@@ -7,3 +7,8 @@ about the world from samples of data
 
 The course is taught using Python
 
+
+
+change in main branch
+I love Kroko
+
