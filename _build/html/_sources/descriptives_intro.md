@@ -12,14 +12,22 @@ summary statistics can be interpreted in order to choose the correct
 ones to report for our particular study.
 <li>When choosing a plot type, we should be mindful of what we want the reader to be able to perceive about the data from the plot (a relationship between two variables? the number of peaks in the distribution? or the difference between a large number of distributions?). 
 </ul>
- 
 
-The emphasis of the lecture is on a conceptual understanding of the
-material that should equip you to make good choices when describing
-your own data.
+## Tasks for this week
 
-To keep the focus on the conceptual level, in this lecture and the
-entire lecture series, I have not gone through worked examples in the core lecture videos.
+<b>Conceptual material</b> is covered in the lecture. In addition to the
+live lecture, you can find lecture videos on Canvas.
 
-Instead, Python exercises are provided for you to work through to
-learn about how we obtain descriptive statistics.
+Please work through the guided exercises in this section (everything
+<i>except</i> the page labelled "Tutorial Exercises") in advance of
+the computer-based tutorial session.
+
+To complete the guided exercises you will need to either:
+<ul>
+<li>open the pages in Google Colab (simply click the Colab button on each page), or
+<li>download them as Jupyter Notbooks to your own computer and work
+with them locally (eg in Spyder)
+</ul>
+
+If you find something difficult or have questions, you can discuss
+with your tutor in the computer-based tutoral session.

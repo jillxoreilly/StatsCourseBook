@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>1.3. Mean and Median &#8212; Introduction to Statistics and Data Science</title>
+    <title>1.4. Mean and Median &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1.4. Standard deviation and IQR" href="descriptives_SDandIQR.html" />
-    <link rel="prev" title="1.2. Concepts Review" href="descriptives_conceptCheck.html" />
+    <link rel="next" title="1.5. Standard deviation and IQR" href="descriptives_SDandIQR.html" />
+    <link rel="prev" title="1.3. Concepts Review" href="descriptives_conceptCheck.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -129,42 +129,42 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_outcomes.html">
-     1.1. Learning Objectives
+     1.2. Learning Objectives
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_conceptCheck.html">
-     1.2. Concepts Review
+     1.3. Concepts Review
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1.3. Mean and Median
+     1.4. Mean and Median
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_SDandIQR.html">
-     1.4. Standard deviation and IQR
+     1.5. Standard deviation and IQR
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_DataCleaning.html">
-     1.5. Data cleaning
+     1.6. Data cleaning
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_groupby.html">
-     1.6. Grouping data
+     1.7. Grouping data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_PythonCheck.html">
-     1.7. Python skills check
+     1.8. Python skills check
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_TutorialExercises.html">
-     1.8. Tutorial exercises
+     1.9. Tutorial exercises
     </a>
    </li>
   </ul>
@@ -309,7 +309,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/descriptives_MeanAndMedian.ipynb"
+        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/descriptives_MeanAndMedian.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -322,6 +322,24 @@ title="Launch on Binder"
     <img src="_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/descriptives_MeanAndMedian.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -352,7 +370,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/jillxoreilly/StatsCourseBook"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -369,7 +387,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdescriptives_MeanAndMedian.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2Fdescriptives_MeanAndMedian.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -458,36 +476,36 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#set-up-python-libraries">
-   1.3.1. Set up Python libraries
+   1.4.1. Set up Python libraries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-mean">
-   1.3.2. The Mean
+   1.4.2. The Mean
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#toy-example-mean">
-     1.3.2.1. Toy example: mean
+     1.4.2.1. Toy example: mean
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#median">
-   1.3.3. Median
+   1.4.3. Median
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#toy-example-median">
-     1.3.3.1. Toy example: median
+     1.4.3.1. Toy example: median
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#effect-of-outliers">
-   1.3.4. Effect of outliers
+   1.4.4. Effect of outliers
   </a>
  </li>
 </ul>
@@ -511,36 +529,36 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#set-up-python-libraries">
-   1.3.1. Set up Python libraries
+   1.4.1. Set up Python libraries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-mean">
-   1.3.2. The Mean
+   1.4.2. The Mean
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#toy-example-mean">
-     1.3.2.1. Toy example: mean
+     1.4.2.1. Toy example: mean
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#median">
-   1.3.3. Median
+   1.4.3. Median
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#toy-example-median">
-     1.3.3.1. Toy example: median
+     1.4.3.1. Toy example: median
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#effect-of-outliers">
-   1.3.4. Effect of outliers
+   1.4.4. Effect of outliers
   </a>
  </li>
 </ul>
@@ -554,12 +572,12 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="mean-and-median">
-<h1><span class="section-number">1.3. </span>Mean and Median<a class="headerlink" href="#mean-and-median" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1.4. </span>Mean and Median<a class="headerlink" href="#mean-and-median" title="Permalink to this heading">#</a></h1>
 <p><a class="reference external" href="https://colab.research.google.com/github/jillxoreilly/StatsCourse/blob//main/notebooks/descriptives_MeanAndMedian.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <p>The mean and median are sometimes called measures of the <i>location</i> or <i>centre</i> of a distribution.</p>
 <p>They both tell you something about the typical or average value in your dataset - but different things.</p>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">1.3.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.4.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -576,12 +594,12 @@ title="Print to PDF"
 </div>
 </section>
 <section id="the-mean">
-<h2><span class="section-number">1.3.2. </span>The Mean<a class="headerlink" href="#the-mean" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.4.2. </span>The Mean<a class="headerlink" href="#the-mean" title="Permalink to this heading">#</a></h2>
 <p>The mean is obtained by adding up all the data values (<span class="math notranslate nohighlight">\(x_1, x_2..... x_n\)</span>) and dividing by the number of datapoints <span class="math notranslate nohighlight">\(n\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[ \bar{x} = \frac{\sum{x_i}}{n} \]</div>
 <section id="toy-example-mean">
-<h3><span class="section-number">1.3.2.1. </span>Toy example: mean<a class="headerlink" href="#toy-example-mean" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.4.2.1. </span>Toy example: mean<a class="headerlink" href="#toy-example-mean" title="Permalink to this heading">#</a></h3>
 <p>To understand the properties of the mean, let’s start with a <i>toy example</i>, i.e. a very small dataset in which it is easy to see what is going on.</p>
 <p>Let’s say these are the heights (cm) and weights (kg) of 6 toddlers:</p>
 <div class="cell docutils container">
@@ -711,7 +729,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="median">
-<h2><span class="section-number">1.3.3. </span>Median<a class="headerlink" href="#median" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.4.3. </span>Median<a class="headerlink" href="#median" title="Permalink to this heading">#</a></h2>
 <p>The median is the middle value of the dataset</p>
 <p>To obtain the median:
 <ul>
@@ -721,7 +739,7 @@ title="Print to PDF"
 <li> If <span class="math notranslate nohighlight">\(n\)</span> is even, the median is halfway between the middle two values
 </ul></p>
 <section id="toy-example-median">
-<h3><span class="section-number">1.3.3.1. </span>Toy example: median<a class="headerlink" href="#toy-example-median" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.4.3.1. </span>Toy example: median<a class="headerlink" href="#toy-example-median" title="Permalink to this heading">#</a></h3>
 <p>Let’s get the median for our toddler height data using the method <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.median.html"><tt>median</tt></a> from <tt>pandas</tt></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -824,7 +842,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="effect-of-outliers">
-<h2><span class="section-number">1.3.4. </span>Effect of outliers<a class="headerlink" href="#effect-of-outliers" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.4.4. </span>Effect of outliers<a class="headerlink" href="#effect-of-outliers" title="Permalink to this heading">#</a></h2>
 <p>What if someone made a data entry error?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -983,13 +1001,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.2. </span>Concepts Review</p>
+            <p class="prev-next-title"><span class="section-number">1.3. </span>Concepts Review</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="descriptives_SDandIQR.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.4. </span>Standard deviation and IQR</p>
+        <p class="prev-next-title"><span class="section-number">1.5. </span>Standard deviation and IQR</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
