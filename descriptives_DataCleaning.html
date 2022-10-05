@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>1.5. Data cleaning &#8212; Introduction to Statistics and Data Science</title>
+    <title>1.6. Data cleaning &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1.6. Grouping data" href="descriptives_groupby.html" />
-    <link rel="prev" title="1.4. Standard deviation and IQR" href="descriptives_SDandIQR.html" />
+    <link rel="next" title="1.7. Grouping data" href="descriptives_groupby.html" />
+    <link rel="prev" title="1.5. Standard deviation and IQR" href="descriptives_SDandIQR.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -127,42 +127,42 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_outcomes.html">
-     1.1. Learning Objectives
+     1.2. Learning Objectives
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_conceptCheck.html">
-     1.2. Concepts Review
+     1.3. Concepts Review
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_MeanAndMedian.html">
-     1.3. Mean and Median
+     1.4. Mean and Median
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_SDandIQR.html">
-     1.4. Standard deviation and IQR
+     1.5. Standard deviation and IQR
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1.5. Data cleaning
+     1.6. Data cleaning
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_groupby.html">
-     1.6. Grouping data
+     1.7. Grouping data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_PythonCheck.html">
-     1.7. Python skills check
+     1.8. Python skills check
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_TutorialExercises.html">
-     1.8. Tutorial exercises
+     1.9. Tutorial exercises
     </a>
    </li>
   </ul>
@@ -307,7 +307,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/descriptives_DataCleaning.ipynb"
+        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/descriptives_DataCleaning.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -320,6 +320,24 @@ title="Launch on Binder"
     <img src="_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/descriptives_DataCleaning.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -350,7 +368,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/jillxoreilly/StatsCourseBook"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -367,7 +385,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdescriptives_DataCleaning.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2Fdescriptives_DataCleaning.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -456,51 +474,51 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#set-up-python-libraries">
-   1.5.1. Set up Python libraries
+   1.6.1. Set up Python libraries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#removing-an-outlier">
-   1.5.2. Removing an outlier
+   1.6.2. Removing an outlier
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#import-the-data">
-     1.5.2.1. Import the data
+     1.6.2.1. Import the data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#get-descriptives">
-     1.5.2.2. Get descriptives
+     1.6.2.2. Get descriptives
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nan-an-outlier-value">
-   1.5.3. NaN an outlier value
+   1.6.3. NaN an outlier value
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     1.5.3.1. Import the data
+     1.6.3.1. Import the data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     1.5.3.2. Get descriptives
+     1.6.3.2. Get descriptives
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#find-nans">
-     1.5.3.3. Find NaNs
+     1.6.3.3. Find NaNs
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#delete-or-tt-nan-tt">
-   1.5.4. Delete or
+   1.6.4. Delete or
    <tt>
     NaN
    </tt>
@@ -509,17 +527,17 @@ title="Print to PDF"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#partial-data-records-are-valuable">
-     1.5.4.1. Partial data records are valuable
+     1.6.4.1. Partial data records are valuable
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#deleting-data-could-be-misleaading">
-     1.5.4.2. Deleting data could be misleaading
+     1.6.4.2. Deleting data could be misleaading
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#some-errors-really-are-errors">
-     1.5.4.3. Some errors really are errors
+     1.6.4.3. Some errors really are errors
     </a>
    </li>
   </ul>
@@ -545,51 +563,51 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#set-up-python-libraries">
-   1.5.1. Set up Python libraries
+   1.6.1. Set up Python libraries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#removing-an-outlier">
-   1.5.2. Removing an outlier
+   1.6.2. Removing an outlier
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#import-the-data">
-     1.5.2.1. Import the data
+     1.6.2.1. Import the data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#get-descriptives">
-     1.5.2.2. Get descriptives
+     1.6.2.2. Get descriptives
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nan-an-outlier-value">
-   1.5.3. NaN an outlier value
+   1.6.3. NaN an outlier value
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     1.5.3.1. Import the data
+     1.6.3.1. Import the data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     1.5.3.2. Get descriptives
+     1.6.3.2. Get descriptives
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#find-nans">
-     1.5.3.3. Find NaNs
+     1.6.3.3. Find NaNs
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#delete-or-tt-nan-tt">
-   1.5.4. Delete or
+   1.6.4. Delete or
    <tt>
     NaN
    </tt>
@@ -598,17 +616,17 @@ title="Print to PDF"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#partial-data-records-are-valuable">
-     1.5.4.1. Partial data records are valuable
+     1.6.4.1. Partial data records are valuable
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#deleting-data-could-be-misleaading">
-     1.5.4.2. Deleting data could be misleaading
+     1.6.4.2. Deleting data could be misleaading
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#some-errors-really-are-errors">
-     1.5.4.3. Some errors really are errors
+     1.6.4.3. Some errors really are errors
     </a>
    </li>
   </ul>
@@ -624,7 +642,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="data-cleaning">
-<h1><span class="section-number">1.5. </span>Data cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1.6. </span>Data cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this heading">#</a></h1>
 <p><a class="reference external" href="https://colab.research.google.com/github/jillxoreilly/StatsCourse/blob//main/notebooks/descriptives_DataCleaning.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <p>As we have seen, outliers can distort the values of statistics such as the mean and standard deviation</p>
 <p>In real datasets, outliers are common, arising from one of the following:</p>
@@ -635,7 +653,7 @@ title="Print to PDF"
 </ul>
 <p>Identifying and removing outliers and bad data points is a crucial step in the process of preparing our data for analysis, sometimes called <i>data wrangling</i></p>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">1.5.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.6.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -652,11 +670,11 @@ title="Print to PDF"
 </div>
 </section>
 <section id="removing-an-outlier">
-<h2><span class="section-number">1.5.2. </span>Removing an outlier<a class="headerlink" href="#removing-an-outlier" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.6.2. </span>Removing an outlier<a class="headerlink" href="#removing-an-outlier" title="Permalink to this heading">#</a></h2>
 <p>In some cases, we can identify that an outlier datapoint should not be in our dataset, and remove it.</p>
 <p>Let’s try an example:</p>
 <section id="import-the-data">
-<h3><span class="section-number">1.5.2.1. </span>Import the data<a class="headerlink" href="#import-the-data" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.6.2.1. </span>Import the data<a class="headerlink" href="#import-the-data" title="Permalink to this heading">#</a></h3>
 <p>Let’s import a dataframe with size information on a random sample of cars</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -775,7 +793,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="get-descriptives">
-<h3><span class="section-number">1.5.2.2. </span>Get descriptives<a class="headerlink" href="#get-descriptives" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.6.2.2. </span>Get descriptives<a class="headerlink" href="#get-descriptives" title="Permalink to this heading">#</a></h3>
 <p>We can get the descriptive statistics using the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html"><tt>decribe()</tt></a> method in <tt>pandas</tt></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -997,14 +1015,14 @@ Name: type, dtype: int64
 </section>
 </section>
 <section id="nan-an-outlier-value">
-<h2><span class="section-number">1.5.3. </span>NaN an outlier value<a class="headerlink" href="#nan-an-outlier-value" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.6.3. </span>NaN an outlier value<a class="headerlink" href="#nan-an-outlier-value" title="Permalink to this heading">#</a></h2>
 <p>Sometimes, we don’t want to remove an entire entry.</p>
 <p>Say for example there is a data entry error for one of the vehicle heights. We might not be that interested in vehicle height, and wish to retain other data on this vehicle.</p>
 <p>Then we can replace just the offending value with the value <tt>NaN</tt></p>
 <p><tt>NaN</tt> stands for Not a Number and is code across many programming languages for a missing value that should be ignored.</p>
 <p>Let’s try an example</p>
 <section id="id1">
-<h3><span class="section-number">1.5.3.1. </span>Import the data<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.6.3.1. </span>Import the data<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>Let’s import a dataframe with size information on a random sample of cars</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1024,7 +1042,7 @@ Name: type, dtype: int64
 </div>
 </section>
 <section id="id2">
-<h3><span class="section-number">1.5.3.2. </span>Get descriptives<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.6.3.2. </span>Get descriptives<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>We can get the descriptive statistics using the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html"><tt>decribe()</tt></a> method in <tt>pandas</tt></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1255,7 +1273,7 @@ Name: type, dtype: int64
 </div>
 </section>
 <section id="find-nans">
-<h3><span class="section-number">1.5.3.3. </span>Find NaNs<a class="headerlink" href="#find-nans" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.6.3.3. </span>Find NaNs<a class="headerlink" href="#find-nans" title="Permalink to this heading">#</a></h3>
 <p>If you download a dataset, it can be useful to check which rows have missing values.</p>
 <p>You can do this using the method <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isna.html"><tt>isna</tt></a>, which returns a True for NaN values and False elsewhere.</p>
 <p>For example we can check the section of the dataframe where we replaced some values with <tt>NaN</tt>s</p>
@@ -1398,24 +1416,24 @@ Name: type, dtype: int64
 </section>
 </section>
 <section id="delete-or-tt-nan-tt">
-<h2><span class="section-number">1.5.4. </span>Delete or <tt>NaN</tt>?<a class="headerlink" href="#delete-or-tt-nan-tt" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.6.4. </span>Delete or <tt>NaN</tt>?<a class="headerlink" href="#delete-or-tt-nan-tt" title="Permalink to this heading">#</a></h2>
 <p>When should you delete the entire row and when should you replace a missing value with a <tt>NaN</tt>?</p>
 <p>In general, it is better to replace bad or missing values with a <tt>NaN</tt></p>
 <p>I think there are three main considerations:</p>
 <section id="partial-data-records-are-valuable">
-<h3><span class="section-number">1.5.4.1. </span>Partial data records are valuable<a class="headerlink" href="#partial-data-records-are-valuable" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.6.4.1. </span>Partial data records are valuable<a class="headerlink" href="#partial-data-records-are-valuable" title="Permalink to this heading">#</a></h3>
 <p>If you have many data values for each record or row in your dataframe (in this case, records correspond to individual cars, but they could be patients for example), you may not wish ot junk all the data just because some variables are incomplete or have bad values.</p>
 <p>For example, say we run a study which involves a hospital visit for a battery of tests (blood pressure, thyroid function, levels of vitamin B12…) and the lab looses a batch of samples for the B12 analysis. The remaining data on the patients may still be useful - maybe we didn’t even care that much about vitamin B12.</p>
 <p>In this case, it is better to put a missing value for B12 in the affected patients and retain the rest of their data as normal.</p>
 </section>
 <section id="deleting-data-could-be-misleaading">
-<h3><span class="section-number">1.5.4.2. </span>Deleting data could be misleaading<a class="headerlink" href="#deleting-data-could-be-misleaading" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.6.4.2. </span>Deleting data could be misleaading<a class="headerlink" href="#deleting-data-could-be-misleaading" title="Permalink to this heading">#</a></h3>
 <p>Say one of the measures in our patient study is a follow-up questionairre and only 60% of patients complete this.</p>
 <p>If we simply delete all the patients who didn’t complete the follow-up from our database, we will have a biased sample (an no-one will ever know!)</p>
 <p>For this reason it is good practice to retain incomplete data records, with <tt>Nan</tt>s as appropriate, so another researcher can see the full picture.</p>
 </section>
 <section id="some-errors-really-are-errors">
-<h3><span class="section-number">1.5.4.3. </span>Some errors really are errors<a class="headerlink" href="#some-errors-really-are-errors" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.6.4.3. </span>Some errors really are errors<a class="headerlink" href="#some-errors-really-are-errors" title="Permalink to this heading">#</a></h3>
 <p>However, if a record is clearly an error (completely empty) or a duplicate (two identical files for the same NHS number), it would be appropriate to delete it</p>
 </section>
 </section>
@@ -1452,13 +1470,13 @@ Name: type, dtype: int64
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.4. </span>Standard deviation and IQR</p>
+            <p class="prev-next-title"><span class="section-number">1.5. </span>Standard deviation and IQR</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="descriptives_groupby.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.6. </span>Grouping data</p>
+        <p class="prev-next-title"><span class="section-number">1.7. </span>Grouping data</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

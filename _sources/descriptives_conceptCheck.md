@@ -1,5 +1,15 @@
 # Concepts Review
 
+Here we review some conceptual points from the lecture.
+
+Please try to answer each question yourself before clicking to reveal
+the answer
+
+You can discuss these points with your tutor at the computer-based
+tutorial session (these sessions are for discussing concepts as well
+as for developing Python skills)
+
+
 <ol>
 <li>The fertility rate (mean number of children per adult woman) varies in Western Europe between a low of 1.3 (Italy and Spain) and a high of 1.9 (Ireland).
 
@@ -86,3 +96,34 @@ e)	Number of speeding fines someone got in the last year. You can’t get less t
 
 ```
 
+<li>A teacher summarizes grades on the midterm exam as follows:
+<ul type=none>
+<li>  Min 26 
+ <li> Q1 67 
+ <li> Median 80 
+ <li> Q3 87 
+ <li> Max 100 
+ <li> Mean 76 
+ <li> Mode 100 
+ <li>Standard deviation 76 
+ <li>IQR 20
+ </ul>
+  She incorrectly recorded one of the numbers (which has an impossible
+  value). Which one do you think it is? Why?
+
+```{admonition} Click to reveal answer
+:class: dropdown
+The standard deviation is incorrectly recorded. It exceeds the range of the data. 
+
+```
+
+<li> An exam is graded on the scale 1-100 and the mean score is 76. Which value is the 
+more plausible for the standard deviation: -20, 0 , 10, or 50? Why?
+
+```{admonition} Click to reveal answer
+:class: dropdown
+10 is realistic; –20 is impossible since the standard deviation cannot be negative; 0 
+implies that every student scored 76 on the exam, which is highly improbable; 50 is too 
+large (it is half of the possible range of scores).   
+
+```
