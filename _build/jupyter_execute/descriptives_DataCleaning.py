@@ -3,8 +3,6 @@
 
 # # Data cleaning
 # 
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jillxoreilly/StatsCourse/blob//main/notebooks/descriptives_DataCleaning.ipynb#)
-# 
 # As we have seen, outliers can distort the values of statistics such as the mean and standard deviation
 # 
 # In real datasets, outliers are common, arising from one of the following:

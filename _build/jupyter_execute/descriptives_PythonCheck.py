@@ -3,8 +3,6 @@
 
 # # Python skills check
 # 
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jillxoreilly/StatsCourse/blob//main/notebooks/descriptives_PythonCheck.ipynb#)
-# 
 # Here we will review all the Python skills you should know by the end of this week
 
 # ### Set up Python libraries

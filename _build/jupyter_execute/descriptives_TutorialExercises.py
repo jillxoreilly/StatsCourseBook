@@ -3,8 +3,6 @@
 
 # # Tutorial exercises
 # 
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jillxoreilly/StatsCourse/blob/main/notebooks/descriptives_TutorialExercises.ipynb#)
-# 
 # You should work through this is the tutorial. The idea is to bring together the skills you have learned (and highlight any gaps to discuss woith your tutor)
 
 # ## Car park exercise

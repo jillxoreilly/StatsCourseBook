@@ -3,8 +3,6 @@
 
 # # Mean and Median
 # 
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jillxoreilly/StatsCourse/blob//main/notebooks/descriptives_MeanAndMedian.ipynb#)
-# 
 # The mean and median are sometimes called measures of the <i>location</i> or <i>centre</i> of a distribution.
 # 
 # They both tell you something about the typical or average value in your dataset - but different things.
