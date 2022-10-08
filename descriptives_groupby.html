@@ -408,32 +408,31 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#set-up-python-libraries">
-   1.7.1. Set up Python libraries
+   Set up Python libraries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load-and-view-the-data">
-   1.7.2. Load and view the data
+   Load and view the data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#obtain-descriptive-statistics">
-   1.7.3. Obtain descriptive statistics
+   Obtain descriptive statistics
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#why-group-the-data">
-   1.7.4. Why group the data?
+   Why group the data?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#grouping-into-separate-dataframes">
-   1.7.5. Grouping into separate dataframes
+   Grouping into separate dataframes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tt-pandas-groupby-tt">
-   1.7.6.
    <tt>
     pandas.groupby
    </tt>
@@ -460,32 +459,31 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#set-up-python-libraries">
-   1.7.1. Set up Python libraries
+   Set up Python libraries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load-and-view-the-data">
-   1.7.2. Load and view the data
+   Load and view the data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#obtain-descriptive-statistics">
-   1.7.3. Obtain descriptive statistics
+   Obtain descriptive statistics
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#why-group-the-data">
-   1.7.4. Why group the data?
+   Why group the data?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#grouping-into-separate-dataframes">
-   1.7.5. Grouping into separate dataframes
+   Grouping into separate dataframes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tt-pandas-groupby-tt">
-   1.7.6.
    <tt>
     pandas.groupby
    </tt>
@@ -506,7 +504,7 @@ title="Print to PDF"
 <p><a class="reference external" href="https://colab.research.google.com/github/jillxoreilly/StatsCourse/blob//main/notebooks/descriptives_groupby.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <p>In many datasets, data can be categorized and we would wish to give descriptive statistics separately for each category.</p>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">1.7.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -523,7 +521,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="load-and-view-the-data">
-<h2><span class="section-number">1.7.2. </span>Load and view the data<a class="headerlink" href="#load-and-view-the-data" title="Permalink to this heading">#</a></h2>
+<h2>Load and view the data<a class="headerlink" href="#load-and-view-the-data" title="Permalink to this heading">#</a></h2>
 <img src="images/carsBanner.png" width=100% alt="Picture of some cars" >
 <p>Let’s load the datafile “vehicles.csv” which contains size data on vehicles parked at a vehicle-ferry terminal at 1pm on Sunday 24th April 2022, which they regard as a representative sample.</p>
 <div class="cell docutils container">
@@ -553,7 +551,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="obtain-descriptive-statistics">
-<h2><span class="section-number">1.7.3. </span>Obtain descriptive statistics<a class="headerlink" href="#obtain-descriptive-statistics" title="Permalink to this heading">#</a></h2>
+<h2>Obtain descriptive statistics<a class="headerlink" href="#obtain-descriptive-statistics" title="Permalink to this heading">#</a></h2>
 <p>We can use the built in functions in <tt>pandas.describe()</tt> to return descriptives for our data</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -577,7 +575,7 @@ Name: length, dtype: float64
 </div>
 </section>
 <section id="why-group-the-data">
-<h2><span class="section-number">1.7.4. </span>Why group the data?<a class="headerlink" href="#why-group-the-data" title="Permalink to this heading">#</a></h2>
+<h2>Why group the data?<a class="headerlink" href="#why-group-the-data" title="Permalink to this heading">#</a></h2>
 <p>You can see above that the mean length of vehicles in the car park is 6.72m.</p>
 <p>This is surprising as it is rather longer than even a large family car</p>
 <p>To get a better sense of the length data, I am going to plot them.</p>
@@ -619,7 +617,7 @@ Name: length, dtype: float64
 <p>Aha. We might want to describe our data separately for each by vehicle type.</p>
 </section>
 <section id="grouping-into-separate-dataframes">
-<h2><span class="section-number">1.7.5. </span>Grouping into separate dataframes<a class="headerlink" href="#grouping-into-separate-dataframes" title="Permalink to this heading">#</a></h2>
+<h2>Grouping into separate dataframes<a class="headerlink" href="#grouping-into-separate-dataframes" title="Permalink to this heading">#</a></h2>
 <p>One way to do this is to create separate dataframes for each vehicle type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -794,7 +792,7 @@ Name: length, dtype: float64
 </div>
 </section>
 <section id="tt-pandas-groupby-tt">
-<h2><span class="section-number">1.7.6. </span><tt>pandas.groupby</tt><a class="headerlink" href="#tt-pandas-groupby-tt" title="Permalink to this heading">#</a></h2>
+<h2><tt>pandas.groupby</tt><a class="headerlink" href="#tt-pandas-groupby-tt" title="Permalink to this heading">#</a></h2>
 <p>We can also use the pandas function <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html"><tt>groupby</tt></a> to split up our dataframe according to a categorical variable, in this case vehicle type.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
