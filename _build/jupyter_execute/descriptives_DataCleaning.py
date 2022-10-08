@@ -47,7 +47,7 @@ sns.set_theme()
 # In[2]:
 
 
-cars = pandas.read_csv('data/cars_outlier1.csv')
+cars = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/cars_outlier1.csv')
 display(cars)
 
 
@@ -148,7 +148,7 @@ cars_clean['type'].value_counts() # check if we still have any trucks in the sam
 # In[10]:
 
 
-cars = # your code here to read the file 'data/cars_outlier2.csv'
+cars = # your code here to read the file 'https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/cars_outlier2.csv'
 display(cars)
 
 

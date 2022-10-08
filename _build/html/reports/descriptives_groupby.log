@@ -17,17 +17,18 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# load the data
-vehicles = ### your code here to load the csv file
-
-# replace bad values with NaNs
-
+vehicles = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/vehicles.csv')
+vehicles.to_csv('vehicles.csv', Index=False)
+display(vehicles)
 ------------------
 
-[0;36m  File [0;32m"/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_84209/669523579.py"[0;36m, line [0;32m2[0m
-[0;31m    vehicles = ### your code here to load the csv file[0m
-[0m               ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_82887/2301791713.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0mvehicles[0m [0;34m=[0m [0mpandas[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m'https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/vehicles.csv'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mvehicles[0m[0;34m.[0m[0mto_csv[0m[0;34m([0m[0;34m'vehicles.csv'[0m[0;34m,[0m [0mIndex[0m[0;34m=[0m[0;32mFalse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0mdisplay[0m[0;34m([0m[0mvehicles[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-SyntaxError: invalid syntax (669523579.py, line 2)
+[0;31mTypeError[0m: to_csv() got an unexpected keyword argument 'Index'
+TypeError: to_csv() got an unexpected keyword argument 'Index'
 

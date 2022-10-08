@@ -23,12 +23,14 @@ sns.set_theme()
 
 # ### Load the data
 # 
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/titanic.jpg" width=100% alt="Picture of the Titanic" />
+# 
 # Let's load some data about the passengers of the Titanic from the file "data/titanic.csv"
 
 # In[2]:
 
 
-titanic = pandas.read_csv('data/titanic.csv')
+titanic = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/titanic.csv')
 display(titanic)
 
 

@@ -32,7 +32,7 @@
 # <b>Your task is to produce a report answering these questions, justifying you answer with plots and descriptive statistics based on the sample data provided by SpeedyFerry, introduced below</b>
 # </div>
 # 
-# <img src="images/carsBanner.png" width=100% alt="Picture of some cars" >
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/carsBanner.png" width=100% alt="Picture of some cars" />
 
 # ### Set up Python libraries
 # 
@@ -61,7 +61,7 @@ sns.set_theme()
 # In[2]:
 
 
-vehicles = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourse/main/data/vehicles.csv')
+vehicles = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/vehicles.csv')
 display(vehicles)
 
 

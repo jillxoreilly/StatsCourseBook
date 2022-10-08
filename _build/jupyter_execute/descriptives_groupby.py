@@ -32,7 +32,8 @@ sns.set_theme()
 # In[2]:
 
 
-vehicles = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourse/main/data/vehicles.csv')
+vehicles = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/vehicles.csv')
+vehicles.to_csv('vehicles.csv', Index=False)
 display(vehicles)
 
 
@@ -60,7 +61,7 @@ vehicles['length'].describe()
 # 
 # Don't worry too much about the plotting code for now, as there are dedicated exercises on plotting later.
 
-# In[4]:
+# In[31]:
 
 
 sns.histplot(data=vehicles, x="length",  bins = np.arange(0,16,0.5))
@@ -76,7 +77,7 @@ plt.xlabel('vehicle length (m)')
 # 
 # I can plot vehicle types in different colours (again no need ot worry about the plotting code at this stage)
 
-# In[5]:
+# In[30]:
 
 
 sns.histplot(data=vehicles, x="length", bins = np.arange(0,16,0.5), hue="type")
@@ -89,7 +90,7 @@ plt.xlabel('vehicle length (m)')
 # 
 # One way to do this is to create separate dataframes for each vehicle type:
 
-# In[6]:
+# In[37]:
 
 
 cars = vehicles[vehicles['type']=='car']
@@ -100,7 +101,7 @@ cars.describe()
 # 
 # Try modifying the code below to get descriptive statistics for trucks:
 
-# In[7]:
+# In[38]:
 
 
 # modify the code to get descritives for trucks
@@ -112,7 +113,7 @@ cars.describe()
 # 
 # We can also use the pandas function <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html"><tt>groupby</tt></a> to split up our dataframe according to a categorical variable, in this case vehicle type.
 
-# In[8]:
+# In[41]:
 
 
 vehicles.groupby(['type']).describe()
@@ -122,7 +123,7 @@ vehicles.groupby(['type']).describe()
 # 
 # It may be preferable to output descriptives only for one measure (eg length):
 
-# In[9]:
+# In[43]:
 
 
 vehicles.groupby(['type'])['length'].describe()
@@ -130,7 +131,7 @@ vehicles.groupby(['type'])['length'].describe()
 
 # ... or to output one descriptive (such as the mean) at a time, rather than the whole table
 
-# In[10]:
+# In[45]:
 
 
 vehicles.groupby(['type']).mean()
