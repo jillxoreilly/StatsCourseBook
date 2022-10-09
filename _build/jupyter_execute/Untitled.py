@@ -1,21 +1,26 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Further exercises
+# # Simulation Exercises
 # 
-# In 1885 Francis Galton famously collected data on the heights (amongst other features) of a large number of family groups - over 800 individuals
+# <img src="images/tallVshort.jpg" width=25% alt="(display image of dice)" >
 # 
-# These data were important in the development of some classic statistics (like correlation) and some important ideas (like regression to the mean).
 # 
-# Plotting these data we can see how histograms could work for a larger dataset
+
+# ### Set up Python libraries
 # 
-# Load the file "GaltonsHeightData.csv"
+# As usual, run the code cell below to import the relevant Python libraries
 
 # In[1]:
 
 
-galtonData = pandas.read_csv('data/GaltonsHeightData.csv')
-display(galtonData)
+# Set-up Python libraries - you need to run this but you don't need to change it
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+import pandas 
+import seaborn as sns
+sns.set_theme()
 
 
 # In[ ]:

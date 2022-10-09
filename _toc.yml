@@ -6,6 +6,13 @@ root: intro
 options:  # The options key will be applied to all chapters, but not sub-sections
   numbered: 2
 chapters:
+- file: prepwork_intro.md
+  sections:
+  - file: prepwork_datacamp.md
+  - file: prepwork_forloop.ipynb
+  - file: prepwork_diceroll_for.ipynb
+  - file: prepwork_diceroll_while.ipynb
+  - file: prepwork_simExercises.ipynb
 - file: descriptives_intro.md
   sections:
   - file: descriptives_outcomes.md
@@ -17,8 +24,3 @@ chapters:
   - file: descriptives_PythonCheck.ipynb
   - file: descriptives_TutorialExercises.ipynb
 - file: plotting_intro.md
-- file: ttest_intro.md
-- file: nonpara_intro.md
-
-
-

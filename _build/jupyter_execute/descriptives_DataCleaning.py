@@ -172,8 +172,6 @@ display(cars)
 # your code here to display the rows of the dataframe with car length greater than 8m
 # check above for an example
 
-cars[cars['height']>8]
-
 
 # Hm, these height values appear to be about 10x the mean height
 # 

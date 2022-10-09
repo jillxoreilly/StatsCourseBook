@@ -25,6 +25,9 @@ sns.set_theme()
 # 
 # <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/titanic.jpg" width=50% alt="Picture of the Titanic" />
 # 
+# <br>
+# <br>
+# 
 # Let's load some data about the passengers of the Titanic from the file "data/titanic.csv"
 
 # In[2]:

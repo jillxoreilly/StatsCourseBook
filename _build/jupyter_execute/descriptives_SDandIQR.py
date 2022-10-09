@@ -26,12 +26,14 @@ sns.set_theme()
 
 # ## The Standard Deviation
 # 
-# The standard deviation is obtained by:
+# The standard deviation is obtained as follows:
 # 
-# <ul>
-#     <li>find the difference between each datapoint and the mean value $(x_1 - \bar{x}), (x_2 - \bar{x})... (x_n - \bar{x})$
-#     <li> square each difference
-#     <li>add them all up 
+# 1. Find the difference between each datapoint and the mean value $(x_1 - \bar{x}), (x_2 - \bar{x})... (x_n - \bar{x}) $
+# 
+# 2. Square each difference
+# 
+# 3. Add them all up 
+# 
 #     <li>divide by ($n-1$) where $n$ is the number of datapoints
 # </ul>
 # 
