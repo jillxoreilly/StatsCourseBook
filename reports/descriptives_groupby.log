@@ -24,7 +24,7 @@ display(vehicles)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mTypeError[0m                                 Traceback (most recent call last)
-[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_82887/2301791713.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_32217/2301791713.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0mvehicles[0m [0;34m=[0m [0mpandas[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m'https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/vehicles.csv'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 2[0;31m [0mvehicles[0m[0;34m.[0m[0mto_csv[0m[0;34m([0m[0;34m'vehicles.csv'[0m[0;34m,[0m [0mIndex[0m[0;34m=[0m[0;32mFalse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m [0mdisplay[0m[0;34m([0m[0mvehicles[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

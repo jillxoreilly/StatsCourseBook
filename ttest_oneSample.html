@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>3.2. One sample t-test &#8212; Introduction to Statistics and Data Science</title>
+    <title>One sample t-test &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3.3. Independent samples t-test" href="ttest_independentSamples.html" />
-    <link rel="prev" title="3.1. Paired Samples t-test" href="ttest_pairedSamples.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -116,10 +114,10 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="descriptives_intro.html">
-   1. Describing data
+  <a class="reference internal" href="prepwork_intro.html">
+   1. Preparatory Work
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -128,50 +126,39 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_outcomes.html">
-     1.2. Learning Objectives
+    <a class="reference internal" href="prepwork_datacamp.html">
+     1.2. Datacamp
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_conceptCheck.html">
-     1.3. Concepts Review
+    <a class="reference internal" href="prepwork_forloop.html">
+     1.3. The
+     <tt>
+      for
+     </tt>
+     loop
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_MeanAndMedian.html">
-     1.4. Mean and Median
+    <a class="reference internal" href="prepwork_diceroll_for.html">
+     1.4. Rolling a virtual dice I
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_SDandIQR.html">
-     1.5. Standard deviation and IQR
+    <a class="reference internal" href="prepwork_diceroll_while.html">
+     1.5. Rolling a virtual dice II
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_DataCleaning.html">
-     1.6. Data cleaning
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_groupby.html">
-     1.7. Grouping data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_PythonCheck.html">
-     1.8. Python skills check
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_TutorialExercises.html">
-     1.9. Tutorial exercises
+    <a class="reference internal" href="prepwork_simExercises.html">
+     1.6. Simulation Exercises
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="plotting_intro.html">
-   2. Plotting Data
+  <a class="reference internal" href="descriptives_intro.html">
+   2. Describing data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -180,75 +167,51 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="plotting_histogram.html">
-     2.2. Histogram and KDE plot
+    <a class="reference internal" href="descriptives_outcomes.html">
+     2.2. Learning Objectives
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="plotting_scatterplot.html">
-     2.3. Scatterplot
+    <a class="reference internal" href="descriptives_conceptCheck.html">
+     2.3. Concepts Review
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="plotting_boxplot.html">
-     2.4. Boxplot
+    <a class="reference internal" href="descriptives_MeanAndMedian.html">
+     2.4. Mean and Median
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_SDandIQR.html">
+     2.5. Standard deviation and IQR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_DataCleaning.html">
+     2.6. Data cleaning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_groupby.html">
+     2.7. Grouping data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_PythonCheck.html">
+     2.8. Python skills check
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercises.html">
+     2.9. Tutorial exercises
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="ttest_intro.html">
-   3. The t-test
+ <li class="toctree-l1">
+  <a class="reference internal" href="plotting_intro.html">
+   3. Plotting Data
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_pairedSamples.html">
-     3.1. Paired Samples t-test
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     3.2. One sample t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_independentSamples.html">
-     3.3. Independent samples t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_furtherExercises.html">
-     3.4. t-test further exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="nonpara_intro.html">
-   4. Non-parametric equivalents of the t-test
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nonpara_MannWhitneyU.html">
-     4.1. Set up Python libraries
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nonpara_WilcoxonSignRank.html">
-     4.4. Set up Python libraries
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -476,54 +439,54 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#set-up-python-libraries">
-   3.2.1. Set up Python libraries
+   Set up Python libraries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example">
-   3.2.2. Example
+   Example
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#plot-the-data">
-     3.2.2.1. Plot the data
+     Plot the data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#hypotheses">
-     3.2.2.2. Hypotheses
+     Hypotheses
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#descriptive-statistics">
-     3.2.2.3. Descriptive Statistics
+     Descriptive Statistics
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#carry-out-the-test">
-     3.2.2.4. Carry out the test
+     Carry out the test
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#degrees-of-freedom">
-     3.2.2.5. Degrees of freedom
+     Degrees of freedom
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interpretation">
-     3.2.2.6. Interpretation
+     Interpretation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#draw-conclusions">
-     3.2.2.7. Draw conclusions
+     Draw conclusions
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#write-up">
-   3.2.3. Write-up
+   Write-up
   </a>
  </li>
 </ul>
@@ -547,54 +510,54 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#set-up-python-libraries">
-   3.2.1. Set up Python libraries
+   Set up Python libraries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example">
-   3.2.2. Example
+   Example
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#plot-the-data">
-     3.2.2.1. Plot the data
+     Plot the data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#hypotheses">
-     3.2.2.2. Hypotheses
+     Hypotheses
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#descriptive-statistics">
-     3.2.2.3. Descriptive Statistics
+     Descriptive Statistics
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#carry-out-the-test">
-     3.2.2.4. Carry out the test
+     Carry out the test
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#degrees-of-freedom">
-     3.2.2.5. Degrees of freedom
+     Degrees of freedom
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interpretation">
-     3.2.2.6. Interpretation
+     Interpretation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#draw-conclusions">
-     3.2.2.7. Draw conclusions
+     Draw conclusions
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#write-up">
-   3.2.3. Write-up
+   Write-up
   </a>
  </li>
 </ul>
@@ -608,9 +571,9 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="one-sample-t-test">
-<h1><span class="section-number">3.2. </span>One sample t-test<a class="headerlink" href="#one-sample-t-test" title="Permalink to this heading">#</a></h1>
+<h1>One sample t-test<a class="headerlink" href="#one-sample-t-test" title="Permalink to this heading">#</a></h1>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">3.2.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -626,7 +589,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="example">
-<h2><span class="section-number">3.2.2. </span>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
 <img src="images/rowingTeam.png" width=50% alt="There should be a picture of some apples here" >
 <p>Here are the heights in cm of eight men on a rowing team</p>
 <div class="cell docutils container">
@@ -699,7 +662,7 @@ title="Print to PDF"
 <p>Use a one-sample t-test to determine whether the mean height of the rowing team is
 significantly greater than the average height of men in the UK (175 cm).</p>
 <section id="plot-the-data">
-<h3><span class="section-number">3.2.2.1. </span>Plot the data<a class="headerlink" href="#plot-the-data" title="Permalink to this heading">#</a></h3>
+<h3>Plot the data<a class="headerlink" href="#plot-the-data" title="Permalink to this heading">#</a></h3>
 <p>First we plot the data to check if they are roughly normally distributed and check for outliers.
 As before, a KDE plot is useful to show the shape of the distribution, and a rug plot to show individual values,
 as the sample size is so small</p>
@@ -724,7 +687,7 @@ they don’t look too bad although there is one very tall outlier.</p>
 <p>However, height is generally normally distributed so let’s go ahead and use the t-test.</p>
 </section>
 <section id="hypotheses">
-<h3><span class="section-number">3.2.2.2. </span>Hypotheses<a class="headerlink" href="#hypotheses" title="Permalink to this heading">#</a></h3>
+<h3>Hypotheses<a class="headerlink" href="#hypotheses" title="Permalink to this heading">#</a></h3>
 <p>Ho: the mean height of rowers is greater than the population average of 175cm</p>
 <p>Ha: the mean higher of rowers is not different from the populaation average of 175cm</p>
 <p>This is a one tailed test as the observer’s hypothesis (described above) is directional -
@@ -732,7 +695,7 @@ she thinks taller people are more likely to be good rowers</p>
 <p>We will test at the <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span> significance level</p>
 </section>
 <section id="descriptive-statistics">
-<h3><span class="section-number">3.2.2.3. </span>Descriptive Statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this heading">#</a></h3>
+<h3>Descriptive Statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this heading">#</a></h3>
 <p>First, we obtain the relevant desriptive statistics. By relevant, I mean the ones that go into the equation for the t-test:</p>
 <div class="math notranslate nohighlight">
 \[ t = \frac{\bar{x}}{\frac{s}{\sqrt{n}}} \]</div>
@@ -807,7 +770,7 @@ she thinks taller people are more likely to be good rowers</p>
 It turns out (from the normal distribution) that if the average rower was an actual person, they would be taller than aabout 75% of others, so tall but not remarkably so. However, if the rowers are consistently quite tall (that is most of them are tall), they may as a group be significantly taller than average.</p>
 </section>
 <section id="carry-out-the-test">
-<h3><span class="section-number">3.2.2.4. </span>Carry out the test<a class="headerlink" href="#carry-out-the-test" title="Permalink to this heading">#</a></h3>
+<h3>Carry out the test<a class="headerlink" href="#carry-out-the-test" title="Permalink to this heading">#</a></h3>
 <p>To do the t-test itself we use a one-sample t-test using the function <tt>ttest_1samp</tt> (that’s <tt>1samp</tt> for one sample) from
 <tt>scipy.stats</tt>, here loaded as <tt>stats</tt></p>
 <div class="cell docutils container">
@@ -828,24 +791,24 @@ that mean of the first input <tt>apples.MiracleGro</tt> is greater than the seco
 <p>The outputs are <tt>statistic</tt> (<span class="math notranslate nohighlight">\(t=1.70\)</span>) and <tt>pvalue</tt> (<span class="math notranslate nohighlight">\(p=0.067\)</span>) - if this is less than our <span class="math notranslate nohighlight">\(\alpha\)</span> value 0.5, there is a significant difference.</p>
 </section>
 <section id="degrees-of-freedom">
-<h3><span class="section-number">3.2.2.5. </span>Degrees of freedom<a class="headerlink" href="#degrees-of-freedom" title="Permalink to this heading">#</a></h3>
+<h3>Degrees of freedom<a class="headerlink" href="#degrees-of-freedom" title="Permalink to this heading">#</a></h3>
 <p>In a scientific write-up we also need to report the degrees of freedom of the test. This tells us how many observations (data-points) the test was based on, corrected for the number of means we had to estimate from the data in order to do the test.</p>
 <p>In the case of the one sample t-test <span class="math notranslate nohighlight">\(df = n-1\)</span> so in this case, df=7 and we can report out test results as:</p>
 <p><span class="math notranslate nohighlight">\(t(7) = 1.70, p=0.067\)</span> (one-tailed)</p>
 </section>
 <section id="interpretation">
-<h3><span class="section-number">3.2.2.6. </span>Interpretation<a class="headerlink" href="#interpretation" title="Permalink to this heading">#</a></h3>
+<h3>Interpretation<a class="headerlink" href="#interpretation" title="Permalink to this heading">#</a></h3>
 <p>Our t value of 1.67 means that the difference between the mean height of the rowers and the standard value (175cm, the mean height of British men) is 1.67 times the standard error (where <span class="math notranslate nohighlight">\( SE = s \sqrt{\frac{1}{n_1}+\frac{1}{n_2}}\)</span>).</p>
 <p>Such a large difference (in the expected direction) would occur 0.067 (6.7%) of the time due to chance if the null hypothesis were true (rowers were no taller than other men), hence the p value of 0.067. This is higher than our alpha value (0.05) so the test is not significant.</p>
 <p>This diagram shows the expected distribubtion of t-values if the null were true, with our obtained t-value marked:</p>
 <img src="images/ttestRowing.png" width=50% alt="There should be a picture of the t-distribution here" ></section>
 <section id="draw-conclusions">
-<h3><span class="section-number">3.2.2.7. </span>Draw conclusions<a class="headerlink" href="#draw-conclusions" title="Permalink to this heading">#</a></h3>
+<h3>Draw conclusions<a class="headerlink" href="#draw-conclusions" title="Permalink to this heading">#</a></h3>
 <p>As p&gt;0.05 the test is not significant and we fail to reject the null hypothesis. There is not sufficient evidence to support the hypothesis that rowers are taller than average.</p>
 </section>
 </section>
 <section id="write-up">
-<h2><span class="section-number">3.2.3. </span>Write-up<a class="headerlink" href="#write-up" title="Permalink to this heading">#</a></h2>
+<h2>Write-up<a class="headerlink" href="#write-up" title="Permalink to this heading">#</a></h2>
 <br>
 <div style = "    padding-top: 10px;
     padding-bottom: 10px;
@@ -986,20 +949,6 @@ that mean of the first input <tt>apples.MiracleGro</tt> is greater than the seco
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="ttest_pairedSamples.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3.1. </span>Paired Samples t-test</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="ttest_independentSamples.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.3. </span>Independent samples t-test</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

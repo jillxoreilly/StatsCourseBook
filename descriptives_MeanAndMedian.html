@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>1.4. Mean and Median &#8212; Introduction to Statistics and Data Science</title>
+    <title>2.4. Mean and Median &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1.5. Standard deviation and IQR" href="descriptives_SDandIQR.html" />
-    <link rel="prev" title="1.3. Concepts Review" href="descriptives_conceptCheck.html" />
+    <link rel="next" title="2.5. Standard deviation and IQR" href="descriptives_SDandIQR.html" />
+    <link rel="prev" title="2.3. Concepts Review" href="descriptives_conceptCheck.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -117,71 +117,102 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="prepwork_intro.html">
+   1. Preparatory Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_datacamp.html">
+     1.2. Datacamp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_forloop.html">
+     1.3. The
+     <tt>
+      for
+     </tt>
+     loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_diceroll_for.html">
+     1.4. Rolling a virtual dice I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_diceroll_while.html">
+     1.5. Rolling a virtual dice II
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prepwork_simExercises.html">
+     1.6. Simulation Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="descriptives_intro.html">
-   1. Describing data
+   2. Describing data
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_outcomes.html">
-     1.2. Learning Objectives
+     2.2. Learning Objectives
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_conceptCheck.html">
-     1.3. Concepts Review
+     2.3. Concepts Review
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1.4. Mean and Median
+     2.4. Mean and Median
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_SDandIQR.html">
-     1.5. Standard deviation and IQR
+     2.5. Standard deviation and IQR
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_DataCleaning.html">
-     1.6. Data cleaning
+     2.6. Data cleaning
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_groupby.html">
-     1.7. Grouping data
+     2.7. Grouping data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_PythonCheck.html">
-     1.8. Python skills check
+     2.8. Python skills check
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_TutorialExercises.html">
-     1.9. Tutorial exercises
+     2.9. Tutorial exercises
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="plotting_intro.html">
-   2. Plotting Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ttest_intro.html">
-   3. The t-test
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="nonpara_intro.html">
-   4. Non-parametric equivalents of the t-test
+   3. Plotting Data
   </a>
  </li>
 </ul>
@@ -506,7 +537,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="mean-and-median">
-<h1><span class="section-number">1.4. </span>Mean and Median<a class="headerlink" href="#mean-and-median" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2.4. </span>Mean and Median<a class="headerlink" href="#mean-and-median" title="Permalink to this heading">#</a></h1>
 <p>The mean and median are sometimes called measures of the <i>location</i> or <i>centre</i> of a distribution.</p>
 <p>They both tell you something about the typical or average value in your dataset - but different things.</p>
 <section id="set-up-python-libraries">
@@ -934,13 +965,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.3. </span>Concepts Review</p>
+            <p class="prev-next-title"><span class="section-number">2.3. </span>Concepts Review</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="descriptives_SDandIQR.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.5. </span>Standard deviation and IQR</p>
+        <p class="prev-next-title"><span class="section-number">2.5. </span>Standard deviation and IQR</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
