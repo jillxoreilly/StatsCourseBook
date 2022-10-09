@@ -34,8 +34,8 @@ sns.set_theme()
 # 
 # 3. Add them all up 
 # 
-#     <li>divide by ($n-1$) where $n$ is the number of datapoints
-# </ul>
+# 4. Divide by ($n-1$) where $n$ is the number of datapoints
+# 
 # 
 # The process can be described by the formula
 # 

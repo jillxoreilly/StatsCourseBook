@@ -3,7 +3,7 @@
 
 # # Simulation Exercises
 # 
-# <img src="images/tallVshort.jpg" width=25% alt="(display image of two people of different height)" >
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/tallVshort.jpg" width=25% alt="(display image of two people of different height)" >
 # 
 # 
 
@@ -157,7 +157,7 @@ m.mean()
 # 
 # <ul>
 # <li> Try increasing the number of samples from 100 to 10,000 
-# <li> Try varying the sample size - how does the chance of the meana height of woen exceeding the mean height of men depend on the sample size?
+# <li> Try varying the sample size - how does the chance of the mean height of women exceeding the mean height of men depend on the sample size?
 
 # ## Simulated sampling - <tt>while</tt> loop
 # 

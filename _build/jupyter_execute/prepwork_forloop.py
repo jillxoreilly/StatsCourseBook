@@ -239,23 +239,17 @@ print(s)
 # ### Exercises:
 # 
 # <ul>
-# <li> Can you edit the loop above so it sums the numbers to $n=100$ ?
+# <li> Can you edit the loop above so it sums the numbers to n=100 ?
 # <li> What about obtaining the sum of the numbers [0.1, 0.2, 0.3 ..... 0.9, 1.0]? 
 # </ul>
 # 
 
 # 
 # ### Aside
-# <br>
 # 
-# <div style = "    padding-top: 10px;
-#     padding-bottom: 10px;
-#     padding-left: 10px;
-#     padding-right: 10px;
-#     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-#     vertical-align: middle;">
+# We can actually work out the sum of the numbers to $n$ using the formula 
 # 
-# We can actually work out the sum of the numbers to $n$ using the formula $$s_n = \frac{n(n+1)}{2}$$.
+# $s_n = \frac{n(n+1)}{2}$
 # 
 # You can think of it as a series of 101 pairs that each add to 100: 
 #     <ul list-style-type="none">
@@ -272,11 +266,13 @@ print(s)
 # This formula has been known since the time of Pythagoras.
 # 
 # One charming story about the great mathematician Euler is that when he was in infant school, the master gave the task of summing numbers to 100 to keep the children quiet for a while. Within a few seconds Euler was at his desk with the answer, having immediately perceived that the solution above could be used.
-# </ul>
+# 
 
 # ## Example: Fibonacci Sequence
 # 
-# The Fibonacci Sequence is a sequence of numbers that begins [0,1,...] and continues by adding together the two previous numbers such that $$ x_i = x_{i-1} + x_{i-2} $$
+# The Fibonacci Sequence is a sequence of numbers that begins [0,1,...] and continues by adding together the two previous numbers such that 
+# 
+# $$ x_i = x_{i-1} + x_{i-2} $$
 # 
 # The sequence begins [0, 1, 1, 2, 3, 5, 8, 13..... ] and goes on forever.
 # 

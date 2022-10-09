@@ -693,7 +693,7 @@ Hello Craig!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_32516/1521534538.py&quot;</span><span class="gt">, line </span><span class="mi">4</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_39866/1521534538.py&quot;</span><span class="gt">, line </span><span class="mi">4</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">....</span><span class="p">):</span> <span class="c1"># complete the code</span>
                        <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -887,20 +887,14 @@ Hello Craig!
 <section id="exercises">
 <h3>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h3>
 <ul>
-<li> Can you edit the loop above so it sums the numbers to $n=100$ ?
+<li> Can you edit the loop above so it sums the numbers to n=100 ?
 <li> What about obtaining the sum of the numbers [0.1, 0.2, 0.3 ..... 0.9, 1.0]? 
 </ul>
 </section>
 <section id="aside">
 <h3>Aside<a class="headerlink" href="#aside" title="Permalink to this heading">#</a></h3>
-<br>
-<div style = "    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    vertical-align: middle;">
-<p>We can actually work out the sum of the numbers to <span class="math notranslate nohighlight">\(n\)</span> using the formula $<span class="math notranslate nohighlight">\(s_n = \frac{n(n+1)}{2}\)</span>$.</p>
+<p>We can actually work out the sum of the numbers to <span class="math notranslate nohighlight">\(n\)</span> using the formula</p>
+<p><span class="math notranslate nohighlight">\(s_n = \frac{n(n+1)}{2}\)</span></p>
 <p>You can think of it as a series of 101 pairs that each add to 100:
 <ul list-style-type="none">
 <li>0+100 = 100
@@ -914,11 +908,13 @@ Hello Craig!
 </ul></p>
 <p>This formula has been known since the time of Pythagoras.</p>
 <p>One charming story about the great mathematician Euler is that when he was in infant school, the master gave the task of summing numbers to 100 to keep the children quiet for a while. Within a few seconds Euler was at his desk with the answer, having immediately perceived that the solution above could be used.</p>
-</ul></section>
+</section>
 </section>
 <section id="example-fibonacci-sequence">
 <h2>Example: Fibonacci Sequence<a class="headerlink" href="#example-fibonacci-sequence" title="Permalink to this heading">#</a></h2>
-<p>The Fibonacci Sequence is a sequence of numbers that begins [0,1,…] and continues by adding together the two previous numbers such that $<span class="math notranslate nohighlight">\( x_i = x_{i-1} + x_{i-2} \)</span>$</p>
+<p>The Fibonacci Sequence is a sequence of numbers that begins [0,1,…] and continues by adding together the two previous numbers such that</p>
+<div class="math notranslate nohighlight">
+\[ x_i = x_{i-1} + x_{i-2} \]</div>
 <p>The sequence begins [0, 1, 1, 2, 3, 5, 8, 13….. ] and goes on forever.</p>
 <p>You can find some fun facts about the Fibonacci sequence <a href="https://www.mathsisfun.com/numbers/fibonacci-sequence.html">here</a>:</p>
 <p>Let’s make a <tt>for</tt> loop to calculate the first 10 elements of the Fibonacci sequence</p>
