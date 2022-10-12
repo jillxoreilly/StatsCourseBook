@@ -72,4 +72,4 @@ The section "preparatory work" is intended to be completed in the preparatory se
 
 ### More practice
 
-I can't believe aanyone will get this far, but if you do, you can find more coding practice exercises <a href="https://pynative.com/python-basic-exercise-for-beginners/">here</a>
+I can't believe anyone will get this far, but if you do, you can find more coding practice exercises <a href="https://pynative.com/python-basic-exercise-for-beginners/">here</a>

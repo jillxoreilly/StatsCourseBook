@@ -558,23 +558,117 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vehicles</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/vehicles.csv&#39;</span><span class="p">)</span>
-<span class="n">vehicles</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;vehicles.csv&#39;</span><span class="p">,</span> <span class="n">Index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">vehicles</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_32217</span><span class="o">/</span><span class="mf">2301791713.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">vehicles</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/vehicles.csv&#39;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">vehicles</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;vehicles.csv&#39;</span><span class="p">,</span> <span class="n">Index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">display</span><span class="p">(</span><span class="n">vehicles</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">TypeError</span>: to_csv() got an unexpected keyword argument &#39;Index&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3.9187</td>
+      <td>1.5320</td>
+      <td>1.8030</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.6486</td>
+      <td>1.5936</td>
+      <td>1.6463</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.5785</td>
+      <td>1.5447</td>
+      <td>1.7140</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.5563</td>
+      <td>1.5549</td>
+      <td>1.7331</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4.0321</td>
+      <td>1.5069</td>
+      <td>1.7320</td>
+      <td>car</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1359</th>
+      <td>15.5000</td>
+      <td>4.2065</td>
+      <td>2.5112</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>1360</th>
+      <td>14.4960</td>
+      <td>4.1965</td>
+      <td>2.5166</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>1361</th>
+      <td>15.9890</td>
+      <td>4.1964</td>
+      <td>2.4757</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>1362</th>
+      <td>14.3700</td>
+      <td>4.2009</td>
+      <td>2.5047</td>
+      <td>truck</td>
+    </tr>
+    <tr>
+      <th>1363</th>
+      <td>14.2350</td>
+      <td>4.2016</td>
+      <td>2.5212</td>
+      <td>truck</td>
+    </tr>
+  </tbody>
+</table>
+<p>1364 rows × 4 columns</p>
+</div></div></div>
 </div>
 <p>That was a long list of vehicles!</p>
 <ul class="simple">
