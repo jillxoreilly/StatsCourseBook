@@ -106,7 +106,7 @@ woman_taller
 #     <li><tt>False</tt> becomes 0
 # </ul>
 # 
-# It would be handy if we could automatically count the 1s - we do this with <a href="https://numpy.org/doc/stable/reference/generated/numpy.count_nonzero.html"><tt>np.count_nonzero(woman_taller)</tt></a>
+# It would be handy if we could automatically count the 1s - we do this by simply adding up (or 'summing') all the values in the array using <tt>numpy.sum()</tt>.
 
 # In[7]:
 
@@ -118,7 +118,7 @@ for i in range(100):
     w = np.random.choice(women, 1, replace=False)
     woman_taller[i]=w>m
 
-count = np.count_nonzero(woman_taller) # this counts how many 'True's there are in the array
+count = np.sum(woman_taller) # this counts how many 'True's there are in the array
 
 print('the woman was taller ' + str(count) + '/100 times')
 

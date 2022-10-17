@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>2.9. Tutorial exercises &#8212; Introduction to Statistics and Data Science</title>
+    <title>2.9. Tutorial exercises I &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Plotting Data" href="plotting_intro.html" />
+    <link rel="next" title="2.11. Tutorial Exercises II - optional" href="descriptives_TutorialExercisesII.html" />
     <link rel="prev" title="2.8. Python skills check" href="descriptives_PythonCheck.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -203,7 +203,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.9. Tutorial exercises
+     2.9. Tutorial exercises I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercisesII.html">
+     2.11. Tutorial Exercises II - optional
     </a>
    </li>
   </ul>
@@ -439,7 +444,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   2.9. Tutorial exercises
+   2.9. Tutorial exercises I
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -499,7 +504,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tutorial exercises</h1>
+                <h1>Tutorial exercises I</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -511,7 +516,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   2.9. Tutorial exercises
+   2.9. Tutorial exercises I
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -572,8 +577,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises">
-<h1><span class="section-number">2.9. </span>Tutorial exercises<a class="headerlink" href="#tutorial-exercises" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises-i">
+<h1><span class="section-number">2.9. </span>Tutorial exercises I<a class="headerlink" href="#tutorial-exercises-i" title="Permalink to this heading">#</a></h1>
 <p>You should work through this is the tutorial. The idea is to bring together the skills you have learned (and highlight any gaps to discuss woith your tutor)</p>
 <section id="car-park-exercise">
 <h2>Car park exercise<a class="headerlink" href="#car-park-exercise" title="Permalink to this heading">#</a></h2>
@@ -779,7 +784,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_32209/669523579.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_43412/669523579.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
     <span class="n">vehicles</span> <span class="o">=</span> <span class="c1">### your code here to load the csv file</span>
                <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -822,7 +827,7 @@ title="Print to PDF"
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">vehicles</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;type&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;vehicle length (m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;vehicle width (m)&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="c1"># shift the plots sideways so they don&#39;t overlap</span>
 </pre></div>
@@ -1017,10 +1022,10 @@ The exact lengths are: /<your text here/></p>
             <p class="prev-next-title"><span class="section-number">2.8. </span>Python skills check</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="plotting_intro.html" title="next page">
+    <a class='right-next' id="next-link" href="descriptives_TutorialExercisesII.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Plotting Data</p>
+        <p class="prev-next-title"><span class="section-number">2.11. </span>Tutorial Exercises II - optional</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

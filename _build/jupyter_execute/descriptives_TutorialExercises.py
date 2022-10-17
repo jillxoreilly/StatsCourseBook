@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Tutorial exercises
+# # Tutorial exercises I
 # 
 # You should work through this is the tutorial. The idea is to bring together the skills you have learned (and highlight any gaps to discuss woith your tutor)
 
@@ -143,7 +143,7 @@ plt.xlabel('vehicle length (m)')
 
 plt.subplot(1,2,2)
 sns.histplot(data=vehicles, x="width", bins = np.arange(1.5,3,0.1), hue="type")
-plt.xlabel('vehicle length (m)')
+plt.xlabel('vehicle width (m)')
 
 plt.subplots_adjust(wspace = 0.5) # shift the plots sideways so they don't overlap
 

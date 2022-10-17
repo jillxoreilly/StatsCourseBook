@@ -23,4 +23,5 @@ chapters:
   - file: descriptives_groupby.ipynb
   - file: descriptives_PythonCheck.ipynb
   - file: descriptives_TutorialExercises.ipynb
+  - file: descriptives_TutorialExercisesII.ipynb
 - file: plotting_intro.md
