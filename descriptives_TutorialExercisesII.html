@@ -703,8 +703,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>population mean = 174.90717609972089
-population sd = 6.93472447905718
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>population mean = 175.0513996250407
+population sd = 7.0177641833822815
 </pre></div>
 </div>
 </div>
@@ -723,17 +723,16 @@ population sd = 6.93472447905718
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[166.74428427 150.3537165  178.47767299 161.37622805 172.71219827
- 167.21062274 176.02586141 172.7926431  168.56165601 164.99770046]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[174.79991143 170.67815544 172.91625711 174.1869591  182.10249287
+ 168.85546061 168.32142601 174.90936587 165.21091727 174.38850442]
 </pre></div>
 </div>
 </div>
 </div>
 <p>Let’s calculate the mean and standard deviation of the sample - because we are going to try out different equations, we will not use the built in functions <tt>mean</tt> and <tt>std</tt> but instead enter the equations ourselves.</p>
-<ul>
-    <li> Remember that the symbol ** means 'power' - so 3**2 means $3^2$ 
-    <li> Remember also that $n^\frac{1}{2} = \sqrt{n}$ so for example 4**0.5 = $\sqrt{4}$ = 2
-</ul><div class="cell docutils container">
+<p>Remember that the symbol ** means ‘power’ - so 3**2 means <span class="math notranslate nohighlight">\(3^2\)</span></p>
+<p>Remember also that <span class="math notranslate nohighlight">\(n^\frac{1}{2} = \sqrt{n}\)</span> so for example 4**0.5 = <span class="math notranslate nohighlight">\(\sqrt{4}\)</span> = 2</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">10</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">popHeights</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -750,7 +749,7 @@ population sd = 6.93472447905718
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_44097/845226441.py&quot;</span><span class="gt">, line </span><span class="mi">5</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_44683/845226441.py&quot;</span><span class="gt">, line </span><span class="mi">5</span>
     <span class="n">m</span> <span class="o">=</span> <span class="c1"># your code here for the mean</span>
         <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
