@@ -203,7 +203,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_TutorialExercises.html">
-     2.9. Tutorial exercises
+     2.9. Tutorial exercises I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercisesII.html">
+     2.11. Tutorial Exercises II - optional
     </a>
    </li>
   </ul>
@@ -606,7 +611,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd46e5835b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fb283e5caf0&gt;
 </pre></div>
 </div>
 <img alt="_images/prepwork_simExercises_4_1.png" src="_images/prepwork_simExercises_4_1.png" />
@@ -626,7 +631,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[174.20833645]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[184.52255196]
 </pre></div>
 </div>
 </div>
@@ -640,7 +645,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[165.69701411]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[163.48374189]
 </pre></div>
 </div>
 </div>
@@ -678,12 +683,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 1., 0., 0.,
-       0., 0., 1., 0., 0., 1., 1., 0., 0., 0., 0., 1., 1., 0., 0., 0., 1.,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 1., 0., 0., 0., 0., 0.,
        0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
-       0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0.,
-       0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
-       0., 0., 0., 0., 0., 1., 0., 1., 1., 0., 0., 0., 1., 0., 0.])
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0.])
 </pre></div>
 </div>
 </div>
@@ -694,7 +699,7 @@ title="Print to PDF"
     <li><tt>True</tt> becomes 1
     <li><tt>False</tt> becomes 0
 </ul>
-<p>It would be handy if we could automatically count the 1s - we do this with <a href="https://numpy.org/doc/stable/reference/generated/numpy.count_nonzero.html"><tt>np.count_nonzero(woman_taller)</tt></a></p>
+<p>It would be handy if we could automatically count the 1s - we do this by simply adding up (or ‘summing’) all the values in the array using <tt>numpy.sum()</tt>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">woman_taller</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># create an empty array to store the results</span>
@@ -704,14 +709,14 @@ title="Print to PDF"
     <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">women</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">woman_taller</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">w</span><span class="o">&gt;</span><span class="n">m</span>
 
-<span class="n">count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">woman_taller</span><span class="p">)</span> <span class="c1"># this counts how many &#39;True&#39;s there are in the array</span>
+<span class="n">count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">woman_taller</span><span class="p">)</span> <span class="c1"># this counts how many &#39;True&#39;s there are in the array</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the woman was taller &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/100 times&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the woman was taller 9/100 times
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the woman was taller 13.0/100 times
 </pre></div>
 </div>
 </div>
@@ -734,7 +739,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[181.78363295]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[172.11254454]
 </pre></div>
 </div>
 </div>
@@ -747,7 +752,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>181.78363295127266
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>172.11254453861355
 </pre></div>
 </div>
 </div>

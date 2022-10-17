@@ -17,17 +17,24 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# load the data
-vehicles = ### your code here to load the csv file
+n=10
+x = np.random.choice(popHeights, n, replace=False)
 
-# replace bad values with NaNs
+# if you are stuck you can find the answer at the bottom of the page
+m = # your code here for the mean
+s1 = # your code here for the s.d. with n on the bottom
+s2 = # your code here for the s.d. with n-1 on the bottom
+
+print('mean = ' + str(m))
+print('sd (with n on the bottom) = ' + str(s1))
+print('sd (with n-1 on the bottom) = ' + str(s2))
 
 ------------------
 
-[0;36m  File [0;32m"/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_43412/669523579.py"[0;36m, line [0;32m2[0m
-[0;31m    vehicles = ### your code here to load the csv file[0m
-[0m               ^[0m
+[0;36m  File [0;32m"/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_44097/845226441.py"[0;36m, line [0;32m5[0m
+[0;31m    m = # your code here for the mean[0m
+[0m        ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-SyntaxError: invalid syntax (669523579.py, line 2)
+SyntaxError: invalid syntax (845226441.py, line 5)
 
