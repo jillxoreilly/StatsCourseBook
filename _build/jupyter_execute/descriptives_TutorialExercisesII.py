@@ -84,7 +84,7 @@ sns.set_theme()
 # 
 # Let's imagine that our population is all the men on the island of Shetland - about 10,000 people
 # 
-# <img src="'https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Shetland.png" width=60% alt="A picture of Shetland" title="The Island of Shetland - population 22,010" >
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Shetland.png" width="60%">
 # 
 
 # I'm going to create a <tt>numpy</tt> array of 10,000 heights (these are simulated data but you could do this with real data from a survey if you had them)
@@ -126,10 +126,10 @@ print(x)
 
 # Let's calculate the mean and standard deviation of the sample - because we are going to try out different equations, we will not use the built in functions <tt>mean</tt> and <tt>std</tt> but instead enter the equations ourselves.
 # 
-# <ul>
-#     <li> Remember that the symbol ** means 'power' - so 3**2 means $3^2$ 
-#     <li> Remember also that $n^\frac{1}{2} = \sqrt{n}$ so for example 4**0.5 = $\sqrt{4}$ = 2
-# </ul>
+# Remember that the symbol ** means 'power' - so 3**2 means $3^2$ 
+# 
+# Remember also that $n^\frac{1}{2} = \sqrt{n}$ so for example 4**0.5 = $\sqrt{4}$ = 2
+# 
 
 # In[5]:
 
@@ -202,7 +202,7 @@ print('population sd = ' + str(sdPop))
 # 
 # To get a sense why this is, look at the diagram below. 
 # 
-# <img src="'https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/sdVersions.png" width=75% >
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/sdVersions.png" width="75%" >
 # 
 # When calculating the standard deviation from our sample, we look at the deviations of the datapoints about our estimate of the mean, $\bar{x}$. 
 # 
