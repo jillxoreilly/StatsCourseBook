@@ -673,7 +673,7 @@ title="Print to PDF"
 <section id="population-data">
 <h3>Population data<a class="headerlink" href="#population-data" title="Permalink to this heading">#</a></h3>
 <p>Let’s imagine that our population is all the men on the island of Shetland - about 10,000 people</p>
-<img src="'https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Shetland.png" width=60% alt="A picture of Shetland" title="The Island of Shetland - population 22,010" >
+<img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Shetland.png" width="60%">
 <p>I’m going to create a <tt>numpy</tt> array of 10,000 heights (these are simulated data but you could do this with real data from a survey if you had them)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -703,8 +703,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>population mean = 175.0513996250407
-population sd = 7.0177641833822815
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>population mean = 174.95754994225885
+population sd = 6.990562388725429
 </pre></div>
 </div>
 </div>
@@ -723,8 +723,8 @@ population sd = 7.0177641833822815
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[174.79991143 170.67815544 172.91625711 174.1869591  182.10249287
- 168.85546061 168.32142601 174.90936587 165.21091727 174.38850442]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[165.35648626 184.56162194 180.87702185 174.9498714  175.3136933
+ 170.61914991 183.72196417 166.2882523  173.90577013 178.68797923]
 </pre></div>
 </div>
 </div>
@@ -749,7 +749,7 @@ population sd = 7.0177641833822815
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_44683/845226441.py&quot;</span><span class="gt">, line </span><span class="mi">5</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_44874/845226441.py&quot;</span><span class="gt">, line </span><span class="mi">5</span>
     <span class="n">m</span> <span class="o">=</span> <span class="c1"># your code here for the mean</span>
         <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -819,7 +819,7 @@ population sd = 7.005912927563505
 <h3>Justifying <span class="math notranslate nohighlight">\(n-1\)</span><a class="headerlink" href="#justifying-n-1" title="Permalink to this heading">#</a></h3>
 <p>If we calculate the standard deviation of the sample as we might naively (with <span class="math notranslate nohighlight">\(n\)</span> rather than <span class="math notranslate nohighlight">\(n-1\)</span> on the bottom), we would systematically underestimate the standard deviation of the population. This bias is worse when the sample size is small.</p>
 <p>To get a sense why this is, look at the diagram below.</p>
-<img src="'https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/sdVersions.png" width=75% >
+<img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/sdVersions.png" width="75%" >
 <p>When calculating the standard deviation from our sample, we look at the deviations of the datapoints about our estimate of the mean, <span class="math notranslate nohighlight">\(\bar{x}\)</span>.</p>
 <p>Now, <span class="math notranslate nohighlight">\(\bar{x}\)</span> is calculated from the sample itself (and as it happens, the formula for the mean minimizes the squared devations <span class="math notranslate nohighlight">\(\sum{{(x_i - \bar{x})}^2}\)</span>) - so there is no possible value of the mean that could result in a lower set of deviations.</p>
 <p>Therefore if we knew the true population mean <span class="math notranslate nohighlight">\(\mu\)</span> (which is similar to <span class="math notranslate nohighlight">\(\bar{x}\)</span> but won’t be exactly the same), and could calculate the deviations about it <span class="math notranslate nohighlight">\(\sum{(x_i - \mu)^2}\)</span> we would certainly get a higher value for the standard deviation.</p>
