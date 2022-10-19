@@ -579,7 +579,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises-i">
 <h1><span class="section-number">2.9. </span>Tutorial exercises I<a class="headerlink" href="#tutorial-exercises-i" title="Permalink to this heading">#</a></h1>
-<p>You should work through this is the tutorial. The idea is to bring together the skills you have learned (and highlight any gaps to discuss woith your tutor)</p>
+<p>You should work through this is the tutorial. The idea is to bring together the skills you have learned (and highlight any gaps to discuss with your tutor)</p>
 <section id="car-park-exercise">
 <h2>Car park exercise<a class="headerlink" href="#car-park-exercise" title="Permalink to this heading">#</a></h2>
 <p>In this exercise, you will plan car parking at a ferry terminal and inside the ferry itself.</p>
@@ -624,8 +624,9 @@ title="Print to PDF"
 <p>Let’s load the datafile “data/vehicles.csv” and have a look what information we have in the dataset</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vehicles</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/vehicles.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vehicles</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/vehicles_2.csv&#39;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">vehicles</span><span class="p">)</span>
+<span class="n">vehicles</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -713,7 +714,7 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>1361</th>
-      <td>15.9890</td>
+      <td>9999.0000</td>
       <td>4.1964</td>
       <td>2.4757</td>
       <td>truck</td>
@@ -735,6 +736,80 @@ title="Print to PDF"
   </tbody>
 </table>
 <p>1364 rows × 4 columns</p>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>height</th>
+      <th>width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1364.000000</td>
+      <td>1364.000000</td>
+      <td>1364.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>36.124518</td>
+      <td>2.234867</td>
+      <td>1.981283</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>540.534138</td>
+      <td>1.072685</td>
+      <td>0.309353</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.110900</td>
+      <td>1.430400</td>
+      <td>1.624100</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>3.930450</td>
+      <td>1.553600</td>
+      <td>1.771800</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>4.421100</td>
+      <td>1.601250</td>
+      <td>1.812950</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>9.540825</td>
+      <td>2.911750</td>
+      <td>2.254650</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>9999.000000</td>
+      <td>4.213700</td>
+      <td>2.546700</td>
+    </tr>
+  </tbody>
+</table>
 </div></div></div>
 </div>
 <p>That was a long list of vehicles!</p>
@@ -784,7 +859,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_43412/669523579.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_13094/669523579.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
     <span class="n">vehicles</span> <span class="o">=</span> <span class="c1">### your code here to load the csv file</span>
                <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
