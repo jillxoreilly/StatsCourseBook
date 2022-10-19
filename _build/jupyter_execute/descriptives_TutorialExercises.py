@@ -3,7 +3,7 @@
 
 # # Tutorial exercises I
 # 
-# You should work through this is the tutorial. The idea is to bring together the skills you have learned (and highlight any gaps to discuss woith your tutor)
+# You should work through this is the tutorial. The idea is to bring together the skills you have learned (and highlight any gaps to discuss with your tutor)
 
 # ## Car park exercise
 # 
@@ -61,7 +61,7 @@ sns.set_theme()
 # In[2]:
 
 
-vehicles = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/vehicles.csv')
+vehicles = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/vehicles_2.csv')
 display(vehicles)
 
 

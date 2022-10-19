@@ -169,7 +169,7 @@ display(cars)
 # In[33]:
 
 
-# your code here to display the rows of the dataframe with car length greater than 8m
+# your code here to display the rows of the dataframe with car height greater than 8m
 # check above for an example
 
 
