@@ -31,12 +31,12 @@ sns.set_theme() # use pretty defaults
 
 # ### Load and inspect the data
 # 
-# Load the file brotherSisterData.csv which contains heights in cm for 25 brother-sister pairs
+# Load the file BrotherSisterData.csv which contains heights in cm for 25 brother-sister pairs
 
 # In[2]:
 
 
-heightData = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/brotherSisterData.csv')
+heightData = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/BrotherSisterData.csv')
 
 
 # ### Add KDE to histogram 
@@ -52,7 +52,7 @@ heightData = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/Sta
 #     <li>Try to switch the KDE plot off!
 # </ul>
 
-# In[9]:
+# In[3]:
 
 
 plt.subplot(1,2,1)
@@ -78,7 +78,7 @@ plt.subplots_adjust(wspace = 0.5) # shift the plots sideways so they don't overl
 # 
 # Therefore I sometimes like to use the KDE plot without a histogram and instead display the individual data points as tick marks using <tt>sns.rugplot</tt>
 
-# In[26]:
+# In[4]:
 
 
 sns.kdeplot(heightData["brother"],  color='b', shade="True") # plot the KDE
@@ -114,7 +114,7 @@ sns.rugplot(heightData["brother"],  color='b', height=0.1) # plot individual dat
 # </ul>
 # Try out some different values for <tt>bw_adjust</tt> to get a more detailed, or a smoother, KDE - you could try 1.0, 2.0, 0.5 and 0.1
 
-# In[20]:
+# In[5]:
 
 
 sns.kdeplot(heightData["brother"],  color='b', shade="True", bw_adjust=1.0) # plot the KDE

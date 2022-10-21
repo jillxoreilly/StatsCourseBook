@@ -109,7 +109,7 @@ display(weather)
 # In[8]:
 
 
-sns.scatterplot(data=weather, x='Tmean', y='Rainfall_mm')
+# your code here!
 
 
 # Interesting, it looks almost like high rainfall is more likely on warm days, but the plot is so crowded it is a bit hard to tell
@@ -120,7 +120,7 @@ sns.scatterplot(data=weather, x='Tmean', y='Rainfall_mm')
 # 
 # Let's revisit the relationship between Tmin and Tmax
 
-# In[80]:
+# In[9]:
 
 
 sns.jointplot(data=weather, x='Tmin', y='Tmax')
@@ -128,7 +128,7 @@ sns.jointplot(data=weather, x='Tmin', y='Tmax')
 
 # That scatterplot is too crowded. How about a 2D histogram in which shading indicates the count of datapoints in each square?
 
-# In[83]:
+# In[10]:
 
 
 sns.jointplot(data=weather, x='Tmin', y='Tmax', kind='hist')

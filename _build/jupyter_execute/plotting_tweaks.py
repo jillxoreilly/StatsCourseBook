@@ -48,7 +48,7 @@ display(titanic)
 # 
 # This is achieved using the function <tt>plt.subplot</tt> which creates... a figure with multiple panels or subplots.
 
-# In[24]:
+# In[3]:
 
 
 plt.subplot(1,2,1)
@@ -68,7 +68,7 @@ plt.subplots_adjust(wspace = 0.5) # shift the plots sideways so they don't overl
 # 
 # Can you change the code in the block below to organize the panels one above the other, rather than next to each other?
 
-# In[13]:
+# In[4]:
 
 
 plt.subplot(1,2,1) # edit this line!
@@ -86,7 +86,7 @@ plt.subplots_adjust(wspace = 0.5) # shift the plots sideways so they don't overl
 # 
 # Can you edit the code block below to produce three stacked subplots showing the age distribution in each class?
 
-# In[21]:
+# In[5]:
 
 
 # Edit this code block!
@@ -112,7 +112,7 @@ plt.subplots_adjust(wspace = 0.5) # shift the plots sideways so they don't overl
 # 
 # Let's remake our two side-by-side subbplots of age of men and women, and this time set the y axis to have the same range
 
-# In[22]:
+# In[6]:
 
 
 plt.subplot(1,2,1) 
@@ -138,7 +138,7 @@ plt.subplots_adjust(wspace = 0.5) # shift the plots sideways so they don't overl
 # 
 # Just for fun let's label the x axis "bananas" and the y axis "fruitbats"
 
-# In[23]:
+# In[7]:
 
 
 plt.subplot(1,2,1) 
