@@ -36,12 +36,14 @@ sns.set_theme()
 # 
 # 4. Divide by ($n-1$) where $n$ is the number of datapoints
 # 
+# 5. Take the square root of the whole thing
+# 
 # 
 # The process can be described by the formula
 # 
-# $$ s_x^2  = \sum\frac{(x_i - \bar{x})}{(n-1)}$$
+# $$ s_x^2  = \sum\frac{(x_i - \bar{x})^2}{(n-1)}$$
 # 
-# Where $s^2$ is the standard deviation squared (ie the variance)
+# Where $s^2$ is the standard deviation squared (ie the variance), so the sd is the square root of the right hand side.
 
 # ### Toy example: standard deviation
 # 

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Boxplot &#8212; Introduction to Statistics and Data Science</title>
+    <title>3.5. Boxplot &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3.6. Scatterplot" href="plotting_scatterplot.html" />
+    <link rel="prev" title="3.4. KDE plot" href="plotting_KDE.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -112,7 +114,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="prepwork_intro.html">
    1. Preparatory Work
@@ -201,15 +203,72 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="descriptives_TutorialExercises.html">
-     2.9. Tutorial exercises
+     2.9. Tutorial exercises I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercisesII.html">
+     2.11. Tutorial Exercises II - optional
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="plotting_intro.html">
    3. Plotting Data
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_outcomes.html">
+     3.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_histogram.html">
+     3.3. Histogram
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_KDE.html">
+     3.4. KDE plot
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.5. Boxplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_scatterplot.html">
+     3.6. Scatterplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_pandas.html">
+     3.7. Plotting with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_tweaks.html">
+     3.8. Tweaking plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_additionalMaterials.html">
+     3.9. More resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_TutorialExercises.html">
+     3.10. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -436,18 +495,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-up-python-libraries">
-   Set up Python libraries
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example">
-   Example
+  <a class="reference internal nav-link" href="#oxford-weather-example">
+   Oxford Weather example
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inspect-the-data">
-     Inspect the data
+    <a class="reference internal nav-link" href="#set-up-python-libraries">
+     Set up Python libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-and-inspect-the-data">
+     Load and inspect the data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -460,12 +519,12 @@ title="Print to PDF"
      Comparing patterns
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#violinplot">
-     Violinplot
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#violinplot">
+   Violinplot
+  </a>
  </li>
 </ul>
 
@@ -487,18 +546,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-up-python-libraries">
-   Set up Python libraries
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example">
-   Example
+  <a class="reference internal nav-link" href="#oxford-weather-example">
+   Oxford Weather example
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inspect-the-data">
-     Inspect the data
+    <a class="reference internal nav-link" href="#set-up-python-libraries">
+     Set up Python libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-and-inspect-the-data">
+     Load and inspect the data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -511,12 +570,12 @@ title="Print to PDF"
      Comparing patterns
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#violinplot">
-     Violinplot
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#violinplot">
+   Violinplot
+  </a>
  </li>
 </ul>
 
@@ -529,12 +588,15 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="boxplot">
-<h1>Boxplot<a class="headerlink" href="#boxplot" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3.5. </span>Boxplot<a class="headerlink" href="#boxplot" title="Permalink to this heading">#</a></h1>
 <p>Sometimes less is more!</p>
-<p>We saw in the lecture that if we want to compare several data distributions, it can be uesful to have a plot that highlights key features (the median and quartiles) whilst eliminaating unnecessary detail</p>
+<p>We saw in the lecture that if we want to compare several data distributions, it can be useful to have a plot that highlights key features (the median and quartiles) whilst eliminaating unnecessary detail</p>
 <p>The boxplot can do this job</p>
-<section id="set-up-python-libraries">
-<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<section id="oxford-weather-example">
+<h2>Oxford Weather example<a class="headerlink" href="#oxford-weather-example" title="Permalink to this heading">#</a></h2>
+<p>We will work with historical data from the Oxford weather centre</p>
+<img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/OxfordSnow.jpg" width="50%"  /><section id="set-up-python-libraries">
+<h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h3>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -550,19 +612,19 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
+<section id="load-and-inspect-the-data">
+<h3>Load and inspect the data<a class="headerlink" href="#load-and-inspect-the-data" title="Permalink to this heading">#</a></h3>
 <p>Let’s load some historical data about the weather in Oxford, from the file “OxfordWeather.csv”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/OxfordWeather.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/OxfordWeather.csv&quot;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">weather</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_32403/1472197167.py:1: DtypeWarning: Columns (6,7) have mixed types. Specify dtype option on import or set low_memory=False.
-  weather = pandas.read_csv(&quot;data/OxfordWeather.csv&quot;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_89261/3980356552.py:1: DtypeWarning: Columns (6,7) have mixed types. Specify dtype option on import or set low_memory=False.
+  weather = pandas.read_csv(&quot;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/OxfordWeather.csv&quot;)
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -720,19 +782,17 @@ title="Print to PDF"
 <p>71343 rows × 8 columns</p>
 </div></div></div>
 </div>
-<section id="inspect-the-data">
-<h3>Inspect the data<a class="headerlink" href="#inspect-the-data" title="Permalink to this heading">#</a></h3>
 <p>Have a look at the dataframe.</p>
 <p>What do you think is contained in each column?</p>
 <ul>
 <li>Each row is a single day from 1827 to 2022. The columns YYYY,MM,DD give the date.
-<li>The columns Tmax, Tmin and Tmean give informaiton about the temperature
+<li>The columns Tmax, Tmin and Tmean give information about the temperature
 <li>We also have a record of the rainfall each day
 </ul>
 </section>
 <section id="plot-the-temperature">
 <h3>Plot the temperature<a class="headerlink" href="#plot-the-temperature" title="Permalink to this heading">#</a></h3>
-<p>Say we want to plot the mean temperature in each month of the year. We have almost 200 datapoints for every date (and 30 dates within each month, so 6000 measurements per month!)</p>
+<p>Say we want to plot the mean temperature in each month of the year. We have almost 200 datapoints for every date (and 30ish dates within each month, so 6000 measurements per month!)</p>
 <p>We can summarise the distribution of temperatures in each month using a boxplot:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -747,20 +807,20 @@ title="Print to PDF"
 <img alt="_images/plotting_boxplot_6_1.png" src="_images/plotting_boxplot_6_1.png" />
 </div>
 </div>
-<p>Using a simple obxplot for each month, we can easily see the trend across months for warmer weather in the summer and cooler weather in the winter.</p>
+<p>Using a simple boxplot for each month, we can easily see the trend across months for warmer weather in the summer and cooler weather in the winter.</p>
 <p>Within each month we can also see some information about the distribution - for example:</p>
 <ul>
-    <li> Temperatures are more variablbe in winter and summer, than in autumn and spring
-    <li> In winter, the distribution of temperatures has negative skew (there are some unusually cold years) but in summer the converse is true
+    <li> Temperatures are more variable in winter and summer, than in autumn and spring
+    <li> In winter, the distribution of temperatures has negative skew (there are some unusually cold years) but in summer the converse is true - this is evident from the position of the median within each box but is clearer in a violinplot (see below)
 </ul></section>
 <section id="comparing-patterns">
 <h3>Comparing patterns<a class="headerlink" href="#comparing-patterns" title="Permalink to this heading">#</a></h3>
 <p>Has the pattern of temperatures changed over the years?</p>
 <p>Let’s compare temperatures in the 19th, 20th and 21st century.</p>
-<p>To do so we add a ‘century’ column to our dataframe. We use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.cut.html"><tt>pandas.cut</tt></a> function to categorize the values of YYYY into centuries.</p>
+<p>To do so we add a ‘century’ column to our dataframe. We use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.cut.html"><tt>pandas.cut</tt></a> function to categorise the values of year into 18thC, 19thC and 20thC</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span><span class="p">[</span><span class="s1">&#39;CCCC&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">weather</span><span class="p">[</span><span class="s1">&#39;YYYY&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="mi">1800</span><span class="p">,</span><span class="mi">1900</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2100</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;1800s&quot;</span><span class="p">,</span><span class="s2">&quot;1900s&quot;</span><span class="p">,</span><span class="s2">&quot;2000s&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span><span class="p">[</span><span class="s1">&#39;CCCC&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">weather</span><span class="p">[</span><span class="s1">&#39;YYYY&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="mi">1800</span><span class="p">,</span><span class="mi">1900</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2100</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;18thC&quot;</span><span class="p">,</span><span class="s2">&quot;19thC&quot;</span><span class="p">,</span><span class="s2">&quot;20thC&quot;</span><span class="p">])</span>
 <span class="n">display</span><span class="p">(</span><span class="n">weather</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -806,7 +866,7 @@ title="Print to PDF"
       <td>7.0</td>
       <td>2.7</td>
       <td>0.0</td>
-      <td>1800s</td>
+      <td>18thC</td>
     </tr>
     <tr>
       <th>1</th>
@@ -818,7 +878,7 @@ title="Print to PDF"
       <td>1.1</td>
       <td>2.2</td>
       <td>0.0</td>
-      <td>1800s</td>
+      <td>18thC</td>
     </tr>
     <tr>
       <th>2</th>
@@ -830,7 +890,7 @@ title="Print to PDF"
       <td>-5.3</td>
       <td>6.1</td>
       <td>9.7</td>
-      <td>1800s</td>
+      <td>18thC</td>
     </tr>
     <tr>
       <th>3</th>
@@ -842,7 +902,7 @@ title="Print to PDF"
       <td>-4.8</td>
       <td>6.1</td>
       <td>0.0</td>
-      <td>1800s</td>
+      <td>18thC</td>
     </tr>
     <tr>
       <th>4</th>
@@ -854,7 +914,7 @@ title="Print to PDF"
       <td>-5.3</td>
       <td>10.6</td>
       <td>0.0</td>
-      <td>1800s</td>
+      <td>18thC</td>
     </tr>
     <tr>
       <th>...</th>
@@ -878,7 +938,7 @@ title="Print to PDF"
       <td>9.7</td>
       <td>11.1</td>
       <td>0</td>
-      <td>2000s</td>
+      <td>20thC</td>
     </tr>
     <tr>
       <th>71339</th>
@@ -890,7 +950,7 @@ title="Print to PDF"
       <td>6.7</td>
       <td>8.1</td>
       <td>0</td>
-      <td>2000s</td>
+      <td>20thC</td>
     </tr>
     <tr>
       <th>71340</th>
@@ -902,7 +962,7 @@ title="Print to PDF"
       <td>8.3</td>
       <td>8.8</td>
       <td>0</td>
-      <td>2000s</td>
+      <td>20thC</td>
     </tr>
     <tr>
       <th>71341</th>
@@ -914,7 +974,7 @@ title="Print to PDF"
       <td>9.2</td>
       <td>5</td>
       <td>0</td>
-      <td>2000s</td>
+      <td>20thC</td>
     </tr>
     <tr>
       <th>71342</th>
@@ -926,7 +986,7 @@ title="Print to PDF"
       <td>9.3</td>
       <td>16.6</td>
       <td>0</td>
-      <td>2000s</td>
+      <td>20thC</td>
     </tr>
   </tbody>
 </table>
@@ -949,8 +1009,9 @@ title="Print to PDF"
 </div>
 <p>It looks like Oxford has been getting a bit warmer over the centuries.</p>
 </section>
+</section>
 <section id="violinplot">
-<h3>Violinplot<a class="headerlink" href="#violinplot" title="Permalink to this heading">#</a></h3>
+<h2>Violinplot<a class="headerlink" href="#violinplot" title="Permalink to this heading">#</a></h2>
 <p>Using Python, you can make a slighly fancier version of the boxplot called a violinplot.</p>
 <p>The violinplot shows the full distribution of data rather than the summary captured in a boxplot - the violin body is basically a KDE plot.</p>
 <p>Let’s give it a try using the function <a href="https://seaborn.pydata.org/generated/seaborn.violinplot.html"><tt>sns.violinplot</tt></a></p>
@@ -968,8 +1029,12 @@ title="Print to PDF"
 </div>
 </div>
 <p>This is a nice compromise - still easy to “eyeball” the pattern across categories (in this case, across months) but giving plenty of detail within each category also</p>
-</section>
-</section>
+<p>Note for example that the trend for:</p>
+<ul>
+    <li>negative skew in temperature in winter (outliers are cold days)
+    <li>positive skew in summer (outliers are hot days)
+</ul>
+...is much more clearly visible in the violin plot than in a box plot.</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -999,6 +1064,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="plotting_KDE.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3.4. </span>KDE plot</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="plotting_scatterplot.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.6. </span>Scatterplot</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

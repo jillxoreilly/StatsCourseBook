@@ -1,13 +1,18 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Standard deviation and IQR
+# # Plotting with Pandas
 # 
+# The <tt>Seaborn</tt> plotting library is designed to be used with Pandas.
 # 
-# The standard deviation and inter quartile range are measures of the <i>spread</i> of a distribution.
-# 
-# They both tell you something about the typical or average value in your dataset - but different things.
+# For example, if we want to plot one variable (say age) separately based on another variable (say, which class someone travelled in), we can do it very easily with <tt>Seaborn</tt>
 
+# ## Example: Titanic data
+# 
+# Let's use the Titanic passenger data again!
+# 
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/titanic.jpg" width=50% alt="Picture of the Titanic" />
+# 
 # ### Set up Python libraries
 # 
 # As usual, run the code cell below to import the relevant Python libraries
@@ -24,112 +29,103 @@ import seaborn as sns
 sns.set_theme()
 
 
-# ## The Standard Deviation
-# 
-# The standard deviation is obtained by:
-# 
-# <ul>
-#     <li>find the difference between each datapoint and the mean value $(x_1 - \bar{x}), (x_2 - \bar{x})... (x_n - \bar{x})$
-#     <li> square each difference
-#     <li>add them all up 
-#     <li>divide by ($n-1$) where $n$ is the number of datapoints
-# </ul>
-# 
-# The process can be described by the formula
-# 
-# $$ s_x^2  = \sum\frac{(x_i - \bar{x})}{(n-1)}$$
-# 
-# Where $s^2$ is the standard deviation squared (ie the variance)
-
-# ### Toy example: standard deviation
-# 
-# To understand the properties of the standard deviation, let's start with a <i>toy example</i>, i.e. a very small dataset in which it is easy to see what is going on.
-# 
-# Let's say these are the heights (cm) and weights (kg) of 6 toddlers:
+# ### Load the data
 
 # In[2]:
 
 
-data = {'Name': ["Axel","Benji","Charlie","Danny","Edward","Freddie"],
-        'Height': [89.0, 96.2, 93.4, 88.1, 91.7, 93.2],
-        'Weight': [12.4, 13.8, 13.1, 12.9, 13.5, 14.0],}
-
-toddlerData = pandas.DataFrame(data)
-display(toddlerData)
+titanic = pandas.read_csv('data/titanic_2.csv')
+display(titanic)
 
 
-# We saw previously that the mean height was 91.9 cm and we can see from the data frame above that the range is about +/- 4cm around the mean.
+# ### Grouping by a categorical variable
 # 
-# Let's obtain the standard deviation using the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.std.html"><tt>std</tt></a> method from pandas:
+# Say we want to plot the distribution of age separately in each travel class on the titanic. 
+# 
+# We can do this using the "hue" argument in <tt>sns.histplot</tt> or <tt>sns.kdeplot</tt>:
 
 # In[3]:
 
 
-toddlerData['Height'].std()
+sns.histplot(data=titanic, x='Age', hue='Pclass')
 
 
-# Shall we check that we can obtain the same value by implementing the formula ourselves?
+# Hm, that was a bit messy - it looks clearer as a kdeplot
 
 # In[4]:
 
 
-# calculate the mean
-m = toddlerData['Height'].mean()
-
-# add a column containing the deviations
-toddlerData['d'] = toddlerData['Height']-m
-
-# add a column containing the squared deviations
-toddlerData['d2'] = toddlerData['d']**2
-
-# check what we have done so far
-display(toddlerData)
+# your code here to produce the KDEplot version of the above
 
 
-# Great now we can go on with the formula
+# You may notice in the KDEplot it appears as though there were many people with an age below zero.
+# 
+# Glance babck at this histogram - you will see that there are not in fact any people with age <0, but there is a big spike in the passenger counts for young children, which gets smoothed out in the KDE plot resulting in the KDE plot extending below zero.
+# 
+# ### Countplot
+# 
+# The simple plotting function <tt>sns.countplot</tt> shows the frequencies of different categories:
 
 # In[5]:
 
 
-# sum of squared deviations
-ss = toddlerData['d2'].sum()
-
-# obtain n
-n = toddlerData['Height'].count()
-
-# calculate variance
-sd2 = (ss/(n-1))
-
-# standard deviation is square root of variance (ie variance to power 0.5)
-sd = sd2**0.5
-
-print(sd)
+sns.countplot(data=titanic, x='Pclass')
 
 
-# Hurrah!
-
-# ## IQR and quantiles
-# 
-# The inter quartile range or IQR is the difference between the 25th and 75th centile of a distribution.
-# 
-# We can calculate it easily using Python:
+# ... we can break the data down by a second category using the argument <tt>hue</tt> as follows:
 
 # In[6]:
 
 
-IQR = toddlerData['Height'].quantile(0.75) - toddlerData['Height'].quantile(0.25)
-
-print(IQR)
+sns.countplot(data=titanic, x='Pclass', hue='Survived')
 
 
-# Note that it can also be useful to get other quantiles.
+# Hm, looks like being in 3rd class was not good news on the Titanic.
 # 
-# For example, if we wanted to know how high to make a playhouse so 90% of toddlers can stand up inside, we would be interested int he 90th centile (0.9 quantile) of the height distribution
+# ### Barplot
+# 
+# If we want to plot the mean value of a variable by category (rather than just the count in each category), we can use the function <tt>barplot</tt>
 
 # In[7]:
 
 
-toddlerData['Height'].quantile(0.9)
+sns.barplot(data=titanic, y='Age', x='Pclass')
+
+
+# However, in many cases it will be more informative to plot a <tt>boxplot</tt> or <tt>violinplot</tt>
+
+# In[8]:
+
+
+sns.violinplot(data=titanic, x='Pclass', y="Age")
+
+
+# Once again you can use the argument <tt>hue</tt> to break the data down by another category
+
+# In[9]:
+
+
+# Your code here for a barplot of age, broken down by class, 
+# and further broken down by whether the passenger survived - 
+# base it on the countplot example above
+
+
+# ### Scatterplot
+# 
+# We can use similar tricks in a scatterplot.
+# 
+# Let's plot a scatterplot of age against fare paid:
+
+# In[10]:
+
+
+sns.scatterplot(data=titanic, x='Fare', y='Age')
+
+
+# In[11]:
+
+
+# Your code here to repeat the scatterplot above but plotting different classes in different colours, using 'hue'
 
 
 # In[ ]:

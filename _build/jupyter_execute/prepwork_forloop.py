@@ -103,8 +103,11 @@ else:
 months=['January','February','March','April','May','June',
         'July','August','September','October','November','Decemeber']
 
-for i in range(....): # complete the code
-    if ... # complete the code 
+for i in range(12): # complete the code
+    if ("r" in months[i]):
+        print('Don\'t eat shellfish in ' + months[i])
+    else:
+        print('Do eat shellfish in ' + months[i]) 
         
 
 
@@ -114,7 +117,7 @@ for i in range(....): # complete the code
 # 
 # We could do it like this:
 
-# In[6]:
+# In[8]:
 
 
 s = 1+2+3+4+5+6+7+8+9+10
@@ -127,7 +130,7 @@ print('sum = ' + str(s))
 # 
 # First let's get an array with the numbers 1-10 in it using the <tt>numpy</tt> function <tt>np.arange</tt>
 
-# In[7]:
+# In[9]:
 
 
 numbers = np.arange(start=1, stop=10, step=1)
@@ -136,7 +139,7 @@ print(numbers)
 
 # Oops, I forgot in Python the upper bound of the range is always left out - so if I want to stop at 10 (rather than 9) I need to do this:
 
-# In[8]:
+# In[10]:
 
 
 numbers = np.arange(start=1, stop=10+1, step=1)
@@ -149,7 +152,7 @@ print(numbers)
 # 
 # Initially, s is zero
 
-# In[9]:
+# In[11]:
 
 
 s = 0
@@ -157,7 +160,7 @@ s = 0
 
 # Then we can add each element of our array <tt>numbers</tt> in turn
 
-# In[10]:
+# In[12]:
 
 
 s = 0
@@ -167,7 +170,7 @@ print(s)
 
 # and the rest...
 
-# In[11]:
+# In[13]:
 
 
 s = 0
@@ -197,7 +200,7 @@ print(s)
 # 
 # We an avoid typing the commands every time by doing a loop
 
-# In[12]:
+# In[14]:
 
 
 s=0
@@ -211,7 +214,7 @@ for i in range(len(numbers)):
 # 
 # We signal the end of the loop by the end of the indenting:
 
-# In[13]:
+# In[15]:
 
 
 s=0
@@ -224,7 +227,7 @@ print(s)
 
 # We can make our loop generalizable using a variable $n$ for the number up to which we are summing integers:
 
-# In[14]:
+# In[16]:
 
 
 n=10
@@ -280,7 +283,7 @@ print(s)
 # 
 # Let's make a <tt>for</tt> loop to calculate the first 10 elements of the Fibonacci sequence 
 
-# In[24]:
+# In[17]:
 
 
 n = 10 # number of elements to calculate

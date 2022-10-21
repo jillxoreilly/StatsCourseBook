@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Standard deviation and IQR &#8212; Introduction to Statistics and Data Science</title>
+    <title>Plotting with Pandas &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -116,8 +114,8 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="descriptives_intro.html">
-   1. Describing data
+  <a class="reference internal" href="prepwork_intro.html">
+   1. Preparatory Work
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -126,50 +124,39 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_outcomes.html">
-     1.1. Learning Objectives
+    <a class="reference internal" href="prepwork_datacamp.html">
+     1.2. Datacamp
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_conceptCheck.html">
-     1.2. Concepts Review
+    <a class="reference internal" href="prepwork_forloop.html">
+     1.3. The
+     <tt>
+      for
+     </tt>
+     loop
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_MeanAndMedian.html">
-     1.3. Mean and Median
+    <a class="reference internal" href="prepwork_diceroll_for.html">
+     1.4. Rolling a virtual dice I
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_SDandIQR.html">
-     1.4. Standard deviation and IQR
+    <a class="reference internal" href="prepwork_diceroll_while.html">
+     1.5. Rolling a virtual dice II
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_DataCleaning.html">
-     1.5. Data cleaning
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_groupby.html">
-     1.6. Grouping data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_PythonCheck.html">
-     1.7. Python skills check
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_TutorialExercises.html">
-     1.8. Tutorial exercises
+    <a class="reference internal" href="prepwork_simExercises.html">
+     1.6. Simulation Exercises
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="plotting_intro.html">
-   2. Plotting Data
+  <a class="reference internal" href="descriptives_intro.html">
+   2. Describing data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -178,25 +165,55 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="plotting_histogram.html">
-     2.2. Histogram and KDE plot
+    <a class="reference internal" href="descriptives_outcomes.html">
+     2.2. Learning Objectives
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="plotting_scatterplot.html">
-     2.3. Scatterplot
+    <a class="reference internal" href="descriptives_conceptCheck.html">
+     2.3. Concepts Review
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="plotting_boxplot.html">
-     2.4. Boxplot
+    <a class="reference internal" href="descriptives_MeanAndMedian.html">
+     2.4. Mean and Median
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_SDandIQR.html">
+     2.5. Standard deviation and IQR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_DataCleaning.html">
+     2.6. Data cleaning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_groupby.html">
+     2.7. Grouping data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_PythonCheck.html">
+     2.8. Python skills check
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercises.html">
+     2.9. Tutorial exercises I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercisesII.html">
+     2.11. Tutorial Exercises II - optional
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="ttest_intro.html">
-   3. The t-test
+  <a class="reference internal" href="plotting_intro.html">
+   3. Plotting Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -205,45 +222,43 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="ttest_pairedSamples.html">
-     3.1. Paired Samples t-test
+    <a class="reference internal" href="plotting_outcomes.html">
+     3.2. Learning Objectives
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ttest_oneSample.html">
-     3.2. One sample t-test
+    <a class="reference internal" href="plotting_histogram.html">
+     3.3. Histogram
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ttest_independentSamples.html">
-     3.3. Independent samples t-test
+    <a class="reference internal" href="plotting_KDE.html">
+     3.4. KDE plot
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ttest_furtherExercises.html">
-     3.4. t-test further exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="nonpara_intro.html">
-   4. Non-parametric equivalents of the t-test
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nonpara_MannWhitneyU.html">
-     4.1. Set up Python libraries
+    <a class="reference internal" href="plotting_boxplot.html">
+     3.5. Boxplot
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="nonpara_WilcoxonSignRank.html">
-     4.4. Set up Python libraries
+    <a class="reference internal" href="plotting_scatterplot.html">
+     3.6. Scatterplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_pandas.html">
+     3.7. Plotting with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_tweaks.html">
+     3.8. Tweaking plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_additionalMaterials.html">
+     3.9. More resources
     </a>
    </li>
   </ul>
@@ -307,7 +322,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Untitled3.ipynb"
+        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/Untitled3.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -320,6 +335,24 @@ title="Launch on Binder"
     <img src="_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/Untitled3.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -350,7 +383,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/jillxoreilly/StatsCourseBook"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -367,7 +400,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FUntitled3.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2FUntitled3.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -455,26 +488,41 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-up-python-libraries">
-   Set up Python libraries
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-standard-deviation">
-   The Standard Deviation
+  <a class="reference internal nav-link" href="#example-titanic-data">
+   Example: Titanic data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#toy-example-standard-deviation">
-     Toy example: standard deviation
+    <a class="reference internal nav-link" href="#set-up-python-libraries">
+     Set up Python libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-the-data">
+     Load the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grouping-by-a-categorical-variable">
+     Grouping by a categorical variable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#countplot">
+     Countplot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#barplot">
+     Barplot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scatterplot">
+     Scatterplot
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#iqr-and-quantiles">
-   IQR and quantiles
-  </a>
  </li>
 </ul>
 
@@ -485,7 +533,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Standard deviation and IQR</h1>
+                <h1>Plotting with Pandas</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -496,26 +544,41 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-up-python-libraries">
-   Set up Python libraries
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-standard-deviation">
-   The Standard Deviation
+  <a class="reference internal nav-link" href="#example-titanic-data">
+   Example: Titanic data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#toy-example-standard-deviation">
-     Toy example: standard deviation
+    <a class="reference internal nav-link" href="#set-up-python-libraries">
+     Set up Python libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-the-data">
+     Load the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grouping-by-a-categorical-variable">
+     Grouping by a categorical variable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#countplot">
+     Countplot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#barplot">
+     Barplot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scatterplot">
+     Scatterplot
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#iqr-and-quantiles">
-   IQR and quantiles
-  </a>
  </li>
 </ul>
 
@@ -527,12 +590,16 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="standard-deviation-and-iqr">
-<h1>Standard deviation and IQR<a class="headerlink" href="#standard-deviation-and-iqr" title="Permalink to this heading">#</a></h1>
-<p>The standard deviation and inter quartile range are measures of the <i>spread</i> of a distribution.</p>
-<p>They both tell you something about the typical or average value in your dataset - but different things.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="plotting-with-pandas">
+<h1>Plotting with Pandas<a class="headerlink" href="#plotting-with-pandas" title="Permalink to this heading">#</a></h1>
+<p>The <tt>Seaborn</tt> plotting library is designed to be used with Pandas.</p>
+<p>For example, if we want to plot one variable (say age) separately based on another variable (say, which class someone travelled in), we can do it very easily with <tt>Seaborn</tt></p>
+<section id="example-titanic-data">
+<h2>Example: Titanic data<a class="headerlink" href="#example-titanic-data" title="Permalink to this heading">#</a></h2>
+<p>Let’s use the Titanic passenger data again!</p>
+<img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/titanic.jpg" width=50% alt="Picture of the Titanic" />
 <section id="set-up-python-libraries">
-<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h3>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -548,31 +615,12 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="the-standard-deviation">
-<h2>The Standard Deviation<a class="headerlink" href="#the-standard-deviation" title="Permalink to this heading">#</a></h2>
-<p>The standard deviation is obtained by:</p>
-<ul>
-    <li>find the difference between each datapoint and the mean value $(x_1 - \bar{x}), (x_2 - \bar{x})... (x_n - \bar{x})$
-    <li> square each difference
-    <li>add them all up 
-    <li>divide by ($n-1$) where $n$ is the number of datapoints
-</ul>
-<p>The process can be described by the formula</p>
-<div class="math notranslate nohighlight">
-\[ s_x^2  = \sum\frac{(x_i - \bar{x})}{(n-1)}\]</div>
-<p>Where <span class="math notranslate nohighlight">\(s^2\)</span> is the standard deviation squared (ie the variance)</p>
-<section id="toy-example-standard-deviation">
-<h3>Toy example: standard deviation<a class="headerlink" href="#toy-example-standard-deviation" title="Permalink to this heading">#</a></h3>
-<p>To understand the properties of the standard deviation, let’s start with a <i>toy example</i>, i.e. a very small dataset in which it is easy to see what is going on.</p>
-<p>Let’s say these are the heights (cm) and weights (kg) of 6 toddlers:</p>
+<section id="load-the-data">
+<h3>Load the data<a class="headerlink" href="#load-the-data" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Axel&quot;</span><span class="p">,</span><span class="s2">&quot;Benji&quot;</span><span class="p">,</span><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span><span class="s2">&quot;Danny&quot;</span><span class="p">,</span><span class="s2">&quot;Edward&quot;</span><span class="p">,</span><span class="s2">&quot;Freddie&quot;</span><span class="p">],</span>
-        <span class="s1">&#39;Height&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">89.0</span><span class="p">,</span> <span class="mf">96.2</span><span class="p">,</span> <span class="mf">93.4</span><span class="p">,</span> <span class="mf">88.1</span><span class="p">,</span> <span class="mf">91.7</span><span class="p">,</span> <span class="mf">93.2</span><span class="p">],</span>
-        <span class="s1">&#39;Weight&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">12.4</span><span class="p">,</span> <span class="mf">13.8</span><span class="p">,</span> <span class="mf">13.1</span><span class="p">,</span> <span class="mf">12.9</span><span class="p">,</span> <span class="mf">13.5</span><span class="p">,</span> <span class="mf">14.0</span><span class="p">],}</span>
-
-<span class="n">toddlerData</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">toddlerData</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/titanic_2.csv&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">titanic</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -595,222 +643,306 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
       <th>Name</th>
-      <th>Height</th>
-      <th>Weight</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Axel</td>
-      <td>89.0</td>
-      <td>12.4</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Braund, Mr. Owen Harris</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>A/5 21171</td>
+      <td>7.2500</td>
+      <td>NaN</td>
+      <td>S</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Benji</td>
-      <td>96.2</td>
-      <td>13.8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>PC 17599</td>
+      <td>71.2833</td>
+      <td>C85</td>
+      <td>C</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Charlie</td>
-      <td>93.4</td>
-      <td>13.1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Heikkinen, Miss. Laina</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>STON/O2. 3101282</td>
+      <td>7.9250</td>
+      <td>NaN</td>
+      <td>S</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Danny</td>
-      <td>88.1</td>
-      <td>12.9</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>113803</td>
+      <td>53.1000</td>
+      <td>C123</td>
+      <td>S</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Edward</td>
-      <td>91.7</td>
-      <td>13.5</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Allen, Mr. William Henry</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>373450</td>
+      <td>8.0500</td>
+      <td>NaN</td>
+      <td>S</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>Freddie</td>
-      <td>93.2</td>
-      <td>14.0</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>886</th>
+      <td>0</td>
+      <td>2</td>
+      <td>Montvila, Rev. Juozas</td>
+      <td>male</td>
+      <td>27.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>211536</td>
+      <td>13.0000</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>887</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Graham, Miss. Margaret Edith</td>
+      <td>female</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>112053</td>
+      <td>30.0000</td>
+      <td>B42</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>888</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Johnston, Miss. Catherine Helen "Carrie"</td>
+      <td>female</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>2</td>
+      <td>W./C. 6607</td>
+      <td>23.4500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>889</th>
+      <td>1</td>
+      <td>1</td>
+      <td>Behr, Mr. Karl Howell</td>
+      <td>male</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>111369</td>
+      <td>30.0000</td>
+      <td>C148</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>890</th>
+      <td>0</td>
+      <td>3</td>
+      <td>Dooley, Mr. Patrick</td>
+      <td>male</td>
+      <td>32.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>370376</td>
+      <td>7.7500</td>
+      <td>NaN</td>
+      <td>Q</td>
     </tr>
   </tbody>
 </table>
+<p>891 rows × 11 columns</p>
 </div></div></div>
 </div>
-<p>We saw previously that the mean height was 91.9 cm and we can see from the data frame above that the range is about +/- 4cm around the mean.</p>
-<p>Let’s obtain the standard deviation using the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.std.html"><tt>std</tt></a> method from pandas:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">toddlerData</span><span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0104263263974227
-</pre></div>
-</div>
-</div>
-</div>
-<p>Shall we check that we can obtain the same value by implementing the formula ourselves?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the mean</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">toddlerData</span><span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-
-<span class="c1"># add a column containing the deviations</span>
-<span class="n">toddlerData</span><span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">toddlerData</span><span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">m</span>
-
-<span class="c1"># add a column containing the squared deviations</span>
-<span class="n">toddlerData</span><span class="p">[</span><span class="s1">&#39;d2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">toddlerData</span><span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
-
-<span class="c1"># check what we have done so far</span>
-<span class="n">display</span><span class="p">(</span><span class="n">toddlerData</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Name</th>
-      <th>Height</th>
-      <th>Weight</th>
-      <th>d</th>
-      <th>d2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Axel</td>
-      <td>89.0</td>
-      <td>12.4</td>
-      <td>-2.933333</td>
-      <td>8.604444</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Benji</td>
-      <td>96.2</td>
-      <td>13.8</td>
-      <td>4.266667</td>
-      <td>18.204444</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Charlie</td>
-      <td>93.4</td>
-      <td>13.1</td>
-      <td>1.466667</td>
-      <td>2.151111</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Danny</td>
-      <td>88.1</td>
-      <td>12.9</td>
-      <td>-3.833333</td>
-      <td>14.694444</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Edward</td>
-      <td>91.7</td>
-      <td>13.5</td>
-      <td>-0.233333</td>
-      <td>0.054444</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Freddie</td>
-      <td>93.2</td>
-      <td>14.0</td>
-      <td>1.266667</td>
-      <td>1.604444</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Great now we can go on with the formula</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sum of squared deviations</span>
-<span class="n">ss</span> <span class="o">=</span> <span class="n">toddlerData</span><span class="p">[</span><span class="s1">&#39;d2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-<span class="c1"># obtain n</span>
-<span class="n">n</span> <span class="o">=</span> <span class="n">toddlerData</span><span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-
-<span class="c1"># calculate variance</span>
-<span class="n">sd2</span> <span class="o">=</span> <span class="p">(</span><span class="n">ss</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-
-<span class="c1"># standard deviation is square root of variance (ie variance to power 0.5)</span>
-<span class="n">sd</span> <span class="o">=</span> <span class="n">sd2</span><span class="o">**</span><span class="mf">0.5</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">sd</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0104263263974227
-</pre></div>
-</div>
-</div>
-</div>
-<p>Hurrah!</p>
 </section>
+<section id="grouping-by-a-categorical-variable">
+<h3>Grouping by a categorical variable<a class="headerlink" href="#grouping-by-a-categorical-variable" title="Permalink to this heading">#</a></h3>
+<p>Say we want to plot the distribution of age separately in each travel class on the titanic.</p>
+<p>We can do this using the “hue” argument in <tt>sns.histplot</tt> or <tt>sns.kdeplot</tt>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Pclass&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Age&#39;, ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/Untitled3_6_1.png" src="_images/Untitled3_6_1.png" />
+</div>
+</div>
+<p>Hm, that was a bit messy - it looks clearer as a kdeplot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here to produce the KDEplot version of the above</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You may notice in the KDEplot it appears as though there were many people with an age below zero.</p>
+<p>Glance babck at this histogram - you will see that there are not in fact any people with age &lt;0, but there is a big spike in the passenger counts for young children, which gets smoothed out in the KDE plot resulting in the KDE plot extending below zero.</p>
 </section>
-<section id="iqr-and-quantiles">
-<h2>IQR and quantiles<a class="headerlink" href="#iqr-and-quantiles" title="Permalink to this heading">#</a></h2>
-<p>The inter quartile range or IQR is the difference between the 25th and 75th centile of a distribution.</p>
-<p>We can calculate it easily using Python:</p>
+<section id="countplot">
+<h3>Countplot<a class="headerlink" href="#countplot" title="Permalink to this heading">#</a></h3>
+<p>The simple plotting function <tt>sns.countplot</tt> shows the frequencies of different categories:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IQR</span> <span class="o">=</span> <span class="n">toddlerData</span><span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span> <span class="o">-</span> <span class="n">toddlerData</span><span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">IQR</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pclass&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.6750000000000114
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Pclass&#39;, ylabel=&#39;count&#39;&gt;
 </pre></div>
 </div>
+<img alt="_images/Untitled3_10_1.png" src="_images/Untitled3_10_1.png" />
 </div>
 </div>
-<p>Note that it can also be useful to get other quantiles.</p>
-<p>For example, if we wanted to know how high to make a playhouse so 90% of toddlers can stand up inside, we would be interested int he 90th centile (0.9 quantile) of the height distribution</p>
+<p>… we can break the data down by a second category using the argument <tt>hue</tt> as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">toddlerData</span><span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.9</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Survived&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>94.80000000000001
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Pclass&#39;, ylabel=&#39;count&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/Untitled3_12_1.png" src="_images/Untitled3_12_1.png" />
+</div>
+</div>
+<p>Hm, looks like being in 3rd class was not good news on the Titanic.</p>
+</section>
+<section id="barplot">
+<h3>Barplot<a class="headerlink" href="#barplot" title="Permalink to this heading">#</a></h3>
+<p>If we want to plot the mean value of a variable by category (rather than just the count in each category), we can use the function <tt>barplot</tt></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pclass&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Pclass&#39;, ylabel=&#39;Age&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/Untitled3_14_1.png" src="_images/Untitled3_14_1.png" />
+</div>
+</div>
+<p>However, in many cases it will be more informative to plot a <tt>boxplot</tt> or <tt>violinplot</tt></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Age&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Pclass&#39;, ylabel=&#39;Age&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/Untitled3_16_1.png" src="_images/Untitled3_16_1.png" />
+</div>
+</div>
+<p>Once again you can use the argument <tt>hue</tt> to break the data down by another category</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here for a barplot of age, broken down by class, </span>
+<span class="c1"># and further broken down by whether the passenger survived - </span>
+<span class="c1"># base it on the countplot example above</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="scatterplot">
+<h3>Scatterplot<a class="headerlink" href="#scatterplot" title="Permalink to this heading">#</a></h3>
+<p>We can use similar tricks in a scatterplot.</p>
+<p>Let’s plot a scatterplot of age against fare paid:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Fare&#39;, ylabel=&#39;Age&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/Untitled3_20_1.png" src="_images/Untitled3_20_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to repeat the scatterplot above but plotting different classes in different colours, using &#39;hue&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 

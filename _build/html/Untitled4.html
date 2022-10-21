@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Python skills check &#8212; Introduction to Statistics and Data Science</title>
+    <title>Tweaking plots &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -114,8 +114,8 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="descriptives_intro.html">
-   1. Describing data
+  <a class="reference internal" href="prepwork_intro.html">
+   1. Preparatory Work
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -124,50 +124,39 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_outcomes.html">
-     1.1. Learning Objectives
+    <a class="reference internal" href="prepwork_datacamp.html">
+     1.2. Datacamp
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_conceptCheck.html">
-     1.2. Concepts Review
+    <a class="reference internal" href="prepwork_forloop.html">
+     1.3. The
+     <tt>
+      for
+     </tt>
+     loop
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_MeanAndMedian.html">
-     1.3. Mean and Median
+    <a class="reference internal" href="prepwork_diceroll_for.html">
+     1.4. Rolling a virtual dice I
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_SDandIQR.html">
-     1.4. Standard deviation and IQR
+    <a class="reference internal" href="prepwork_diceroll_while.html">
+     1.5. Rolling a virtual dice II
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_DataCleaning.html">
-     1.5. Data cleaning
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_groupby.html">
-     1.6. Grouping data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_PythonCheck.html">
-     1.7. Python skills check
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="descriptives_TutorialExercises.html">
-     1.8. Tutorial exercises
+    <a class="reference internal" href="prepwork_simExercises.html">
+     1.6. Simulation Exercises
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="plotting_intro.html">
-   2. Plotting Data
+  <a class="reference internal" href="descriptives_intro.html">
+   2. Describing data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -176,25 +165,55 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="plotting_histogram.html">
-     2.2. Histogram and KDE plot
+    <a class="reference internal" href="descriptives_outcomes.html">
+     2.2. Learning Objectives
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="plotting_scatterplot.html">
-     2.3. Scatterplot
+    <a class="reference internal" href="descriptives_conceptCheck.html">
+     2.3. Concepts Review
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="plotting_boxplot.html">
-     2.4. Boxplot
+    <a class="reference internal" href="descriptives_MeanAndMedian.html">
+     2.4. Mean and Median
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_SDandIQR.html">
+     2.5. Standard deviation and IQR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_DataCleaning.html">
+     2.6. Data cleaning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_groupby.html">
+     2.7. Grouping data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_PythonCheck.html">
+     2.8. Python skills check
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercises.html">
+     2.9. Tutorial exercises I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="descriptives_TutorialExercisesII.html">
+     2.11. Tutorial Exercises II - optional
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="ttest_intro.html">
-   3. The t-test
+  <a class="reference internal" href="plotting_intro.html">
+   3. Plotting Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -203,45 +222,43 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="ttest_pairedSamples.html">
-     3.1. Paired Samples t-test
+    <a class="reference internal" href="plotting_outcomes.html">
+     3.2. Learning Objectives
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ttest_oneSample.html">
-     3.2. One sample t-test
+    <a class="reference internal" href="plotting_histogram.html">
+     3.3. Histogram
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ttest_independentSamples.html">
-     3.3. Independent samples t-test
+    <a class="reference internal" href="plotting_KDE.html">
+     3.4. KDE plot
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ttest_furtherExercises.html">
-     3.4. t-test further exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="nonpara_intro.html">
-   4. Non-parametric equivalents of the t-test
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nonpara_MannWhitneyU.html">
-     4.1. Set up Python libraries
+    <a class="reference internal" href="plotting_boxplot.html">
+     3.5. Boxplot
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="nonpara_WilcoxonSignRank.html">
-     4.4. Set up Python libraries
+    <a class="reference internal" href="plotting_scatterplot.html">
+     3.6. Scatterplot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_pandas.html">
+     3.7. Plotting with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_tweaks.html">
+     3.8. Tweaking plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting_additionalMaterials.html">
+     3.9. More resources
     </a>
    </li>
   </ul>
@@ -305,7 +322,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Untitled4.ipynb"
+        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/Untitled4.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -318,6 +335,24 @@ title="Launch on Binder"
     <img src="_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/Untitled4.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -348,7 +383,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/jillxoreilly/StatsCourseBook"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -365,7 +400,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FUntitled4.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2FUntitled4.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -453,19 +488,38 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-up-python-libraries">
-   Set up Python libraries
+  <a class="reference internal nav-link" href="#tt-matplotlib-tt">
+   <tt>
+    Matplotlib
+   </tt>
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-the-data">
-   Load the data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#get-descriptives">
-   Get descriptives
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-up-python-libraries">
+     Set up Python libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-the-data">
+     Import the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subplot">
+     Subplot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adjust-axes">
+     Adjust axes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-axis-labels">
+     Set axis labels
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -476,7 +530,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Python skills check</h1>
+                <h1>Tweaking plots</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -487,19 +541,38 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-up-python-libraries">
-   Set up Python libraries
+  <a class="reference internal nav-link" href="#tt-matplotlib-tt">
+   <tt>
+    Matplotlib
+   </tt>
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-the-data">
-   Load the data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#get-descriptives">
-   Get descriptives
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-up-python-libraries">
+     Set up Python libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-the-data">
+     Import the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subplot">
+     Subplot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adjust-axes">
+     Adjust axes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-axis-labels">
+     Set axis labels
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -511,11 +584,16 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="python-skills-check">
-<h1>Python skills check<a class="headerlink" href="#python-skills-check" title="Permalink to this heading">#</a></h1>
-<p>Here we will review all the Python skills you should know by the end of this week</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="tweaking-plots">
+<h1>Tweaking plots<a class="headerlink" href="#tweaking-plots" title="Permalink to this heading">#</a></h1>
+<p>In this section we cover a couple of points about adjusting the appearance of plots</p>
+<section id="tt-matplotlib-tt">
+<h2><tt>Matplotlib</tt><a class="headerlink" href="#tt-matplotlib-tt" title="Permalink to this heading">#</a></h2>
+<p><tt>Seaborn</tt> is designed to produce nice looking plots without us having to manually set many options</p>
+<p>If we want to manually set something like the axis labels or axis range, many of the functions for doing this are from the <tt>Matplotlib</tt> library which contains a lot of lower level plotting functions (things that produce or edit bits of plots, rather than producing a whole nice figure in one step).</p>
+<p>In the olden days, people made plots just with <tt>Matplotlib</tt> and had to write a lot ore code to achieve a nice looking plot.</p>
 <section id="set-up-python-libraries">
-<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h3>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -531,12 +609,12 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="load-the-data">
-<h2>Load the data<a class="headerlink" href="#load-the-data" title="Permalink to this heading">#</a></h2>
-<p>Let’s load some data about the passengers of the Titanic from the file “data/titanic.csv”</p>
+<section id="import-the-data">
+<h3>Import the data<a class="headerlink" href="#import-the-data" title="Permalink to this heading">#</a></h3>
+<p>We’ll use the Titanic data again</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/titanic.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/titanic_2.csv&#39;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">titanic</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -560,8 +638,6 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Unnamed: 0</th>
-      <th>PassengerId</th>
       <th>Survived</th>
       <th>Pclass</th>
       <th>Name</th>
@@ -579,8 +655,6 @@ title="Print to PDF"
     <tr>
       <th>0</th>
       <td>0</td>
-      <td>1</td>
-      <td>0</td>
       <td>3</td>
       <td>Braund, Mr. Owen Harris</td>
       <td>male</td>
@@ -595,8 +669,6 @@ title="Print to PDF"
     <tr>
       <th>1</th>
       <td>1</td>
-      <td>2</td>
-      <td>1</td>
       <td>1</td>
       <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
       <td>female</td>
@@ -610,8 +682,6 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>2</th>
-      <td>2</td>
-      <td>3</td>
       <td>1</td>
       <td>3</td>
       <td>Heikkinen, Miss. Laina</td>
@@ -626,8 +696,6 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>3</th>
-      <td>3</td>
-      <td>4</td>
       <td>1</td>
       <td>1</td>
       <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
@@ -642,8 +710,6 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>4</th>
-      <td>4</td>
-      <td>5</td>
       <td>0</td>
       <td>3</td>
       <td>Allen, Mr. William Henry</td>
@@ -669,13 +735,9 @@ title="Print to PDF"
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>886</th>
-      <td>886</td>
-      <td>887</td>
       <td>0</td>
       <td>2</td>
       <td>Montvila, Rev. Juozas</td>
@@ -690,8 +752,6 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>887</th>
-      <td>887</td>
-      <td>888</td>
       <td>1</td>
       <td>1</td>
       <td>Graham, Miss. Margaret Edith</td>
@@ -706,8 +766,6 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>888</th>
-      <td>888</td>
-      <td>889</td>
       <td>0</td>
       <td>3</td>
       <td>Johnston, Miss. Catherine Helen "Carrie"</td>
@@ -722,8 +780,6 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>889</th>
-      <td>889</td>
-      <td>890</td>
       <td>1</td>
       <td>1</td>
       <td>Behr, Mr. Karl Howell</td>
@@ -738,8 +794,6 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>890</th>
-      <td>890</td>
-      <td>891</td>
       <td>0</td>
       <td>3</td>
       <td>Dooley, Mr. Patrick</td>
@@ -754,207 +808,135 @@ title="Print to PDF"
     </tr>
   </tbody>
 </table>
-<p>891 rows × 13 columns</p>
+<p>891 rows × 11 columns</p>
 </div></div></div>
 </div>
-<p>You can find some information abbout this dataset on <a href="https://www.kaggle.com/competitions/titanic/data">Kaggle</a> including explanations of the less obvious column headers</p>
 </section>
-<section id="get-descriptives">
-<h2>Get descriptives<a class="headerlink" href="#get-descriptives" title="Permalink to this heading">#</a></h2>
-<p>Let’s get some descriptive statistics, just for practice:</p>
+<section id="subplot">
+<h3>Subplot<a class="headerlink" href="#subplot" title="Permalink to this heading">#</a></h3>
+<p>Say for some reason we want to plot a histogram of age separately for men and women.</p>
+<p>We might like to show these plots next to eachother as panels of a larger figure</p>
+<p>This is achieved using the function <tt>plt.subbplot</tt> which creates… a figure with multiple panels or subplots.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How many people were in each class? Hint - use df.value_counts() which we saw on the page on data cleaning</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What was the mean fare in each class? Hint- use .mean() and .groupby()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What was the standard deviation of fare in each class? Hint- use .std() and .groupby()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What was the 10th and 90th centile of age overall?</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># display rows 400-420 of the dataframe</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># display only passengers under 12 years old</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># display only passengers whose age is unknown (NaN)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count how many passengers&#39; age was unknown</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># display only passengers over 70 years old</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Wait a minute!</p>
-<p>There was something strange in that last dataframe. Maybe someone’s age was mis-recorded?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># replace the misrecorded age with NaN - hint - check the page on data cleaning</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">titanic</span><span class="o">.</span><span class="n">Sex</span><span class="o">==</span><span class="s1">&#39;male&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;men&#39;</span><span class="p">])</span>
 
-<span class="c1"># and display the relevant part of the dataframe ot check</span>
-<span class="n">titanic</span><span class="p">[</span><span class="mi">420</span><span class="p">:</span><span class="mi">425</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">titanic</span><span class="o">.</span><span class="n">Sex</span><span class="o">==</span><span class="s1">&#39;female&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;women&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="c1"># shift the plots sideways so they don&#39;t overlap</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Unnamed: 0</th>
-      <th>PassengerId</th>
-      <th>Survived</th>
-      <th>Pclass</th>
-      <th>Name</th>
-      <th>Sex</th>
-      <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
-      <th>Ticket</th>
-      <th>Fare</th>
-      <th>Cabin</th>
-      <th>Embarked</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>420</th>
-      <td>420</td>
-      <td>421</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Gheorgheff, Mr. Stanio</td>
-      <td>male</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>0</td>
-      <td>349254</td>
-      <td>7.8958</td>
-      <td>NaN</td>
-      <td>C</td>
-    </tr>
-    <tr>
-      <th>421</th>
-      <td>421</td>
-      <td>422</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Charters, Mr. David</td>
-      <td>male</td>
-      <td>21.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>A/5. 13032</td>
-      <td>7.7333</td>
-      <td>NaN</td>
-      <td>Q</td>
-    </tr>
-    <tr>
-      <th>422</th>
-      <td>422</td>
-      <td>423</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Zimmerman, Mr. Leo</td>
-      <td>male</td>
-      <td>290.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>315082</td>
-      <td>7.8750</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>423</th>
-      <td>423</td>
-      <td>424</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Danbom, Mrs. Ernst Gilbert (Anna Sigrid Maria ...</td>
-      <td>female</td>
-      <td>28.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>347080</td>
-      <td>14.4000</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>424</th>
-      <td>424</td>
-      <td>425</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Rosblom, Mr. Viktor Richard</td>
-      <td>male</td>
-      <td>18.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>370129</td>
-      <td>20.2125</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<img alt="_images/Untitled4_5_0.png" src="_images/Untitled4_5_0.png" />
 </div>
+</div>
+<p>The arguments of <tt>plt.subplot</tt> are the number of rows and columns to be created in the figure, and then the location in which to place the next plot.</p>
+<p>In the example above we have one row and two columns, hence we call <tt>plt.subplot(1 [rows],2 [columns],1 [location for next plot])</tt> for the first plot.</p>
+<p>Can you change the code in the block below to organize the panels one abbove the other, rather than next to each other?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># edit this line!</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">titanic</span><span class="o">.</span><span class="n">Sex</span><span class="o">==</span><span class="s1">&#39;male&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;men&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># edit this line!</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">titanic</span><span class="o">.</span><span class="n">Sex</span><span class="o">==</span><span class="s1">&#39;female&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;women&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="c1"># shift the plots sideways so they don&#39;t overlap</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Untitled4_7_0.png" src="_images/Untitled4_7_0.png" />
+</div>
+</div>
+<p>Ah, it’s actually a bit easier to compare the distributions when they are arranged vertically! Good choice!</p>
+<p>Can you edit the code block below to produce three stacked subplots showing the age distribution in each class?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Edit this code block!</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">titanic</span><span class="o">.</span><span class="n">Sex</span><span class="o">==</span><span class="s1">&#39;male&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;men&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> 
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">titanic</span><span class="o">.</span><span class="n">Sex</span><span class="o">==</span><span class="s1">&#39;female&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;women&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="c1"># shift the plots sideways so they don&#39;t overlap</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Untitled4_9_0.png" src="_images/Untitled4_9_0.png" />
+</div>
+</div>
+</section>
+<section id="adjust-axes">
+<h3>Adjust axes<a class="headerlink" href="#adjust-axes" title="Permalink to this heading">#</a></h3>
+<p>It is often easier to compare across plots if the axis ranges are the same.</p>
+<p>Seaborn will automatically adjust the axes to fit the range of the data in each plot, which normally means the axis ranges don’t match across subplots.</p>
+<p>We can set the axis range using the functions <tt>plt.ylim</tt> (to set the limits in y) and <tt>plt.xlim</tt> (to set the limits in x)</p>
+<p>Let’s remake our two side-by-side subbplots of age of men and women, and this time set the y axis to have the same range</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">titanic</span><span class="o">.</span><span class="n">Sex</span><span class="o">==</span><span class="s1">&#39;male&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;men&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> 
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">titanic</span><span class="o">.</span><span class="n">Sex</span><span class="o">==</span><span class="s1">&#39;female&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;women&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="c1"># shift the plots sideways so they don&#39;t overlap</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Untitled4_11_0.png" src="_images/Untitled4_11_0.png" />
+</div>
+</div>
+<p>Ooh, suddenly we can see that there were a lot more men than women on the Titanic!</p>
+</section>
+<section id="set-axis-labels">
+<h3>Set axis labels<a class="headerlink" href="#set-axis-labels" title="Permalink to this heading">#</a></h3>
+<p>Your axis labbels should always convey what is plotted. If you are using <tt>Seaborn</tt> with a <tt>Pandas</tt> dataframe, the axis labels will often be the column labels from your dataframe, which are (usually) meaningful although sometimes they are odd codes that wouldn’t mean much to a naive reader (Pclass anyone? SibSp? Parch?).</p>
+<p>You can always edit the labels on the axes and unless their meaning is clear, you must do so.</p>
+<p>Just for fun let’s label the x axis “bananas” and the y axis “fruitbats”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">titanic</span><span class="o">.</span><span class="n">Sex</span><span class="o">==</span><span class="s1">&#39;male&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;bananas&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;fruitbats&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;mad&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> 
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">titanic</span><span class="o">.</span><span class="n">Sex</span><span class="o">==</span><span class="s1">&#39;female&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;bananas&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;fruitbats&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;madder&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="c1"># shift the plots sideways so they don&#39;t overlap</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Untitled4_14_0.png" src="_images/Untitled4_14_0.png" />
+</div>
+</div>
+</section>
 </section>
 </section>
 

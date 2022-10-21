@@ -80,11 +80,9 @@ display(vehicles)
 
 # your code here to find the long vehicles
 
-# make a new dataframe
-vehicles_clean = vehicles
 
 # replace the incorrect vehicle lengths with NaNs
-# vehicles_clean.loc(.....)=np.nan
+# vehicles.loc(.....)=np.nan
 
 
 # # Your report for SpeedyFerry

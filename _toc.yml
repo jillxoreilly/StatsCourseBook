@@ -25,3 +25,13 @@ chapters:
   - file: descriptives_TutorialExercises.ipynb
   - file: descriptives_TutorialExercisesII.ipynb
 - file: plotting_intro.md
+  sections:
+  - file: plotting_outcomes.md
+  - file: plotting_histogram.ipynb
+  - file: plotting_KDE.ipynb
+  - file: plotting_boxplot.ipynb
+  - file: plotting_scatterplot.ipynb
+  - file: plotting_pandas.ipynb
+  - file: plotting_tweaks.ipynb
+  - file: plotting_additionalMaterials.md  
+  - file: plotting_TutorialExercises.md 
