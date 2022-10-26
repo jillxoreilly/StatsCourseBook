@@ -56,7 +56,7 @@ display(CO2vGDP)
 # 
 # $r_s$ can be calculated using the same built-in function <tt>pandas.df.corr()</tt>:
 
-# In[70]:
+# In[3]:
 
 
 CO2vGDP.corr(method='spearman')
@@ -72,13 +72,13 @@ CO2vGDP.corr(method='spearman')
 #     
 # The default (the method used if no method is specified) is Pearson - we can see this by comparing the results with method specified as Pearson and no method specified:
 
-# In[71]:
+# In[4]:
 
 
 CO2vGDP.corr(method='pearson')
 
 
-# In[72]:
+# In[5]:
 
 
 CO2vGDP.corr()
@@ -104,7 +104,7 @@ CO2vGDP.corr()
 #     <li>high-ranked countries for GDP should also be high-ranked for CO2
 # </ul>
 
-# In[73]:
+# In[6]:
 
 
 CO2vGDP['CO2_rank'] = CO2vGDP['CO2'].rank()
@@ -118,7 +118,7 @@ display(CO2vGDP.sort_values(by='CO2'))
 # 
 # Let's plot the data, and the ranked data, on scatterplots. You can see that the ranked data do not have the same heteroscedasticity issue as the data themselves.
 
-# In[91]:
+# In[7]:
 
 
 plt.subplot(1,2,1)
@@ -132,7 +132,7 @@ plt.subplots_adjust(wspace = 0.5) # shift the plots sideways so they don't overl
 
 # To continue the process of applying the equation, we make a new column containing the difference of ranks:
 
-# In[74]:
+# In[8]:
 
 
 CO2vGDP['d'] = CO2vGDP['CO2_rank']-CO2vGDP['GDP_rank']
@@ -140,7 +140,7 @@ CO2vGDP['d'] = CO2vGDP['CO2_rank']-CO2vGDP['GDP_rank']
 
 # ... and apply the formula:
 
-# In[77]:
+# In[9]:
 
 
 n = len(CO2vGDP)
@@ -161,7 +161,7 @@ print('r = ' + str(r_s))
 # 
 # Let's try it!
 
-# In[86]:
+# In[10]:
 
 
 # make a new dataframe with only ranks
@@ -169,7 +169,7 @@ CO2vGDP_ranks = CO2vGDP[['CO2_rank','GDP_rank']]
 display(CO2vGDP_ranks)
 
 
-# In[88]:
+# In[11]:
 
 
 # Calculate **Pearson's** correlation on the ranks

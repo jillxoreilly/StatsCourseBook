@@ -47,7 +47,7 @@ display(heartAttack)
 # 
 # How many missing values (NaNs) are there for each variale (column) in the dataset?
 
-# In[1]:
+# In[3]:
 
 
 # your code here!
@@ -73,7 +73,7 @@ display(heartAttack)
 # Think how you would justify your choice to a reader
 # 
 
-# In[2]:
+# In[4]:
 
 
 # your code here!
@@ -85,7 +85,7 @@ display(heartAttack)
 # 
 # Plot the distribution of charges using a suitable plot type. 
 
-# In[3]:
+# In[5]:
 
 
 # Your code here
@@ -97,7 +97,7 @@ display(heartAttack)
 # 
 # Try to make a choice yourself, and then discuss with your tutor if unsure.
 
-# In[4]:
+# In[6]:
 
 
 # Your code here
@@ -109,7 +109,7 @@ display(heartAttack)
 # 
 # Plot the distribution of length of stay using a suitable plot type. 
 
-# In[5]:
+# In[7]:
 
 
 # Your code here
@@ -121,7 +121,7 @@ display(heartAttack)
 # 
 # HINT: it may help to plot data separately for the different values of one of the categorical variables, using the argument <tt>hue</tt> in the plotting function. You will get a clearer result with a KDE plot than a histogram (try both and see why).
 
-# In[6]:
+# In[8]:
 
 
 # Your code here
@@ -135,7 +135,7 @@ display(heartAttack)
 # 
 # Produce an appropriate plot and descriptive statisitics to demonstrate the relationship between cost and length of stay.
 
-# In[7]:
+# In[9]:
 
 
 # Your code here
@@ -149,7 +149,7 @@ display(heartAttack)
 # 
 # Apply the equation in Python to find out how much, on average, one extra day in hospital costs.
 
-# In[8]:
+# In[10]:
 
 
 # Your code here
@@ -159,7 +159,7 @@ display(heartAttack)
 # 
 # Older people tend to stay longer in hospital - produce an appropriate plot and descriptive statisitics to demonstrate the relationship between cost and length of stay.
 
-# In[9]:
+# In[11]:
 
 
 # Your code here
@@ -173,7 +173,7 @@ display(heartAttack)
 # 
 # Illustrate this assocation between sex and mortality using <tt>sns.countplot()</tt>
 
-# In[10]:
+# In[12]:
 
 
 # Your code here
@@ -185,7 +185,7 @@ display(heartAttack)
 # 
 # Explore with appropriate plots and summarize your observations in words including descriptive statstics.
 
-# In[11]:
+# In[13]:
 
 
 # Your code here
@@ -199,7 +199,7 @@ display(heartAttack)
 # 
 # I do not know what the different codes mean, ut you could try to find out by plotting some of the other variables broken down by DRG (eg using the <tt>hue</tt> property of <tt>sns</tt> plotting functions</tt>). You should at least eb ablbe to work out what code 123 means.
 
-# In[12]:
+# In[14]:
 
 
 # Your code here

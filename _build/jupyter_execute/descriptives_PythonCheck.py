@@ -43,55 +43,55 @@ display(titanic)
 # 
 # Let's get some descriptive statistics, just for practice:
 
-# In[25]:
+# In[3]:
 
 
 # How many people were in each class? Hint - use df.value_counts() which we saw on the page on data cleaning
 
 
-# In[26]:
+# In[4]:
 
 
 # What was the mean fare in each class? Hint- use .mean() and .groupby()
 
 
-# In[32]:
+# In[5]:
 
 
 # What was the standard deviation of fare in each class? Hint- use .std() and .groupby()
 
 
-# In[33]:
+# In[6]:
 
 
 # What was the 10th and 90th centile of age overall?
 
 
-# In[39]:
+# In[7]:
 
 
 # display rows 400-420 of the dataframe
 
 
-# In[58]:
+# In[8]:
 
 
 # display only passengers under 12 years old
 
 
-# In[45]:
+# In[9]:
 
 
 # display only passengers whose age is unknown (NaN)
 
 
-# In[60]:
+# In[10]:
 
 
 # count how many passengers' age was unknown
 
 
-# In[61]:
+# In[11]:
 
 
 # display only passengers over 70 years old
@@ -101,7 +101,7 @@ display(titanic)
 # 
 # There was something strange in that last dataframe. Maybe someone's age was mis-recorded?
 
-# In[106]:
+# In[12]:
 
 
 # replace the misrecorded age with NaN - hint - check the page on data cleaning

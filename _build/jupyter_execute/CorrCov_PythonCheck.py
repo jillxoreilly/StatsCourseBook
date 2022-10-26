@@ -42,7 +42,7 @@ display(weather)
 # 
 # Create a plot to show the relationship between mean temp (Tmean) and rainfall
 
-# In[4]:
+# In[3]:
 
 
 # your code here
@@ -52,7 +52,7 @@ display(weather)
 # 
 # Using the appropriate method, obtain the full correlation matrix for the <tt>weather</tt> dataframe
 
-# In[5]:
+# In[4]:
 
 
 # your code here
@@ -60,7 +60,7 @@ display(weather)
 
 # ... and just the correlation between Tmean and rainfall
 
-# In[7]:
+# In[5]:
 
 
 # your code here
@@ -68,7 +68,7 @@ display(weather)
 
 # Obtain the covariance between Tmin and Tmax
 
-# In[8]:
+# In[6]:
 
 
 # your code here

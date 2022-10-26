@@ -46,7 +46,7 @@ display(titanic)
 # 
 # We can do this using the "hue" argument in <tt>sns.histplot</tt> or <tt>sns.kdeplot</tt>:
 
-# In[4]:
+# In[3]:
 
 
 sns.histplot(data=titanic, x='Age', hue='Pclass')
@@ -54,7 +54,7 @@ sns.histplot(data=titanic, x='Age', hue='Pclass')
 
 # Hm, that was a bit messy - it looks clearer as a kdeplot
 
-# In[5]:
+# In[4]:
 
 
 # your code here to produce the KDEplot version of the above
@@ -68,7 +68,7 @@ sns.histplot(data=titanic, x='Age', hue='Pclass')
 # 
 # The simple plotting function <tt>sns.countplot</tt> shows the frequencies of different categories:
 
-# In[6]:
+# In[5]:
 
 
 sns.countplot(data=titanic, x='Pclass')
@@ -76,7 +76,7 @@ sns.countplot(data=titanic, x='Pclass')
 
 # ... we can break the data down by a second category using the argument <tt>hue</tt> as follows:
 
-# In[7]:
+# In[6]:
 
 
 sns.countplot(data=titanic, x='Pclass', hue='Survived')
@@ -88,7 +88,7 @@ sns.countplot(data=titanic, x='Pclass', hue='Survived')
 # 
 # If we want to plot the mean value of a variable by category (rather than just the count in each category), we can use the function <tt>barplot</tt>
 
-# In[8]:
+# In[7]:
 
 
 sns.barplot(data=titanic, y='Age', x='Pclass')
@@ -96,7 +96,7 @@ sns.barplot(data=titanic, y='Age', x='Pclass')
 
 # However, in many cases it will be more informative to plot a <tt>boxplot</tt> or <tt>violinplot</tt>
 
-# In[9]:
+# In[8]:
 
 
 sns.violinplot(data=titanic, x='Pclass', y="Age")
@@ -104,7 +104,7 @@ sns.violinplot(data=titanic, x='Pclass', y="Age")
 
 # Once again you can use the argument <tt>hue</tt> to break the data down by another category
 
-# In[10]:
+# In[9]:
 
 
 # Your code here for a barplot of age, broken down by class, 
@@ -118,13 +118,13 @@ sns.violinplot(data=titanic, x='Pclass', y="Age")
 # 
 # Let's plot a scatterplot of age against fare paid:
 
-# In[11]:
+# In[10]:
 
 
 sns.scatterplot(data=titanic, x='Fare', y='Age')
 
 
-# In[12]:
+# In[11]:
 
 
 # Your code here to repeat the scatterplot above but plotting different classes in different colours, using 'hue'

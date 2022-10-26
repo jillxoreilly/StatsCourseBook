@@ -53,7 +53,7 @@ display(weather)
 # 
 # You might want to increase the spacing between plots - you can find a line of code for this on the 'tweaks' worksheet
 
-# In[ ]:
+# In[3]:
 
 
 # your code here!
@@ -63,7 +63,7 @@ display(weather)
 # 
 # Let's try the same thing but comparing mean temperature (Tmean) and rainfall - the relationship isn't nearly as clear
 
-# In[1]:
+# In[4]:
 
 
 # your code here for boxplots or violin plots for Tmean and Rainfall_mm 
@@ -73,7 +73,7 @@ display(weather)
 # 
 # Let's make a scatterplot of two variables that should definitely be related - Tmin and Tmax, the daily minimum and maximum temperature (say on 21st June the temp peaks at 25 degrees in mid afternoon, but falls to 8 degrees by 3am: Tmax=25 and Tmin=8 for that day)
 
-# In[ ]:
+# In[5]:
 
 
 # your code here to make the scatterplot!
@@ -87,7 +87,7 @@ display(weather)
 # 
 # 
 
-# In[ ]:
+# In[6]:
 
 
 # your code here!
@@ -97,7 +97,7 @@ display(weather)
 # 
 # Choose an appropriate plot for this yourself.
 
-# In[ ]:
+# In[7]:
 
 
 # Your code here!
@@ -111,7 +111,7 @@ display(weather)
 # 
 # Make a scatterplot to find out!
 
-# In[ ]:
+# In[8]:
 
 
 # your code here!
@@ -125,7 +125,7 @@ display(weather)
 # 
 # Let's revisit the relationship between Tmin and Tmax
 
-# In[ ]:
+# In[9]:
 
 
 sns.jointplot(data=weather, x='Tmin', y='Tmax')
@@ -133,7 +133,7 @@ sns.jointplot(data=weather, x='Tmin', y='Tmax')
 
 # That scatterplot is too crowded. How about a 2D histogram in which shading indicates the count of datapoints in each square?
 
-# In[ ]:
+# In[10]:
 
 
 sns.jointplot(data=weather, x='Tmin', y='Tmax', kind='hist')

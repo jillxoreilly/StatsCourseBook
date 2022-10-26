@@ -93,7 +93,7 @@ plt.ylabel('frequency')
 #     <li> Edit the code so that the in boundaries are at 153,158,163 etc
 # </ul>
 
-# In[16]:
+# In[5]:
 
 
 sns.histplot(heightData["brother"],  bins = range(152,202,5), color='b')
@@ -105,7 +105,7 @@ plt.ylabel('frequency')
 # 
 # We can see this more clearly if we plot both versions next to each other (this is achieved using the command <tt>subplot</tt> - we will revisit it later so don't worry too much about that)
 
-# In[22]:
+# In[6]:
 
 
 plt.subplot(1,2,1)

@@ -61,7 +61,7 @@ vehicles['length'].describe()
 # 
 # Don't worry too much about the plotting code for now, as there are dedicated exercises on plotting later.
 
-# In[31]:
+# In[4]:
 
 
 sns.histplot(data=vehicles, x="length",  bins = np.arange(0,16,0.5))
@@ -77,7 +77,7 @@ plt.xlabel('vehicle length (m)')
 # 
 # I can plot vehicle types in different colours (again no need ot worry about the plotting code at this stage)
 
-# In[30]:
+# In[5]:
 
 
 sns.histplot(data=vehicles, x="length", bins = np.arange(0,16,0.5), hue="type")
@@ -90,7 +90,7 @@ plt.xlabel('vehicle length (m)')
 # 
 # One way to do this is to create separate dataframes for each vehicle type:
 
-# In[37]:
+# In[6]:
 
 
 cars = vehicles[vehicles['type']=='car']
@@ -101,7 +101,7 @@ cars.describe()
 # 
 # Try modifying the code below to get descriptive statistics for trucks:
 
-# In[38]:
+# In[7]:
 
 
 # modify the code to get descritives for trucks
@@ -113,7 +113,7 @@ cars.describe()
 # 
 # We can also use the pandas function <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html"><tt>groupby</tt></a> to split up our dataframe according to a categorical variable, in this case vehicle type.
 
-# In[41]:
+# In[8]:
 
 
 vehicles.groupby(['type']).describe()
@@ -123,7 +123,7 @@ vehicles.groupby(['type']).describe()
 # 
 # It may be preferable to output descriptives only for one measure (eg length):
 
-# In[43]:
+# In[9]:
 
 
 vehicles.groupby(['type'])['length'].describe()
@@ -131,7 +131,7 @@ vehicles.groupby(['type'])['length'].describe()
 
 # ... or to output one descriptive (such as the mean) at a time, rather than the whole table
 
-# In[45]:
+# In[10]:
 
 
 vehicles.groupby(['type']).mean()

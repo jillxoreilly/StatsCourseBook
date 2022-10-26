@@ -43,7 +43,7 @@ display(heightFinger)
 # 
 # Let's plot the data. A scatterplot is usually a good choice for bivariate data such as these.
 
-# In[84]:
+# In[3]:
 
 
 sns.scatterplot(data=heightFinger, x='Height', y='FingerLength')
@@ -53,7 +53,7 @@ sns.scatterplot(data=heightFinger, x='Height', y='FingerLength')
 # 
 # One consequence of this is that some datapoints will fall exactly on top of each other! You can see this if I make the data points a bit transparent (by using the alpha parameter) so that the dots appear darker where several fall on top of eachother
 
-# In[85]:
+# In[4]:
 
 
 sns.scatterplot(data=heightFinger, x='Height', y='FingerLength', alpha=0.1)
@@ -61,7 +61,7 @@ sns.scatterplot(data=heightFinger, x='Height', y='FingerLength', alpha=0.1)
 
 # Alternatively, we can visualise the data using another type of plot such as a 2D KDE plot - this is a good solution if the dataset is very large
 
-# In[47]:
+# In[5]:
 
 
 sns.kdeplot(data=heightFinger, x='Height', y='FingerLength')
@@ -73,7 +73,7 @@ sns.kdeplot(data=heightFinger, x='Height', y='FingerLength')
 # 
 # We can calculate the covariance using a built in function from <tt>pandas</tt>
 
-# In[86]:
+# In[6]:
 
 
 heightFinger.cov()
@@ -89,7 +89,7 @@ heightFinger.cov()
 # 
 # You can check that the Height-Height and FingerLength-FingerLength entries are indeed the relevant variances, using the function <tt>std</tt> to obtain the standard deviation $s$ - the variance is then $s^2$
 
-# In[51]:
+# In[7]:
 
 
 heightFinger['Height'].std()**2
@@ -101,7 +101,7 @@ heightFinger['Height'].std()**2
 # 
 # $$ s_{xy} = \sum{\frac{(x_i - \bar{x})(y_i - \bar{y})}{n-1}} $$
 
-# In[87]:
+# In[8]:
 
 
 # Work out the mean in x and y
@@ -126,7 +126,7 @@ display(heightFinger)
 # 
 # Now we can apply the equation:
 
-# In[88]:
+# In[9]:
 
 
 # get n
@@ -145,7 +145,7 @@ print('covariance = ' + str(s_xy))
 # 
 # We can calulate the correlation using a built in function of <tt>pandas</tt>:
 
-# In[89]:
+# In[10]:
 
 
 # reload the data to get rid of the extra columns we added just now
@@ -165,7 +165,7 @@ heightFinger.corr()
 # 
 # ... and $s_x$, $s_y$ are the standard deviations of the two datasets (height and finger length)
 
-# In[90]:
+# In[11]:
 
 
 s_x = heightFinger['Height'].std()
@@ -188,7 +188,7 @@ print('The correlation is ' + str(r))
 # 
 # Let's convert the finger length data to cm using the conversion 1 inch = 2.54 cm
 
-# In[91]:
+# In[12]:
 
 
 heightFinger['FingerLength'] = heightFinger['FingerLength']*2.54 
@@ -197,7 +197,7 @@ display(heightFinger)
 
 # Now we recalculate the covariance
 
-# In[92]:
+# In[13]:
 
 
 heightFinger.cov()
@@ -205,7 +205,7 @@ heightFinger.cov()
 
 # ... and the correlation
 
-# In[93]:
+# In[14]:
 
 
 heightFinger.corr()
@@ -225,7 +225,7 @@ heightFinger.corr()
 # 
 # we get a coefficient $b$ which tells us how many units $y$ increases, for one unit increase in $x$.
 
-# In[72]:
+# In[15]:
 
 
 b = s_xy/(s_x**2)
@@ -240,7 +240,7 @@ print(b)
 
 # Conversely:
 
-# In[73]:
+# In[16]:
 
 
 b = s_xy/(s_y**2)

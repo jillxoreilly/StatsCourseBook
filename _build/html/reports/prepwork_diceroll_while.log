@@ -26,7 +26,7 @@ plt.show()
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_43760/3079488677.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_49340/3079488677.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      2[0m [0mplt[0m[0;34m.[0m[0mbar[0m[0;34m([0m[0mscores[0m[0;34m,[0m [0mheight[0m[0;34m=[0m[0mcounts[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      3[0m [0mplt[0m[0;34m.[0m[0mxlabel[0m[0;34m([0m[0;34m'rolls needed'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 4[0;31m [0mplt[0m[0;34m.[0m[0mylabel[0m[0;34m([0m[0;34m'frequency out of '[0m [0;34m+[0m [0mstr[0m[0;34m([0m[0mnTrials[0m[0;34m)[0m [0;34m+[0m [0;34m' trials'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

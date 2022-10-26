@@ -56,7 +56,7 @@ display(heightData)
 # 
 # We can call KDE plot twice to plot the data from brothers and sisters overlayed
 
-# In[4]:
+# In[3]:
 
 
 sns.kdeplot(heightData["brother"],  color='b',  fill='true', label='brother')
@@ -73,7 +73,7 @@ plt.legend()
 # 
 # On a scatterplot, each dot represents <b>two</b> paired datapoints - a brother and sister:
 
-# In[5]:
+# In[4]:
 
 
 sns.scatterplot(x=heightData["brother"], y=heightData["sister"])
@@ -99,7 +99,7 @@ sns.scatterplot(x=heightData["brother"], y=heightData["sister"])
 #     <li> See if you can add another line of code to draw a red horizontal line at y=170
 # </ul>
 
-# In[6]:
+# In[5]:
 
 
 sns.scatterplot(x=heightData["brother"], y=heightData["sister"])
@@ -130,7 +130,7 @@ plt.plot([150, 190],[150, 190], 'k--')
 # 
 # We can get the best of both worlds by useing <tt>seaborn</tt> function <tt>jointplot</tt>, which shows the <b>marginal</b> distributions (the height distributions for brothers and sisters separately) at the side of the main scatter plot
 
-# In[8]:
+# In[6]:
 
 
 sns.jointplot(x=heightData["brother"], y=heightData["sister"])
@@ -138,7 +138,7 @@ sns.jointplot(x=heightData["brother"], y=heightData["sister"])
 
 # We can adjust the bins and add a KDE plot if we like:
 
-# In[41]:
+# In[7]:
 
 
 sns.jointplot(x=heightData["brother"], y=heightData["sister"], marginal_kws=dict(bins=range(150,200,5), kde="true"))
@@ -148,7 +148,7 @@ sns.jointplot(x=heightData["brother"], y=heightData["sister"], marginal_kws=dict
 # 
 # This is a little fiddly as we have to tell the computer which part of the the joint plot to add the line to, by getting a <i>handle</i> to the plot (see comments in the code)
 
-# In[44]:
+# In[8]:
 
 
 # create the joint plot as before but give it a label - "myfig"

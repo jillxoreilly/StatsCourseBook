@@ -55,7 +55,7 @@ display(cars)
 # 
 # We can get the descriptive statistics using the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html"><tt>decribe()</tt></a> method in <tt>pandas</tt>
 
-# In[24]:
+# In[3]:
 
 
 cars.describe()
@@ -65,7 +65,7 @@ cars.describe()
 # 
 # Let's plot the data (don't worry about the plotting code, there is a session on this later)
 
-# In[25]:
+# In[4]:
 
 
 sns.histplot(cars['length'])
@@ -75,7 +75,7 @@ sns.histplot(cars['length'])
 # 
 # Let's zoom in a bit:
 
-# In[26]:
+# In[5]:
 
 
 plt.subplot(1,2,1)
@@ -92,7 +92,7 @@ plt.subplots_adjust(wspace = 0.5)
 # 
 # Let's check it in the dataframe by pulling out any cars longer than 8m:
 
-# In[27]:
+# In[6]:
 
 
 cars[cars['length']>8]
@@ -102,7 +102,7 @@ cars[cars['length']>8]
 # 
 # Let's check what other types we have:
 
-# In[28]:
+# In[7]:
 
 
 cars['type'].value_counts()
@@ -110,7 +110,7 @@ cars['type'].value_counts()
 
 # Hm, 981 cars and 2 trucks. I think the trucks were included by mistake. Let's drop them:
 
-# In[29]:
+# In[8]:
 
 
 cars_clean = cars.drop([100,101]) # 100 is the row index of the truck - you can see it above
@@ -121,7 +121,7 @@ cars_clean['type'].value_counts() # check if we still have any trucks in the sam
 # 
 # if you were working with lots of files, it could be useful to cut out the middle man and find the row index using code:
 
-# In[30]:
+# In[9]:
 
 
 ix = cars.index[cars['type']=='truck'] # find the row index for the truck and save it as 'ix'
@@ -145,7 +145,7 @@ cars_clean['type'].value_counts() # check if we still have any trucks in the sam
 # 
 # Let's import a dataframe with size information on a random sample of cars
 
-# In[31]:
+# In[10]:
 
 
 cars = # your code here to read the file 'https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/cars_outlier2.csv'
