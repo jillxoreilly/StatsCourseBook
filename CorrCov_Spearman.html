@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Spearman’s Rank Correlation &#8212; Introduction to Statistics and Data Science</title>
+    <title>4.7. Spearman’s Rank Correlation &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4.8. Python skills check" href="CorrCov_PythonCheck.html" />
+    <link rel="prev" title="4.6. Climate example" href="CorrCov_ClimateExample.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -114,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="prepwork_intro.html">
    1. Preparatory Work
@@ -266,6 +268,58 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="plotting_TutorialExercises.html">
      3.10. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="CorrCov_intro.html">
+   4. Correlation and Covariance
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_outcomes.html">
+     4.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_conceptCheck.html">
+     4.3. Concepts Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_introCorrCov.html">
+     4.4. Covariance and Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_ClimateExample.html">
+     4.6. Climate example
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.7. Spearman’s Rank Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_PythonCheck.html">
+     4.8. Python skills check
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_TutorialExercises.html">
+     4.9. Tutorial Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_HandInAssignment.html">
+     4.10. Hand-in Assignment
     </a>
    </li>
   </ul>
@@ -588,7 +642,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="spearman-s-rank-correlation">
-<h1>Spearman’s Rank Correlation<a class="headerlink" href="#spearman-s-rank-correlation" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4.7. </span>Spearman’s Rank Correlation<a class="headerlink" href="#spearman-s-rank-correlation" title="Permalink to this heading">#</a></h1>
 <section id="climate-example">
 <h2>Climate Example<a class="headerlink" href="#climate-example" title="Permalink to this heading">#</a></h2>
 <p>We will again use the a dataset containing carbon emissions, GDP and population for 164 countries (data from 2018).</p>
@@ -615,7 +669,7 @@ title="Print to PDF"
 <p>Load the data from the file CO2vGDP.csv.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2vGDP</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/CO2vGDP.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2vGDP</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/CO2vGDP.csv&#39;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">CO2vGDP</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -730,7 +784,7 @@ title="Print to PDF"
 </div>
 <p>We noted previously that our climate dataset is not suitable for a ‘normal’ Pearson’s correlation because it has one of the three freatures that violate the assumptions of Pearson’s correlation:</p>
 <ul>
-    <li> Non-Straight-Line relationship between $x$ and $y$
+    <li> Non-Straight-Line relationship between x and y
     <li> Heteroscedasticity
     <li> Outliers
 </ul>
@@ -793,7 +847,13 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
-<p>The ‘methods’ available are Pearson (‘normal’ correlation), Spearman (rank based) and Kendal (rarely used). The default (the method used if no method is specified) is Pearson - we can see this by comparing the results with method specified as Pearson and no method specified:</p>
+<p>The ‘methods’ available are:</p>
+<ul>
+    <li>Pearson ('normal' correlation), 
+    <li>Spearman (rank based) and 
+    <li>Kendal (categorical; rarely used).     
+</ul>
+<p>The default (the method used if no method is specified) is Pearson - we can see this by comparing the results with method specified as Pearson and no method specified:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2vGDP</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;pearson&#39;</span><span class="p">)</span>
@@ -1276,6 +1336,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="CorrCov_ClimateExample.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4.6. </span>Climate example</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="CorrCov_PythonCheck.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.8. </span>Python skills check</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

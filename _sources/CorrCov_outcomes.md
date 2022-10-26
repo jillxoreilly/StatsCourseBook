@@ -5,7 +5,7 @@
 This week we are looking at relationships between two variables
 measured in a bivariate (or multivariate) dataset.
 
-After this week you should understand:
+After this week you should be able to:
 
 <ul>
 <li> Recognise and understand the equations for covariance and correlation 
@@ -24,6 +24,10 @@ correlation:
 </ol>
 <li> Explain why a rank-based correlation methon (Spearman's
 correlation) resolves the issue in each case
+</ul>
+<ul>
+<li> Visually identify interactions and crossover interactions in bar
+plots of categorical data
 </ul>
 
 This material is covered in the lecture (also in the lecture videos on Canvas)

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Covariance and Correlation &#8212; Introduction to Statistics and Data Science</title>
+    <title>4.4. Covariance and Correlation &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4.6. Climate example" href="CorrCov_ClimateExample.html" />
+    <link rel="prev" title="4.3. Concepts Review" href="CorrCov_conceptCheck.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -114,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="prepwork_intro.html">
    1. Preparatory Work
@@ -266,6 +268,58 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="plotting_TutorialExercises.html">
      3.10. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="CorrCov_intro.html">
+   4. Correlation and Covariance
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_outcomes.html">
+     4.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_conceptCheck.html">
+     4.3. Concepts Review
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.4. Covariance and Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_ClimateExample.html">
+     4.6. Climate example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_Spearman.html">
+     4.7. Spearman’s Rank Correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_PythonCheck.html">
+     4.8. Python skills check
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_TutorialExercises.html">
+     4.9. Tutorial Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CorrCov_HandInAssignment.html">
+     4.10. Hand-in Assignment
     </a>
    </li>
   </ul>
@@ -496,7 +550,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Covariance and Correlation
+   4.4. Covariance and Correlation
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -542,7 +596,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#corr-vs-cov">
-   Corr vs Cov
+   4.5. Corr vs Cov
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -578,7 +632,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Covariance and Correlation
+   4.4. Covariance and Correlation
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -624,7 +678,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#corr-vs-cov">
-   Corr vs Cov
+   4.5. Corr vs Cov
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -650,10 +704,10 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="covariance-and-correlation">
-<h1>Covariance and Correlation<a class="headerlink" href="#covariance-and-correlation" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4.4. </span>Covariance and Correlation<a class="headerlink" href="#covariance-and-correlation" title="Permalink to this heading">#</a></h1>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
-<p>We will look at a dataset containing of measurements of heights and middle finger lengths for 3000 (this is adapted from a dataset bizarrely recorded for jail inmates 1902 - W. R. MacDonell (Biometrika, Vol. I., p. 219)).</p>
+<p>We will look at a dataset containing of measurements of heights and middle finger lengths for 3000 men (this is adapted from a dataset bizarrely recorded for jail inmates 1902 - W. R. MacDonell (Biometrika, Vol. I., p. 219)).</p>
 <section id="set-up-python-libraries">
 <h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h3>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
@@ -676,7 +730,7 @@ title="Print to PDF"
 <p>Load the data from the file HeightFinger.csv</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heightFinger</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/HeightFingerInches.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heightFinger</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/HeightFingerInches.csv&#39;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">heightFinger</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -785,7 +839,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>Hm, that looks strange. Because data were rounded to the nearest inch or 1/8th inch, the data points appear to be on a regular grid.</p>
-<p>One consequence of this is that some datapoint will fall on top of each other! You can see this if I make the data points a bit transparent (by using the alpha parameter) so that the dots appear darker where several fall on top of eachother</p>
+<p>One consequence of this is that some datapoints will fall exactly on top of each other! You can see this if I make the data points a bit transparent (by using the alpha parameter) so that the dots appear darker where several fall on top of eachother</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heightFinger</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Height&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;FingerLength&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
@@ -799,7 +853,7 @@ title="Print to PDF"
 <img alt="_images/CorrCov_introCorrCov_8_1.png" src="_images/CorrCov_introCorrCov_8_1.png" />
 </div>
 </div>
-<p>We can also visualise the data using another type of plot such as a 2D KDE plot</p>
+<p>Alternatively, we can visualise the data using another type of plot such as a 2D KDE plot - this is a good solution if the dataset is very large</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heightFinger</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Height&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;FingerLength&#39;</span><span class="p">)</span>
@@ -1049,7 +1103,7 @@ mean finger length = 4.547666666666666 mm
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reload the data to get rid of the extra columns we added just now</span>
-<span class="n">heightFinger</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/HeightFingerInches.csv&#39;</span><span class="p">)</span>
+<span class="n">heightFinger</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/HeightFingerInches.csv&#39;</span><span class="p">)</span>
 <span class="n">heightFinger</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1121,7 +1175,7 @@ mean finger length = 4.547666666666666 mm
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="corr-vs-cov">
-<h1>Corr vs Cov<a class="headerlink" href="#corr-vs-cov" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4.5. </span>Corr vs Cov<a class="headerlink" href="#corr-vs-cov" title="Permalink to this heading">#</a></h1>
 <p>When should you use the correlation, when would you use the covariance?</p>
 <section id="changing-units">
 <h2>Changing units<a class="headerlink" href="#changing-units" title="Permalink to this heading">#</a></h2>
@@ -1333,7 +1387,7 @@ mean finger length = 4.547666666666666 mm
 </div>
 <p>For every extra 1 inch of height, finger length increases by 0.055 inches.</p>
 <p>This is actually a regression coefficient (there will be much more detail on this later in the course) and we can see if we plot a regression line that b is its slope:</p>
-<img src= "images/regFingerHeight.png" width="70%"  /><p>Conversely:</p>
+<img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regFingerHeight.png" width="70%"/><p>Conversely:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">s_xy</span><span class="o">/</span><span class="p">(</span><span class="n">s_y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
@@ -1348,8 +1402,8 @@ mean finger length = 4.547666666666666 mm
 </div>
 </div>
 <p>for every extra inch in finger length, height increases by 7.70 inches.</p>
-<img src= "images/regHeightFinger.png" width="70%"  /><p>Now, if we were to convert our finger measurements to cm instead of inches, the coviariance would change, and so would our slop - because a one cm increase in finger length is assocated with a smaller increase in height, than a 1 inch increase in finger length would be.</p>
-<p>There will be a whole block on regression later in the course - you are not expected to carry out or interpret regressions at this stage; the material is presented to explain one application of the covariance.</p>
+<img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regHeightFinger.png" width="70%"  /><p>Now, if we were to convert our finger measurements to cm instead of inches, the coviariance would change, and so would our slop - because a one cm increase in finger length is assocated with a smaller increase in height, than a 1 inch increase in finger length would be.</p>
+<p>There will be a whole block on regression later in the course.</p>
 </section>
 </section>
 
@@ -1380,6 +1434,20 @@ mean finger length = 4.547666666666666 mm
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="CorrCov_conceptCheck.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4.3. </span>Concepts Review</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="CorrCov_ClimateExample.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.6. </span>Climate example</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

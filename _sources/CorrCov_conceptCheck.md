@@ -36,6 +36,20 @@ covariance will increase as the spread in weight and height are both greater for
 
 ```
 
+![rViolations](images/corrProbs.png)
+<li>Which features of each illustration above violate the assumptions
+of Pearson's r?
+
+```{admonition} Click to reveal answer
+:class: dropdown
+<ol type='a'>
+<li> outliers
+<li> heteroscedasticity
+<li> straight line relationship
+</ol>
+
+```
+
 
 <li>What is heteroscedasticity?
 
@@ -64,6 +78,29 @@ The difference between a light and heavy two year
 old is only a few kg (as a two year old weighs less than 20kg), but
 the difference between a light and heavy adult is much greater as the
 average weight of an adult is greater.
+```
+
+![rViolations](images/catInteractions.png)
+<li> The plots above show type of pet owned by a (fictional) sample of men who
+describe themselves as politically liberal or conservative.
+
+Explain what is meant by an interaction between categorical variables and why each of the plots
+above illustrate such an interaction
+```{admonition} Click to reveal answer
+:class: dropdown
+
+An interaction is when the proportion of cases of one variable (cat v
+dog) differs depnding on the value of another variaablbe (liberal v
+conservative).
+
+In example a, we have a crossover interaction, whereby more liberals
+are cat owners (than dog owners), but the reverse is true for
+conservatives.
+
+In example b, we also have an interaction - in this case dogs are more
+popular than cats in both political groups, but the proportion
+preferring dogs is much greater in the conservative group, whilst
+cats and dogs are more equally balanced in the libberal group.
 ```
 
 
