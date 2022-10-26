@@ -35,3 +35,13 @@ chapters:
   - file: plotting_tweaks.ipynb
   - file: plotting_additionalMaterials.md  
   - file: plotting_TutorialExercises.md
+- file: CorrCov_intro.md
+  sections:
+  - file: CorrCov_outcomes.md
+  - file: CorrCov_conceptCheck.md
+  - file: CorrCov_introCorrCov.ipynb
+  - file: CorrCov_ClimateExample.ipynb
+  - file: CorrCov_Spearman.ipynb
+  - file: CorrCov_PythonCheck.ipynb
+  - file: CorrCov_TutorialExercises.ipynb
+  - file: CorrCov_HandInAssignment.ipynb

@@ -105,7 +105,7 @@ plt.ylabel('frequency')
 # 
 # We can see this more clearly if we plot both versions next to each other (this is achieved using the command <tt>subplot</tt> - we will revisit it later so don't worry too much about that)
 
-# In[6]:
+# In[8]:
 
 
 plt.subplot(2,1,1)

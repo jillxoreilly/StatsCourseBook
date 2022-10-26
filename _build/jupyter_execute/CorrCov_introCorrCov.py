@@ -5,7 +5,7 @@
 
 # ## Example
 # 
-# We will look at a dataset containing of measurements of heights and middle finger lengths for 3000 (this is adapted from a dataset bizarrely recorded for jail inmates 1902 - W. R. MacDonell (Biometrika, Vol. I., p. 219)). 
+# We will look at a dataset containing of measurements of heights and middle finger lengths for 3000 men (this is adapted from a dataset bizarrely recorded for jail inmates 1902 - W. R. MacDonell (Biometrika, Vol. I., p. 219)). 
 # 
 # 
 # ### Set up Python libraries
@@ -31,7 +31,7 @@ sns.set_theme() # use pretty defaults
 # In[2]:
 
 
-heightFinger = pandas.read_csv('data/HeightFingerInches.csv')
+heightFinger = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/HeightFingerInches.csv')
 display(heightFinger)
 
 
@@ -43,7 +43,7 @@ display(heightFinger)
 # 
 # Let's plot the data. A scatterplot is usually a good choice for bivariate data such as these.
 
-# In[3]:
+# In[84]:
 
 
 sns.scatterplot(data=heightFinger, x='Height', y='FingerLength')
@@ -51,17 +51,17 @@ sns.scatterplot(data=heightFinger, x='Height', y='FingerLength')
 
 # Hm, that looks strange. Because data were rounded to the nearest inch or 1/8th inch, the data points appear to be on a regular grid. 
 # 
-# One consequence of this is that some datapoint will fall on top of each other! You can see this if I make the data points a bit transparent (by using the alpha parameter) so that the dots appear darker where several fall on top of eachother
+# One consequence of this is that some datapoints will fall exactly on top of each other! You can see this if I make the data points a bit transparent (by using the alpha parameter) so that the dots appear darker where several fall on top of eachother
 
-# In[4]:
+# In[85]:
 
 
 sns.scatterplot(data=heightFinger, x='Height', y='FingerLength', alpha=0.1)
 
 
-# We can also visualise the data using another type of plot such as a 2D KDE plot
+# Alternatively, we can visualise the data using another type of plot such as a 2D KDE plot - this is a good solution if the dataset is very large
 
-# In[5]:
+# In[47]:
 
 
 sns.kdeplot(data=heightFinger, x='Height', y='FingerLength')
@@ -73,7 +73,7 @@ sns.kdeplot(data=heightFinger, x='Height', y='FingerLength')
 # 
 # We can calculate the covariance using a built in function from <tt>pandas</tt>
 
-# In[6]:
+# In[86]:
 
 
 heightFinger.cov()
@@ -89,7 +89,7 @@ heightFinger.cov()
 # 
 # You can check that the Height-Height and FingerLength-FingerLength entries are indeed the relevant variances, using the function <tt>std</tt> to obtain the standard deviation $s$ - the variance is then $s^2$
 
-# In[7]:
+# In[51]:
 
 
 heightFinger['Height'].std()**2
@@ -101,7 +101,7 @@ heightFinger['Height'].std()**2
 # 
 # $$ s_{xy} = \sum{\frac{(x_i - \bar{x})(y_i - \bar{y})}{n-1}} $$
 
-# In[8]:
+# In[87]:
 
 
 # Work out the mean in x and y
@@ -126,7 +126,7 @@ display(heightFinger)
 # 
 # Now we can apply the equation:
 
-# In[9]:
+# In[88]:
 
 
 # get n
@@ -145,11 +145,11 @@ print('covariance = ' + str(s_xy))
 # 
 # We can calulate the correlation using a built in function of <tt>pandas</tt>:
 
-# In[10]:
+# In[89]:
 
 
 # reload the data to get rid of the extra columns we added just now
-heightFinger = pandas.read_csv('data/HeightFingerInches.csv')
+heightFinger = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/HeightFingerInches.csv')
 heightFinger.corr()
 
 
@@ -165,7 +165,7 @@ heightFinger.corr()
 # 
 # ... and $s_x$, $s_y$ are the standard deviations of the two datasets (height and finger length)
 
-# In[11]:
+# In[90]:
 
 
 s_x = heightFinger['Height'].std()
@@ -188,7 +188,7 @@ print('The correlation is ' + str(r))
 # 
 # Let's convert the finger length data to cm using the conversion 1 inch = 2.54 cm
 
-# In[12]:
+# In[91]:
 
 
 heightFinger['FingerLength'] = heightFinger['FingerLength']*2.54 
@@ -197,7 +197,7 @@ display(heightFinger)
 
 # Now we recalculate the covariance
 
-# In[13]:
+# In[92]:
 
 
 heightFinger.cov()
@@ -205,7 +205,7 @@ heightFinger.cov()
 
 # ... and the correlation
 
-# In[14]:
+# In[93]:
 
 
 heightFinger.corr()
@@ -225,7 +225,7 @@ heightFinger.corr()
 # 
 # we get a coefficient $b$ which tells us how many units $y$ increases, for one unit increase in $x$.
 
-# In[15]:
+# In[72]:
 
 
 b = s_xy/(s_x**2)
@@ -236,11 +236,11 @@ print(b)
 # 
 # This is actually a regression coefficient (there will be much more detail on this later in the course) and we can see if we plot a regression line that b is its slope:
 # 
-# <img src= "images/regFingerHeight.png" width="70%"  />
+# <img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regFingerHeight.png" width="70%"/>
 
 # Conversely:
 
-# In[16]:
+# In[73]:
 
 
 b = s_xy/(s_y**2)
@@ -249,11 +249,11 @@ print(b)
 
 # for every extra inch in finger length, height increases by 7.70 inches.
 # 
-# <img src= "images/regHeightFinger.png" width="70%"  />
+# <img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regHeightFinger.png" width="70%"  />
 
 # Now, if we were to convert our finger measurements to cm instead of inches, the coviariance would change, and so would our slop - because a one cm increase in finger length is assocated with a smaller increase in height, than a 1 inch increase in finger length would be.
 # 
-# There will be a whole block on regression later in the course - you are not expected to carry out or interpret regressions at this stage; the material is presented to explain one application of the covariance.
+# There will be a whole block on regression later in the course.
 
 # In[ ]:
 

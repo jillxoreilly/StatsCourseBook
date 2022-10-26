@@ -75,28 +75,28 @@ display(vehicles)
 # 
 # Let's get some descriptives for the length of vehicles:
 
-# In[3]:
+# In[4]:
 
 
 # the mean length
 vehicles['length'].mean()
 
 
-# In[4]:
+# In[5]:
 
 
 # the median length
 vehicles['length'].median()
 
 
-# In[5]:
+# In[9]:
 
 
 # the median, which is the 50th centile of 0.5 quantile
 vehicles['length'].quantile(0.5)
 
 
-# In[6]:
+# In[10]:
 
 
 # The inter quartile range, which is the difference between the 25th and 75th centile or the 0,25 and 0,75 quantile
@@ -105,7 +105,7 @@ vehicles['length'].quantile(0.75)-vehicles['length'].quantile(0.25)
 
 # We can make life easier by using the function <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html"><tt>pandas.describe()</tt></a>, which spits out all the most commonly used descriptive statistics:
 
-# In[7]:
+# In[12]:
 
 
 vehicles['length'].describe()
@@ -114,7 +114,7 @@ vehicles['length'].describe()
 # Indeed, we don't need to limit ourselves to length - 
 # we can get descriptives for all numeric columns in the dataframe at once
 
-# In[8]:
+# In[14]:
 
 
 vehicles.describe()
@@ -130,7 +130,7 @@ vehicles.describe()
 # 
 # Don't worry too much about the plotting code for now, as there are dedicated exercises on plotting later.
 
-# In[9]:
+# In[31]:
 
 
 sns.histplot(data=vehicles, x="length",  bins = np.arange(0,16,0.5))
@@ -146,7 +146,7 @@ plt.xlabel('vehicle length (m)')
 # 
 # I can plot vehicle types in different colours (again no need ot worry about the plotting code at this stage)
 
-# In[10]:
+# In[30]:
 
 
 sns.histplot(data=vehicles, x="length", bins = np.arange(0,16,0.5), hue="type")
@@ -157,7 +157,7 @@ plt.xlabel('vehicle length (m)')
 # 
 # One way to do this is to create separate dataframes for each vehicle type:
 
-# In[11]:
+# In[37]:
 
 
 cars = vehicles[vehicles['type']=='car']
@@ -168,7 +168,7 @@ cars.describe()
 # 
 # Try modifying the code below to get descriptive statistics for trucks:
 
-# In[12]:
+# In[38]:
 
 
 # modify the code to get descritives for trucks
@@ -180,7 +180,7 @@ cars.describe()
 # 
 # We can also use the pandas function <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html"><tt>groupby</tt></a> to split up our dataframe according to a categorical variable, in this case vehicle type.
 
-# In[13]:
+# In[41]:
 
 
 vehicles.groupby(['type']).describe()
@@ -190,7 +190,7 @@ vehicles.groupby(['type']).describe()
 # 
 # It may be preferable to output descriptives only for one measure (eg length):
 
-# In[14]:
+# In[43]:
 
 
 vehicles.groupby(['type'])['length'].describe()
@@ -198,7 +198,7 @@ vehicles.groupby(['type'])['length'].describe()
 
 # ... or to output one descriptive (such as the mean) at a time, rather than the whole table
 
-# In[15]:
+# In[45]:
 
 
 vehicles.groupby(['type']).mean()
@@ -232,7 +232,7 @@ vehicles.groupby(['type']).mean()
 # 
 # The majority of vehicles are cars.
 
-# In[16]:
+# In[49]:
 
 
 # load the data

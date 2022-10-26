@@ -42,7 +42,7 @@ display(weather)
 # 
 # Create a plot to show the relationship between mean temp (Tmean) and rainfall
 
-# In[3]:
+# In[4]:
 
 
 sns.scatterplot(data=weather, x='Tmean', y='Rainfall_mm')
@@ -52,7 +52,7 @@ sns.scatterplot(data=weather, x='Tmean', y='Rainfall_mm')
 # 
 # Using the appropriate method, obtain the full correlation matrix for the <tt>weather</tt> dataframe
 
-# In[4]:
+# In[5]:
 
 
 weather.corr(method = 'spearman')
@@ -60,7 +60,7 @@ weather.corr(method = 'spearman')
 
 # ... and just the correlation between Tmean and rainfall
 
-# In[5]:
+# In[7]:
 
 
 weather['Tmean'].corr(weather['Rainfall_mm'], method = 'spearman')
@@ -68,13 +68,13 @@ weather['Tmean'].corr(weather['Rainfall_mm'], method = 'spearman')
 
 # Obtain the covariance between Tmin and Tmax
 
-# In[6]:
+# In[8]:
 
 
 weather['Tmax'].cov(weather['Tmin'])
 
 
-# In[7]:
+# In[ ]:
 
 
 The end!

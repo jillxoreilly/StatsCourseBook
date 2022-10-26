@@ -33,7 +33,7 @@ sns.set_theme() # use pretty defaults
 # In[2]:
 
 
-CO2vGDP = pandas.read_csv('data/CO2vGDP.csv')
+CO2vGDP = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/CO2vGDP.csv')
 display(CO2vGDP)
 
 
@@ -42,7 +42,7 @@ display(CO2vGDP)
 # We noted previously that our climate dataset is not suitable for a 'normal' Pearson's correlation because it has one of the three freatures that violate the assumptions of Pearson's correlation:
 # 
 # <ul>
-#     <li> Non-Straight-Line relationship between $x$ and $y$
+#     <li> Non-Straight-Line relationship between x and y
 #     <li> Heteroscedasticity
 #     <li> Outliers
 # </ul>
@@ -56,21 +56,29 @@ display(CO2vGDP)
 # 
 # $r_s$ can be calculated using the same built-in function <tt>pandas.df.corr()</tt>:
 
-# In[3]:
+# In[70]:
 
 
 CO2vGDP.corr(method='spearman')
 
 
-# The 'methods' available are Pearson ('normal' correlation), Spearman (rank based) and Kendal (rarely used). The default (the method used if no method is specified) is Pearson - we can see this by comparing the results with method specified as Pearson and no method specified:
+# The 'methods' available are:
+# 
+# <ul>
+#     <li>Pearson ('normal' correlation), 
+#     <li>Spearman (rank based) and 
+#     <li>Kendal (categorical; rarely used).     
+# </ul>
+#     
+# The default (the method used if no method is specified) is Pearson - we can see this by comparing the results with method specified as Pearson and no method specified:
 
-# In[4]:
+# In[71]:
 
 
 CO2vGDP.corr(method='pearson')
 
 
-# In[5]:
+# In[72]:
 
 
 CO2vGDP.corr()
@@ -96,7 +104,7 @@ CO2vGDP.corr()
 #     <li>high-ranked countries for GDP should also be high-ranked for CO2
 # </ul>
 
-# In[6]:
+# In[73]:
 
 
 CO2vGDP['CO2_rank'] = CO2vGDP['CO2'].rank()
@@ -110,7 +118,7 @@ display(CO2vGDP.sort_values(by='CO2'))
 # 
 # Let's plot the data, and the ranked data, on scatterplots. You can see that the ranked data do not have the same heteroscedasticity issue as the data themselves.
 
-# In[7]:
+# In[91]:
 
 
 plt.subplot(1,2,1)
@@ -124,7 +132,7 @@ plt.subplots_adjust(wspace = 0.5) # shift the plots sideways so they don't overl
 
 # To continue the process of applying the equation, we make a new column containing the difference of ranks:
 
-# In[8]:
+# In[74]:
 
 
 CO2vGDP['d'] = CO2vGDP['CO2_rank']-CO2vGDP['GDP_rank']
@@ -132,7 +140,7 @@ CO2vGDP['d'] = CO2vGDP['CO2_rank']-CO2vGDP['GDP_rank']
 
 # ... and apply the formula:
 
-# In[9]:
+# In[77]:
 
 
 n = len(CO2vGDP)
@@ -153,7 +161,7 @@ print('r = ' + str(r_s))
 # 
 # Let's try it!
 
-# In[10]:
+# In[86]:
 
 
 # make a new dataframe with only ranks
@@ -161,7 +169,7 @@ CO2vGDP_ranks = CO2vGDP[['CO2_rank','GDP_rank']]
 display(CO2vGDP_ranks)
 
 
-# In[11]:
+# In[88]:
 
 
 # Calculate **Pearson's** correlation on the ranks

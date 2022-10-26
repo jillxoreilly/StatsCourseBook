@@ -77,7 +77,7 @@ display(vehicles)
 # 
 # Find them and replace them with <tt>NaNs</tt>.
 
-# In[3]:
+# In[ ]:
 
 
 # your code here to find the long vehicles
@@ -108,7 +108,7 @@ vehicles_clean = vehicles
 #     
 # </div>
 
-# In[4]:
+# In[ ]:
 
 
 # load the data

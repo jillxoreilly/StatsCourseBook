@@ -58,7 +58,7 @@ display(weather)
 # 
 # We can summarise the distribution of temperatures in each month using a boxplot:
 
-# In[3]:
+# In[5]:
 
 
 sns.boxplot(data=weather, x="MM", y="Tmax")
@@ -81,7 +81,7 @@ sns.boxplot(data=weather, x="MM", y="Tmax")
 # 
 # To do so we add a 'century' column to our dataframe. We use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.cut.html"><tt>pandas.cut</tt></a> function to categorise the values of year into 19thC, 20thC and 21stC
 
-# In[4]:
+# In[6]:
 
 
 weather['CCCC'] = pandas.cut(x=weather['YYYY'], bins=[1800,1900,2000,2100], labels=["19thC","20thC","21stC"])
@@ -90,7 +90,7 @@ display(weather)
 
 # Now we can use the argument <tt>hue</tt> in <a href="https://seaborn.pydata.org/generated/seaborn.boxplot.html"><tt>seaborn.boxplot</tt></a> to produce parallel box plots.
 
-# In[5]:
+# In[7]:
 
 
 sns.boxplot(data=weather, x="MM", y="Tmean", hue="CCCC")
@@ -106,7 +106,7 @@ sns.boxplot(data=weather, x="MM", y="Tmean", hue="CCCC")
 # 
 # Let's give it a try using the function <a href="https://seaborn.pydata.org/generated/seaborn.violinplot.html"><tt>sns.violinplot</tt></a>
 
-# In[6]:
+# In[63]:
 
 
 sns.violinplot(data=weather, x="MM", y="Tmax")

@@ -75,7 +75,7 @@ display(vehicles)
 # 
 # Find them and replace them with <tt>NaNs</tt>.
 
-# In[3]:
+# In[22]:
 
 
 # your code here to find the long vehicles
@@ -106,7 +106,7 @@ vehicles.sort_values(by='length', ascending=False)
 #     
 # </div>
 
-# In[4]:
+# In[ ]:
 
 
 # load the data
