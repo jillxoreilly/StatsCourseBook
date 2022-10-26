@@ -5,7 +5,7 @@
 # 
 # Sometimes less is more!
 # 
-# We saw in the lecture that if we want to compare several data distributions, it can be useful to have a plot that highlights key features (the median and quartiles) whilst eliminaating unnecessary detail
+# We saw in the lecture that if we want to compare several data distributions, it can be useful to have a plot that highlights key features (the median and quartiles) whilst eliminating unnecessary detail
 # 
 # The boxplot can do this job
 # 
@@ -79,12 +79,12 @@ sns.boxplot(data=weather, x="MM", y="Tmax")
 # 
 # Let's compare temperatures in the 19th, 20th and 21st century. 
 # 
-# To do so we add a 'century' column to our dataframe. We use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.cut.html"><tt>pandas.cut</tt></a> function to categorise the values of year into 18thC, 19thC and 20thC
+# To do so we add a 'century' column to our dataframe. We use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.cut.html"><tt>pandas.cut</tt></a> function to categorise the values of year into 19thC, 20thC and 21stC
 
 # In[4]:
 
 
-weather['CCCC'] = pandas.cut(x=weather['YYYY'], bins=[1800,1900,2000,2100], labels=["18thC","19thC","20thC"])
+weather['CCCC'] = pandas.cut(x=weather['YYYY'], bins=[1800,1900,2000,2100], labels=["19thC","20thC","21stC"])
 display(weather)
 
 

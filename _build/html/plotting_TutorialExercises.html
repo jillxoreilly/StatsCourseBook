@@ -519,6 +519,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temp-vs-rainfall">
+     Temp vs rainfall
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fancy-joint-plots">
      Fancy joint plots
     </a>
@@ -567,6 +572,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#scatterplot">
      Scatterplot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temp-vs-rainfall">
+     Temp vs rainfall
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -778,8 +788,13 @@ title="Print to PDF"
 </section>
 <section id="max-and-min-temperature">
 <h3>Max and Min temperature<a class="headerlink" href="#max-and-min-temperature" title="Permalink to this heading">#</a></h3>
-<p>Let’s use a two box plots or violin plots (you choose) to display the mean value of Tmax and Tmin (max and min temperature over 24 hours) in each month.</p>
-<p>Make them as subplots (so they sit next to or one above each other - you decide which is allows for a more meaningful comparison)</p>
+<p>Let’s make two figures using box plots (or violin plots, you choose) to display the distribution of:</p>
+<ul>
+    <li>Tmax (max temperature over 24 hours) 
+    <li>Tmin (min temperature over 24 hours) 
+</ul>
+month-by-month over the year (there should be one box per month so you can see temp rise and fall over the year, as we did for Tmean in the boxplot exercises).
+<p>Make your figures as subplots in a larger figure so they sit next to or one above each other - you decide which is allows for a more meaningful comparison</p>
 <p>Consider the range of the axes to make the plots easy to compare.</p>
 <p>You might want to increase the spacing between plots - you can find a line of code for this on the ‘tweaks’ worksheet</p>
 <div class="cell docutils container">
@@ -790,10 +805,10 @@ title="Print to PDF"
 </div>
 </div>
 <p>Which did you choose - box plot or violin plot? Why?</p>
-<p>Let’s try the same thing but comparing mean temperature and rainfall - the relationship isn’t nearly as clear</p>
+<p>Let’s try the same thing but comparing mean temperature (Tmean) and rainfall - the relationship isn’t nearly as clear</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here for bobxplots or violin plots for Tmean and Rainfall_mm </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here for boxplots or violin plots for Tmean and Rainfall_mm </span>
 </pre></div>
 </div>
 </div>
@@ -818,7 +833,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let’s plot the mean daily temperature range (Trange) in each month to find out if there is a pattern.</p>
+<p>Let’s plot the daily temperature range (Trange) in each month to find out if there is a pattern.</p>
 <p>Choose an appropriate plot for this yourself.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -827,8 +842,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>It seems months with higher temperatures also have a larger mean daily temperature range.</p>
-<p>Temp vs rainfall</p>
+<p>It seems months with higher temperatures also have a larger daily temperature range.</p>
+</section>
+<section id="temp-vs-rainfall">
+<h3>Temp vs rainfall<a class="headerlink" href="#temp-vs-rainfall" title="Permalink to this heading">#</a></h3>
 <p>We have seen that rainfall is fairly evenly spread over the months and temp is not. But is there any relationship between rainfall and temperature on a day-by-day basis?</p>
 <p>Make a scatterplot to find out!</p>
 <div class="cell docutils container">
@@ -851,7 +868,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x7fb703461e20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x7f891e28fe50&gt;
 </pre></div>
 </div>
 <img alt="_images/plotting_TutorialExercises_19_1.png" src="_images/plotting_TutorialExercises_19_1.png" />
@@ -865,14 +882,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x7fb6fd930f10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x7f891e1a57c0&gt;
 </pre></div>
 </div>
 <img alt="_images/plotting_TutorialExercises_21_1.png" src="_images/plotting_TutorialExercises_21_1.png" />
 </div>
 </div>
 <p>Or a join kde plot? Change ‘kind’ to <tt>kde</tt> above</p>
-<p>Or how about a hex plot? Change ‘kind’ to <tt>kde</tt> above</p>
+<p>Or how about a hex plot? Change ‘kind’ to <tt>hex</tt> above</p>
 <p>You can find many more nice examples in the <a href="http://seaborn.pydata.org/examples/index.html">Seaborn Gallery</a> - why not try some out? If you click on any of the pictures of plots you get the code snippet for the plot.</p>
 </section>
 </section>

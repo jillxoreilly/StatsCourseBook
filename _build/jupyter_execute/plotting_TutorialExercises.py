@@ -40,9 +40,14 @@ display(weather)
 
 # ### Max and Min temperature
 # 
-# Let's use a two box plots or violin plots (you choose) to display the mean value of Tmax and Tmin (max and min temperature over 24 hours) in each month.
+# Let's make two figures using box plots (or violin plots, you choose) to display the distribution of:
+# <ul>
+#     <li>Tmax (max temperature over 24 hours) 
+#     <li>Tmin (min temperature over 24 hours) 
+# </ul>
+# month-by-month over the year (there should be one box per month so you can see temp rise and fall over the year, as we did for Tmean in the boxplot exercises).
 # 
-# Make them as subplots (so they sit next to or one above each other - you decide which is allows for a more meaningful comparison)
+# Make your figures as subplots in a larger figure so they sit next to or one above each other - you decide which is allows for a more meaningful comparison
 # 
 # Consider the range of the axes to make the plots easy to compare.
 # 
@@ -56,12 +61,12 @@ display(weather)
 
 # Which did you choose - box plot or violin plot? Why?
 # 
-# Let's try the same thing but comparing mean temperature and rainfall - the relationship isn't nearly as clear
+# Let's try the same thing but comparing mean temperature (Tmean) and rainfall - the relationship isn't nearly as clear
 
 # In[4]:
 
 
-# your code here for bobxplots or violin plots for Tmean and Rainfall_mm 
+# your code here for boxplots or violin plots for Tmean and Rainfall_mm 
 
 
 # ### Scatterplot
@@ -88,7 +93,7 @@ display(weather)
 # your code here!
 
 
-# Let's plot the mean daily temperature range (Trange) in each month to find out if there is a pattern.
+# Let's plot the daily temperature range (Trange) in each month to find out if there is a pattern.
 # 
 # Choose an appropriate plot for this yourself.
 
@@ -98,9 +103,9 @@ display(weather)
 # Your code here!
 
 
-# It seems months with higher temperatures also have a larger mean daily temperature range.
+# It seems months with higher temperatures also have a larger daily temperature range.
 
-# Temp vs rainfall
+# ### Temp vs rainfall
 # 
 # We have seen that rainfall is fairly evenly spread over the months and temp is not. But is there any relationship between rainfall and temperature on a day-by-day basis? 
 # 
@@ -136,9 +141,15 @@ sns.jointplot(data=weather, x='Tmin', y='Tmax', kind='hist')
 
 # Or a join kde plot? Change 'kind' to <tt>kde</tt> above
 # 
-# Or how about a hex plot? Change 'kind' to <tt>kde</tt> above
+# Or how about a hex plot? Change 'kind' to <tt>hex</tt> above
 # 
 # You can find many more nice examples in the <a href="http://seaborn.pydata.org/examples/index.html">Seaborn Gallery</a> - why not try some out? If you click on any of the pictures of plots you get the code snippet for the plot.
+
+# In[ ]:
+
+
+
+
 
 # In[ ]:
 

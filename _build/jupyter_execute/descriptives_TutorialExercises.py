@@ -80,6 +80,8 @@ display(vehicles)
 
 # your code here to find the long vehicles
 
+vehicles.sort_values(by='length', ascending=False)
+
 
 # replace the incorrect vehicle lengths with NaNs
 # vehicles.loc(.....)=np.nan
@@ -122,11 +124,12 @@ vehicles = ### your code here to load the csv file
 # 
 # The majority of vehicles are cars.
 
-# In[98]:
+# In[18]:
 
 
 # your code to count vehicles by type - 
-# hint use groupby() and value_counts()
+# hint use groupby() and describe(), or use value_counts()
+vehicles.groupby(['type']).describe()
 
 
 # The length and width of vehicles differs substantially between classes
