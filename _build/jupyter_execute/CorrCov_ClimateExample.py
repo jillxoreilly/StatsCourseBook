@@ -33,7 +33,7 @@ sns.set_theme() # use pretty defaults
 # In[2]:
 
 
-CO2vGDP = pandas.read_csv('data/CO2vGDP.csv')
+CO2vGDP = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/CO2vGDP.csv')
 display(CO2vGDP)
 
 

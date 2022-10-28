@@ -70,6 +70,10 @@ heartAttack=pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/Stat
 display(heartAttack)
 
 
+# ### Data Cleaning
+# 
+# Explain how many outlier/bad/missing values you removed and what your criteria for removal were
+
 # ### Sample Overview
 # 
 # Report key demographics of the sample (proportion male/female; proportion that survived in each case)
