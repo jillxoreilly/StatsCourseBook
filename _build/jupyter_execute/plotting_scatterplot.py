@@ -81,7 +81,7 @@ sns.scatterplot(x=heightData["brother"], y=heightData["sister"])
 
 # One thing we can clearly see is that tall brothers tend to have tall sisters - that is there is a shared familial effect, or to put it another way, height of brothers aand sisters is correlated across families.
 # 
-# This suggests it was a good idea to use a paired design as what we really want to know is not whether some families are taller than others, bubt whether the male sibling in each family is taller than the female sibling once the family effect is accounted for (by compaaring only within families). To help us visualise this we add a <b>reference line</b>
+# This suggests it was a good idea to use a paired design as what we really want to know is not whether some families are taller than others, but whether the male sibling in each family is taller than the female sibling once the family effect is accounted for (by compaaring only within families). To help us visualise this we add a <b>reference line</b>
 # 
 # ### Reference line
 # 
@@ -120,7 +120,7 @@ plt.plot([150, 190],[150, 190], 'k--')
 # 
 # This means that in general tall brothers have tall sisters and this variation between families rather dwarfs the effect of interest (that within each family the brother is taller than his own sister)
 # 
-# This feature of the plot is evidence gthat a paired design was a particularly good choice for this question - in te paired design, the (large) variation between families is cancelled out allowing us to detect the (smaall) differnece between male and females.
+# This feature of the plot is evidence that a paired design was a particularly good choice for this question - in the paired design, the (large) variation between families is cancelled out allowing us to detect the (small) difference between male and females.
 
 # ### Jointplot
 # 

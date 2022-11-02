@@ -1,20 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Histogram
+# # Tutorial Exercises
 # 
-# If we want to see the shape of a data distribution, the histgram can be a good choice
+# You should work through this is the tutorial. The idea is to bring together the skills you have learned (and highlight any gaps to discuss with your tutor)
 # 
-# In this section we will see how to plot a histogram using Python and what choices we can make to show the data distribution clearly and accurately
+# ## Oxford weather station data
 # 
-# We will also consider some of the limitations of the histogram for small datasets. In the next section we meet a related plot, the Kernel Density Estimate plot, which can mitigate these limitations.
+# We will work with historical data from the Oxford weather station
+# 
+# <img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/OxfordSnow.jpg" width="50%"  />
 
-# ## Example
-# 
-# We will look at a small sample of height data for brother-sister pairs.
-# 
-# <img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/tallVshort.jpg" width="50%" />
-# 
 # ### Set up Python libraries
 # 
 # As usual, run the code cell below to import the relevant Python libraries
@@ -28,111 +24,143 @@ import matplotlib.pyplot as plt
 import scipy.stats as stats
 import pandas 
 import seaborn as sns
-sns.set_theme() # use pretty defaults
+sns.set_theme()
 
 
 # ### Load and inspect the data
-
-# Load the file brotherSisterData.csv which contains heights in cm for 25 brother-sister pairs
+# 
+# Let's load some historical data about the weather in Oxford, from the file "OxfordWeather.csv"
 
 # In[2]:
 
 
-heightData = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/BrotherSisterData.csv')
-display(heightData)
+weather = pandas.read_csv("https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/OxfordWeather.csv")
+display(weather)
 
 
-# In this section, we are going to focus just on the brothers.
+# ### Max and Min temperature
 # 
-# ### Plot a histogram
+# Let's make two figures using box plots (or violin plots, you choose) to display the distribution of:
+# <ul>
+#     <li>Tmax (max temperature over 24 hours) 
+#     <li>Tmin (min temperature over 24 hours) 
+# </ul>
+# month-by-month over the year (there should be one box per month so you can see temp rise and fall over the year, as we did for Tmean in the boxplot exercises).
 # 
-# Let's start by plotting a histogram of the data to see what the distriubtion of heights is.
+# Make your figures as subplots in a larger figure so they sit next to or one above each other - you decide which is allows for a more meaningful comparison
 # 
-# In this course we will use plotting functions from the libraries <tt>matplotlib</tt> (imported as <tt>plt</tt>) and <tt>seaborn</tt> (imported as <tt>sns</tt>). 
+# Consider the range of the axes to make the plots easy to compare.
 # 
-# Therefore all the plotting commands will be preceded by either <tt>plt.</tt> or <tt>sns</tt>.
+# You might want to increase the spacing between plots - you can find a line of code for this on the 'tweaks' worksheet
 
 # In[3]:
 
 
-sns.histplot(heightData["brother"],  bins = range(150,200,5), color='b')
-plt.xlabel('brother\'s height') 
-plt.ylabel('frequency')
+# your code here!
 
 
-# ### Bin size
+# Which did you choose - box plot or violin plot? Why?
 # 
-# In a histogram, we bin data (in this case, we group the heights into 5cm-wide bins), and count how many data values fall in each bin
-# 
-# I used bins of 5cm to group the heights, and used x-axis values from 150 to 200 cm. 
-# <ul>
-# <li>Can you find where in the code this is specified?
-# <li>In the code block below, change the width of the bins to 1cm. 
-# What do you notice? Can you see the shape of the distribution better or worse using the 1cm bins?
-# </ul>
+# Let's try the same thing but comparing mean temperature (Tmean) and rainfall - the relationship isn't nearly as clear
 
 # In[4]:
 
 
-sns.histplot(heightData["brother"],  bins = range(150,200,5), color='b') # hint - the numbers 150, 200 and 5 are the minimum/maximum x axis values and the bin size
-plt.xlabel('brother\'s height') 
-plt.ylabel('frequency')
+sns.boxplot(data=weather, x='MM', y='Rainfall_mm')
+plt.ylim([0,5])
 
 
-# ### Bin boundaries
+# ### Scatterplot
 # 
-# One problem with using a histogram when you have only a small number of data points is 
-# that the shape of the histogram can depend a lot on where the bin boundaries happen to fall. 
-# 
-# Look at the following plot of brothers' heights, again grouped into 5cm bins but with different bin boundaries: 
-# 
-# #### Exercises
-# <ul>
-#     <li> What change in the code moved the bin boundaries?
-#     <li> What were the old bin boundaries? What are the new bin boundaries?
-#     <li> Edit the code so that the in boundaries are at 153,158,163 etc
-# </ul>
+# Let's make a scatterplot of two variables that should definitely be related - Tmin and Tmax, the daily minimum and maximum temperature (say on 21st June the temp peaks at 25 degrees in mid afternoon, but falls to 8 degrees by 3am: Tmax=25 and Tmin=8 for that day)
 
 # In[5]:
 
 
-sns.histplot(heightData["brother"],  bins = range(152,202,5), color='b')
-plt.xlabel('brother\'s height') 
-plt.ylabel('frequency')
+weather[weather['MM']==10].describe()
 
 
-# The shape of the distribution looks quite different!
+# We see that Tmin and Tmax are indeed related, but there are some days with a large temperature range (high TMax and low Tmin) and others with a low range (Tmax and Tmin nearly equal).
 # 
-# We can see this more clearly if we plot both versions next to each other (this is achieved using the command <tt>subplot</tt> - we will revisit it later so don't worry too much about that)
+# Add the line x=y to the plot so you can see where the data would fall if Tmax=Tmin on a given day.
+# 
+# 
+# 
+# 
 
 # In[6]:
 
 
-plt.subplot(2,1,1)
-sns.histplot(heightData["brother"],  bins = range(150,200,5), color='b', kde=True)
-plt.xlabel('height') 
-plt.ylabel('frequency')
-plt.ylim((0,10)) # this sets the y axis limits rather than letting the computer choose them automatically
-
-plt.subplot(2,1,2)
-sns.histplot(heightData["brother"],  bins = range(152,202,5), color='b',kde=True) 
-plt.xlabel('height') 
-plt.ylabel('frequency')
-plt.ylim((0,10))
-
-plt.subplots_adjust(wspace = 0.5) # shift the plots sideways so they don't overlap
+sns.scatterplot
 
 
-# Originally (left) the bin boundaries were at 150cm, 155cm, 160cm etc.
+# Let's plot the daily temperature range (Trange) in each month to find out if there is a pattern.
 # 
-# In the second histogram (right) the bin boundaries were at 152cm, 157cm, 162cm etc.
+# Choose an appropriate plot for this yourself.
+
+# In[7]:
+
+
+# Your code here!
+
+
+# It seems months with higher temperatures also have a larger daily temperature range.
+
+# ### Temp vs rainfall
 # 
-# Moving the bin boundaries changed how many observations fell in each bin and thus the shape of the histogram. This can happen easily when you have a small number of observations in each bin (check the y-axis in the above histogram - you can see that moving just one observation makes a big difference to the height of the bars).
+# We have seen that rainfall is fairly evenly spread over the months and temp is not. But is there any relationship between rainfall and temperature on a day-by-day basis? 
 # 
-# For this reason, a histogram may not be the best representation of the data for a small sample.
+# Make a scatterplot to find out!
+
+# In[8]:
+
+
+# your code here!
+
+
+# Interesting, it looks almost like high rainfall is more likely on warm days, but the plot is so crowded it is a bit hard to tell
 # 
-# #### Exercises
-# <ul>
-#     <li> I added a line of code to set the y axis limits to be [0,10] - why do you think I did this?
-#     <li> Try removing or commenting it out and see how the two histograms change - is it easier to compare with fixed or automatic y-axis?
-# </ul>
+# ### Fancy joint plots
+# 
+# You can use the function <tt>sns.jointplot</tt> that we saw before (scatterplot plus the two marginal histograms) to make some fancy plots!
+# 
+# Let's revisit the relationship between Tmin and Tmax
+
+# In[9]:
+
+
+sns.jointplot(data=weather, x='Tmin', y='Tmax')
+
+
+# That scatterplot is too crowded. How about a 2D histogram in which shading indicates the count of datapoints in each square?
+
+# In[10]:
+
+
+sns.jointplot(data=weather, x='Tmin', y='Tmax', kind='hist')
+
+
+# Or a join kde plot? Change 'kind' to <tt>kde</tt> above
+# 
+# Or how about a hex plot? Change 'kind' to <tt>hex</tt> above
+# 
+# You can find many more nice examples in the <a href="http://seaborn.pydata.org/examples/index.html">Seaborn Gallery</a> - why not try some out? If you click on any of the pictures of plots you get the code snippet for the plot.
+
+# ### High rainfall occurs in warm months
+# 
+# We calculated the correlation (Pearson's r) between mean daily temperature (Tmean) and rainfall (Rainfall_mm):
+
+# In[11]:
+
+
+sns.scatterplot(data=weather, x='Tmean', y='Rainfall_mm', alpha=0.1)
+plt.xlabel('Mean Daily Temperature (C)')
+
+print('Pearson\'s r = ' + str(weather['Tmean'].corr(weather['Rainfall_mm'])))
+
+
+# In[ ]:
+
+
+
+

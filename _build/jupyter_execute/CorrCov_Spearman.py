@@ -90,7 +90,7 @@ CO2vGDP.corr()
 # 
 # The equation is:
 #     
-# $$ r_s = 6 \sum{\frac{d^2}{n(n^2 - 2)}} $$
+# $$ r_s = 1 - 6 \sum{\frac{d^2}{n(n^2 - 1)}} $$
 # 
 # ... where d is the difference in ranks between paired datapoints.
 # 
@@ -145,7 +145,7 @@ CO2vGDP['d'] = CO2vGDP['CO2_rank']-CO2vGDP['GDP_rank']
 
 n = len(CO2vGDP)
 
-r_s = 1 - 6*sum(CO2vGDP['d']**2)/(n*(n**2 - 2))
+r_s = 1 - 6*sum(CO2vGDP['d']**2)/(n*(n**2 - 1))
 print('r = ' + str(r_s))
 
 
