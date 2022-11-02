@@ -81,8 +81,10 @@ average weight of an adult is greater.
 ```
 
 ![rViolations](images/catInteractions.png)
-<li> The plots above show type of pet owned by a (fictional) sample of men who
-describe themselves as politically liberal or conservative.
+<li> The two plots above show type of pet owned by two (fictional) samples
+of men. For each man the researcher recorded whether he descriebs
+himseld as politically liberal or conservative, and whether he prefers
+cats or dogs
 
 Explain what is meant by an interaction between categorical variables and why each of the plots
 above illustrate such an interaction
@@ -90,7 +92,7 @@ above illustrate such an interaction
 :class: dropdown
 
 An interaction is when the proportion of cases of one variable (cat v
-dog) differs depnding on the value of another variaablbe (liberal v
+dog) differs depnding on the value of another variable (liberal v
 conservative).
 
 In example a, we have a crossover interaction, whereby more liberals
@@ -100,7 +102,7 @@ conservatives.
 In example b, we also have an interaction - in this case dogs are more
 popular than cats in both political groups, but the proportion
 preferring dogs is much greater in the conservative group, whilst
-cats and dogs are more equally balanced in the libberal group.
+cats and dogs are more equally balanced in the liberal group.
 ```
 
 
