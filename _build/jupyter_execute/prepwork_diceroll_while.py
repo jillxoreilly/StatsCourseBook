@@ -177,7 +177,7 @@ scores, counts = np.unique(rollsNeeded, return_counts=True)
 # plot the nummber of players who needed 1,2,3,4....etc rolls to get a six
 plt.bar(scores, height=counts)
 plt.xlabel('rolls needed')
-plt.ylabel('frequency out of ' + str(nTrials) + ' trials')
+plt.ylabel('frequency out of ' + str(nPlayers) + ' trials')
 plt.show()
 
 
@@ -198,13 +198,13 @@ plt.show()
 # 
 # 
 
-# In[15]:
+# In[8]:
 
 
 np.count_nonzero(rollsNeeded>=5) # actual number of trials on which 10 or more rolls were needed
 
 
-# In[16]:
+# In[9]:
 
 
 100 * np.count_nonzero(rollsNeeded>=5)/nPlayers # same thing, as a percentage of trials
@@ -222,7 +222,7 @@ np.count_nonzero(rollsNeeded>=5) # actual number of trials on which 10 or more r
 # 
 # It's easier to see how this works in an eample using smaller array:
 
-# In[12]:
+# In[10]:
 
 
 a = np.array([1,2,3,4,5]) # create a simple numpy array
@@ -240,7 +240,7 @@ a>=4 # check whether each element is >= 4
 # 
 # Let's look again with our simple example:
 
-# In[13]:
+# In[11]:
 
 
 a = np.array([1,2,3,4,5]) # create a simple numpy array
@@ -257,7 +257,7 @@ np.count_nonzero(a>=4) # check whether each element is >= 3
 #     </ul>to obtain a six?
 # </ul>
 
-# In[23]:
+# In[12]:
 
 
 100 * np.count_nonzero(rollsNeeded>=10)/10000
