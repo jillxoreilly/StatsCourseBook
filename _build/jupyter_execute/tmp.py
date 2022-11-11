@@ -1,15 +1,28 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Tutorial Exercises
+# # Simulated coin toss
 # 
-# You should work through this is the tutorial. The idea is to bring together the skills you have learned (and highlight any gaps to discuss with your tutor)
+# To get a feel for how likely different outcomes are, we are going to <i>simulate the data generating process</i>
 # 
-# ## Oxford weather station data
+# <img src="images/Minion_what.jpg" width=10%>
 # 
-# We will work with historical data from the Oxford weather station
+# Here is an example of how we could <i>simulate the data generating process</i> in real life:
 # 
-# <img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/OxfordSnow.jpg" width="50%"  />
+# To work out how likely we are to get 5 heads out of 10 coin tosses, we could...
+# <ul>    
+#     <li>get a real coin (but who has cash on them these days?)
+#     <li>assume it is fair (<i>p = 0.5</i>)
+#     <li>toss it 10 times (because <i>n = 10</i>)
+#     <li>count the number of heads (<i>k</i>)
+# </ul>
+# ... 
+# 
+# Then we could repeat that whole process many times (say, 100 times) and count how often we get exactly 5 heads.
+# 
+# Or.... we could get the computer to do that. 
+# 
+# Yes, let's get the computer to do it. That will be less hassle.
 
 # ### Set up Python libraries
 # 
@@ -24,139 +37,135 @@ import matplotlib.pyplot as plt
 import scipy.stats as stats
 import pandas 
 import seaborn as sns
-sns.set_theme()
+sns.set_theme() # use pretty defaults
 
 
-# ### Load and inspect the data
+# ### Simulate a single coin toss
 # 
-# Let's load some historical data about the weather in Oxford, from the file "OxfordWeather.csv"
+# The computer doesn't really toss a coin. 
+# 
+# It does someting mathematically equivalent, namely generates a random number called <tt>x</tt> and applies a test to it that will give a "hit" a certain proportion of the time, defined by <i>p</i>. 
+# 
+# If the outcome is a hit,
+# the value of the variable <tt>hit</tt> is set to 1, otherwise <tt>hit</tt> is set to zero
+# 
+# Try running the code block below several times and see if you understand what it does. 
 
 # In[2]:
 
 
-weather = pandas.read_csv("https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/OxfordWeather.csv")
-display(weather)
+# generate a random number between 0 and 1
+x = np.random.uniform(0,1)
+print('value of random number:  ' + str(x))
 
 
-# ### Max and Min temperature
+# What happened?
 # 
-# Let's make two figures using box plots (or violin plots, you choose) to display the distribution of:
-# <ul>
-#     <li>Tmax (max temperature over 24 hours) 
-#     <li>Tmin (min temperature over 24 hours) 
-# </ul>
-# month-by-month over the year (there should be one box per month so you can see temp rise and fall over the year, as we did for Tmean in the boxplot exercises).
+# We used numpy's random number generator (np.random) to get a number (with decimal places) between 0 and 1. The numbers are drawn from a uniform distribution, which means that any number between 0 and 1 is equally likely.
 # 
-# Make your figures as subplots in a larger figure so they sit next to or one above each other - you decide which is allows for a more meaningful comparison
+# Re run the code block above a few times - you should get a different random number every time.
 # 
-# Consider the range of the axes to make the plots easy to compare.
+# How do we convert this to a virtual 'coin toss'? We need to randomly generate "hits" and "misses" rather than decimal numbers.
 # 
-# You might want to increase the spacing between plots - you can find a line of code for this on the 'tweaks' worksheet
+# To do this we simply add a piece of code that checks whether our random number is greater or less than some number - in this case 0.5, as we should get equal frequencies of random numbers greater than 0.5 and less than 0.5, thus simulating a fair coin.
+# 
 
 # In[3]:
 
 
-# your code here!
+# check if it is less than p - this should happen on a proportion of trials equal to p
+p=0.5
+if x>p:
+    hit = 1
+else:
+    hit = 0
+print('is it a hit?:            ' + str(hit))
 
 
-# Which did you choose - box plot or violin plot? Why?
+# ### Simulate 10 coin tosses
 # 
-# Let's try the same thing but comparing mean temperature (Tmean) and rainfall - the relationship isn't nearly as clear
+# In our coin tossing example, we need to toss the coin 10 times (<i>n</i> = 10) 
+# and count how many hits we get (<i>k</i> = ?)
+# 
+# To do this we will create a loop to repeat the coin toss 10 times
 
 # In[4]:
 
 
-sns.boxplot(data=weather, x='MM', y='Rainfall_mm')
-plt.ylim([0,5])
+for i in np.arange(10):
+
+    # generate a random number between 0 and 1
+    x = np.random.uniform(0,1)
+    print('value of random number:  ' + str(x))
+
+    # check if it is less than p - this should happen on a proportion of trials equal to p
+    p=0.7
+    if x>p:
+        hit = 1
+    else:
+        hit = 0
+    print('is it a hit?:            ' + str(hit))
 
 
-# ### Scatterplot
+# <img src="images/Minion_ooph.jpeg" width=15% alt="What?!" >
 # 
-# Let's make a scatterplot of two variables that should definitely be related - Tmin and Tmax, the daily minimum and maximum temperature (say on 21st June the temp peaks at 25 degrees in mid afternoon, but falls to 8 degrees by 3am: Tmax=25 and Tmin=8 for that day)
+# OK, well the output of that code block was not really user friendly.
+# 
+# ### Use an array to store the outcomes
+# 
+# Now that we know how the virtual coin toss works, 
+# we can dispense with printing out the actual value of the random number <tt>x</tt>
+# and just give the 10 binary outcomes (1/0 for hit/miss)
 
 # In[5]:
 
 
-weather[weather['MM']==10].describe()
+for i in np.arange(10):
+
+    # generate a random number between 0 and 1
+    x = np.random.uniform(0,1)
+
+    # check if it is less than p - this should happen on a proportion of trials equal to p
+    p=0.7
+    if x>p:
+        hit = 1
+    else:
+        hit = 0
+    print(hit)
 
 
-# We see that Tmin and Tmax are indeed related, but there are some days with a large temperature range (high TMax and low Tmin) and others with a low range (Tmax and Tmin nearly equal).
-# 
-# Add the line x=y to the plot so you can see where the data would fall if Tmax=Tmin on a given day.
-# 
-# 
-# 
+# ... but we also want to count the number of hits, so we need to store the outcomes (0/1) in an array
 # 
 
 # In[6]:
 
 
-sns.scatterplot
+outcomes = np.empty(10) # create an empty array to store the outcomes
+
+for i in np.arange(10):
+
+    # generate a random number between 0 and 1
+    x = np.random.uniform(0,1)
+
+    # check if it is less than p - this should happen on a proportion of trials equal to p
+    p=0.7
+    if x>p:
+        hit = 1
+    else:
+        hit = 0
+    
+    outcomes[i] = hit # store the valuee of 'hit' on this trial in place 'i' in the array 'outcomes'
+    
+print('outcomes = ' + str(outcomes))
 
 
-# Let's plot the daily temperature range (Trange) in each month to find out if there is a pattern.
-# 
-# Choose an appropriate plot for this yourself.
+# ... and then we need to count the hits:
 
 # In[7]:
 
 
-# Your code here!
-
-
-# It seems months with higher temperatures also have a larger daily temperature range.
-
-# ### Temp vs rainfall
-# 
-# We have seen that rainfall is fairly evenly spread over the months and temp is not. But is there any relationship between rainfall and temperature on a day-by-day basis? 
-# 
-# Make a scatterplot to find out!
-
-# In[8]:
-
-
-# your code here!
-
-
-# Interesting, it looks almost like high rainfall is more likely on warm days, but the plot is so crowded it is a bit hard to tell
-# 
-# ### Fancy joint plots
-# 
-# You can use the function <tt>sns.jointplot</tt> that we saw before (scatterplot plus the two marginal histograms) to make some fancy plots!
-# 
-# Let's revisit the relationship between Tmin and Tmax
-
-# In[9]:
-
-
-sns.jointplot(data=weather, x='Tmin', y='Tmax')
-
-
-# That scatterplot is too crowded. How about a 2D histogram in which shading indicates the count of datapoints in each square?
-
-# In[10]:
-
-
-sns.jointplot(data=weather, x='Tmin', y='Tmax', kind='hist')
-
-
-# Or a join kde plot? Change 'kind' to <tt>kde</tt> above
-# 
-# Or how about a hex plot? Change 'kind' to <tt>hex</tt> above
-# 
-# You can find many more nice examples in the <a href="http://seaborn.pydata.org/examples/index.html">Seaborn Gallery</a> - why not try some out? If you click on any of the pictures of plots you get the code snippet for the plot.
-
-# ### High rainfall occurs in warm months
-# 
-# We calculated the correlation (Pearson's r) between mean daily temperature (Tmean) and rainfall (Rainfall_mm):
-
-# In[11]:
-
-
-sns.scatterplot(data=weather, x='Tmean', y='Rainfall_mm', alpha=0.1)
-plt.xlabel('Mean Daily Temperature (C)')
-
-print('Pearson\'s r = ' + str(weather['Tmean'].corr(weather['Rainfall_mm'])))
+k = np.sum(outcomes)
+print('k = ' + str(k))
 
 
 # In[ ]:

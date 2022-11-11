@@ -45,3 +45,15 @@ chapters:
   - file: CorrCov_PythonCheck.ipynb
   - file: CorrCov_TutorialExercises.ipynb
   - file: CorrCov_HandInAssignment.ipynb
+- file: binomial_overallIntro.md
+  sections:
+  - file: binomial_intro.md
+  - file: binomial_objectives.md
+  - file: binomial_singlecoin.ipynb
+  - file: binomial_10000reps.ipynb
+  - file: binomial_nandp.ipynb
+  - file: binomial_PMFandCDF.ipynb
+  - file: binomial_normal.ipynb
+  - file: binomial_PythonCheck.ipynb
+  - file: binomial_TutorialExercises1.ipynb
+  - file: binomial_TutorialExercises2.ipynb

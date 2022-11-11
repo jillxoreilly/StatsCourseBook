@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Tutorial Exercises &#8212; Introduction to Statistics and Data Science</title>
+    <title>Simulated coin toss &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -320,6 +320,60 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="binomial_intro.html">
+   5. The Binomial Distribution
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_singlecoin.html">
+     5.1. Simulated coin toss
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_10000reps.html">
+     5.2. Repeat the simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_nandp.html">
+     5.3. Changing
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(p\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_PMFandCDF.html">
+     5.4. Binomial PMF and CDF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_normal.html">
+     5.5. Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_TutorialExercises1.html">
+     5.6. Tutorial Exercises I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_TutorialExercises2.html">
+     5.7. Tutorial Exercises II
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -545,46 +599,24 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#oxford-weather-station-data">
-   Oxford weather station data
+  <a class="reference internal nav-link" href="#set-up-python-libraries">
+   Set up Python libraries
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set-up-python-libraries">
-     Set up Python libraries
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-and-inspect-the-data">
-     Load and inspect the data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#max-and-min-temperature">
-     Max and Min temperature
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scatterplot">
-     Scatterplot
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#temp-vs-rainfall">
-     Temp vs rainfall
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fancy-joint-plots">
-     Fancy joint plots
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#high-rainfall-occurs-in-warm-months">
-     High rainfall occurs in warm months
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulate-a-single-coin-toss">
+   Simulate a single coin toss
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulate-10-coin-tosses">
+   Simulate 10 coin tosses
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-an-array-to-store-the-outcomes">
+   Use an array to store the outcomes
+  </a>
  </li>
 </ul>
 
@@ -595,7 +627,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tutorial Exercises</h1>
+                <h1>Simulated coin toss</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -606,46 +638,24 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#oxford-weather-station-data">
-   Oxford weather station data
+  <a class="reference internal nav-link" href="#set-up-python-libraries">
+   Set up Python libraries
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set-up-python-libraries">
-     Set up Python libraries
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-and-inspect-the-data">
-     Load and inspect the data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#max-and-min-temperature">
-     Max and Min temperature
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scatterplot">
-     Scatterplot
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#temp-vs-rainfall">
-     Temp vs rainfall
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fancy-joint-plots">
-     Fancy joint plots
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#high-rainfall-occurs-in-warm-months">
-     High rainfall occurs in warm months
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulate-a-single-coin-toss">
+   Simulate a single coin toss
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulate-10-coin-tosses">
+   Simulate 10 coin tosses
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-an-array-to-store-the-outcomes">
+   Use an array to store the outcomes
+  </a>
  </li>
 </ul>
 
@@ -657,14 +667,24 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises">
-<h1>Tutorial Exercises<a class="headerlink" href="#tutorial-exercises" title="Permalink to this heading">#</a></h1>
-<p>You should work through this is the tutorial. The idea is to bring together the skills you have learned (and highlight any gaps to discuss with your tutor)</p>
-<section id="oxford-weather-station-data">
-<h2>Oxford weather station data<a class="headerlink" href="#oxford-weather-station-data" title="Permalink to this heading">#</a></h2>
-<p>We will work with historical data from the Oxford weather station</p>
-<img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/OxfordSnow.jpg" width="50%"  /><section id="set-up-python-libraries">
-<h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="simulated-coin-toss">
+<h1>Simulated coin toss<a class="headerlink" href="#simulated-coin-toss" title="Permalink to this heading">#</a></h1>
+<p>To get a feel for how likely different outcomes are, we are going to <i>simulate the data generating process</i></p>
+<img src="images/Minion_what.jpg" width=10%>
+<p>Here is an example of how we could <i>simulate the data generating process</i> in real life:</p>
+<p>To work out how likely we are to get 5 heads out of 10 coin tosses, we could…</p>
+<ul>    
+    <li>get a real coin (but who has cash on them these days?)
+    <li>assume it is fair (<i>p = 0.5</i>)
+    <li>toss it 10 times (because <i>n = 10</i>)
+    <li>count the number of heads (<i>k</i>)
+</ul>
+... 
+<p>Then we could repeat that whole process many times (say, 100 times) and count how often we get exactly 5 heads.</p>
+<p>Or…. we could get the computer to do that.</p>
+<p>Yes, let’s get the computer to do it. That will be less hassle.</p>
+<section id="set-up-python-libraries">
+<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -674,438 +694,188 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
 <span class="kn">import</span> <span class="nn">pandas</span> 
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span> <span class="c1"># use pretty defaults</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="load-and-inspect-the-data">
-<h3>Load and inspect the data<a class="headerlink" href="#load-and-inspect-the-data" title="Permalink to this heading">#</a></h3>
-<p>Let’s load some historical data about the weather in Oxford, from the file “OxfordWeather.csv”</p>
+<section id="simulate-a-single-coin-toss">
+<h2>Simulate a single coin toss<a class="headerlink" href="#simulate-a-single-coin-toss" title="Permalink to this heading">#</a></h2>
+<p>The computer doesn’t really toss a coin.</p>
+<p>It does someting mathematically equivalent, namely generates a random number called <tt>x</tt> and applies a test to it that will give a “hit” a certain proportion of the time, defined by <i>p</i>.</p>
+<p>If the outcome is a hit,
+the value of the variable <tt>hit</tt> is set to 1, otherwise <tt>hit</tt> is set to zero</p>
+<p>Try running the code block below several times and see if you understand what it does.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/OxfordWeather.csv&quot;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">weather</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate a random number between 0 and 1</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;value of random number:  &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.19294012505799718
+</pre></div>
+</div>
+</div>
+</div>
+<p>What happened?</p>
+<p>We used numpy’s random number generator (np.random) to get a number (with decimal places) between 0 and 1. The numbers are drawn from a uniform distribution, which means that any number between 0 and 1 is equally likely.</p>
+<p>Re run the code block above a few times - you should get a different random number every time.</p>
+<p>How do we convert this to a virtual ‘coin toss’? We need to randomly generate “hits” and “misses” rather than decimal numbers.</p>
+<p>To do this we simply add a piece of code that checks whether our random number is greater or less than some number - in this case 0.5, as we should get equal frequencies of random numbers greater than 0.5 and less than 0.5, thus simulating a fair coin.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check if it is less than p - this should happen on a proportion of trials equal to p</span>
+<span class="n">p</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">p</span><span class="p">:</span>
+    <span class="n">hit</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">hit</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;is it a hit?:            &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">hit</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>is it a hit?:            0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="simulate-10-coin-tosses">
+<h2>Simulate 10 coin tosses<a class="headerlink" href="#simulate-10-coin-tosses" title="Permalink to this heading">#</a></h2>
+<p>In our coin tossing example, we need to toss the coin 10 times (<i>n</i> = 10)
+and count how many hits we get (<i>k</i> = ?)</p>
+<p>To do this we will create a loop to repeat the coin toss 10 times</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+    <span class="c1"># generate a random number between 0 and 1</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;value of random number:  &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>YYYY</th>
-      <th>MM</th>
-      <th>DD</th>
-      <th>Tmax</th>
-      <th>Tmin</th>
-      <th>Tmean</th>
-      <th>Trange</th>
-      <th>Rainfall_mm</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1827</td>
-      <td>1</td>
-      <td>1</td>
-      <td>8.3</td>
-      <td>5.6</td>
-      <td>7.0</td>
-      <td>2.7</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1827</td>
-      <td>1</td>
-      <td>2</td>
-      <td>2.2</td>
-      <td>0.0</td>
-      <td>1.1</td>
-      <td>2.2</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1827</td>
-      <td>1</td>
-      <td>3</td>
-      <td>-2.2</td>
-      <td>-8.3</td>
-      <td>-5.3</td>
-      <td>6.1</td>
-      <td>9.7</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1827</td>
-      <td>1</td>
-      <td>4</td>
-      <td>-1.7</td>
-      <td>-7.8</td>
-      <td>-4.8</td>
-      <td>6.1</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1827</td>
-      <td>1</td>
-      <td>5</td>
-      <td>0.0</td>
-      <td>-10.6</td>
-      <td>-5.3</td>
-      <td>10.6</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>71338</th>
-      <td>2022</td>
-      <td>4</td>
-      <td>26</td>
-      <td>15.2</td>
-      <td>4.1</td>
-      <td>9.7</td>
-      <td>11.1</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>71339</th>
-      <td>2022</td>
-      <td>4</td>
-      <td>27</td>
-      <td>10.7</td>
-      <td>2.6</td>
-      <td>6.7</td>
-      <td>8.1</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>71340</th>
-      <td>2022</td>
-      <td>4</td>
-      <td>28</td>
-      <td>12.7</td>
-      <td>3.9</td>
-      <td>8.3</td>
-      <td>8.8</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>71341</th>
-      <td>2022</td>
-      <td>4</td>
-      <td>29</td>
-      <td>11.7</td>
-      <td>6.7</td>
-      <td>9.2</td>
-      <td>5.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>71342</th>
-      <td>2022</td>
-      <td>4</td>
-      <td>30</td>
-      <td>17.6</td>
-      <td>1.0</td>
-      <td>9.3</td>
-      <td>16.6</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>71343 rows × 8 columns</p>
-</div></div></div>
-</div>
-</section>
-<section id="max-and-min-temperature">
-<h3>Max and Min temperature<a class="headerlink" href="#max-and-min-temperature" title="Permalink to this heading">#</a></h3>
-<p>Let’s make two figures using box plots (or violin plots, you choose) to display the distribution of:</p>
-<ul>
-    <li>Tmax (max temperature over 24 hours) 
-    <li>Tmin (min temperature over 24 hours) 
-</ul>
-month-by-month over the year (there should be one box per month so you can see temp rise and fall over the year, as we did for Tmean in the boxplot exercises).
-<p>Make your figures as subplots in a larger figure so they sit next to or one above each other - you decide which is allows for a more meaningful comparison</p>
-<p>Consider the range of the axes to make the plots easy to compare.</p>
-<p>You might want to increase the spacing between plots - you can find a line of code for this on the ‘tweaks’ worksheet</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here!</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Which did you choose - box plot or violin plot? Why?</p>
-<p>Let’s try the same thing but comparing mean temperature (Tmean) and rainfall - the relationship isn’t nearly as clear</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">weather</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;MM&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Rainfall_mm&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+    <span class="c1"># check if it is less than p - this should happen on a proportion of trials equal to p</span>
+    <span class="n">p</span><span class="o">=</span><span class="mf">0.7</span>
+    <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">p</span><span class="p">:</span>
+        <span class="n">hit</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hit</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;is it a hit?:            &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">hit</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 5.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.6119382562730452
+is it a hit?:            0
+value of random number:  0.7554339509539397
+is it a hit?:            1
+value of random number:  0.09299174241957187
+is it a hit?:            0
+value of random number:  0.5276041855023227
+is it a hit?:            0
+value of random number:  0.10078770980498031
+is it a hit?:            0
+value of random number:  0.8653536933895245
+is it a hit?:            1
+value of random number:  0.2541606603084833
+is it a hit?:            0
+value of random number:  0.9859751063237724
+is it a hit?:            1
+value of random number:  0.9545088049738498
+is it a hit?:            1
+value of random number:  0.948168268388098
+is it a hit?:            1
 </pre></div>
 </div>
-<img alt="_images/tmp_8_1.png" src="_images/tmp_8_1.png" />
 </div>
 </div>
+<img src="images/Minion_ooph.jpeg" width=15% alt="What?!" >
+<p>OK, well the output of that code block was not really user friendly.</p>
 </section>
-<section id="scatterplot">
-<h3>Scatterplot<a class="headerlink" href="#scatterplot" title="Permalink to this heading">#</a></h3>
-<p>Let’s make a scatterplot of two variables that should definitely be related - Tmin and Tmax, the daily minimum and maximum temperature (say on 21st June the temp peaks at 25 degrees in mid afternoon, but falls to 8 degrees by 3am: Tmax=25 and Tmin=8 for that day)</p>
+<section id="use-an-array-to-store-the-outcomes">
+<h2>Use an array to store the outcomes<a class="headerlink" href="#use-an-array-to-store-the-outcomes" title="Permalink to this heading">#</a></h2>
+<p>Now that we know how the virtual coin toss works,
+we can dispense with printing out the actual value of the random number <tt>x</tt>
+and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span><span class="p">[</span><span class="n">weather</span><span class="p">[</span><span class="s1">&#39;MM&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+    <span class="c1"># generate a random number between 0 and 1</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>YYYY</th>
-      <th>MM</th>
-      <th>DD</th>
-      <th>Tmax</th>
-      <th>Tmin</th>
-      <th>Tmean</th>
-      <th>Trange</th>
-      <th>Rainfall_mm</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>6045.000000</td>
-      <td>6045.0</td>
-      <td>6045.000000</td>
-      <td>6045.000000</td>
-      <td>6045.000000</td>
-      <td>6045.000000</td>
-      <td>6043.00000</td>
-      <td>6045.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>1924.000000</td>
-      <td>10.0</td>
-      <td>16.000000</td>
-      <td>14.112639</td>
-      <td>6.874028</td>
-      <td>10.518825</td>
-      <td>7.23907</td>
-      <td>2.173002</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>56.295568</td>
-      <td>0.0</td>
-      <td>8.945012</td>
-      <td>3.090256</td>
-      <td>3.825368</td>
-      <td>3.123133</td>
-      <td>3.05920</td>
-      <td>4.596017</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>1827.000000</td>
-      <td>10.0</td>
-      <td>1.000000</td>
-      <td>2.300000</td>
-      <td>-5.700000</td>
-      <td>-0.200000</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>1875.000000</td>
-      <td>10.0</td>
-      <td>8.000000</td>
-      <td>12.100000</td>
-      <td>4.300000</td>
-      <td>8.400000</td>
-      <td>5.00000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>1924.000000</td>
-      <td>10.0</td>
-      <td>16.000000</td>
-      <td>14.200000</td>
-      <td>7.200000</td>
-      <td>10.700000</td>
-      <td>7.00000</td>
-      <td>0.100000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>1973.000000</td>
-      <td>10.0</td>
-      <td>24.000000</td>
-      <td>16.100000</td>
-      <td>9.700000</td>
-      <td>12.700000</td>
-      <td>9.20000</td>
-      <td>2.200000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>2021.000000</td>
-      <td>10.0</td>
-      <td>31.000000</td>
-      <td>29.100000</td>
-      <td>17.000000</td>
-      <td>20.800000</td>
-      <td>19.90000</td>
-      <td>60.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>We see that Tmin and Tmax are indeed related, but there are some days with a large temperature range (high TMax and low Tmin) and others with a low range (Tmax and Tmin nearly equal).</p>
-<p>Add the line x=y to the plot so you can see where the data would fall if Tmax=Tmin on a given day.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span>
+    <span class="c1"># check if it is less than p - this should happen on a proportion of trials equal to p</span>
+    <span class="n">p</span><span class="o">=</span><span class="mf">0.7</span>
+    <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">p</span><span class="p">:</span>
+        <span class="n">hit</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hit</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">hit</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function seaborn.relational.scatterplot(*, x=None, y=None, hue=None, style=None, size=None, data=None, palette=None, hue_order=None, hue_norm=None, sizes=None, size_order=None, size_norm=None, markers=True, style_order=None, x_bins=None, y_bins=None, units=None, estimator=None, ci=95, n_boot=1000, alpha=None, x_jitter=None, y_jitter=None, legend=&#39;auto&#39;, ax=None, **kwargs)&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
+1
+0
+0
+0
+0
+0
+0
+0
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let’s plot the daily temperature range (Trange) in each month to find out if there is a pattern.</p>
-<p>Choose an appropriate plot for this yourself.</p>
+<p>… but we also want to count the number of hits, so we need to store the outcomes (0/1) in an array</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here!</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>It seems months with higher temperatures also have a larger daily temperature range.</p>
-</section>
-<section id="temp-vs-rainfall">
-<h3>Temp vs rainfall<a class="headerlink" href="#temp-vs-rainfall" title="Permalink to this heading">#</a></h3>
-<p>We have seen that rainfall is fairly evenly spread over the months and temp is not. But is there any relationship between rainfall and temperature on a day-by-day basis?</p>
-<p>Make a scatterplot to find out!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here!</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Interesting, it looks almost like high rainfall is more likely on warm days, but the plot is so crowded it is a bit hard to tell</p>
-</section>
-<section id="fancy-joint-plots">
-<h3>Fancy joint plots<a class="headerlink" href="#fancy-joint-plots" title="Permalink to this heading">#</a></h3>
-<p>You can use the function <tt>sns.jointplot</tt> that we saw before (scatterplot plus the two marginal histograms) to make some fancy plots!</p>
-<p>Let’s revisit the relationship between Tmin and Tmax</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">weather</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Tmin&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Tmax&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x7f961af93fd0&gt;
-</pre></div>
-</div>
-<img alt="_images/tmp_19_1.png" src="_images/tmp_19_1.png" />
-</div>
-</div>
-<p>That scatterplot is too crowded. How about a 2D histogram in which shading indicates the count of datapoints in each square?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">weather</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Tmin&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Tmax&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x7f962192c520&gt;
-</pre></div>
-</div>
-<img alt="_images/tmp_21_1.png" src="_images/tmp_21_1.png" />
-</div>
-</div>
-<p>Or a join kde plot? Change ‘kind’ to <tt>kde</tt> above</p>
-<p>Or how about a hex plot? Change ‘kind’ to <tt>hex</tt> above</p>
-<p>You can find many more nice examples in the <a href="http://seaborn.pydata.org/examples/index.html">Seaborn Gallery</a> - why not try some out? If you click on any of the pictures of plots you get the code snippet for the plot.</p>
-</section>
-<section id="high-rainfall-occurs-in-warm-months">
-<h3>High rainfall occurs in warm months<a class="headerlink" href="#high-rainfall-occurs-in-warm-months" title="Permalink to this heading">#</a></h3>
-<p>We calculated the correlation (Pearson’s r) between mean daily temperature (Tmean) and rainfall (Rainfall_mm):</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">weather</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Tmean&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Rainfall_mm&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Mean Daily Temperature (C)&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outcomes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># create an empty array to store the outcomes</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pearson</span><span class="se">\&#39;</span><span class="s1">s r = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">weather</span><span class="p">[</span><span class="s1">&#39;Tmean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">weather</span><span class="p">[</span><span class="s1">&#39;Rainfall_mm&#39;</span><span class="p">])))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+
+    <span class="c1"># generate a random number between 0 and 1</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># check if it is less than p - this should happen on a proportion of trials equal to p</span>
+    <span class="n">p</span><span class="o">=</span><span class="mf">0.7</span>
+    <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">p</span><span class="p">:</span>
+        <span class="n">hit</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hit</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="n">outcomes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">hit</span> <span class="c1"># store the valuee of &#39;hit&#39; on this trial in place &#39;i&#39; in the array &#39;outcomes&#39;</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;outcomes = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">outcomes</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pearson&#39;s r = 0.035036901577064086
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [0. 0. 0. 1. 1. 0. 0. 0. 0. 1.]
 </pre></div>
 </div>
-<img alt="_images/tmp_24_1.png" src="_images/tmp_24_1.png" />
 </div>
 </div>
-</section>
+<p>… and then we need to count the hits:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">outcomes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;k = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 3.0
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 

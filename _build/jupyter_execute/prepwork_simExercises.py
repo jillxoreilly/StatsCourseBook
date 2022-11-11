@@ -29,7 +29,7 @@ sns.set_theme()
 # 
 # ### Create some data
 # 
-# We are going to start by creating some fake data (great start to your degree!). These are the heights of 10,000 simmulated (made up) men and 10,000 simulated women, which will have the same distribution as the real heights of men and women in the UK.
+# We are going to start by creating some fake data (great start to your degree!). These are the heights of 10,000 simulated (made up) men and 10,000 simulated women, which will have the same distribution as the real heights of men and women in the UK.
 # 
 # For today you really don't need to worry about how I'm creating these simulated heights.
 # 
