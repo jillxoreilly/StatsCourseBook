@@ -320,6 +320,60 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="binomial_intro.html">
+   5. The Binomial Distribution
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_singlecoin.html">
+     5.1. Simulated coin toss
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_10000reps.html">
+     5.2. Repeat the simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_nandp.html">
+     5.3. Changing
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(p\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_PMFandCDF.html">
+     5.4. Binomial PMF and CDF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_normal.html">
+     5.5. Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_TutorialExercises1.html">
+     5.6. Tutorial Exercises I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_TutorialExercises2.html">
+     5.7. Tutorial Exercises II
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -926,7 +980,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_92814</span><span class="o">/</span><span class="mf">4122011182.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_2478</span><span class="o">/</span><span class="mf">4122011182.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heartAttack</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;AGE&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;LOS&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
@@ -960,74 +1014,46 @@ title="Print to PDF"
 <span class="g g-Whitespace">    </span><span class="mi">567</span>                     <span class="n">hist</span><span class="p">[</span><span class="s2">&quot;heights&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">bottom</span><span class="p">,</span>
 
 <span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/axes/_axes.py</span> in <span class="ni">barh</span><span class="nt">(self, y, width, height, left, align, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2549</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2550</span><span class="s2">         kwargs.setdefault(&#39;orientation&#39;, &#39;horizontal&#39;)</span>
-<span class="ne">-&gt; </span><span class="mi">2551</span><span class="s2">         patches = self.bar(x=left, height=height, width=width, bottom=y,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2552</span><span class="s2">                            align=align, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2553</span><span class="s2">         return patches</span>
+<span class="g g-Whitespace">   </span><span class="mi">2549</span>         <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2550</span><span class="sd">         kwargs.setdefault(&#39;orientation&#39;, &#39;horizontal&#39;)</span>
+<span class="ne">-&gt; </span><span class="mi">2551</span><span class="sd">         patches = self.bar(x=left, height=height, width=width, bottom=y,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2552</span><span class="sd">                            align=align, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2553</span><span class="sd">         return patches</span>
 
 <span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/__init__.py</span> in <span class="ni">inner</span><span class="nt">(ax, data, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1410</span><span class="s2">     def inner(ax, *args, data=None, **kwargs):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1411</span><span class="s2">         if data is None:</span>
-<span class="ne">-&gt; </span><span class="mi">1412</span><span class="s2">             return func(ax, *map(sanitize_sequence, args), **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1413</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1414</span><span class="s2">         bound = new_sig.bind(ax, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1410</span><span class="sd">     def inner(ax, *args, data=None, **kwargs):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1411</span><span class="sd">         if data is None:</span>
+<span class="ne">-&gt; </span><span class="mi">1412</span><span class="sd">             return func(ax, *map(sanitize_sequence, args), **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1413</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1414</span><span class="sd">         bound = new_sig.bind(ax, *args, **kwargs)</span>
 
 <span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/axes/_axes.py</span> in <span class="ni">bar</span><span class="nt">(self, x, height, width, bottom, align, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2407</span><span class="s2">             elif orientation == &#39;horizontal&#39;:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2408</span><span class="s2">                 r.sticky_edges.x.append(l)</span>
-<span class="ne">-&gt; </span><span class="mi">2409</span><span class="s2">             self.add_patch(r)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2410</span><span class="s2">             patches.append(r)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2411</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">2407</span><span class="sd">             elif orientation == &#39;horizontal&#39;:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2408</span><span class="sd">                 r.sticky_edges.x.append(l)</span>
+<span class="ne">-&gt; </span><span class="mi">2409</span><span class="sd">             self.add_patch(r)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2410</span><span class="sd">             patches.append(r)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2411</span><span class="sd"> </span>
 
 <span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/axes/_base.py</span> in <span class="ni">add_patch</span><span class="nt">(self, p)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2361</span><span class="s2">         if p.get_clip_path() is None:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2362</span><span class="s2">             p.set_clip_path(self.patch)</span>
-<span class="ne">-&gt; </span><span class="mi">2363</span><span class="s2">         self._update_patch_limits(p)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2364</span><span class="s2">         self._children.append(p)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2365</span><span class="s2">         p._remove_method = self._children.remove</span>
+<span class="g g-Whitespace">   </span><span class="mi">2361</span><span class="sd">         if p.get_clip_path() is None:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2362</span><span class="sd">             p.set_clip_path(self.patch)</span>
+<span class="ne">-&gt; </span><span class="mi">2363</span><span class="sd">         self._update_patch_limits(p)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2364</span><span class="sd">         self._children.append(p)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2365</span><span class="sd">         p._remove_method = self._children.remove</span>
 
 <span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/axes/_base.py</span> in <span class="ni">_update_patch_limits</span><span class="nt">(self, patch)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2394</span><span class="s2">             if updatey and patch_trf == self.get_xaxis_transform():</span>
-<span class="g g-Whitespace">   </span><span class="mi">2395</span><span class="s2">                 updatey = False</span>
-<span class="ne">-&gt; </span><span class="mi">2396</span><span class="s2">         trf_to_data = patch_trf - self.transData</span>
-<span class="g g-Whitespace">   </span><span class="mi">2397</span><span class="s2">         xys = trf_to_data.transform(vertices)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2398</span><span class="s2">         self.update_datalim(xys, updatex=updatex, updatey=updatey)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2381</span><span class="sd">         p = patch.get_path()</span>
+<span class="g g-Whitespace">   </span><span class="mi">2382</span><span class="sd">         vertices = p.vertices if p.codes is None else p.vertices[np.isin(</span>
+<span class="ne">-&gt; </span><span class="mi">2383</span><span class="sd">             p.codes, (mpath.Path.CLOSEPOLY, mpath.Path.STOP), invert=True)]</span>
+<span class="g g-Whitespace">   </span><span class="mi">2384</span><span class="sd">         if not vertices.size:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2385</span><span class="sd">             return</span>
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/transforms.py</span> in <span class="ni">__sub__</span><span class="nt">(self, other)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1457</span><span class="s2">             return NotImplemented</span>
-<span class="g g-Whitespace">   </span><span class="mi">1458</span><span class="s2">         for remainder, sub_tree in self._iter_break_from_left_to_right():</span>
-<span class="ne">-&gt; </span><span class="mi">1459</span><span class="s2">             if sub_tree == other:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1460</span><span class="s2">                 return remainder</span>
-<span class="g g-Whitespace">   </span><span class="mi">1461</span><span class="s2">         for remainder, sub_tree in other._iter_break_from_left_to_right():</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/transforms.py</span> in <span class="ni">__eq__</span><span class="nt">(self, other)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2395</span><span class="s2">     def __eq__(self, other):</span>
-<span class="g g-Whitespace">   </span><span class="mi">2396</span><span class="s2">         if isinstance(other, (CompositeGenericTransform, CompositeAffine2D)):</span>
-<span class="ne">-&gt; </span><span class="mi">2397</span><span class="s2">             return self is other or (self._a == other._a</span>
-<span class="g g-Whitespace">   </span><span class="mi">2398</span><span class="s2">                                      and self._b == other._b)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2399</span><span class="s2">         else:</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/transforms.py</span> in <span class="ni">__eq__</span><span class="nt">(self, other)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1725</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1726</span><span class="s2">     def __eq__(self, other):</span>
-<span class="ne">-&gt; </span><span class="mi">1727</span><span class="s2">         return self._child.__eq__(other)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1728</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1729</span><span class="s2">     __str__ = _make_str_method(&quot;_child&quot;)</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/transforms.py</span> in <span class="ni">__eq__</span><span class="nt">(self, other)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2168</span><span class="s2">             return (self._x == other._x) and (self._y == other._y)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2169</span><span class="s2">         elif self._x == self._y:</span>
-<span class="ne">-&gt; </span><span class="mi">2170</span><span class="s2">             return self._x == other</span>
-<span class="g g-Whitespace">   </span><span class="mi">2171</span><span class="s2">         else:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2172</span><span class="s2">             return NotImplemented</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/transforms.py</span> in <span class="ni">__eq__</span><span class="nt">(self, other)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1790</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1791</span><span class="s2">     def __eq__(self, other):</span>
-<span class="ne">-&gt; </span><span class="mi">1792</span><span class="s2">         if getattr(other, &quot;is_affine&quot;, False) and hasattr(other, &quot;get_matrix&quot;):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1793</span><span class="s2">             return np.all(self.get_matrix() == other.get_matrix())</span>
-<span class="g g-Whitespace">   </span><span class="mi">1794</span><span class="s2">         return NotImplemented</span>
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/path.py</span> in <span class="ni">codes</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span><span class="sd">         self._update_values()</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span><span class="sd"> </span>
+<span class="ne">--&gt; </span><span class="mi">214</span><span class="sd">     @property</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span><span class="sd">     def codes(self):</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span><span class="sd">         &quot;&quot;&quot;</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
