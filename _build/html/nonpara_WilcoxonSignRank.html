@@ -323,8 +323,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="binomial_intro.html">
-   5. The Binomial Distribution
+  <a class="reference internal" href="binomial_overallIntro.html">
+   5. Data generating distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -333,18 +333,28 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="binomial_intro.html">
+     5.1. The Binomial Distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_objectives.html">
+     5.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="binomial_singlecoin.html">
-     5.1. Simulated coin toss
+     5.3. Simulated coin toss
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="binomial_10000reps.html">
-     5.2. Repeat the simulation
+     5.4. Repeat the simulation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="binomial_nandp.html">
-     5.3. Changing
+     5.5. Changing
      <span class="math notranslate nohighlight">
       \(n\)
      </span>
@@ -356,22 +366,27 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="binomial_PMFandCDF.html">
-     5.4. Binomial PMF and CDF
+     5.6. Binomial PMF and CDF
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="binomial_normal.html">
-     5.5. Normal distribution
+     5.7. Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_PythonCheck.html">
+     5.8. Python skills check
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="binomial_TutorialExercises1.html">
-     5.6. Tutorial Exercises I
+     5.9. Tutorial Exercises I
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="binomial_TutorialExercises2.html">
-     5.7. Tutorial Exercises II
+     5.10. Tutorial Exercises II
     </a>
    </li>
   </ul>
@@ -1039,7 +1054,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb803d7d250&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa9eb33e220&gt;]
 </pre></div>
 </div>
 <img alt="_images/nonpara_WilcoxonSignRank_7_1.png" src="_images/nonpara_WilcoxonSignRank_7_1.png" />
@@ -1846,9 +1861,9 @@ R- = 46.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True, False,  True, False, False, False,  True, False,  True,
-       False, False,  True, False,  True, False,  True, False,  True,
-       False,  True])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True,  True,  True,  True, False, False,  True, False,  True,
+        True,  True,  True, False,  True,  True,  True, False,  True,
+        True, False])
 </pre></div>
 </div>
 </div>
@@ -1864,8 +1879,8 @@ R- = 46.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R+ = 100
-R- = 110
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R+ = 141
+R- = 69
 </pre></div>
 </div>
 </div>
@@ -1879,7 +1894,7 @@ R- = 110
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T = 100
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T = 141
 </pre></div>
 </div>
 </div>
@@ -1928,7 +1943,7 @@ R- = 110
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0246
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0235
 </pre></div>
 </div>
 </div>
