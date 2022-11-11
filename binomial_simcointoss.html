@@ -321,8 +321,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="binomial_intro.html">
-   5. The Binomial Distribution
+  <a class="reference internal" href="binomial_overallIntro.html">
+   5. Data generating distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -331,18 +331,28 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="binomial_intro.html">
+     5.1. The Binomial Distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_objectives.html">
+     5.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="binomial_singlecoin.html">
-     5.1. Simulated coin toss
+     5.3. Simulated coin toss
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="binomial_10000reps.html">
-     5.2. Repeat the simulation
+     5.4. Repeat the simulation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="binomial_nandp.html">
-     5.3. Changing
+     5.5. Changing
      <span class="math notranslate nohighlight">
       \(n\)
      </span>
@@ -354,22 +364,27 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="binomial_PMFandCDF.html">
-     5.4. Binomial PMF and CDF
+     5.6. Binomial PMF and CDF
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="binomial_normal.html">
-     5.5. Normal distribution
+     5.7. Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_PythonCheck.html">
+     5.8. Python skills check
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="binomial_TutorialExercises1.html">
-     5.6. Tutorial Exercises I
+     5.9. Tutorial Exercises I
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="binomial_TutorialExercises2.html">
-     5.7. Tutorial Exercises II
+     5.10. Tutorial Exercises II
     </a>
    </li>
   </ul>
@@ -733,7 +748,7 @@ the value of the variable <tt>hit</tt> is set to 1, otherwise <tt>hit</tt> is se
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.2209219974707778
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.8946895519450119
 </pre></div>
 </div>
 </div>
@@ -756,7 +771,7 @@ the value of the variable <tt>hit</tt> is set to 1, otherwise <tt>hit</tt> is se
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>is it a hit?:            0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>is it a hit?:            1
 </pre></div>
 </div>
 </div>
@@ -786,25 +801,25 @@ and count how many hits we get (<i>k</i> = ?)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.28003924445494244
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.5300075775269597
 is it a hit?:            0
-value of random number:  0.7058995149225015
-is it a hit?:            1
-value of random number:  0.34697055502506446
+value of random number:  0.59119744234181
 is it a hit?:            0
-value of random number:  0.7726612977795746
-is it a hit?:            1
-value of random number:  0.2927854279403287
+value of random number:  0.5082102156212098
 is it a hit?:            0
-value of random number:  0.9454803465507197
-is it a hit?:            1
-value of random number:  0.5815241065333909
+value of random number:  0.43673528583333354
 is it a hit?:            0
-value of random number:  0.12426071997164745
+value of random number:  0.19399954639705497
 is it a hit?:            0
-value of random number:  0.9190327754082432
-is it a hit?:            1
-value of random number:  0.41101383639753364
+value of random number:  0.2616203558113068
+is it a hit?:            0
+value of random number:  0.23899074152705502
+is it a hit?:            0
+value of random number:  0.6186906421497924
+is it a hit?:            0
+value of random number:  0.6493466255431591
+is it a hit?:            0
+value of random number:  0.6118460597904921
 is it a hit?:            0
 </pre></div>
 </div>
@@ -836,16 +851,16 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 0
-0
-1
 0
 0
 0
 0
 0
 1
+0
+0
 </pre></div>
 </div>
 </div>
@@ -874,7 +889,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [1. 0. 0. 0. 0. 0. 0. 0. 1. 1.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [1. 0. 1. 0. 1. 0. 1. 0. 0. 1.]
 </pre></div>
 </div>
 </div>
@@ -888,7 +903,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 3.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 5.0
 </pre></div>
 </div>
 </div>
@@ -910,7 +925,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 8
 </pre></div>
 </div>
 </div>
