@@ -7,9 +7,9 @@
 # 
 # In this section we will fit such an approximation.
 # 
-# In the Olden Days (as recently as 2021 on this course) you might have used a normal approximation to get the proability of obtaining at least $k$ hits when $n$ is large, which would be cumbersome to do bby hand using the binomial equation
+# In the Olden Days (as recently as 2021 on this course) you might have used a normal approximation to get the proability of obtaining at least $k$ hits when $n$ is large, which would be cumbersome to do by hand using the binomial equation
 # 
-# In Modern Times (now we are workin on computers) you won't need to do that, but it is important to understand conceptually the relationship between these distributions as this is fundamental to the Central Limit Theorem, which in turn explains why Most Noise in the world is Normal (more on these topics next week).
+# In Modern Times (now we are working on computers) you won't need to do that, but it is important to understand conceptually the relationship between these distributions as this is fundamental to the Central Limit Theorem, which in turn explains why Most Noise in the world is Normal (more on these topics next week).
 # 
 # 
 # 
@@ -162,7 +162,7 @@ s = (n*p*(1-p))**0.5
 # 
 # So the probability that $k=22$ (under the discrete binomial) is equivalent to the probability that $k$ takes any value that would <i>round</i> to 22 (under the continuous normal), ie $p(21.5 <= k < 22.5)$
 # 
-# <img src= "images/continuity.png" width="100%"  />
+# <img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/continuity.png" width="100%"  />
 # 
 # Similarly the probaility  $k>=22$ (under the discrete binomial) is equivalent to the probability that $k$ takes any value that would <i>round</i> to 22 or more (under the continuous normal), ie $p(k>21.5)$
 # 

@@ -703,8 +703,8 @@ title="Print to PDF"
 <h1><span class="section-number">5.10. </span>Tutorial Exercises II<a class="headerlink" href="#tutorial-exercises-ii" title="Permalink to this heading">#</a></h1>
 <p>We saw in the lecture that when <span class="math notranslate nohighlight">\(n\)</span> is large, the binomial distribution can be approximated by the normal distribution</p>
 <p>In this section we will fit such an approximation.</p>
-<p>In the Olden Days (as recently as 2021 on this course) you might have used a normal approximation to get the proability of obtaining at least <span class="math notranslate nohighlight">\(k\)</span> hits when <span class="math notranslate nohighlight">\(n\)</span> is large, which would be cumbersome to do bby hand using the binomial equation</p>
-<p>In Modern Times (now we are workin on computers) you won’t need to do that, but it is important to understand conceptually the relationship between these distributions as this is fundamental to the Central Limit Theorem, which in turn explains why Most Noise in the world is Normal (more on these topics next week).</p>
+<p>In the Olden Days (as recently as 2021 on this course) you might have used a normal approximation to get the proability of obtaining at least <span class="math notranslate nohighlight">\(k\)</span> hits when <span class="math notranslate nohighlight">\(n\)</span> is large, which would be cumbersome to do by hand using the binomial equation</p>
+<p>In Modern Times (now we are working on computers) you won’t need to do that, but it is important to understand conceptually the relationship between these distributions as this is fundamental to the Central Limit Theorem, which in turn explains why Most Noise in the world is Normal (more on these topics next week).</p>
 <section id="normal-approximation-to-the-binomial">
 <h2>Normal approximation to the binomial<a class="headerlink" href="#normal-approximation-to-the-binomial" title="Permalink to this heading">#</a></h2>
 <p>Say we want to fit a normal approximation to the binomial distribution:</p>
@@ -859,7 +859,7 @@ title="Print to PDF"
 <p>Hm, it’s not the same.</p>
 <p>The reason is that the binomial is defined only for discrete values.</p>
 <p>So the probability that <span class="math notranslate nohighlight">\(k=22\)</span> (under the discrete binomial) is equivalent to the probability that <span class="math notranslate nohighlight">\(k\)</span> takes any value that would <i>round</i> to 22 (under the continuous normal), ie <span class="math notranslate nohighlight">\(p(21.5 &lt;= k &lt; 22.5)\)</span></p>
-<img src= "images/continuity.png" width="100%"  />
+<img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/continuity.png" width="100%"  />
 <p>Similarly the probaility  <span class="math notranslate nohighlight">\(k&gt;=22\)</span> (under the discrete binomial) is equivalent to the probability that <span class="math notranslate nohighlight">\(k\)</span> takes any value that would <i>round</i> to 22 or more (under the continuous normal), ie <span class="math notranslate nohighlight">\(p(k&gt;21.5)\)</span></p>
 <p>Let’s check if this gives us a match to the binomial probability:</p>
 <div class="cell docutils container">

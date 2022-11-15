@@ -75,15 +75,15 @@ plt.show()
 # 
 # Work this out based on 
 # <ul>
-# <li>The simulation
-# <li> The equation
+# <li> The function <tt>stats.binom.cdf()</tt>
+# <li> The simulation
 # </ul>
 # 
 # Hopefully the answers should match quite closely!
 
 # ## Blindsight example
 # 
-# Warrington and Weiskrantz (1974) worked that a patient (called in their work by his initials, DB). DB had damage to the visual cortex of his brain, and reported no conscious vision, but Warrington and Weiskrantz noticed some hints that he could react to visual stimuli even though he was unaware of them, so they set up the following experiment:
+# Warrington and Weiskrantz (1974) worked with a patient (called in their work by his initials, DB). DB had damage to the visual cortex of his brain, and reported no conscious vision, but Warrington and Weiskrantz noticed some hints that he could react to visual stimuli even though he was unaware of them, so they set up the following experiment:
 # 
 # Symbols are presented on a screen - 50% of symbols are X's and 50% are O's The patient guesses whether each symbol is an X or an O
 # 
