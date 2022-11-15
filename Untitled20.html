@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>5.9. Tutorial Exercises I &#8212; Introduction to Statistics and Data Science</title>
+    <title>Drawing random samples &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5.10. Tutorial Exercises II" href="binomial_TutorialExercises2.html" />
-    <link rel="prev" title="5.8. Python skills check" href="binomial_PythonCheck.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -116,7 +114,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="prepwork_intro.html">
    1. Preparatory Work
@@ -324,16 +322,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="binomial_overallIntro.html">
    5. Data generating distributions
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="binomial_intro.html">
      5.1. The Binomial Distribution
@@ -381,8 +379,8 @@ const thebe_selector_output = ".output, .cell_output"
      5.8. Python skills check
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_TutorialExercises1.html">
      5.9. Tutorial Exercises I
     </a>
    </li>
@@ -452,7 +450,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/binomial_TutorialExercises1.ipynb"
+        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/Untitled20.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -470,7 +468,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/binomial_TutorialExercises1.ipynb"
+        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/Untitled20.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -530,7 +528,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2Fbinomial_TutorialExercises1.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2FUntitled20.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -558,7 +556,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/binomial_TutorialExercises1.ipynb"
+        <a href="_sources/Untitled20.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -617,19 +615,38 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-up-python-libraries">
-   Set up Python libraries
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Drawing random samples
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-up-python-libraries">
+     Set up Python libraries
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dice-roll-example">
-   Dice roll example
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-python-libraries-you-need-to-run-this-but-you-don-t-need-to-change-it">
+   Set-up Python libraries - you need to run this but you don’t need to change it
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-and-plot-the-data">
+     Load and plot the data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-sample-distriution-resembles-the-parent-distriution">
+     The sample distriution resembles the parent distriution
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#blindsight-example">
-   Blindsight example
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-sampling-distribution-of-the-mean">
+   The sampling distribution of the mean
   </a>
  </li>
 </ul>
@@ -641,7 +658,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tutorial Exercises I</h1>
+                <h1>Drawing random samples</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -651,19 +668,38 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-up-python-libraries">
-   Set up Python libraries
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Drawing random samples
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-up-python-libraries">
+     Set up Python libraries
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dice-roll-example">
-   Dice roll example
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-python-libraries-you-need-to-run-this-but-you-don-t-need-to-change-it">
+   Set-up Python libraries - you need to run this but you don’t need to change it
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-and-plot-the-data">
+     Load and plot the data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-sample-distriution-resembles-the-parent-distriution">
+     The sample distriution resembles the parent distriution
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#blindsight-example">
-   Blindsight example
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-sampling-distribution-of-the-mean">
+   The sampling distribution of the mean
   </a>
  </li>
 </ul>
@@ -676,92 +712,167 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises-i">
-<h1><span class="section-number">5.9. </span>Tutorial Exercises I<a class="headerlink" href="#tutorial-exercises-i" title="Permalink to this heading">#</a></h1>
-<p>At the start of this section, we introduced three examples:</p>
-<ul>
-    <li> a fair coin is tossed 10 times. How likely is it that we obtain exactly 5 heads?
-    <li> a fair six sided dice is rolled 3 times. How likely is it that we obtain two or more sixes?
-    <li> a blind man guesses whether a symbol on a screen is an X or an O. How likely is it that he guesses correctly at least 22 out of 30 times?
-</ul>        
-<p>In each case there is an event with two possible outcomes.</p>
-<p>One outcome (the one we are looking for) is designated as a “hit” whilst the other is called a “miss”.</p>
-<p>The probability of a hit is a fixed value (<i>p</i>)</p>
-<p>The event is repeated a certain number of times (<i>n</i>) and we count the number of times (<i>k</i>) one of the outcomes occurs</p>
-<img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/BinomialTable.png" width="60%"  />
-<p>So far we have considered the coin toss example. Can we adapt the code to simulte the dice roll example and the blindsight example?</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="drawing-random-samples">
+<h1>Drawing random samples<a class="headerlink" href="#drawing-random-samples" title="Permalink to this heading">#</a></h1>
 <section id="set-up-python-libraries">
 <h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
-<span class="kn">import</span> <span class="nn">pandas</span> 
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span> <span class="c1"># use pretty defaults</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
-<section id="dice-roll-example">
-<h2>Dice roll example<a class="headerlink" href="#dice-roll-example" title="Permalink to this heading">#</a></h2>
-<p>In the code block below I have copied the complete code to simulate 10 coin tosses for 10,000 repeats, plot the proportion of repeats on which each value of k was obtained, and plot the expected distribution from the equation</p>
-<p>Can you modify the code to simulate the dice roll example from the table above?</p>
-<p>You will need to change the values of <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, and the <span class="math notranslate nohighlight">\(x\)</span>-axis label for the histogram</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="set-up-python-libraries-you-need-to-run-this-but-you-don-t-need-to-change-it">
+<h1>Set-up Python libraries - you need to run this but you don’t need to change it<a class="headerlink" href="#set-up-python-libraries-you-need-to-run-this-but-you-don-t-need-to-change-it" title="Permalink to this heading">#</a></h1>
+<p>import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+import pandas
+import seaborn as sns
+sns.set_theme()</p>
+<section id="load-and-plot-the-data">
+<h2>Load and plot the data<a class="headerlink" href="#load-and-plot-the-data" title="Permalink to this heading">#</a></h2>
+<p>We will work with a distinctly non-normal data distribution - the scores for a large num of individuals on a 100-item political questionairre called BrexDex.</p>
+<p>The questions are designed and scored so that a high score overall score on the questionairre indicates an attitude in favour of Brexit, and a low score indicates an attitude against brexit.</p>
+<p>Because the scores relate to a polarizing topic, the data distribution is bimodal</p>
+<p>(These are made up data by the way!)</p>
+<p>First load the data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">10</span>
-<span class="n">p</span><span class="o">=</span><span class="mf">0.5</span>
-
-<span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)):</span> <span class="c1"># we are going to simlulte 10,000 repeats of 10 coin tosses</span>
-    <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
-    
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;number of heads&#39;</span><span class="p">)</span>
-
-<span class="c1"># add the expected distribution</span>
-<span class="n">p_k</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
-<span class="n">freq</span> <span class="o">=</span> <span class="n">p_k</span> <span class="o">*</span> <span class="n">nReps</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">freq</span><span class="p">,</span> <span class="s1">&#39;k.-&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UKBrexdex</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/nonNormalData2.txt&#39;</span><span class="p">)</span>
+<span class="n">UKBrexdex</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/binomial_TutorialExercises1_4_0.png" src="_images/binomial_TutorialExercises1_4_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_29075</span><span class="o">/</span><span class="mf">3231699687.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">UKBrexdex</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/nonNormalData2.txt&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">UKBrexdex</span>
+
+<span class="ne">NameError</span>: name &#39;pandas&#39; is not defined
+</pre></div>
 </div>
 </div>
-<p>The question asks you to work out the probability of obtaining 2 or more sizes out of three dice rolls.</p>
-<p>Work this out based on</p>
-<ul>
-<li>The simulation
-<li> The equation
-</ul>
-<p>Hopefully the answers should match quite closely!</p>
+</div>
+<p>We can see that the dataset contains 10,000 individuals’ scores on the BrexDex questionnaire.</p>
+<p>Let’s plot them to get a sense of the distribution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">UKBrexdex</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;score on BrexDex&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequency&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;frequency&#39;)
+</pre></div>
+</div>
+<img alt="_images/Untitled20_5_1.png" src="_images/Untitled20_5_1.png" />
+</div>
+</div>
+<p>Obviously, 10,000 is a very large sample (perhaps a national sample). We might be interested giving the questionnarie to a smaller group (say, 100 first year studens in Oxford) to see if their attitutdes were similar to the larger national sample.</p>
+<p>What kind of distribution of responses would we expect to get in a sample of 100?</p>
 </section>
-<section id="blindsight-example">
-<h2>Blindsight example<a class="headerlink" href="#blindsight-example" title="Permalink to this heading">#</a></h2>
-<p>Warrington and Weiskrantz (1974) worked that a patient (called in their work by his initials, DB). DB had damage to the visual cortex of his brain, and reported no conscious vision, but Warrington and Weiskrantz noticed some hints that he could react to visual stimuli even though he was unaware of them, so they set up the following experiment:</p>
-<p>Symbols are presented on a screen - 50% of symbols are X’s and 50% are O’s The patient guesses whether each symbol is an X or an O</p>
-<p>If the patient gives the correct answer much more often than we would expect if he were guessing, we conclude that he has some redisual (unconsicous) vision</p>
-<p>DB guessed correctly on 22 out of 30 trials. What can we conclude?
-Simulate the null hypothesis</p>
-<p>Our ‘null’ hypothesis is the baseline against which we test our evidence. In this case, the null hypothesis is that DB was guessing and this would translate to a value for p of 0.5</p>
-<p>So we work out how likely it was to get 22 or more trials out of 30 correct given p=0.5, and this tells us how likely it was that the data could have arisen under the null hypothesis</p>
-<ul>
-    <li>Why 22 or more?
-    <li>We would conclude that DB was not guessing if he got an unusually high number of trials correct. We need to determine a cutoff such that if he scored more than the cut-off, we would conclude he had some residual unconscious vision. It is logical that if 22/30 trials correct is sufficient evidence to reject the null, so is 23/30 and 24/30... 
-</ul>
-<p>Copy the code from above for simulating the binomial distribution and work through modifying it to obtain the probability of 22/30 correct trials if DB was really guessing</p>
+<section id="the-sample-distriution-resembles-the-parent-distriution">
+<h2>The sample distriution resembles the parent distriution<a class="headerlink" href="#the-sample-distriution-resembles-the-parent-distriution" title="Permalink to this heading">#</a></h2>
+<p>If the Oxford first years have attitudes typical of the national sample, we can simulate what their data might look like by drawing a random sample of 100 from our national dataset.</p>
+<p>We can do this using the tool <tt>numpy.random.choice</tt> which makes a random selection of datapoints from a larger dataset:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">UKBrexdex</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">],</span> <span class="mi">100</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[76 23 32 81 77 17 62 18 35 65 77 75 78 80 45 29 24 22 15 53 47 56 51 35
+ 21 42 83 15 84 48 44 35 18 37 63 71 50 53 43 31 73 80 30 37 32 23 19 88
+ 39 37 39 81 79 50 40 77 89 62 35 14 31 15 23 33 78 84 24 41 17 18 83 34
+ 39 84 77 33 44 78 59 34 33 40 30 78 83 82 78 21 37 76 21 52  9 24 83 10
+ 29 76 30 32]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s plot the data and compare to our national sample:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">UKBrexdex</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># use wider bins for the sample as there are fewer datapoints</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Score on Brexdex (%)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Score on Brexdex (%)&#39;)
+</pre></div>
+</div>
+<img alt="_images/Untitled20_9_1.png" src="_images/Untitled20_9_1.png" />
+</div>
+</div>
+<p>Hopefully we can see that the distribution within the sample resemblbes the distribution in the national sample</p>
+<p>Let’s draw a few more random samples, each time of size 100, to check this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">UKBrexdex</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">],</span> <span class="mi">100</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># use wider bins for the sample as there are fewer datapoints   </span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> <span class="c1"># automatically adjust subbplot spacing to accomodate axis labels</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Untitled20_11_0.png" src="_images/Untitled20_11_0.png" />
+</div>
+</div>
+<p>Notice that we always manage to reproduce the bimodal shape, albeit with random variability.</p>
+<p>The distribution within each sample resembles the parent distribution from which it is drawn, ie the UK national sample.</p>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="the-sampling-distribution-of-the-mean">
+<h1>The sampling distribution of the mean<a class="headerlink" href="#the-sampling-distribution-of-the-mean" title="Permalink to this heading">#</a></h1>
+<p>The mean Brexdex score can be obtained from the UK national sample as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UKBrexdex</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>score    49.8748
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>The mean score in the national sample is 49.9%.</p>
+<p>Given that each of our smaller samples (with <span class="math notranslate nohighlight">\(n=100\)</span>) resemble the parent distribution, we might expect that the mean of each of these samples approximates the mean of the UK national sample.</p>
+<p>Let’s try drawing a large number of random samples with <span class="math notranslate nohighlight">\(n=100\)</span>, and getting the mean of each one:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nSamples</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1"># we will draw 10,000 samples</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">100</span> <span class="c1"># each sample contains n people</span>
+
+<span class="n">m</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nSamples</span><span class="p">)</span> <span class="c1"># make an array to store the means</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nSamples</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">UKBrexdex</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">],</span> <span class="mi">100</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">sample</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s plot the resulting means:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">his</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -791,20 +902,6 @@ Simulate the null hypothesis</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="binomial_PythonCheck.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5.8. </span>Python skills check</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="binomial_TutorialExercises2.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.10. </span>Tutorial Exercises II</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
