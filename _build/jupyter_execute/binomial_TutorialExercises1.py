@@ -19,7 +19,7 @@
 # 
 # The event is repeated a certain number of times (<i>n</i>) and we count the number of times (<i>k</i>) one of the outcomes occurs
 # 
-# <img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/BinomialTable.png" width="60%"  />
+# <img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/BinomialTable.png" width="100%"  />
 # 
 # So far we have considered the coin toss example. Can we adapt the code to simulte the dice roll example and the blindsight example?
 # 
