@@ -57,3 +57,10 @@ chapters:
   - file: binomial_PythonCheck.ipynb
   - file: binomial_TutorialExercises1.ipynb
   - file: binomial_TutorialExercises2.ipynb
+- file: CLT_intro.md
+  sections:
+  - file: CLT_outcomes.md
+  - file: CLT_ConceptCheck.md
+  - file: CLT_sampling.ipynb
+  - file: CLT_CI.ipynb
+  - file: CLT_TutorialExercises.ipynb

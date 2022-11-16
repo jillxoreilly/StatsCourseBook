@@ -107,6 +107,8 @@ plt.xticks(range(0, n+1, 10));
 # 
 # $$ std(k) = \sqrt{npq} $$
 # 
+# ... where $q = (1-p)$
+# 
 # This can be seen by playing around with $n$ (and indeed $p$) in the following code block:
 
 # In[5]:
@@ -131,6 +133,8 @@ print('sqrt(npq) = ' + str((n*p*(1-p))**0.5))
 # The proportion of hits is $k/n$ and its standard deviation is given by
 # 
 # $$ \frac{\sqrt{pq}}{\sqrt{n}} $$
+# 
+# where $ q = (1-p) $
 
 # This has the interesting consequence that <b>for a given value of p, the standard deviation fo the proportion of hits is proprtional to $\frac{1}{\sqrt(n)}$ </b>
 # 

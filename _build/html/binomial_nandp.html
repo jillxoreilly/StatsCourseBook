@@ -393,6 +393,36 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="CLT_intro.html">
+   6. The Central Limit Theorem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_sampling.html">
+     6.2. Central Limit Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_CI.html">
+     6.4. Estimating the sampling distribution
+     <i>
+      from a sample
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_TutorialExercises.html">
+     6.6. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -828,7 +858,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean(k) = 6.993
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean(k) = 7.003
 np = 7.0
 </pre></div>
 </div>
@@ -865,6 +895,7 @@ np = 7.0
 <p>The standard deviation of <span class="math notranslate nohighlight">\(k\)</span> (or its expected standard deviation over many repetitions of 10 coin tosses) is given by</p>
 <div class="math notranslate nohighlight">
 \[ std(k) = \sqrt{npq} \]</div>
+<p>… where <span class="math notranslate nohighlight">\(q = (1-p)\)</span></p>
 <p>This can be seen by playing around with <span class="math notranslate nohighlight">\(n\)</span> (and indeed <span class="math notranslate nohighlight">\(p\)</span>) in the following code block:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -882,7 +913,7 @@ np = 7.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>std(k) = 5.035354605189192
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>std(k) = 5.038629550780649
 sqrt(npq) = 5.0
 </pre></div>
 </div>
@@ -895,6 +926,7 @@ sqrt(npq) = 5.0
 <p>The proportion of hits is <span class="math notranslate nohighlight">\(k/n\)</span> and its standard deviation is given by</p>
 <div class="math notranslate nohighlight">
 \[ \frac{\sqrt{pq}}{\sqrt{n}} \]</div>
+<p>where <span class="math notranslate nohighlight">\( q = (1-p) \)</span></p>
 <p>This has the interesting consequence that <b>for a given value of p, the standard deviation fo the proportion of hits is proprtional to <span class="math notranslate nohighlight">\(\frac{1}{\sqrt(n)}\)</span> </b></p>
 <p>In other words, as <span class="math notranslate nohighlight">\(n\)</span> increases, the proportion of hits I get in a single ‘repetition’ of the experiment (a single set of 10 coin tosses in our example) conforms more closely to the true value of <span class="math notranslate nohighlight">\(p\)</span>, the probability of a hit -</p>
 <p>in other words, my estimate of <span class="math notranslate nohighlight">\(p\)</span> gets better</p>
