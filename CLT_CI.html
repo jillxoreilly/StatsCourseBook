@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>5.5. Changing \(n\) and \(p\) &#8212; Introduction to Statistics and Data Science</title>
+    <title>6.5. Estimating the sampling distribution from a sample &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5.6. Binomial PMF and CDF" href="binomial_PMFandCDF.html" />
-    <link rel="prev" title="5.4. Repeat the simulation" href="binomial_10000reps.html" />
+    <link rel="next" title="6.7. Tutorial exercises" href="CLT_TutorialExercises.html" />
+    <link rel="prev" title="6.3. Central Limit Theorem" href="CLT_sampling.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -324,16 +324,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="binomial_overallIntro.html">
    5. Data generating distributions
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="binomial_intro.html">
      5.1. The Binomial Distribution
@@ -354,8 +354,8 @@ const thebe_selector_output = ".output, .cell_output"
      5.4. Repeat the simulation
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="binomial_nandp.html">
      5.5. Changing
      <span class="math notranslate nohighlight">
       \(n\)
@@ -393,24 +393,29 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="CLT_intro.html">
    6. The Central Limit Theorem
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="CLT_sampling.html">
-     6.2. Central Limit Theorem
+    <a class="reference internal" href="CLT_outcomes.html">
+     6.2. Learning Objectives
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="CLT_CI.html">
-     6.4. Estimating the sampling distribution
+    <a class="reference internal" href="CLT_sampling.html">
+     6.3. Central Limit Theorem
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     6.5. Estimating the sampling distribution
      <i>
       from a sample
      </i>
@@ -418,7 +423,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CLT_TutorialExercises.html">
-     6.6. Tutorial exercises
+     6.7. Tutorial exercises
     </a>
    </li>
   </ul>
@@ -482,7 +487,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/binomial_nandp.ipynb"
+        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/CLT_CI.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -500,7 +505,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/binomial_nandp.ipynb"
+        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/CLT_CI.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -560,7 +565,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2Fbinomial_nandp.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2FCLT_CI.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -588,7 +593,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/binomial_nandp.ipynb"
+        <a href="_sources/CLT_CI.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -647,57 +652,50 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#p-probability-of-a-hit">
-   <span class="math notranslate nohighlight">
-    \(p\)
-   </span>
-   , probability of a hit
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   6.5. Estimating the sampling distribution
+   <i>
+    from a sample
+   </i>
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#set-up-python-libraries">
      Set up Python libraries
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#simulation">
      Simulation
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mean-of-k">
-   Mean of
-   <span class="math notranslate nohighlight">
-    \(k\)
-   </span>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#confidence-intervals">
+   6.6. Confidence intervals
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#n-number-of-trials">
-   <span class="math notranslate nohighlight">
-    \(n\)
-   </span>
-   , number of trials
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#standard-deviation-of-k">
-   Standard deviation of
-   <span class="math notranslate nohighlight">
-    \(k\)
-   </span>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#standard-deviation-of-k-n">
-   Standard deviation of
-   <span class="math notranslate nohighlight">
-    \(k/n\)
-   </span>
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-magical-z-1-96">
+     The magical
+     <span class="math notranslate nohighlight">
+      \(Z=1.96\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ci-for-maths-iq">
+     95% CI for maths IQ
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -708,7 +706,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Changing n and p</h1>
+                <h1>Estimating the sampling distribution <i>from a sample</i></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -718,57 +716,50 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#p-probability-of-a-hit">
-   <span class="math notranslate nohighlight">
-    \(p\)
-   </span>
-   , probability of a hit
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   6.5. Estimating the sampling distribution
+   <i>
+    from a sample
+   </i>
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#set-up-python-libraries">
      Set up Python libraries
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#simulation">
      Simulation
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mean-of-k">
-   Mean of
-   <span class="math notranslate nohighlight">
-    \(k\)
-   </span>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#confidence-intervals">
+   6.6. Confidence intervals
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#n-number-of-trials">
-   <span class="math notranslate nohighlight">
-    \(n\)
-   </span>
-   , number of trials
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#standard-deviation-of-k">
-   Standard deviation of
-   <span class="math notranslate nohighlight">
-    \(k\)
-   </span>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#standard-deviation-of-k-n">
-   Standard deviation of
-   <span class="math notranslate nohighlight">
-    \(k/n\)
-   </span>
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-magical-z-1-96">
+     The magical
+     <span class="math notranslate nohighlight">
+      \(Z=1.96\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ci-for-maths-iq">
+     95% CI for maths IQ
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -780,157 +771,167 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="changing-n-and-p">
-<h1><span class="section-number">5.5. </span>Changing <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span><a class="headerlink" href="#changing-n-and-p" title="Permalink to this heading">#</a></h1>
-<p>The binomial has two parameters, <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span>, which together determine the probability of obtaining <span class="math notranslate nohighlight">\(k\)</span> hits:</p>
-<div class="math notranslate nohighlight">
-\[ k \sim \mathcal{B}(n,p) \]</div>
-<p>What happens to the frequency of each value of k, if we change the probability of a hit <span class="math notranslate nohighlight">\(p\)</span>, or the number of trials <span class="math notranslate nohighlight">\(n\)</span>?</p>
-<section id="p-probability-of-a-hit">
-<h2><span class="math notranslate nohighlight">\(p\)</span>, probability of a hit<a class="headerlink" href="#p-probability-of-a-hit" title="Permalink to this heading">#</a></h2>
-<p>First we investigate what happens to our simulated distribution of <span class="math notranslate nohighlight">\(k\)</span> if we change the probability of a hit on any given trial to be <span class="math notranslate nohighlight">\(p=0.7\)</span> (ie the coin is biased to produce heads 70% of the time)</p>
-<section id="set-up-python-libraries">
-<h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="estimating-the-sampling-distribution-i-from-a-sample-i">
+<h1><span class="section-number">6.5. </span>Estimating the sampling distribution <i>from a sample</i><a class="headerlink" href="#estimating-the-sampling-distribution-i-from-a-sample-i" title="Permalink to this heading">#</a></h1>
+<p>The Central Limit Theorem tells us that (for large <span class="math notranslate nohighlight">\(n\)</span>) the sampling distribution of the mean is <span class="math notranslate nohighlight">\(\mathcal{N}(\mu, \frac{\sigma}{\sqrt{n}})\)</span>.</p>
+<p>If we know the parent distribution (as we did for the UK Brexdex distribution), then we know <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> and can calculate the sampling distribution of the mean for samples of size <span class="math notranslate nohighlight">\(n\)</span> - or indeed we can simulate the sampling distribution as we did above.</p>
+<p>However, a more common situation is that we just have one sample (of size <span class="math notranslate nohighlight">\(n\)</span>). Then we do not know the parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> of the parent population.</p>
+<p>Nonetheless we want to estimate what the random variation in sample means <i>would</i> be <i>if</i> we were to draw lots more samples of size <span class="math notranslate nohighlight">\(n\)</span> from the same parent population, as this allows us to establish a plausible range in which the true parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> might fall.</p>
+<p>The Central Limit Theorem allows us to do this by the following logic:</p>
+<p>(For large <span class="math notranslate nohighlight">\(n\)</span>)</p>
+<p>– The true sampling distribution of the mean is <span class="math notranslate nohighlight">\(\mathcal{N}(\mu, \frac{\sigma}{\sqrt{n}})\)</span></p>
+<p>– Our best estimate of the sampling distribution of the mean is therefore <span class="math notranslate nohighlight">\(\mathcal{N}(\bar{x}, \frac{s}{\sqrt{n}})\)</span>, where <span class="math notranslate nohighlight">\(\bar{x}\)</span> and <span class="math notranslate nohighlight">\(s\)</span> are our estimates of the mean and standard deviation of the parent distibution, based on the sample</p>
+<p>—- <span class="math notranslate nohighlight">\(\bar{x}\)</span> is the mean of the sample, ie <tt>sample.mean()</tt></p>
+<p>—- <span class="math notranslate nohighlight">\(s\)</span> is the standard deviation of the sample, ie <tt>sample.std()</tt></p>
+</ul><section id="set-up-python-libraries">
+<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
 <span class="kn">import</span> <span class="nn">pandas</span> 
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span> <span class="c1"># use pretty defaults</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
+<p>I hypothesis that students taking A-level maths have higher than average IQ scores (the average IQ score is 100).</p>
+<p>To test this hypothesis I obtain a sample of IQ scores for 60 students taking A-level maths (<i>note</i> - these are made up data!):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mathsIQ_60</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/mathsIQ_60.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I can see that the mean IQ of the students in my sample is indeed slightly over 100, and a histogram suggests there is a positive skew (some students have IQ well above the mean)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean IQ = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;IQ&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean IQ = 104.6
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;IQ&#39;)
+</pre></div>
+</div>
+<img alt="_images/CLT_CI_6_2.png" src="_images/CLT_CI_6_2.png" />
+</div>
+</div>
+<p>… but could the high mean IQ be due to random chance, as I happened to select a sample of high IQ students?</p>
+<p>Under the central limit theorem, the sampling distribution fo the mean is estimated by <span class="math notranslate nohighlight">\(\mathcal{N}(\bar{x}, \frac{s}{\sqrt{n}})\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">])</span>
+<span class="n">SEM</span> <span class="o">=</span> <span class="n">s</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span><span class="mi">115</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1"># choose a suitable range for the x axis (you might need to guess and adjust)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">SEM</span><span class="p">)</span>
+
+<span class="c1"># plot the hypothetical sampling distriution of the mean</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="s1">&#39;k-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;mean IQ&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;probability&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;probability&#39;)
+</pre></div>
+</div>
+<img alt="_images/CLT_CI_8_1.png" src="_images/CLT_CI_8_1.png" />
+</div>
+</div>
+<p>It appears that we would expect to get a sample mean as low as 100 (the population mean IQ) quite rarely.</p>
+<p>We can work out the exact probability using <tt>stats.norm.cdf()</tt>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;percentage of time sample mean is expected to be less than 100 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">SEM</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>percentage of time sample mean is expected to be less than 100 = 0.0859777089110048%
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="simulation">
-<h3>Simulation<a class="headerlink" href="#simulation" title="Permalink to this heading">#</a></h3>
-<p>Here is the code for the simulation again, now with <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span> coded as variables rather than <i>hard coded</i> as 10 and 0.5</p>
+<h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this heading">#</a></h2>
+<p>Just for fun, here is a much larger sample of all the students taking maths A-level (30,000 individuals)</p>
+<p>Can you run a simulation to draw samples of size 60 from this dataset, get the mean of each one, and work out what percentage of sample means are indeed below 100?</p>
+<p>Hopefully it should match fairly well the prediction from the normal distribution!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mathsIQ_30k</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/mathsIQ_30k.csv&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">150</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;IQ&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;IQ&#39;)
+</pre></div>
+</div>
+<img alt="_images/CLT_CI_12_1.png" src="_images/CLT_CI_12_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to draw 10,000 samples of size 60 from the distribution above</span>
+<span class="c1"># Obtain the sample mean from each sample</span>
+<span class="c1"># Work out the proportion of sample means that are less than 100</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hopefully the proportion of simulated sample means that are lower than 100 matches the prediction from the normal distribution - does it?</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="confidence-intervals">
+<h1><span class="section-number">6.6. </span>Confidence intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this heading">#</a></h1>
+<p>A 95% confidence interval is an interval around a sample mean with a width such that</p>
 <ul>
-    <li> Can you modify it so that p=0.7?
-</ul><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">10</span>
-<span class="n">p</span><span class="o">=</span><span class="mf">0.5</span>
-<span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)):</span> <span class="c1"># we are going to simlulte 10,000 repeats of 10 coin tosses</span>
-    <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
-    
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;count&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/binomial_nandp_4_1.png" src="_images/binomial_nandp_4_1.png" />
-</div>
-</div>
-<p>You should notice after modifying the simulation so that <span class="math notranslate nohighlight">\(p=0.7\)</span> that the most common value for k is 7, ie 7/10 hits.</p>
-<p>Try some other values of p.</p>
+    <li>if we drew many independent samples (all of size n) from the parent distribution
+    <li>... and we drew an interval of that width around each sample mean
+    <li>... then 95% of those intervals would contain the $\mu$, the true mean of the parent population
+</ul>
+<p>Another way of thinking about this is that for a single 95% confidence interval computed on a single sample, we (the researcher) have 95% confidence that that interval contains <span class="math notranslate nohighlight">\(\mu\)</span>, the true mean of the parent population</p>
+<section id="the-magical-z-1-96">
+<h2>The magical <span class="math notranslate nohighlight">\(Z=1.96\)</span><a class="headerlink" href="#the-magical-z-1-96" title="Permalink to this heading">#</a></h2>
+<p>For a normally distributed variable:</p>
+<ul>
+    <li> 95% of cases fall within 1.96 standard deviations of the mean
+    <li> 99% of cases fall within 2.33 standard deviations of the mean
+</ul>
+<p>For example, say women’s heights in the UK follow a normal distribution <span class="math notranslate nohighlight">\(\mathcal{N}(164.3, 6.1)\)</span></p>
+<p>We expect 95% of women to have a height between <span class="math notranslate nohighlight">\(164.3 - 1.96 \times (6.1)\)</span>, and <span class="math notranslate nohighlight">\(164.3 + 1.96 \times (6.1)\)</span>, ie between 152.3 cm and 176.3 cm</p>
 </section>
-</section>
-<section id="mean-of-k">
-<h2>Mean of <span class="math notranslate nohighlight">\(k\)</span><a class="headerlink" href="#mean-of-k" title="Permalink to this heading">#</a></h2>
-<p>The <i>expected value</i> of <span class="math notranslate nohighlight">\(k\)</span>, ie the mean of <span class="math notranslate nohighlight">\(k\)</span> over many repetitions, is given by</p>
+<section id="ci-for-maths-iq">
+<h2>95% CI for maths IQ<a class="headerlink" href="#ci-for-maths-iq" title="Permalink to this heading">#</a></h2>
+<p>The sampling distribution of the mean for the maths IQ data, with samples of size 60, was estimated to be <span class="math notranslate nohighlight">\(\mathcal{N}(\bar{x}, \frac{s}{\sqrt{n}})\)</span> = <span class="math notranslate nohighlight">\(\mathcal{N}(102.75, 1.537043)\)</span>.</p>
+<p>Our 95% CI for the mean of the parent population (mean IQ of all maths A-level students) is then</p>
 <div class="math notranslate nohighlight">
-\[ E(k) = np \]</div>
-<p>This can be seen by playing around with the values of <span class="math notranslate nohighlight">\(p\)</span> (and indeed <span class="math notranslate nohighlight">\(n\)</span>) in the following code:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">10</span>
-<span class="n">p</span><span class="o">=</span><span class="mf">0.7</span>
-<span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)):</span> <span class="c1"># we are going to simlulte 10,000 repeats of 10 coin tosses</span>
-    <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean(k) = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;np = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">p</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean(k) = 7.003
-np = 7.0
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="n-number-of-trials">
-<h2><span class="math notranslate nohighlight">\(n\)</span>, number of trials<a class="headerlink" href="#n-number-of-trials" title="Permalink to this heading">#</a></h2>
-<p>If we increase the number of trials to 100, what happens to the frequency distribution of <span class="math notranslate nohighlight">\(k\)</span>?</p>
-<p>Here we modify the simulation so that <span class="math notranslate nohighlight">\(n=100\)</span>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">100</span>
-<span class="n">p</span><span class="o">=</span><span class="mf">0.5</span>
-<span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)):</span> <span class="c1"># we are going to simlulte 10,000 repeats of 10 coin tosses</span>
-    <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
-    
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">));</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/binomial_nandp_8_0.png" src="_images/binomial_nandp_8_0.png" />
-</div>
-</div>
-<p>We can see that the peak of the histogram is where we expect (the most common value of <span class="math notranslate nohighlight">\(k\)</span> is 50, <span class="math notranslate nohighlight">\(np\)</span>) but the spread of the histogram is narrower, compared to the range of possible values for <span class="math notranslate nohighlight">\(k\)</span> (0 to <span class="math notranslate nohighlight">\(n\)</span>) than when <span class="math notranslate nohighlight">\(n\)</span> was lower</p>
-</section>
-<section id="standard-deviation-of-k">
-<h2>Standard deviation of <span class="math notranslate nohighlight">\(k\)</span><a class="headerlink" href="#standard-deviation-of-k" title="Permalink to this heading">#</a></h2>
-<p>The standard deviation of <span class="math notranslate nohighlight">\(k\)</span> (or its expected standard deviation over many repetitions of 10 coin tosses) is given by</p>
+\[[102.75 - 1.96 \times 1.537, 102.75 + 1.96 \times 1.537]\]</div>
+<p>ie</p>
 <div class="math notranslate nohighlight">
-\[ std(k) = \sqrt{npq} \]</div>
-<p>… where <span class="math notranslate nohighlight">\(q = (1-p)\)</span></p>
-<p>This can be seen by playing around with <span class="math notranslate nohighlight">\(n\)</span> (and indeed <span class="math notranslate nohighlight">\(p\)</span>) in the following code block:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">100</span>
-<span class="n">p</span><span class="o">=</span><span class="mf">0.5</span>
-<span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)):</span> <span class="c1"># we are going to simlulte 10,000 repeats of 10 coin tosses</span>
-    <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;std(k) = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">std</span><span class="p">()))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sqrt(npq) = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">((</span><span class="n">n</span><span class="o">*</span><span class="n">p</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>std(k) = 5.038629550780649
-sqrt(npq) = 5.0
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="standard-deviation-of-k-n">
-<h2>Standard deviation of <span class="math notranslate nohighlight">\(k/n\)</span><a class="headerlink" href="#standard-deviation-of-k-n" title="Permalink to this heading">#</a></h2>
-<p>We noted above that that spread of the distribution of <span class="math notranslate nohighlight">\(k\)</span>, as a proportion of the range of possible values <span class="math notranslate nohighlight">\((0:n)\)</span> decreased as <span class="math notranslate nohighlight">\(n\)</span> increased, in other words that the chance of getting a high or low proportion of hits due to chance decreases when <span class="math notranslate nohighlight">\(n\)</span> is high (this was discussed in the lecture)</p>
-<p>The proportion of hits is <span class="math notranslate nohighlight">\(k/n\)</span> and its standard deviation is given by</p>
-<div class="math notranslate nohighlight">
-\[ \frac{\sqrt{pq}}{\sqrt{n}} \]</div>
-<p>where <span class="math notranslate nohighlight">\( q = (1-p) \)</span></p>
-<p>This has the interesting consequence that <b>for a given value of p, the standard deviation fo the proportion of hits is proprtional to <span class="math notranslate nohighlight">\(\frac{1}{\sqrt(n)}\)</span> </b></p>
-<p>In other words, as <span class="math notranslate nohighlight">\(n\)</span> increases, the proportion of hits I get in a single ‘repetition’ of the experiment (a single set of 10 coin tosses in our example) conforms more closely to the true value of <span class="math notranslate nohighlight">\(p\)</span>, the probability of a hit -</p>
-<p>in other words, my estimate of <span class="math notranslate nohighlight">\(p\)</span> gets better</p>
-<p>but only in proportion to <span class="math notranslate nohighlight">\(\sqrt{n}\)</span></p>
+\[[99.7,105.8]\]</div>
+<p>that is, we are 95% confident that the true population mean IQ lies between 99.7 and 105.8</p>
 </section>
 </section>
 
@@ -961,17 +962,17 @@ sqrt(npq) = 5.0
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="binomial_10000reps.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="CLT_sampling.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5.4. </span>Repeat the simulation</p>
+            <p class="prev-next-title"><span class="section-number">6.3. </span>Central Limit Theorem</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="binomial_PMFandCDF.html" title="next page">
+    <a class='right-next' id="next-link" href="CLT_TutorialExercises.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.6. </span>Binomial PMF and CDF</p>
+        <p class="prev-next-title"><span class="section-number">6.7. </span>Tutorial exercises</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

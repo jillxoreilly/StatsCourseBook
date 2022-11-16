@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>5. Data generating distributions &#8212; Introduction to Statistics and Data Science</title>
+    <title>Concepts Review &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5.1. The Binomial Distribution" href="binomial_intro.html" />
-    <link rel="prev" title="4.10. Hand-in Assignment" href="CorrCov_HandInAssignment.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -114,7 +112,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="prepwork_intro.html">
    1. Preparatory Work
@@ -322,11 +320,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="binomial_overallIntro.html">
    5. Data generating distributions
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
@@ -511,7 +509,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2Fbinomial_overallIntro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2FCLT_conceptCheck.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -539,7 +537,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/binomial_overallIntro.md"
+        <a href="_sources/CLT_conceptCheck.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -588,7 +586,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Data generating distributions</h1>
+                <h1>Concepts Review</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -600,12 +598,53 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="data-generating-distributions">
-<h1><span class="section-number">5. </span>Data generating distributions<a class="headerlink" href="#data-generating-distributions" title="Permalink to this heading">#</a></h1>
-<p>This week we are thinking about how a physical process (such as tossing a coin 10 times) generates a distribution of possible outcomes (frequency of getting 1 head, 2 heads, 3 heads… 10 heads).</p>
-<p>We will look at one distribution in which the link between the physical process (coin toss) and probability distribution can be fairly directly understood, namely the binomial distriution</p>
-<p>We will then see how a binomial process (such as tossing a coin) applied over many trials (coin tosses) gives rise to a variable (number of heads) that follows a normal distribution</p>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="concepts-review">
+<h1>Concepts Review<a class="headerlink" href="#concepts-review" title="Permalink to this heading">#</a></h1>
+<p>Here we review some conceptual points from the lecture.</p>
+<p>Please try to answer each question yourself before clicking to reveal
+the answer</p>
+<p>You can discuss these points with your tutor at the computer-based
+tutorial session (these sessions are for discussing concepts as well
+as for developing Python skills)</p>
+<ol>
+<li>What are the data points in the sampling distribution of the mean?
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal answer</p>
+<p>The sampling distribution of the mean is the expected distribution of means for many samples of size n, drawn from the same population.</p>
+</div>
+<li>What is the shape of the sampling distribution of the mean when sample size n is large?
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal answer</p>
+<p>By the Central Limmit Theorem, when n is large, the sampling distribution of the mean is Normal, with a mean equal to the population mean and a standard deviation equal to the standard error (population standard deviation divided by the square root of n).</p>
+</div>
+<li>How does the spread of the sampling distribution of the mean depend on the sample size n?
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal answer</p>
+<p>The spread (standard deviation) of the sampling distribution of the mean gets smaller as n gets large; the standard deviation of the sampling distribution is inversely proportional to the square root of n</p>
+</div>
+<li>What is the relationship between standard error and the standard deviation?
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal answer</p>
+<p>Standard error is the standard deviation divided by the square root of sample size n
+The standard error is the standard deviation of the sampling distribution.</p>
+</div>
+<li> A student has written ‘a 95% confidence interval for the mean is the range of values that has a 95% chance of containing the mean’. What should he have written instead?
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal answer</p>
+<p>The 95% confidence interval is an interval about the sample mean with a width such that, if a large number of samples were drawn from the same population, 95% of the calculated confidence intervals would overlap the true population mean
+<br>
+OR
+<br>
+The 95% confidence interval is an interval about the sample mean that
+we are 95% confident contains the true population mean</p>
+</div>
+<li> Which is wider, a 95% confidence interval or a 99% confidence interval? 
+```{admonition} Click to reveal answer
+:class: dropdown
+<p>99%</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+</pre></div>
 </div>
 </section>
 
@@ -636,20 +675,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="CorrCov_HandInAssignment.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4.10. </span>Hand-in Assignment</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="binomial_intro.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.1. </span>The Binomial Distribution</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
