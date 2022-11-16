@@ -30,7 +30,7 @@ sns.set_theme()
 # In[2]:
 
 
-UKBrexdex=pandas.read_csv('data/UKBrexdex.csv')
+UKBrexdex=pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/UKBrexdex.csv')
 sns.histplot(UKBrexdex['score'], bins=range(101))
 plt.xlabel('score on BrexDex')
 plt.ylabel('frequency')
@@ -161,7 +161,7 @@ plt.show()
 # 
 # Hopefully, you can see that although the histogram on its own looked quite normal, it is actually not a great fit to the normal distribution we would expect if the Central Limit Theorem applied - the peak is too flat and there are fewer sample means out in the tails than we would expect - the distribution looks like a piece of Toblerone
 # 
-# <img src= "images/toblerone.png" width="30%"  />
+# <img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/toblerone.png" width="30%"  />
 # 
 # ### Q-Q plot
 # 

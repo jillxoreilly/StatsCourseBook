@@ -49,7 +49,7 @@ sns.set_theme()
 # In[2]:
 
 
-mathsIQ_60 = pandas.read_csv('data/mathsIQ_60.csv')
+mathsIQ_60 = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/mathsIQ_60.csv')
 
 
 # I can see that the mean IQ of the students in my sample is indeed slightly over 100, and a histogram suggests there is a positive skew (some students have IQ well above the mean)
@@ -104,7 +104,7 @@ print('percentage of time sample mean is expected to be less than 100 = ' + str(
 # In[6]:
 
 
-mathsIQ_30k = pandas.read_csv('data/mathsIQ_30k.csv')
+mathsIQ_30k = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/mathsIQ_30k.csv')
 sns.histplot(mathsIQ_30k['IQ'], bins=range(80,150))
 plt.xlabel('IQ')
 

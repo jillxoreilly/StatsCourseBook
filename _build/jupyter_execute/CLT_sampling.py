@@ -35,7 +35,7 @@ sns.set_theme()
 # In[2]:
 
 
-UKBrexdex=pandas.read_csv('data/UKBrexdex.csv')
+UKBrexdex=pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/UKBrexdex.csv')
 UKBrexdex
 
 

@@ -7,8 +7,7 @@ After this week you should be able to:
 
 <ul>
 <li> Define the sampling distribution of a statistic (such as the sample mean or proportion) 
-<li> Define standard error; relationship to standard deviation
-correlation (whereby correlation is a normalized form of covariance)
+<li> Define standard error and explain its relationship to standard deviation
 <li> Explain how the standard error depends on sample size n
 <li> State the Central Limit Theorem and know when it applies
 </ul>
@@ -27,10 +26,11 @@ examples in Python
 This week there is an emphasis on simulating the process of drawing a
 large number of samples from a parent distribution
 
-The key skill practiced this week is building a <tt>for</tt> loop to repeat a process
-(such as drawing a random sample aand getting its mean)
+The key skill practiced this week is building a <tt>for</tt> loop to
+repeat a process many times
+(such as drawing a random sample and getting its mean)
 
-lots of times. You might need to change some variable (such as sample
+You might need to change some variable (such as sample
 size n) on each pass through the loop.
 
 Additional new(ish) Python skills:

@@ -852,7 +852,7 @@ title="Print to PDF"
 <p>Let’s remind ourselves of the dataset we are working with</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UKBrexdex</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/UKBrexdex.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UKBrexdex</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/UKBrexdex.csv&#39;</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">UKBrexdex</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;score on BrexDex&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequency&#39;</span><span class="p">)</span>
@@ -975,7 +975,7 @@ The code to get the normal curve and histogram to match in scale is a bit fiddly
 <p>This is clearly quite a good fit.</p>
 <p>Now try changing <span class="math notranslate nohighlight">\(n\)</span>, in the code block above, to <span class="math notranslate nohighlight">\(n=4\)</span> (<b><i>hint:</b></i> change the histogram bins and x-axis values to  <tt>np.arange(0,100,binwidth)</tt>, and change <tt>binwidth</tt> to 1)</p>
 <p>Hopefully, you can see that although the histogram on its own looked quite normal, it is actually not a great fit to the normal distribution we would expect if the Central Limit Theorem applied - the peak is too flat and there are fewer sample means out in the tails than we would expect - the distribution looks like a piece of Toblerone</p>
-<img src= "images/toblerone.png" width="30%"  />
+<img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/toblerone.png" width="30%"  />
 </section>
 <section id="q-q-plot">
 <h2>Q-Q plot<a class="headerlink" href="#q-q-plot" title="Permalink to this heading">#</a></h2>
