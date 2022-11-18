@@ -81,6 +81,18 @@ plt.show()
 # 
 # Hopefully the answers should match quite closely!
 
+# In[3]:
+
+
+# Your code here to work out p(k>=2) using stats.binom.cdf
+
+
+# In[4]:
+
+
+# Your code here to count the proportion of times k>=2 in the simulated dataset
+
+
 # ## Blindsight example
 # 
 # Warrington and Weiskrantz (1974) worked with a patient (called in their work by his initials, DB). DB had damage to the visual cortex of his brain, and reported no conscious vision, but Warrington and Weiskrantz noticed some hints that he could react to visual stimuli even though he was unaware of them, so they set up the following experiment:
@@ -103,6 +115,26 @@ plt.show()
 #         
 # Copy the code from above for simulating the binomial distribution and work through modifying it to obtain the probability of 22/30 correct trials if DB was really guessing
 # 
+
+# In[5]:
+
+
+# Your code here to work out p(k>=22) using stats.binom.cdf
+
+
+# In[6]:
+
+
+# Your code here to count the proportion of times k>=22 in the simulated dataset
+
+
+# If you run the simulation a few times you will notice that the proportion of trials on which k>=22 in the simulation is quite unstable
+# 
+# Even though 10000 reps seems like a lot, and gives you a nice smooth histogram, we are counting the instances of a very rare event - you expect about 80 cases out of 10,000 in which DB gets 22/30 due to chance, but you might sometimes see 70 or 90 such cases.
+# 
+# This suggests you should increase nReps to get a stable estimate of how unlikely k>=22 is based on simulation
+# 
+# In future we may use simulation to estimate the probability of an event where there is no equation to tell us the 'correct' probability - so we will need our simulation to give a reliablbe answer. Bearing in mind that we are often interested in events that would happen only rarely due to chance, it is often necessary to use a large number of repetitions in the simulation. Fortunately computers are fast these days!
 
 # In[ ]:
 

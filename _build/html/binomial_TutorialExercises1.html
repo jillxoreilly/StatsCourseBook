@@ -393,6 +393,41 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="CLT_intro.html">
+   6. The Central Limit Theorem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_outcomes.html">
+     6.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_sampling.html">
+     6.3. Central Limit Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_CI.html">
+     6.5. Estimating the sampling distribution
+     <i>
+      from a sample
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_TutorialExercises.html">
+     6.7. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -746,6 +781,20 @@ title="Print to PDF"
 <li> The simulation
 </ul>
 <p>Hopefully the answers should match quite closely!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to work out p(k&gt;=2) using stats.binom.cdf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to count the proportion of times k&gt;=2 in the simulated dataset</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="blindsight-example">
 <h2>Blindsight example<a class="headerlink" href="#blindsight-example" title="Permalink to this heading">#</a></h2>
@@ -761,6 +810,24 @@ Simulate the null hypothesis</p>
     <li>We would conclude that DB was not guessing if he got an unusually high number of trials correct. We need to determine a cutoff such that if he scored more than the cut-off, we would conclude he had some residual unconscious vision. It is logical that if 22/30 trials correct is sufficient evidence to reject the null, so is 23/30 and 24/30... 
 </ul>
 <p>Copy the code from above for simulating the binomial distribution and work through modifying it to obtain the probability of 22/30 correct trials if DB was really guessing</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to work out p(k&gt;=22) using stats.binom.cdf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to count the proportion of times k&gt;=22 in the simulated dataset</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you run the simulation a few times you will notice that the proportion of trials on which k&gt;=22 in the simulation is quite unstable</p>
+<p>Even though 10000 reps seems like a lot, and gives you a nice smooth histogram, we are counting the instances of a very rare event - you expect about 80 cases out of 10,000 in which DB gets 22/30 due to chance, but you might sometimes see 70 or 90 such cases.</p>
+<p>This suggests you should increase nReps to get a stable estimate of how unlikely k&gt;=22 is based on simulation</p>
+<p>In future we may use simulation to estimate the probability of an event where there is no equation to tell us the ‘correct’ probability - so we will need our simulation to give a reliablbe answer. Bearing in mind that we are often interested in events that would happen only rarely due to chance, it is often necessary to use a large number of repetitions in the simulation. Fortunately computers are fast these days!</p>
 </section>
 </section>
 
