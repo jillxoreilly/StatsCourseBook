@@ -71,7 +71,7 @@ plt.plot(range(n+1),freq, 'k.-')
 plt.show()
 
 
-# The question asks you to work out the probability of obtaining 2 or more sizes out of three dice rolls.
+# The question asks you to work out the probability of obtaining 2 or more sixes out of three dice rolls.
 # 
 # Work this out based on 
 # <ul>
@@ -130,11 +130,11 @@ plt.show()
 
 # If you run the simulation a few times you will notice that the proportion of trials on which k>=22 in the simulation is quite unstable
 # 
-# Even though 10000 reps seems like a lot, and gives you a nice smooth histogram, we are counting the instances of a very rare event - you expect about 80 cases out of 10,000 in which DB gets 22/30 due to chance, but you might sometimes see 70 or 90 such cases.
+# Even though 10000 reps seems like a lot, and gives you a nice smooth histogram, we are counting the instances of a very rare event - you expect about 80 cases out of 10,000 in which DB gets 22/30 due to chance, but you might sometimes see 70 or 90 such cases, a variation of 10%.
 # 
 # This suggests you should increase nReps to get a stable estimate of how unlikely k>=22 is based on simulation
 # 
-# In future we may use simulation to estimate the probability of an event where there is no equation to tell us the 'correct' probability - so we will need our simulation to give a reliablbe answer. Bearing in mind that we are often interested in events that would happen only rarely due to chance, it is often necessary to use a large number of repetitions in the simulation. Fortunately computers are fast these days!
+# In future we may use simulation to estimate the probability of an event where there is no equation to tell us the 'correct' probability - so we will need our simulation to give a reliable answer. Bearing in mind that we are often interested in events that would happen only rarely due to chance, it is often necessary to use a large number of repetitions in the simulation. Fortunately computers are fast these days!
 
 # In[ ]:
 

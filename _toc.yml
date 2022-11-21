@@ -64,3 +64,4 @@ chapters:
   - file: CLT_sampling.ipynb
   - file: CLT_CI.ipynb
   - file: CLT_TutorialExercises.ipynb
+  - file: CLT_Tutorial2tdist.ipynb

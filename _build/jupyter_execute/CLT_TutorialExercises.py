@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Tutorial exercises
+# # Tutorial exercises I: The Central Limit Theorem
 # 
 # In these exercises we again work with the Brexdex data
 # 
