@@ -7,7 +7,9 @@
 # 
 # However as we shall see here, if the parent or population distribution is normal, the sampling distribution of the mean for small samples has a known shape, namely the $t$ distribution
 # 
-# The $t$ distribution looks quite like a normal distribution but has a pointy top and heavy tails
+# The $t$ distribution looks quite like a normal distribution but has a pointy top and heavy tails. 
+# 
+# The difference in the tails, whilst visually not that striking, is really important, because samples means of interest (those which area long way above or below the population mean) are, by definition, in the tails ofthe distribution.
 
 # ### Set up Python libraries
 # 
@@ -102,7 +104,7 @@ plt.show()
 # We note that:
 # <ul>
 #     <li> The predicted normal curve lies neatly over the simulation histogram indicating a good fit
-#     <li> Most of the points in the Q-Q plot fall on a straight line, indicating a good fit, including in the tails of the dsitribution
+#     <li> Most of the points in the Q-Q plot fall on a straight line, indicating a good fit, including in the tails of the distribution
 # </ul>
 
 # ### Estimating $\sigma$ with $s$
@@ -247,7 +249,7 @@ plt.show()
 #     <ul>
 #     <li> The estimates of m and s are not bad 
 #     <li> The random variation in m and s between samples is fairly symmetrical (values above and below the true values mu and sigma are equally likely)
-#     <li> The Q-Q plot shows that normal distribution is not a bad fit to the sampling distribution of m and s (but note as mentioned above, the distribubtion of s is actually a different distribution, the gamma, which looks normal-ish for large n)
+#     <li> The Q-Q plot shows that normal distribution is not a bad fit to the sampling distribution of m and s (but note as mentioned above, the distribution of s is actually a different-shaped distribution, the gamma, which looks normal-ish for large n)
 #     </ul>
 #     
 # #### Try changing $n$
@@ -323,7 +325,7 @@ plt.xlabel('t = (x-m)/(s/sqrt(n))')
 plt.show()
 
 
-# We can see a particular problem in the tail of the distribution.
+# We can see a particular problem in the tails of the distribution - the fit between the predicted Normal and the simulated histogram is poor.
 # 
 # We would expect Z<-1.96 or Z>1.96 to happen 5% of the time (we covered this in the prep work on confidence intervals). How often do they happen in this simulation?
 
@@ -346,7 +348,7 @@ plt.show()
 # Let's try overlaying the t distribution over our histogram:
 # 
 # #### Note - 
-# You will notice the syntax for the $t$ PDF, <tt>stats.t.pdf()</tt> is similar to the syntax <tt>stats.norm.pdf()</tt> but has an additional argument <tt>n-1</tt>, which reflects the fact that the $t$ distriubtion actually changes shape as n$ increases. The term <tt>n-1</tt> is technically the <i>degrees of freedom</i> of the t-distribution (don't worry at this stage if you don't know that term).
+# You will notice the syntax for the $t$ PDF, <tt>stats.t.pdf()</tt> is similar to the syntax <tt>stats.norm.pdf()</tt> but has an additional argument <tt>n-1</tt>, which reflects the fact that the $t$ distriubtion actually changes shape as $n$ increases. The term <tt>(n-1)</tt> is technically the <i>degrees of freedom</i> of the t-distribution (don't worry at this stage if that sounds like unfamiliar jargon).
 # 
 # 
 
@@ -385,12 +387,14 @@ print(sum(t>1.65)/len(t))
 
 
 # use the CDF of the t-distribution to find the proportion of the time t(df=4) should exceed 2.13
+# Your code here!
 
 
 # In[11]:
 
 
 # count what proportion of the time t>=2.13 in your simulation
+# Your code here!
 
 
 # Hopefully the match is not too bad! 
@@ -435,7 +439,7 @@ stats.t.ppf(0.95, 4)
 # 
 # <ol>
 # <li> Try changing $n$ in the simulation above and observe how the $t$ distribution changes (and becomes more like the  distribution when $n$ is large)
-# <li> What value of n is needed for the 95% ppf of the $t(9)$ distribution (the $t$ distribution when n=10) to match that of the Z distribution to 3 significant figures?
+# <li> What value of n is needed for the 95% ppf of the $t(n-1)$ distribution (the $t$ distribution with n degrees of freedom) to match that of the Z distribution to 3 significant figures?
 # </ol>
 # 
 # To get you started with exercise 2 here is some code:
@@ -444,7 +448,7 @@ stats.t.ppf(0.95, 4)
 
 
 stats.norm.ppf(0.95)
-# your code here to find the matching PPF for the t(9) distribution!
+# your code here to find the matching PPF for the t(n-1) distribution for various values of n!
 
 
 # In[ ]:

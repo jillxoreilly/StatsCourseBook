@@ -13,7 +13,7 @@
 # 
 # The Central Limit Theorem allows us to do this by the following logic:
 # 
-# (For large $n$)
+# (For large $n$, which roughly means $n>50$)
 # 
 # -- The true sampling distribution of the mean is $\mathcal{N}(\mu, \frac{\sigma}{\sqrt{n}})$
 # 
@@ -52,7 +52,7 @@ sns.set_theme()
 mathsIQ_60 = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/mathsIQ_60.csv')
 
 
-# I can see that the mean IQ of the students in my sample is indeed slightly over 100, and a histogram suggests there is a positive skew (some students have IQ well above the mean)
+# I can see that the mean IQ of the students in my sample is indeed slightly over 100, and a histogram suggests there is a positive skew (some students have IQ well above the mean but none have an IQ well below the mean)
 
 # In[3]:
 
@@ -62,9 +62,9 @@ sns.histplot(mathsIQ_60['IQ'], bins=range(90,150,5))
 plt.xlabel('IQ')
 
 
-# ... but could the high mean IQ be due to random chance, as I happened to select a sample of high IQ students?
+# ... but could the high mean IQ be due to random chance, as I happened to select a sample containing several high IQ students?
 # 
-# Under the central limit theorem, the sampling distribution fo the mean is estimated by $\mathcal{N}(\bar{x}, \frac{s}{\sqrt{n}})$
+# Under the central limit theorem, because $n$ is large the sampling distribution fo the mean is estimated by $\mathcal{N}(\bar{x}, \frac{s}{\sqrt{n}})$
 
 # In[4]:
 
@@ -99,7 +99,7 @@ print('percentage of time sample mean is expected to be less than 100 = ' + str(
 # 
 # Can you run a simulation to draw samples of size 60 from this dataset, get the mean of each one, and work out what percentage of sample means are indeed below 100?
 # 
-# Hopefully it should match fairly well the prediction from the normal distribution!
+# Hopefully it should match fairly well the prediction from the Central Limit Theorem!
 
 # In[6]:
 
@@ -116,8 +116,18 @@ plt.xlabel('IQ')
 # Obtain the sample mean from each sample
 # Work out the proportion of sample means that are less than 100
 
+nReps=10000
+m=np.empty(nReps)
+n=60
 
-# Hopefully the proportion of simulated sample means that are lower than 100 matches the prediction from the normal distribution - does it?
+for i in range(nReps):
+    sample = np.random.choice(mathsIQ_30k['IQ'],n,replace=False)
+    m[i]=sample.mean()
+
+sum(m<100)/len(m)
+
+
+# Hopefully the proportion of simulated sample means that are lower than 100 matches the prediction from the Central Limit Theorem - does it?
 
 # # Confidence intervals
 # 
@@ -145,7 +155,7 @@ plt.xlabel('IQ')
 # 
 # ### 95% CI for maths IQ
 # 
-# The sampling distribution of the mean for the maths IQ data, with samples of size 60, was estimated to be $\mathcal{N}(\bar{x}, \frac{s}{\sqrt{n}})$ = $\mathcal{N}(102.75, 1.537043)$. 
+# The sampling distribution of the mean for the maths IQ data, with samples of size 60, was estimated to be $\mathcal{N}(\bar{x}, \frac{s}{\sqrt{n}})$ = $\mathcal{N}(102.75, 1.537)$. 
 # 
 # Our 95% CI for the mean of the parent population (mean IQ of all maths A-level students) is then
 # 
@@ -156,3 +166,9 @@ plt.xlabel('IQ')
 # $$[99.7,105.8]$$
 # 
 # that is, we are 95% confident that the true population mean IQ lies between 99.7 and 105.8
+
+# In[ ]:
+
+
+
+

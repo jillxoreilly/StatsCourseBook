@@ -154,7 +154,7 @@ m.mean() # get the mean of the 10,000 sample means
 # 
 # Although the sample means group around the mean of the parent distrbution, there is some random variation, as some samples (by chance) contain higher Brexdex scores than others.
 # 
-# The variability of the sample means is quantified by the standard deviation of the sampling distriution of the mean (ie the sd of the data in the histogram above), which is about 2.46.
+# The variability of the sample means is quantified by the standard deviation of the sampling distribution of the mean (ie the sd of the data in the histogram above), which is about 2.46.
 
 # In[11]:
 
@@ -166,7 +166,7 @@ m.std()
 # 
 # $$ SEM = \frac{\sigma}{\sqrt{n}} $$
 # 
-# ... where $\sigma$ is that standard deviation of the parent distribution, whihc we can obtain as follows:
+# ... where $\sigma$ is that standard deviation of the parent distribution, which in this case where we (unusually) have access to the UK national sample of 10000 individuals, we can obtain as follows:
 
 # In[12]:
 
@@ -259,7 +259,9 @@ print(mu)
 
 
 # Its standard deviation should be the SEM: 
+# 
 # $$SEM = \frac{\sigma}{\sqrt{n}} $$
+# 
 # where $\sigma$ is the standard deviaition of the parent distribution:
 
 # In[17]:
@@ -290,7 +292,7 @@ plt.plot()
 # 
 # Say we give the Brexdex questionnaire to 100 statistics undergraduates in Oxford, and their mean score is 55.1, as opposed to the mean in the UK national sample, 49.9. Can we infer that the students have different political attitude to the UK population as a whole?
 # 
-# The sampling distriution of the mean tells us the distribution of sample means we expect to get if we draw samples from the parent population (the UK national sample)
+# The sampling distribution of the mean tells us the distribution of sample means we expect to get if we draw samples from the parent population (the UK national sample)
 # 
 # ### Using the simulated sampling distribution of the mean
 # 

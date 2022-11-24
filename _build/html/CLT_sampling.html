@@ -423,7 +423,38 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CLT_TutorialExercises.html">
-     6.7. Tutorial exercises
+     6.7. Tutorial exercises I: The Central Limit Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_Tutorial2tdist.html">
+     6.10. Tutorial Exercises II: the
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="bootstrapping_intro.html">
+   7. The Bootstrap
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_samplingIntro.html">
+     7.2. Sampling with and without replacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TheBootstrap.html">
+     7.3. The bootstrap
     </a>
    </li>
   </ul>
@@ -964,11 +995,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[87 41 49 28 76 17 81 19 28 40 87 76 69 23 40 44 29 82 80 52 85 44 47 16
- 38 57 79 10 21 83 61 17 77 81 78 24 49 25 21 25 31 57 81 83 17 23 25 23
- 70 12 57 53 82 82 13 83 78 31 71 32 23 80 16 20 42 84 69 32 25 81 41 37
- 78 25 79 23 50 56 46 55 87 84 34 83 29 16 17 52 34 87 75 75 52 19 28 80
- 49 59 15 80]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[31 79 27 38 22 43 76 80 30 68 16 79 79 62 70 53 25 58 16 41 79 82 20 36
+ 28 46 83 77 11 24 76 30 24 12 42 42 35 81 85 15 42 49 49 69 21 85 50 29
+ 34 80 19 73 27 56 79 33 82 40 77 86 74 27 40 59 20 80 50 34 46 71 87 24
+ 82 88 86 79 84 25 83 20 30 16 84 27 19 30 80 34 31 81 83 49 27 85 40 34
+ 78 14 36 73]
 </pre></div>
 </div>
 </div>
@@ -1067,7 +1098,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.909045
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.873181
 </pre></div>
 </div>
 </div>
@@ -1076,7 +1107,7 @@ title="Print to PDF"
 <section id="standard-error-of-the-mean">
 <h2>Standard Error of the mean<a class="headerlink" href="#standard-error-of-the-mean" title="Permalink to this heading">#</a></h2>
 <p>Although the sample means group around the mean of the parent distrbution, there is some random variation, as some samples (by chance) contain higher Brexdex scores than others.</p>
-<p>The variability of the sample means is quantified by the standard deviation of the sampling distriution of the mean (ie the sd of the data in the histogram above), which is about 2.46.</p>
+<p>The variability of the sample means is quantified by the standard deviation of the sampling distribution of the mean (ie the sd of the data in the histogram above), which is about 2.46.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
@@ -1084,7 +1115,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.4786843481926053
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.47265602768339
 </pre></div>
 </div>
 </div>
@@ -1092,7 +1123,7 @@ title="Print to PDF"
 <p>As we saw in the lecture, the standard deviation of the sampling distribution of the mean has a special name, the <b><i>standard error of the mean</i></b> or SEM, and is given by the formula:</p>
 <div class="math notranslate nohighlight">
 \[ SEM = \frac{\sigma}{\sqrt{n}} \]</div>
-<p>… where <span class="math notranslate nohighlight">\(\sigma\)</span> is that standard deviation of the parent distribution, whihc we can obtain as follows:</p>
+<p>… where <span class="math notranslate nohighlight">\(\sigma\)</span> is that standard deviation of the parent distribution, which in this case where we (unusually) have access to the UK national sample of 10000 individuals, we can obtain as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UKBrexdex</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
@@ -1116,7 +1147,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sd of sampling distriution (from simulation) = 2.4786843481926053
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sd of sampling distriution (from simulation) = 2.47265602768339
 SEM from the formula = 2.479272056187636
 </pre></div>
 </div>
@@ -1202,9 +1233,10 @@ SEM from the formula = 2.479272056187636
 </div>
 </div>
 </div>
-<p>Its standard deviation should be the SEM:
-$<span class="math notranslate nohighlight">\(SEM = \frac{\sigma}{\sqrt{n}} \)</span><span class="math notranslate nohighlight">\(
-where \)</span>\sigma$ is the standard deviaition of the parent distribution:</p>
+<p>Its standard deviation should be the SEM:</p>
+<div class="math notranslate nohighlight">
+\[SEM = \frac{\sigma}{\sqrt{n}} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma\)</span> is the standard deviaition of the parent distribution:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SEM</span> <span class="o">=</span> <span class="n">UKBrexdex</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
@@ -1244,7 +1276,7 @@ where \)</span>\sigma$ is the standard deviaition of the parent distribution:</p
 <section id="how-unusual-is-my-sample-mean">
 <h2>How unusual is my sample mean?<a class="headerlink" href="#how-unusual-is-my-sample-mean" title="Permalink to this heading">#</a></h2>
 <p>Say we give the Brexdex questionnaire to 100 statistics undergraduates in Oxford, and their mean score is 55.1, as opposed to the mean in the UK national sample, 49.9. Can we infer that the students have different political attitude to the UK population as a whole?</p>
-<p>The sampling distriution of the mean tells us the distribution of sample means we expect to get if we draw samples from the parent population (the UK national sample)</p>
+<p>The sampling distribution of the mean tells us the distribution of sample means we expect to get if we draw samples from the parent population (the UK national sample)</p>
 <section id="using-the-simulated-sampling-distribution-of-the-mean">
 <h3>Using the simulated sampling distribution of the mean<a class="headerlink" href="#using-the-simulated-sampling-distribution-of-the-mean" title="Permalink to this heading">#</a></h3>
 <p>What proportion of sample means in our simulated sampling distribution exceeded 55.1?</p>
@@ -1265,7 +1297,7 @@ where \)</span>\sigma$ is the standard deviaition of the parent distribution:</p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of sample means greater than 55.1 = 0.0157 or 1.5699999999999998%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of sample means greater than 55.1 = 0.0184 or 1.8399999999999999%
 </pre></div>
 </div>
 </div>

@@ -9,7 +9,7 @@ calculate the mean - this gives me an estimate of the mean height of
 all men, but how much would my estimate change if I had randomly
 selected 10 different men for my sample?
 
-We start by looking at the unusual case in which the population of
+We start by looking at the unusual case in which the population or
 parent distribution is available to us. We will simulate the process of drawing many samples of size n
 from a parent distribution, and taking the mean of each sample. The
 distribution of these means, known as the <b>sampling distribution of

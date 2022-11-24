@@ -60,7 +60,7 @@ plt.ylabel('frequency')
 # Your code here!
 
 
-# In fact when $n=1$, the sample mean is simply the value of the (one) person int he sample's score, so the sampling distribution of the mean is exactly the sample data distribution
+# In fact when $n=1$, the sample mean is simply the value of the (one) person in the sample's score, so the sampling distribution of the mean is exactly the sample data distribution
 # 
 # ### $n=2$
 # 
@@ -111,7 +111,7 @@ plt.ylabel('frequency')
 # 
 # How large is large enough?
 # 
-# A good rule of thumb is that the Central Limit Theorem applieds for $n>50$, and a larger $n$ is required for a roughly normal sampling distribution when the data distribution is grossly non-normal (such as the bimodal Brexdex distribution). 
+# A good rule of thumb is that the Central Limit Theorem applies for $n>50$, and a larger $n$ is required for a roughly normal sampling distribution when the data distribution is grossly non-normal (such as the bimodal Brexdex distribution). 
 # 
 # In reality, the normal distribution becomes a closer and closer fit tot the sampling distribution of the mean as $n$ gets larger
 # 
@@ -121,10 +121,10 @@ plt.ylabel('frequency')
 # 
 # Now, we work out the mean and SEM that would be predicted for the sampling distribution of the mean, if the central limit theorem applied.
 # 
-# Finally we compare the predicted normmal distribution to the simulated sampling distribution of the mean in a plot
+# Finally we compare the predicted normal distribution to the simulated sampling distribution of the mean in a plot
 # 
 # <b><i>Note - </i></b>
-# The code to get the normal curve and histogram to match in scale is a bit fiddly, I don't expect you to understand this fully
+# The code to get the normal curve and histogram to match in scale is a bit fiddly, I don't expect you to understand this fully but it is explained in Tutorial Exercises II if you get that far!
 
 # In[6]:
 
@@ -167,7 +167,7 @@ plt.show()
 # 
 # The differences in the peak and tails of the distribution can be hard to spot on a histogram/Normal plot as above.
 # 
-# A type of plot designed to make these clearer is what's called a Q-Q (quantile-quantile) plot. This plots the quantiles of the data distriubtion (in this case our 10,000 simulated saample means) against the quantiles of the normal distribution.
+# A type of plot designed to make these clearer exists - it is called a Q-Q (quantile-quantile) plot. In the Q-Q plot, we plot the quantiles of the data distribution (in this case our 10,000 simulated sample means) against the quantiles of the normal distribution.
 # 
 # If our data distribution was normal, the points would all fall on a straight line, but here we see the deviation at the tails of the distribution, reflecting the difference between the triangular tails of the simulated sampling distribution as opposed to the finely tapered tails of the normal distribution.
 

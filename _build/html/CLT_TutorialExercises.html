@@ -437,6 +437,28 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="bootstrapping_intro.html">
+   7. The Bootstrap
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_samplingIntro.html">
+     7.2. Sampling with and without replacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TheBootstrap.html">
+     7.3. The bootstrap
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -896,7 +918,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>In fact when <span class="math notranslate nohighlight">\(n=1\)</span>, the sample mean is simply the value of the (one) person int he sample’s score, so the sampling distribution of the mean is exactly the sample data distribution</p>
+<p>In fact when <span class="math notranslate nohighlight">\(n=1\)</span>, the sample mean is simply the value of the (one) person in the sample’s score, so the sampling distribution of the mean is exactly the sample data distribution</p>
 </section>
 <section id="n-2">
 <h3><span class="math notranslate nohighlight">\(n=2\)</span><a class="headerlink" href="#n-2" title="Permalink to this heading">#</a></h3>
@@ -940,15 +962,15 @@ title="Print to PDF"
 <h1><span class="section-number">6.9. </span>What do we mean by ‘when <span class="math notranslate nohighlight">\(n\)</span> is large’?<a class="headerlink" href="#what-do-we-mean-by-when-n-is-large" title="Permalink to this heading">#</a></h1>
 <p>The Central Limit Theorem states that the sampling distribution of the mean is estimated by <span class="math notranslate nohighlight">\(\mathcal{N}(\bar{x},\frac{s}{\sqrt{n}})\)</span> when <span class="math notranslate nohighlight">\(n\)</span> is large</p>
 <p>How large is large enough?</p>
-<p>A good rule of thumb is that the Central Limit Theorem applieds for <span class="math notranslate nohighlight">\(n&gt;50\)</span>, and a larger <span class="math notranslate nohighlight">\(n\)</span> is required for a roughly normal sampling distribution when the data distribution is grossly non-normal (such as the bimodal Brexdex distribution).</p>
+<p>A good rule of thumb is that the Central Limit Theorem applies for <span class="math notranslate nohighlight">\(n&gt;50\)</span>, and a larger <span class="math notranslate nohighlight">\(n\)</span> is required for a roughly normal sampling distribution when the data distribution is grossly non-normal (such as the bimodal Brexdex distribution).</p>
 <p>In reality, the normal distribution becomes a closer and closer fit tot the sampling distribution of the mean as <span class="math notranslate nohighlight">\(n\)</span> gets larger</p>
 <section id="n-100">
 <h2><span class="math notranslate nohighlight">\(n=100\)</span><a class="headerlink" href="#n-100" title="Permalink to this heading">#</a></h2>
 <p>Let’s start with a value of <span class="math notranslate nohighlight">\(n\)</span> for which the central limit theorem should definitely apply, <span class="math notranslate nohighlight">\(n=100\)</span></p>
 <p>Now, we work out the mean and SEM that would be predicted for the sampling distribution of the mean, if the central limit theorem applied.</p>
-<p>Finally we compare the predicted normmal distribution to the simulated sampling distribution of the mean in a plot</p>
+<p>Finally we compare the predicted normal distribution to the simulated sampling distribution of the mean in a plot</p>
 <p><b><i>Note - </i></b>
-The code to get the normal curve and histogram to match in scale is a bit fiddly, I don’t expect you to understand this fully</p>
+The code to get the normal curve and histogram to match in scale is a bit fiddly, I don’t expect you to understand this fully but it is explained in Tutorial Exercises II if you get that far!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first simulate the sampling distribution of the mean for 10,000 samples</span>
@@ -990,7 +1012,7 @@ The code to get the normal curve and histogram to match in scale is a bit fiddly
 <section id="q-q-plot">
 <h2>Q-Q plot<a class="headerlink" href="#q-q-plot" title="Permalink to this heading">#</a></h2>
 <p>The differences in the peak and tails of the distribution can be hard to spot on a histogram/Normal plot as above.</p>
-<p>A type of plot designed to make these clearer is what’s called a Q-Q (quantile-quantile) plot. This plots the quantiles of the data distriubtion (in this case our 10,000 simulated saample means) against the quantiles of the normal distribution.</p>
+<p>A type of plot designed to make these clearer exists - it is called a Q-Q (quantile-quantile) plot. In the Q-Q plot, we plot the quantiles of the data distribution (in this case our 10,000 simulated sample means) against the quantiles of the normal distribution.</p>
 <p>If our data distribution was normal, the points would all fall on a straight line, but here we see the deviation at the tails of the distribution, reflecting the difference between the triangular tails of the simulated sampling distribution as opposed to the finely tapered tails of the normal distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

@@ -861,7 +861,8 @@ title="Print to PDF"
 <h1><span class="section-number">6.10. </span>Tutorial Exercises II: the <span class="math notranslate nohighlight">\(t\)</span> distribution<a class="headerlink" href="#tutorial-exercises-ii-the-t-distribution" title="Permalink to this heading">#</a></h1>
 <p>When <span class="math notranslate nohighlight">\(n\)</span> is small, the Central Limit Theorem does not apply</p>
 <p>However as we shall see here, if the parent or population distribution is normal, the sampling distribution of the mean for small samples has a known shape, namely the <span class="math notranslate nohighlight">\(t\)</span> distribution</p>
-<p>The <span class="math notranslate nohighlight">\(t\)</span> distribution looks quite like a normal distribution but has a pointy top and heavy tails</p>
+<p>The <span class="math notranslate nohighlight">\(t\)</span> distribution looks quite like a normal distribution but has a pointy top and heavy tails.</p>
+<p>The difference in the tails, whilst visually not that striking, is really important, because samples means of interest (those which area long way above or below the population mean) are, by definition, in the tails ofthe distribution.</p>
 <section id="set-up-python-libraries">
 <h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
@@ -957,7 +958,7 @@ title="Print to PDF"
 <p>We note that:</p>
 <ul>
     <li> The predicted normal curve lies neatly over the simulation histogram indicating a good fit
-    <li> Most of the points in the Q-Q plot fall on a straight line, indicating a good fit, including in the tails of the dsitribution
+    <li> Most of the points in the Q-Q plot fall on a straight line, indicating a good fit, including in the tails of the distribution
 </ul><section id="estimating-sigma-with-s">
 <h3>Estimating <span class="math notranslate nohighlight">\(\sigma\)</span> with <span class="math notranslate nohighlight">\(s\)</span><a class="headerlink" href="#estimating-sigma-with-s" title="Permalink to this heading">#</a></h3>
 <p>Above, we calculated the sample mean <span class="math notranslate nohighlight">\(m\)</span> for each sample. We can think of each of these sample means <span class="math notranslate nohighlight">\(m\)</span> as an estimate of the mean <span class="math notranslate nohighlight">\(\mu\)</span> of the parent (population) distribution - in real life we would usually <i>only</i> have one sample and therefore our (single) value of <span class="math notranslate nohighlight">\(m\)</span> would be the only estimate we have of <span class="math notranslate nohighlight">\(\mu\)</span></p>
@@ -1013,7 +1014,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of s is 7.0050598086944
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of s is 6.9761796298426635
 </pre></div>
 </div>
 <img alt="_images/CLT_Tutorial2tdist_12_1.png" src="_images/CLT_Tutorial2tdist_12_1.png" />
@@ -1096,8 +1097,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of m is 162.00991695938762
-mean simulated value of s is 7.0126689926603545
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of m is 161.94455619780825
+mean simulated value of s is 6.980932236058921
 </pre></div>
 </div>
 <img alt="_images/CLT_Tutorial2tdist_14_1.png" src="_images/CLT_Tutorial2tdist_14_1.png" />
@@ -1109,7 +1110,7 @@ mean simulated value of s is 7.0126689926603545
 <ul>
 <li> The estimates of m and s are not bad
 <li> The random variation in m and s between samples is fairly symmetrical (values above and below the true values mu and sigma are equally likely)
-<li> The Q-Q plot shows that normal distribution is not a bad fit to the sampling distribution of m and s (but note as mentioned above, the distribubtion of s is actually a different distribution, the gamma, which looks normal-ish for large n)
+<li> The Q-Q plot shows that normal distribution is not a bad fit to the sampling distribution of m and s (but note as mentioned above, the distribution of s is actually a different-shaped distribution, the gamma, which looks normal-ish for large n)
 </ul></p>
 <section id="try-changing-n">
 <h3>Try changing <span class="math notranslate nohighlight">\(n\)</span><a class="headerlink" href="#try-changing-n" title="Permalink to this heading">#</a></h3>
@@ -1179,7 +1180,7 @@ mean simulated value of s is 7.0126689926603545
 <img alt="_images/CLT_Tutorial2tdist_17_0.png" src="_images/CLT_Tutorial2tdist_17_0.png" />
 </div>
 </div>
-<p>We can see a particular problem in the tail of the distribution.</p>
+<p>We can see a particular problem in the tails of the distribution - the fit between the predicted Normal and the simulated histogram is poor.</p>
 <p>We would expect Z&lt;-1.96 or Z&gt;1.96 to happen 5% of the time (we covered this in the prep work on confidence intervals). How often do they happen in this simulation?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1188,7 +1189,7 @@ mean simulated value of s is 7.0126689926603545
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.81
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.67
 </pre></div>
 </div>
 </div>
@@ -1203,7 +1204,7 @@ mean simulated value of s is 7.0126689926603545
 <p>Let’s try overlaying the t distribution over our histogram:</p>
 <section id="note">
 <h4>Note -<a class="headerlink" href="#note" title="Permalink to this heading">#</a></h4>
-<p>You will notice the syntax for the <span class="math notranslate nohighlight">\(t\)</span> PDF, <tt>stats.t.pdf()</tt> is similar to the syntax <tt>stats.norm.pdf()</tt> but has an additional argument <tt>n-1</tt>, which reflects the fact that the <span class="math notranslate nohighlight">\(t\)</span> distriubtion actually changes shape as n$ increases. The term <tt>n-1</tt> is technically the <i>degrees of freedom</i> of the t-distribution (don’t worry at this stage if you don’t know that term).</p>
+<p>You will notice the syntax for the <span class="math notranslate nohighlight">\(t\)</span> PDF, <tt>stats.t.pdf()</tt> is similar to the syntax <tt>stats.norm.pdf()</tt> but has an additional argument <tt>n-1</tt>, which reflects the fact that the <span class="math notranslate nohighlight">\(t\)</span> distriubtion actually changes shape as <span class="math notranslate nohighlight">\(n\)</span> increases. The term <tt>(n-1)</tt> is technically the <i>degrees of freedom</i> of the t-distribution (don’t worry at this stage if that sounds like unfamiliar jargon).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># histogram of t</span>
@@ -1233,7 +1234,7 @@ mean simulated value of s is 7.0126689926603545
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/CLT_Tutorial2tdist_22_0.png" src="_images/CLT_Tutorial2tdist_22_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1049
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1076
 </pre></div>
 </div>
 </div>
@@ -1243,6 +1244,7 @@ mean simulated value of s is 7.0126689926603545
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the CDF of the t-distribution to find the proportion of the time t(df=4) should exceed 2.13</span>
+<span class="c1"># Your code here!</span>
 </pre></div>
 </div>
 </div>
@@ -1250,6 +1252,7 @@ mean simulated value of s is 7.0126689926603545
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count what proportion of the time t&gt;=2.13 in your simulation</span>
+<span class="c1"># Your code here!</span>
 </pre></div>
 </div>
 </div>
@@ -1304,13 +1307,13 @@ mean simulated value of s is 7.0126689926603545
 <h3>Further Exercises<a class="headerlink" href="#further-exercises" title="Permalink to this heading">#</a></h3>
 <ol>
 <li> Try changing $n$ in the simulation above and observe how the $t$ distribution changes (and becomes more like the  distribution when $n$ is large)
-<li> What value of n is needed for the 95% ppf of the $t(9)$ distribution (the $t$ distribution when n=10) to match that of the Z distribution to 3 significant figures?
+<li> What value of n is needed for the 95% ppf of the $t(n-1)$ distribution (the $t$ distribution with n degrees of freedom) to match that of the Z distribution to 3 significant figures?
 </ol>
 <p>To get you started with exercise 2 here is some code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)</span>
-<span class="c1"># your code here to find the matching PPF for the t(9) distribution!</span>
+<span class="c1"># your code here to find the matching PPF for the t(n-1) distribution for various values of n!</span>
 </pre></div>
 </div>
 </div>
