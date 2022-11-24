@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6.7. Tutorial exercises" href="CLT_TutorialExercises.html" />
+    <link rel="next" title="6.7. Tutorial exercises I: The Central Limit Theorem" href="CLT_TutorialExercises.html" />
     <link rel="prev" title="6.3. Central Limit Theorem" href="CLT_sampling.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -423,7 +423,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CLT_TutorialExercises.html">
-     6.7. Tutorial exercises
+     6.7. Tutorial exercises I: The Central Limit Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CLT_Tutorial2tdist.html">
+     6.10. Tutorial Exercises II: the
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     distribution
     </a>
    </li>
   </ul>
@@ -778,7 +787,7 @@ title="Print to PDF"
 <p>However, a more common situation is that we just have one sample (of size <span class="math notranslate nohighlight">\(n\)</span>). Then we do not know the parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> of the parent population.</p>
 <p>Nonetheless we want to estimate what the random variation in sample means <i>would</i> be <i>if</i> we were to draw lots more samples of size <span class="math notranslate nohighlight">\(n\)</span> from the same parent population, as this allows us to establish a plausible range in which the true parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> might fall.</p>
 <p>The Central Limit Theorem allows us to do this by the following logic:</p>
-<p>(For large <span class="math notranslate nohighlight">\(n\)</span>)</p>
+<p>(For large <span class="math notranslate nohighlight">\(n\)</span>, which roughly means <span class="math notranslate nohighlight">\(n&gt;50\)</span>)</p>
 <p>– The true sampling distribution of the mean is <span class="math notranslate nohighlight">\(\mathcal{N}(\mu, \frac{\sigma}{\sqrt{n}})\)</span></p>
 <p>– Our best estimate of the sampling distribution of the mean is therefore <span class="math notranslate nohighlight">\(\mathcal{N}(\bar{x}, \frac{s}{\sqrt{n}})\)</span>, where <span class="math notranslate nohighlight">\(\bar{x}\)</span> and <span class="math notranslate nohighlight">\(s\)</span> are our estimates of the mean and standard deviation of the parent distibution, based on the sample</p>
 <p>—- <span class="math notranslate nohighlight">\(\bar{x}\)</span> is the mean of the sample, ie <tt>sample.mean()</tt></p>
@@ -811,7 +820,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>I can see that the mean IQ of the students in my sample is indeed slightly over 100, and a histogram suggests there is a positive skew (some students have IQ well above the mean)</p>
+<p>I can see that the mean IQ of the students in my sample is indeed slightly over 100, and a histogram suggests there is a positive skew (some students have IQ well above the mean but none have an IQ well below the mean)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean IQ = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
@@ -830,8 +839,8 @@ title="Print to PDF"
 <img alt="_images/CLT_CI_6_2.png" src="_images/CLT_CI_6_2.png" />
 </div>
 </div>
-<p>… but could the high mean IQ be due to random chance, as I happened to select a sample of high IQ students?</p>
-<p>Under the central limit theorem, the sampling distribution fo the mean is estimated by <span class="math notranslate nohighlight">\(\mathcal{N}(\bar{x}, \frac{s}{\sqrt{n}})\)</span></p>
+<p>… but could the high mean IQ be due to random chance, as I happened to select a sample containing several high IQ students?</p>
+<p>Under the central limit theorem, because <span class="math notranslate nohighlight">\(n\)</span> is large the sampling distribution fo the mean is estimated by <span class="math notranslate nohighlight">\(\mathcal{N}(\bar{x}, \frac{s}{\sqrt{n}})\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -875,7 +884,7 @@ title="Print to PDF"
 <h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this heading">#</a></h2>
 <p>Just for fun, here is a much larger sample of all the students taking maths A-level (30,000 individuals)</p>
 <p>Can you run a simulation to draw samples of size 60 from this dataset, get the mean of each one, and work out what percentage of sample means are indeed below 100?</p>
-<p>Hopefully it should match fairly well the prediction from the normal distribution!</p>
+<p>Hopefully it should match fairly well the prediction from the Central Limit Theorem!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mathsIQ_30k</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/mathsIQ_30k.csv&#39;</span><span class="p">)</span>
@@ -896,11 +905,26 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to draw 10,000 samples of size 60 from the distribution above</span>
 <span class="c1"># Obtain the sample mean from each sample</span>
 <span class="c1"># Work out the proportion of sample means that are less than 100</span>
+
+<span class="n">nReps</span><span class="o">=</span><span class="mi">10000</span>
+<span class="n">m</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">60</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">],</span><span class="n">n</span><span class="p">,</span><span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">sample</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="nb">sum</span><span class="p">(</span><span class="n">m</span><span class="o">&lt;</span><span class="mi">100</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0071
 </pre></div>
 </div>
 </div>
 </div>
-<p>Hopefully the proportion of simulated sample means that are lower than 100 matches the prediction from the normal distribution - does it?</p>
+<p>Hopefully the proportion of simulated sample means that are lower than 100 matches the prediction from the Central Limit Theorem - does it?</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="confidence-intervals">
@@ -924,7 +948,7 @@ title="Print to PDF"
 </section>
 <section id="ci-for-maths-iq">
 <h2>95% CI for maths IQ<a class="headerlink" href="#ci-for-maths-iq" title="Permalink to this heading">#</a></h2>
-<p>The sampling distribution of the mean for the maths IQ data, with samples of size 60, was estimated to be <span class="math notranslate nohighlight">\(\mathcal{N}(\bar{x}, \frac{s}{\sqrt{n}})\)</span> = <span class="math notranslate nohighlight">\(\mathcal{N}(102.75, 1.537043)\)</span>.</p>
+<p>The sampling distribution of the mean for the maths IQ data, with samples of size 60, was estimated to be <span class="math notranslate nohighlight">\(\mathcal{N}(\bar{x}, \frac{s}{\sqrt{n}})\)</span> = <span class="math notranslate nohighlight">\(\mathcal{N}(102.75, 1.537)\)</span>.</p>
 <p>Our 95% CI for the mean of the parent population (mean IQ of all maths A-level students) is then</p>
 <div class="math notranslate nohighlight">
 \[[102.75 - 1.96 \times 1.537, 102.75 + 1.96 \times 1.537]\]</div>
@@ -972,7 +996,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="CLT_TutorialExercises.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.7. </span>Tutorial exercises</p>
+        <p class="prev-next-title"><span class="section-number">6.7. </span>Tutorial exercises I: The Central Limit Theorem</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
