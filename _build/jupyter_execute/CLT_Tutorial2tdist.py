@@ -437,10 +437,10 @@ stats.t.ppf(0.95, 4)
 
 # ### Further Exercises
 # 
-# <ol>
-# <li> Try changing $n$ in the simulation above and observe how the $t$ distribution changes (and becomes more like the  distribution when $n$ is large)
-# <li> What value of n is needed for the 95% ppf of the $t(n-1)$ distribution (the $t$ distribution with n degrees of freedom) to match that of the Z distribution to 3 significant figures?
-# </ol>
+# 1. Try changing $n$ in the simulation above and observe how the $t$ distribution changes (and becomes more like the  distribution when $n$ is large)
+# 
+# 2. What value of $n$ is needed for the 95% ppf of the $t(n-1)$ distribution (the $t$ distribution for a sample of size $n$) to match that of the $Z$ distribution to 3 significant figures?
+# 
 # 
 # To get you started with exercise 2 here is some code:
 
