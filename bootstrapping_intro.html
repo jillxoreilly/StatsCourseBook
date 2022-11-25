@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>The Bootstrap &#8212; Introduction to Statistics and Data Science</title>
+    <title>7. The Bootstrap &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7.2. Learning Objectives" href="bootstrap_outcomes.html" />
+    <link rel="prev" title="6.10. Tutorial Exercises II: the \(t\) distribution" href="CLT_Tutorial2tdist.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -112,7 +114,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="prepwork_intro.html">
    1. Preparatory Work
@@ -433,6 +435,38 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   7. The Bootstrap
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_outcomes.html">
+     7.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_samplingIntro.html">
+     7.3. Sampling with and without replacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TheBootstrap.html">
+     7.4. The bootstrap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TutorialExercises1.html">
+     7.6. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -612,7 +646,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tasks-for-this-week">
-   Tasks for this week
+   7.1. Tasks for this week
   </a>
  </li>
 </ul>
@@ -636,7 +670,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tasks-for-this-week">
-   Tasks for this week
+   7.1. Tasks for this week
   </a>
  </li>
 </ul>
@@ -650,7 +684,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="the-bootstrap">
-<h1>The Bootstrap<a class="headerlink" href="#the-bootstrap" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>The Bootstrap<a class="headerlink" href="#the-bootstrap" title="Permalink to this heading">#</a></h1>
 <p>This week we will be thinking about random variability across samples</p>
 <p>Often, we have a relatively small sample of data, and want to infer
 from it something about the properties of a parent or population
@@ -664,11 +698,13 @@ from a parent distribution, and taking the mean of each sample. The
 distribution of these means, known as the <b>sampling distribution of
 the mean</b>, describes the expected random variability in the mean
 for different samples.</p>
-<p>We also saw that for certain situations the sampling distribubtion of the mean can be predicted from theory - we saw that the sammpling distribution can sometimes be modelled as a normal distribution (forlarge samples) or a t distribution (for normal data)</p>
+<p>We also saw that for certain situations the sampling distribution of
+the mean can be predicted from theory - we saw that the sammpling
+distribution can sometimes be modelled as a normal distribution (for large samples) or a t distribution (for normal data)</p>
 <p>This week we will meet an empirical (sampling based) technique to establish the sampling distribution of and statsitic, for any sample size, for any data distribution.</p>
 <p>Meet the bootstrap!</p>
 <section id="tasks-for-this-week">
-<h2>Tasks for this week<a class="headerlink" href="#tasks-for-this-week" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.1. </span>Tasks for this week<a class="headerlink" href="#tasks-for-this-week" title="Permalink to this heading">#</a></h2>
 <p><b>Conceptual material</b> is covered in the lecture. In addition to the
 live lecture, you can find lecture videos on Canvas.</p>
 <p>Please work through the guided exercises in this section (everything
@@ -686,6 +722,8 @@ with your tutor in the computer-based tutoral session.</p>
 discuss the guided exercises and tutorial exercises with your tutor to
 make sure you understand</p>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -715,6 +753,20 @@ make sure you understand</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="CLT_Tutorial2tdist.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">6.10. </span>Tutorial Exercises II: the <span class="math notranslate nohighlight">\(t\)</span> distribution</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="bootstrap_outcomes.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7.2. </span>Learning Objectives</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

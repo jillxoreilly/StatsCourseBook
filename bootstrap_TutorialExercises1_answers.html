@@ -435,6 +435,38 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="bootstrapping_intro.html">
+   7. The Bootstrap
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_outcomes.html">
+     7.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_samplingIntro.html">
+     7.3. Sampling with and without replacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TheBootstrap.html">
+     7.4. The bootstrap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TutorialExercises1.html">
+     7.6. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -992,7 +1024,7 @@ title="Print to PDF"
 <p>Let’s start by creating a column in our dataframe for the difference in wellbeing score between pre- and post-vacation measurements</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here!</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Score_diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Score_postVac&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1003,16 +1035,14 @@ title="Print to PDF"
 <li>find out how many psychology students there are
     </ul><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean change = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="c1">##### your code here #####)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="c1">##### your code here #####))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean change = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Psychology&#39;</span><span class="p">][</span><span class="s1">&#39;Score_diff&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Psychology&#39;</span><span class="p">])))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_92018/997001711.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="c1">##### your code here #####))</span>
-                                                   <span class="o">^</span>
-<span class="ne">SyntaxError</span>: unexpected EOF while parsing
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean change = 2.68
+n = 25
 </pre></div>
 </div>
 </div>
@@ -1034,6 +1064,37 @@ title="Print to PDF"
 <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="c1"># plot the sample means</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_1452/4278540331.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="n">nReps</span> <span class="o">=</span> <span class="c1"># your code here</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ANSWER</span>
+
+<span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Psychology&#39;</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Score_diff&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="c1"># plot the sample means</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/bootstrap_TutorialExercises1_answers_13_1.png" src="_images/bootstrap_TutorialExercises1_answers_13_1.png" />
 </div>
 </div>
 <p>We can also work out exactly what percentage of the samples have a negative change in wellbeing</p>
@@ -1072,7 +1133,7 @@ upper bound = 6.36
 </div>
 </div>
 </div>
-<p>The confidence interval includes zero, meaning no change in wellbeing (or a negative change) is a plausible value for the population change in wellbeing over the vac</p>
+<p>The confidence interval includes ero, meaning no change in wellbeing (or a negative change) is a plausible value for the population change in wellbbeing over the vac</p>
 </section>
 </section>
 <section id="is-wellbeing-higher-in-lonsdale-than-in-beaufort-engineering-students">
@@ -1581,12 +1642,12 @@ upper bound = 6.36
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count how many bibology students in each college using df.value_counts()</span>
-<span class="c1"># your code here!</span>
+<span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Biology&#39;</span><span class="p">][</span><span class="s1">&#39;College&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Plot their wellbeing scores (before the vac) in a violin plot</p>
+<p>PLot their wellbeing scores (before the vac) in a violin plot</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Biology&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;College&#39;</span><span class="p">)</span>
@@ -1597,7 +1658,7 @@ upper bound = 6.36
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;College&#39;, ylabel=&#39;Score_preVac&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/bootstrap_TutorialExercises1_answers_23_1.png" src="_images/bootstrap_TutorialExercises1_answers_23_1.png" />
+<img alt="_images/bootstrap_TutorialExercises1_answers_24_1.png" src="_images/bootstrap_TutorialExercises1_answers_24_1.png" />
 </div>
 </div>
 <p>It looks like Beaufort biologists had slightly higher wellbeing scores but how confident can we be in that difference?</p>
@@ -1621,10 +1682,39 @@ upper bound = 6.36
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#ANSWER</span>
+
+<span class="n">LonsdaleBiol</span> <span class="o">=</span> <span class="n">wb</span><span class="p">[(</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;College&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Lonsdale&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Biology&#39;</span><span class="p">)]</span>
+<span class="n">BeaufortBiol</span> <span class="o">=</span> <span class="n">wb</span><span class="p">[(</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;College&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Beaufort&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Biology&#39;</span><span class="p">)]</span>
+
+<span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">mDiff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<span class="n">nL</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">LonsdaleBiol</span><span class="p">)</span>
+<span class="n">nB</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">BeaufortBiol</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample_Lonsdale</span> <span class="o">=</span> <span class="n">LonsdaleBiol</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">nL</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">sample_Beaufort</span> <span class="o">=</span> <span class="n">BeaufortBiol</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">nB</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">mDiff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample_Beaufort</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">-</span><span class="n">sample_Lonsdale</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># mean wellbeing of Beaufort biologists minus mean wellbeing of Lonsdale biologists</span>
+    
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">mDiff</span><span class="p">)</span> <span class="c1"># plot the sample means</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/bootstrap_TutorialExercises1_answers_27_1.png" src="_images/bootstrap_TutorialExercises1_answers_27_1.png" />
+</div>
+</div>
 <p>In what proportion of (re)samples do Lonsdale biologists actually have higher mean wellbeing?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here!</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">mDiff</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">mDiff</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1648,7 +1738,7 @@ upper bound = 6.36
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Score_preVac&#39;, ylabel=&#39;Score_postVac&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/bootstrap_TutorialExercises1_answers_29_1.png" src="_images/bootstrap_TutorialExercises1_answers_29_1.png" />
+<img alt="_images/bootstrap_TutorialExercises1_answers_31_1.png" src="_images/bootstrap_TutorialExercises1_answers_31_1.png" />
 </div>
 </div>
 <p>It looks like there is a fairly strong correlation between wellbeing scores before and after the vacation for the same individual.</p>
@@ -1666,17 +1756,17 @@ upper bound = 6.36
 </div>
 </div>
 <p>I want to know how confident I can be that wellbeing before and after the vacation are correlated</p>
-<p>I need a sampling distribution for the correlation coefficient <span class="math notranslate nohighlight">\(r\)</span></p>
+<p>I need a sampling distriubtion for the correlation coefficient <span class="math notranslate nohighlight">\(r\)</span></p>
 <p>I can obtain this using bootstrapping:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span><span class="o">=</span><span class="c1"># your code here</span>
-<span class="n">r</span><span class="o">=</span><span class="c1"># your code here</span>
-<span class="n">n</span><span class="o">=</span><span class="c1"># your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span><span class="o">=</span><span class="mi">10000</span>
+<span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">wb</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
-    <span class="n">sample</span> <span class="o">=</span> <span class="c1"># your code here</span>
-    <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># your code here</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Score_postVac&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
 
 <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;sample correlation, $r_s$&#39;</span><span class="p">)</span>
@@ -1685,7 +1775,7 @@ upper bound = 6.36
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bootstrap_TutorialExercises1_answers_33_0.png" src="_images/bootstrap_TutorialExercises1_answers_33_0.png" />
+<img alt="_images/bootstrap_TutorialExercises1_answers_35_0.png" src="_images/bootstrap_TutorialExercises1_answers_35_0.png" />
 </div>
 </div>
 <p>We can see that all the (re)samples have a strong positive correlation between wellbeing before and after the vacation</p>
@@ -1723,7 +1813,7 @@ upper bound = 6.36
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Score_preVac&#39;, ylabel=&#39;Score_postVac&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/bootstrap_TutorialExercises1_answers_37_1.png" src="_images/bootstrap_TutorialExercises1_answers_37_1.png" />
+<img alt="_images/bootstrap_TutorialExercises1_answers_39_1.png" src="_images/bootstrap_TutorialExercises1_answers_39_1.png" />
 </div>
 </div>
 <p>Let’s get the correlation coefficient:</p>
@@ -1762,7 +1852,7 @@ upper bound = 6.36
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bootstrap_TutorialExercises1_answers_41_0.png" src="_images/bootstrap_TutorialExercises1_answers_41_0.png" />
+<img alt="_images/bootstrap_TutorialExercises1_answers_43_0.png" src="_images/bootstrap_TutorialExercises1_answers_43_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1815,7 +1905,7 @@ upper bound = 6.36
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of resamples in whihc PPE wellbeing is higher: 0.1197
 </pre></div>
 </div>
-<img alt="_images/bootstrap_TutorialExercises1_answers_44_1.png" src="_images/bootstrap_TutorialExercises1_answers_44_1.png" />
+<img alt="_images/bootstrap_TutorialExercises1_answers_46_1.png" src="_images/bootstrap_TutorialExercises1_answers_46_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1841,7 +1931,7 @@ upper bound = 6.36
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.0,3.0
 </pre></div>
 </div>
-<img alt="_images/bootstrap_TutorialExercises1_answers_45_1.png" src="_images/bootstrap_TutorialExercises1_answers_45_1.png" />
+<img alt="_images/bootstrap_TutorialExercises1_answers_47_1.png" src="_images/bootstrap_TutorialExercises1_answers_47_1.png" />
 </div>
 </div>
 <p>Note the discrete distribution as there are only a small number of dataapoints that can reasonablbe end up being the 5th centile in either college in any given resample</p>

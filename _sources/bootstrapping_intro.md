@@ -16,7 +16,9 @@ distribution of these means, known as the <b>sampling distribution of
 the mean</b>, describes the expected random variability in the mean
 for different samples.
 
-We also saw that for certain situations the sampling distribubtion of the mean can be predicted from theory - we saw that the sammpling distribution can sometimes be modelled as a normal distribution (forlarge samples) or a t distribution (for normal data)
+We also saw that for certain situations the sampling distribution of
+the mean can be predicted from theory - we saw that the sammpling
+distribution can sometimes be modelled as a normal distribution (for large samples) or a t distribution (for normal data)
 
 This week we will meet an empirical (sampling based) technique to establish the sampling distribution of and statsitic, for any sample size, for any data distribution.
 
