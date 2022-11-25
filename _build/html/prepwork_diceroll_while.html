@@ -437,6 +437,38 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="bootstrapping_intro.html">
+   7. The Bootstrap
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_outcomes.html">
+     7.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_samplingIntro.html">
+     7.3. Sampling with and without replacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TheBootstrap.html">
+     7.4. The bootstrap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TutorialExercises1.html">
+     7.6. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -825,19 +857,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>roll 1. Outcome = 4
-roll 2. Outcome = 2
-roll 3. Outcome = 3
-roll 4. Outcome = 1
-roll 5. Outcome = 3
-roll 6. Outcome = 1
-roll 7. Outcome = 2
-roll 8. Outcome = 1
-roll 9. Outcome = 5
-roll 10. Outcome = 3
-roll 11. Outcome = 4
-roll 12. Outcome = 6
-Total rolls needed to get a six: 12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>roll 1. Outcome = 1
+roll 2. Outcome = 3
+roll 3. Outcome = 5
+roll 4. Outcome = 4
+roll 5. Outcome = 6
+Total rolls needed to get a six: 5
 </pre></div>
 </div>
 </div>
@@ -891,7 +916,7 @@ recording how many times we needed to roll the dice to get a six.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([27.,  9.,  8., 13.,  6.,  3.,  1.,  2.,  1., 12.])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 7., 16.,  3.,  4.,  1., 15.,  1.,  2.,  4.,  5.])
 </pre></div>
 </div>
 </div>
@@ -909,8 +934,8 @@ recording how many times we needed to roll the dice to get a six.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>unique values = [ 1.  2.  3.  6.  8.  9. 12. 13. 27.]
-counts =        [2 1 1 1 1 1 1 1 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>unique values = [ 1.  2.  3.  4.  5.  7. 15. 16.]
+counts =        [2 1 1 2 1 1 1 1]
 </pre></div>
 </div>
 </div>
@@ -977,7 +1002,7 @@ we needed 5 or more trials in our simulation</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4775
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4805
 </pre></div>
 </div>
 </div>
@@ -989,7 +1014,7 @@ we needed 5 or more trials in our simulation</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47.75
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>48.05
 </pre></div>
 </div>
 </div>
@@ -1046,7 +1071,7 @@ we needed 5 or more trials in our simulation</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19.75
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19.7
 </pre></div>
 </div>
 </div>

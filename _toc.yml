@@ -65,3 +65,10 @@ chapters:
   - file: CLT_CI.ipynb
   - file: CLT_TutorialExercises.ipynb
   - file: CLT_Tutorial2tdist.ipynb
+- file: bootstrapping_intro.md
+  sections:
+  - file: bootstrap_outcomes.md
+  - file: bootstrap_samplingIntro.ipynb
+  - file: bootstrap_TheBootstrap.ipynb
+  - file: bootstrap_TutorialExercises1.ipynb
+  

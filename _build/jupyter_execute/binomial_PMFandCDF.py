@@ -78,7 +78,7 @@ stats.binom.pmf(8,10,0.5)
 1 - stats.binom.cdf(7,10,0.5)
 
 
-# The proportion of trials on which $k>=8$ should be roughly the same as the proportion of our 10,000 coin tosses in which k=8 (it wont exactly match, as the simulation was subject to random noise)
+# The proportion of trials on which $k>=8$ should be roughly the same as the proportion of our 10,000 coin tosses in which k>=8 (it wont exactly match, as the simulation was subject to random noise)
 
 # <ul>
 #     <li>Can you work out how to change this to get the probability of at least 9 heads out of 12 coin tosses? 

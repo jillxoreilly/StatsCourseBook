@@ -61,7 +61,7 @@ plt.show()
 # In[4]:
 
 
-# Your code here!
+wb['Score_diff'] = wb['Score_postVac']-wb['Score_preVac']
 
 
 # Now let's 
@@ -73,8 +73,8 @@ plt.show()
 # In[5]:
 
 
-print('mean change = ' + str(##### your code here #####)
-print('n = ' + str(##### your code here #####))
+print('mean change = ' + str(wb[wb['Subject']=='Psychology']['Score_diff'].mean()))
+print('n = ' + str(len(wb[wb['Subject']=='Psychology'])))
 
 
 # The mean increase in wellbeing score across the vacation for the 25 Psychology students is 2.68
@@ -85,7 +85,7 @@ print('n = ' + str(##### your code here #####))
 # 
 # Let's simulate it by bootstrapping!
 
-# In[ ]:
+# In[6]:
 
 
 nReps = # your code here
@@ -96,6 +96,22 @@ for i in range(nReps):
     sample = # your code here to draw a sample of size n with replacement fromthe dataframe wb
     m[i] = # the mean change in wellbeing across the vacation for this sample
 
+sns.histplot(m) # plot the sample means
+
+
+# In[168]:
+
+
+# ANSWER
+
+nReps = 10000
+m = np.empty(nReps)
+n = len(wb[wb['Subject']=='Psychology'])
+
+for i in range(nReps):
+    sample = wb.sample(n, replace=True)
+    m[i] = sample['Score_diff'].mean()
+    
 sns.histplot(m) # plot the sample means
 
 
@@ -126,7 +142,7 @@ print('lower bound = ' + str(np.quantile(m,0.025)))
 print('upper bound = ' + str(np.quantile(m,0.975)))
 
 
-# The confidence interval includes zero, meaning no change in wellbeing (or a negative change) is a plausible value for the population change in wellbeing over the vac
+# The confidence interval includes ero, meaning no change in wellbeing (or a negative change) is a plausible value for the population change in wellbbeing over the vac
 
 # ## Is wellbeing higher in Lonsdale than in Beaufort engineering students?
 # 
@@ -147,10 +163,10 @@ wb[wb['Subject']=='Biology']
 
 
 # count how many bibology students in each college using df.value_counts()
-# your code here!
+wb[wb['Subject']=='Biology']['College'].value_counts()
 
 
-# Plot their wellbeing scores (before the vac) in a violin plot
+# PLot their wellbeing scores (before the vac) in a violin plot
 
 # In[187]:
 
@@ -181,12 +197,34 @@ for i in range(nReps):
 sns.histplot(mDiff) # plot the sample means
 
 
+# In[199]:
+
+
+#ANSWER
+
+LonsdaleBiol = wb[(wb['College']=='Lonsdale') & (wb['Subject']=='Biology')]
+BeaufortBiol = wb[(wb['College']=='Beaufort') & (wb['Subject']=='Biology')]
+
+nReps = 10000
+mDiff = np.empty(nReps)
+nL = len(LonsdaleBiol)
+nB = len(BeaufortBiol)
+
+for i in range(nReps):
+    sample_Lonsdale = LonsdaleBiol.sample(nL, replace=True)
+    sample_Beaufort = BeaufortBiol.sample(nB, replace=True)
+    mDiff[i] = sample_Beaufort['Score_preVac'].mean()-sample_Lonsdale['Score_preVac'].mean() # mean wellbeing of Beaufort biologists minus mean wellbeing of Lonsdale biologists
+    
+
+sns.histplot(mDiff) # plot the sample means
+
+
 # In what proportion of (re)samples do Lonsdale biologists actually have higher mean wellbeing?
 
 # In[200]:
 
 
-# your code here!
+sum(mDiff<0)/len(mDiff)
 
 
 # ### Bootstrapped correlation between wellbeing scores before and after the vacation
@@ -213,20 +251,20 @@ wb['Score_preVac'].corr(wb['Score_postVac'], method='spearman')
 
 # I want to know how confident I can be that wellbeing before and after the vacation are correlated
 # 
-# I need a sampling distribution for the correlation coefficient $r$
+# I need a sampling distriubtion for the correlation coefficient $r$
 # 
 # I can obtain this using bootstrapping:
 
 # In[291]:
 
 
-nReps=# your code here
-r=# your code here
-n=# your code here
+nReps=10000
+r=np.empty(nReps)
+n=len(wb)
 
 for i in range(nReps):
-    sample = # your code here
-    r[i] = # your code here
+    sample = wb.sample(n, replace=True)
+    r[i] = sample['Score_preVac'].corr(sample['Score_postVac'], method='spearman')
 
 sns.histplot(r)
 plt.xlabel('sample correlation, $r_s$')

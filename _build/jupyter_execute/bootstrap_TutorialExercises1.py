@@ -101,7 +101,7 @@ sns.histplot(m) # plot the sample means
 
 # We can also work out exactly what percentage of the samples have a negative change in wellbeing
 
-# In[170]:
+# In[ ]:
 
 
 100 * sum(m<0)/len(m)
@@ -115,7 +115,7 @@ sns.histplot(m) # plot the sample means
 # 
 # We can define a 95% confidence interval for the change in wellbeing over the vacation in psychology students as the range in which 95% of (re)sample means fall:
 
-# In[176]:
+# In[ ]:
 
 
 # The boundaries of the 95% confidence interval 
@@ -136,7 +136,7 @@ print('upper bound = ' + str(np.quantile(m,0.975)))
 # 
 # Let's have a look at the relevant data:
 
-# In[289]:
+# In[ ]:
 
 
 # Get the biology students only from the dataframe
@@ -152,7 +152,7 @@ wb[wb['Subject']=='Biology']
 
 # Plot their wellbeing scores (before the vac) in a violin plot
 
-# In[187]:
+# In[ ]:
 
 
 sns.violinplot(data=wb[wb['Subject']=='Biology'], y='Score_preVac', x='College')
@@ -183,7 +183,7 @@ sns.histplot(mDiff) # plot the sample means
 
 # In what proportion of (re)samples do Lonsdale biologists actually have higher mean wellbeing?
 
-# In[200]:
+# In[ ]:
 
 
 # your code here!
@@ -195,7 +195,7 @@ sns.histplot(mDiff) # plot the sample means
 # 
 # Let's get an overview by plotting the data
 
-# In[212]:
+# In[ ]:
 
 
 sns.scatterplot(data=wb, x='Score_preVac', y='Score_postVac')
@@ -205,7 +205,7 @@ sns.scatterplot(data=wb, x='Score_preVac', y='Score_postVac')
 # 
 # The correlation might be exaggerated by a few outliers with particularly low scores, so let's use Spearman's correlation coefficient:
 
-# In[213]:
+# In[ ]:
 
 
 wb['Score_preVac'].corr(wb['Score_postVac'], method='spearman')
@@ -217,7 +217,7 @@ wb['Score_preVac'].corr(wb['Score_postVac'], method='spearman')
 # 
 # I can obtain this using bootstrapping:
 
-# In[291]:
+# In[ ]:
 
 
 nReps=# your code here
@@ -237,7 +237,7 @@ plt.show()
 # 
 # Can you obtain a 95% confidence interval for the correlation coefficient $r_s$?
 
-# In[292]:
+# In[ ]:
 
 
 # your code here
@@ -252,7 +252,7 @@ print(str(np.quantile(r,0.025)) + ',' + str(np.quantile(r,0.975)))
 # 
 # Let's look at the same correlation- wellbeing before and after the vac- in a smaller sample- just the Psychology students:
 
-# In[220]:
+# In[ ]:
 
 
 psy=wb[wb['Subject']=='Psychology']
@@ -261,7 +261,7 @@ sns.scatterplot(data=psy, x='Score_preVac', y='Score_postVac')
 
 # Let's get the correlation coefficient:
 
-# In[221]:
+# In[ ]:
 
 
 psy['Score_preVac'].corr(psy['Score_postVac'], method='spearman')
@@ -272,28 +272,18 @@ psy['Score_preVac'].corr(psy['Score_postVac'], method='spearman')
 # Intuitively, just from looking at the scatterplot, it feels that if we drew random samples from just the psychology students, we would find some random samples with a zero or even negative correlation between wellbeing before and after the vacation - much more likely that when we were working with the full dataset of 300 students.
 # 
 # <ul>
-#     <li> Obtain a bootstrapped sampling distriubtion for the correlation coefficient $r_s$
-#     <li> What proportion of the (re)samples have $r_s<0$?
-#     <li> Obtain at 95% confidence interval for $r_s$
+#     <li> Obtain a bootstrapped sampling distriubtion for the correlation coefficient r
+#     <li> What proportion of the (re)samples have r less than 0?
+#     <li> Obtain at 95% confidence interval for r
 # </ul>
 
-# In[222]:
+# In[ ]:
 
 
-nReps=10000
-r=np.empty(nReps)
-n=len(psy)
-
-for i in range(nReps):
-    sample = psy.sample(n, replace=True)
-    r[i] = sample['Score_preVac'].corr(sample['Score_postVac'], method='spearman')
-
-sns.histplot(r)
-plt.xlabel('sample correlation, $r_s$')
-plt.show()
+# Your code here!
 
 
-# In[278]:
+# In[ ]:
 
 
 sum(r<0)/len(r)

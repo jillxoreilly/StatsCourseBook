@@ -433,6 +433,38 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="bootstrapping_intro.html">
+   7. The Bootstrap
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_outcomes.html">
+     7.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_samplingIntro.html">
+     7.3. Sampling with and without replacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TheBootstrap.html">
+     7.4. The bootstrap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TutorialExercises1.html">
+     7.6. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -775,7 +807,7 @@ the value of the variable <tt>hit</tt> is set to 1, otherwise <tt>hit</tt> is se
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.8933363551479191
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.45945554248725495
 </pre></div>
 </div>
 </div>
@@ -798,7 +830,7 @@ the value of the variable <tt>hit</tt> is set to 1, otherwise <tt>hit</tt> is se
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>is it a hit?:            1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>is it a hit?:            0
 </pre></div>
 </div>
 </div>
@@ -828,25 +860,25 @@ and count how many hits we get (<i>k</i> = ?)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.8052760151948873
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.3852847216366604
+is it a hit?:            0
+value of random number:  0.9251524076226976
 is it a hit?:            1
-value of random number:  0.37811923566403627
-is it a hit?:            0
-value of random number:  0.2946931347841112
-is it a hit?:            0
-value of random number:  0.7342782919898743
+value of random number:  0.9790584190453265
 is it a hit?:            1
-value of random number:  0.26978069591005516
+value of random number:  0.21880907778836833
 is it a hit?:            0
-value of random number:  0.5698251970286742
-is it a hit?:            0
-value of random number:  0.9435492291136544
+value of random number:  0.8114465852369348
 is it a hit?:            1
-value of random number:  0.6121304308652973
+value of random number:  0.26582080357044213
 is it a hit?:            0
-value of random number:  0.5539687697289338
+value of random number:  0.31848061050894616
 is it a hit?:            0
-value of random number:  0.9297084193460091
+value of random number:  0.32571712704391564
+is it a hit?:            0
+value of random number:  0.7683789283671147
+is it a hit?:            1
+value of random number:  0.7136914892734386
 is it a hit?:            1
 </pre></div>
 </div>
@@ -879,15 +911,15 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-0
-0
-0
+1
 0
 0
 0
 1
+1
+1
 0
-0
+1
 </pre></div>
 </div>
 </div>
@@ -916,7 +948,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [0. 0. 0. 0. 0. 0. 1. 1. 1. 1.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [0. 0. 1. 1. 0. 0. 1. 0. 0. 1.]
 </pre></div>
 </div>
 </div>

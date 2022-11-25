@@ -31,7 +31,7 @@ for i in range(len(UKBrexdex)):
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_91824/2990574545.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_1238/2990574545.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      8[0m     [0mlst[0m [0;34m=[0m [0;34m[[0m[0mrandom[0m[0;34m.[0m[0mchoice[0m[0;34m([0m[0mstring[0m[0;34m.[0m[0mascii_letters[0m [0;34m+[0m [0mstring[0m[0;34m.[0m[0mdigits[0m[0;34m)[0m [0;32mfor[0m [0mn[0m [0;32min[0m [0mrange[0m[0;34m([0m[0;36m8[0m[0;34m)[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
 [1;32m      9[0m     [0ms[0m [0;34m=[0m [0;34m""[0m[0;34m.[0m[0mjoin[0m[0;34m([0m[0mlst[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m---> 10[0;31m     [0mcodes[0m[0;34m[[0m[0mi[0m[0;34m][0m [0;34m=[0m [0ms[0m[0;34m[0m[0;34m[0m[0m

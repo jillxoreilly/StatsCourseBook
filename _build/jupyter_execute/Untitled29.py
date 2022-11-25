@@ -58,3 +58,27 @@ p=stats.t.pdf(x,n-1)
 frq=p*nReps*binwidth
 plt.plot(x,frq,'k')
 
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Tutorial Exercises &#8212; Introduction to Statistics and Data Science</title>
+    <title>7.6. Tutorial Exercises &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,6 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="7.4. The bootstrap" href="bootstrap_TheBootstrap.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -114,7 +115,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="prepwork_intro.html">
    1. Preparatory Work
@@ -431,6 +432,38 @@ const thebe_selector_output = ".output, .cell_output"
       \(t\)
      </span>
      distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="bootstrapping_intro.html">
+   7. The Bootstrap
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_outcomes.html">
+     7.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_samplingIntro.html">
+     7.3. Sampling with and without replacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bootstrap_TheBootstrap.html">
+     7.4. The bootstrap
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     7.6. Tutorial Exercises
     </a>
    </li>
   </ul>
@@ -791,7 +824,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises">
-<h1>Tutorial Exercises<a class="headerlink" href="#tutorial-exercises" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">7.6. </span>Tutorial Exercises<a class="headerlink" href="#tutorial-exercises" title="Permalink to this heading">#</a></h1>
 <p>In these exercises we will create bootstrapped sampling distributions for all sorts of stuff!</p>
 <p>We will work with a (made up) dataset containing scores on a wellbeing survey before and after the Christmas vaacation for some Oxford University students</p>
 <section id="set-up-python-libraries">
@@ -985,7 +1018,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_92007/997001711.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_1439/997001711.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="c1">##### your code here #####))</span>
                                                    <span class="o">^</span>
 <span class="ne">SyntaxError</span>: unexpected EOF while parsing
@@ -1019,11 +1052,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.71
-</pre></div>
-</div>
-</div>
 </div>
 <p>I make it about 8.7% of random (re)samples in which the change in wellbeing is negative.</p>
 <p>This is some evidence that the change in wellbeing over the vacation is positive but would not be considered staatstically significant in general - more on statistical significance next term</p>
@@ -1038,12 +1066,6 @@ title="Print to PDF"
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lower bound = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="mf">0.025</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;upper bound = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="mf">0.975</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lower bound = -1.24
-upper bound = 6.36
 </pre></div>
 </div>
 </div>
@@ -1063,496 +1085,6 @@ upper bound = 6.36
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID_code</th>
-      <th>College</th>
-      <th>Subject</th>
-      <th>Score_preVac</th>
-      <th>Score_postVac</th>
-      <th>Score_diff</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>13</th>
-      <td>171910</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>94</td>
-      <td>86</td>
-      <td>-8</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>714640</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>85</td>
-      <td>80</td>
-      <td>-5</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>412830</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>59</td>
-      <td>61</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>145410</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>44</td>
-      <td>51</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>957870</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>55</td>
-      <td>75</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>127470</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>78</td>
-      <td>75</td>
-      <td>-3</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>342660</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>44</td>
-      <td>66</td>
-      <td>22</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>466680</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>57</td>
-      <td>69</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th>53</th>
-      <td>222450</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>80</td>
-      <td>93</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <th>64</th>
-      <td>402100</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>81</td>
-      <td>100</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <th>66</th>
-      <td>795390</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>56</td>
-      <td>47</td>
-      <td>-9</td>
-    </tr>
-    <tr>
-      <th>68</th>
-      <td>182190</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>75</td>
-      <td>78</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>72</th>
-      <td>594080</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>75</td>
-      <td>87</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th>78</th>
-      <td>102430</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>74</td>
-      <td>76</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>80</th>
-      <td>436580</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>79</td>
-      <td>89</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>85</th>
-      <td>714290</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>72</td>
-      <td>89</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <th>90</th>
-      <td>586290</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>78</td>
-      <td>85</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>99</th>
-      <td>274650</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>67</td>
-      <td>76</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>107</th>
-      <td>552200</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>65</td>
-      <td>76</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>108</th>
-      <td>458220</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>72</td>
-      <td>85</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <th>111</th>
-      <td>523680</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>87</td>
-      <td>86</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <th>113</th>
-      <td>156240</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>66</td>
-      <td>58</td>
-      <td>-8</td>
-    </tr>
-    <tr>
-      <th>114</th>
-      <td>399610</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>69</td>
-      <td>76</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>121</th>
-      <td>117530</td>
-      <td>Lonsdale</td>
-      <td>Biology</td>
-      <td>68</td>
-      <td>73</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>126</th>
-      <td>230750</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>84</td>
-      <td>81</td>
-      <td>-3</td>
-    </tr>
-    <tr>
-      <th>138</th>
-      <td>643120</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>55</td>
-      <td>59</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>156</th>
-      <td>136940</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>63</td>
-      <td>62</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <th>165</th>
-      <td>128230</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>91</td>
-      <td>88</td>
-      <td>-3</td>
-    </tr>
-    <tr>
-      <th>166</th>
-      <td>166850</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>77</td>
-      <td>69</td>
-      <td>-8</td>
-    </tr>
-    <tr>
-      <th>175</th>
-      <td>282330</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>81</td>
-      <td>93</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th>176</th>
-      <td>824130</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>63</td>
-      <td>70</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>183</th>
-      <td>898380</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>46</td>
-      <td>57</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>187</th>
-      <td>425700</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>80</td>
-      <td>94</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th>198</th>
-      <td>401040</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>78</td>
-      <td>82</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>202</th>
-      <td>612960</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>63</td>
-      <td>73</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>203</th>
-      <td>272480</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>74</td>
-      <td>80</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>214</th>
-      <td>942840</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>81</td>
-      <td>79</td>
-      <td>-2</td>
-    </tr>
-    <tr>
-      <th>217</th>
-      <td>209410</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>69</td>
-      <td>90</td>
-      <td>21</td>
-    </tr>
-    <tr>
-      <th>221</th>
-      <td>902670</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>69</td>
-      <td>88</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <th>240</th>
-      <td>161690</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>76</td>
-      <td>75</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <th>245</th>
-      <td>595320</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>77</td>
-      <td>66</td>
-      <td>-11</td>
-    </tr>
-    <tr>
-      <th>247</th>
-      <td>950790</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>75</td>
-      <td>73</td>
-      <td>-2</td>
-    </tr>
-    <tr>
-      <th>261</th>
-      <td>649410</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>77</td>
-      <td>83</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>264</th>
-      <td>145110</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>89</td>
-      <td>79</td>
-      <td>-10</td>
-    </tr>
-    <tr>
-      <th>265</th>
-      <td>300070</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>84</td>
-      <td>87</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>270</th>
-      <td>499130</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>80</td>
-      <td>87</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>272</th>
-      <td>964640</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>82</td>
-      <td>81</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <th>279</th>
-      <td>735340</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>84</td>
-      <td>78</td>
-      <td>-6</td>
-    </tr>
-    <tr>
-      <th>292</th>
-      <td>320220</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>78</td>
-      <td>76</td>
-      <td>-2</td>
-    </tr>
-    <tr>
-      <th>293</th>
-      <td>467310</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>49</td>
-      <td>50</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>298</th>
-      <td>856260</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>83</td>
-      <td>84</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1568,12 +1100,6 @@ upper bound = 6.36
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Biology&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;College&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;College&#39;, ylabel=&#39;Score_preVac&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/bootstrap_TutorialExercises1_23_1.png" src="_images/bootstrap_TutorialExercises1_23_1.png" />
 </div>
 </div>
 <p>It looks like Beaufort biologists had slightly higher wellbeing scores but how confident can we be in that difference?</p>
@@ -1604,11 +1130,6 @@ upper bound = 6.36
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0932
-</pre></div>
-</div>
-</div>
 </div>
 <section id="bootstrapped-correlation-between-wellbeing-scores-before-and-after-the-vacation">
 <h3>Bootstrapped correlation between wellbeing scores before and after the vacation<a class="headerlink" href="#bootstrapped-correlation-between-wellbeing-scores-before-and-after-the-vacation" title="Permalink to this heading">#</a></h3>
@@ -1620,23 +1141,12 @@ upper bound = 6.36
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Score_preVac&#39;, ylabel=&#39;Score_postVac&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/bootstrap_TutorialExercises1_29_1.png" src="_images/bootstrap_TutorialExercises1_29_1.png" />
-</div>
 </div>
 <p>It looks like there is a fairly strong correlation between wellbeing scores before and after the vacation for the same individual.</p>
 <p>The correlation might be exaggerated by a few outliers with particularly low scores, so let’s use Spearman’s correlation coefficient:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Score_postVac&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.683268050615877
 </pre></div>
 </div>
 </div>
@@ -1660,9 +1170,6 @@ upper bound = 6.36
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/bootstrap_TutorialExercises1_33_0.png" src="_images/bootstrap_TutorialExercises1_33_0.png" />
-</div>
 </div>
 <p>We can see that all the (re)samples have a strong positive correlation between wellbeing before and after the vacation</p>
 <p>Can you obtain a 95% confidence interval for the correlation coefficient <span class="math notranslate nohighlight">\(r_s\)</span>?</p>
@@ -1670,11 +1177,6 @@ upper bound = 6.36
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mf">0.025</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mf">0.975</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6093127139772399,0.7456487747511137
 </pre></div>
 </div>
 </div>
@@ -1694,12 +1196,6 @@ upper bound = 6.36
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Score_preVac&#39;, ylabel=&#39;Score_postVac&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/bootstrap_TutorialExercises1_37_1.png" src="_images/bootstrap_TutorialExercises1_37_1.png" />
-</div>
 </div>
 <p>Let’s get the correlation coefficient:</p>
 <div class="cell docutils container">
@@ -1708,36 +1204,18 @@ upper bound = 6.36
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3935596127608406
-</pre></div>
-</div>
-</div>
 </div>
 <p>There is a positive correlation,although it is weaker than the correlation in the whole dataset of 300 students.</p>
 <p>Intuitively, just from looking at the scatterplot, it feels that if we drew random samples from just the psychology students, we would find some random samples with a zero or even negative correlation between wellbeing before and after the vacation - much more likely that when we were working with the full dataset of 300 students.</p>
 <ul>
-    <li> Obtain a bootstrapped sampling distriubtion for the correlation coefficient $r_s$
-    <li> What proportion of the (re)samples have $r_s<0$?
-    <li> Obtain at 95% confidence interval for $r_s$
+    <li> Obtain a bootstrapped sampling distriubtion for the correlation coefficient r
+    <li> What proportion of the (re)samples have r less than 0?
+    <li> Obtain at 95% confidence interval for r
 </ul><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span><span class="o">=</span><span class="mi">10000</span>
-<span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
-<span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">psy</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
-    <span class="n">sample</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Score_postVac&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
-
-<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;sample correlation, $r_s$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here!</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/bootstrap_TutorialExercises1_41_0.png" src="_images/bootstrap_TutorialExercises1_41_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1745,11 +1223,6 @@ upper bound = 6.36
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">r</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 
 <span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.06</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>51.0
 </pre></div>
 </div>
 </div>
@@ -1785,6 +1258,13 @@ upper bound = 6.36
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="bootstrap_TheBootstrap.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">7.4. </span>The bootstrap</p>
+        </div>
+    </a>
 </div>
             </footer>
         </div>
