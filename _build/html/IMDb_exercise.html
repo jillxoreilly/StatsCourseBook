@@ -1625,13 +1625,13 @@ Name: Certificate, dtype: int64
 <p>You may find this example useful in creating a new column for UK classifications:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#first, create a new (empty) column</span>
-<span class="n">movies</span><span class="p">[</span><span class="s1">&#39;UK_classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;None&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#first, create a new column with the default value &#39;None&#39;</span>
+<span class="n">movies</span><span class="p">[</span><span class="s1">&#39;classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;None&#39;</span>
 
-<span class="c1"># np.isin to do a boolean check on every element of the array and see if it is in a different list (your list of interest)</span>
+<span class="c1">#np.isin to do a boolean check on every element of the array and see if it is in a different list (your list of interest)</span>
 <span class="c1"># use np.where to get booleans where that condition is met, assign a new value if true, or do nothing if not true</span>
-<span class="n">movies</span><span class="p">[</span><span class="s1">&#39;UK_classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">movies</span><span class="o">.</span><span class="n">Certificate</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-G&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-Y&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-7&#39;</span><span class="p">]),</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="n">movies</span><span class="o">.</span><span class="n">classification</span><span class="p">)</span>
-<span class="n">movies</span><span class="p">[</span><span class="s1">&#39;UK_classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">movies</span><span class="o">.</span><span class="n">Certificate</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;PG&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-PG&#39;</span><span class="p">]),</span> <span class="s1">&#39;PG&#39;</span><span class="p">,</span> <span class="n">movies</span><span class="o">.</span><span class="n">classification</span><span class="p">)</span>
+<span class="n">movies</span><span class="p">[</span><span class="s1">&#39;classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">movies</span><span class="o">.</span><span class="n">Certificate</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-G&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-Y&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-7&#39;</span><span class="p">]),</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="n">movies</span><span class="o">.</span><span class="n">classification</span><span class="p">)</span>
+<span class="n">movies</span><span class="p">[</span><span class="s1">&#39;classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">movies</span><span class="o">.</span><span class="n">Certificate</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;PG&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-PG&#39;</span><span class="p">]),</span> <span class="s1">&#39;PG&#39;</span><span class="p">,</span> <span class="n">movies</span><span class="o">.</span><span class="n">classification</span><span class="p">)</span>
 
 
 <span class="c1">#the syntax for this is:</span>
@@ -1646,34 +1646,273 @@ Name: Certificate, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_34726/367159761.py:2: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_35649/644592405.py:2: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  movies[&#39;UK_classification&#39;] = &#39;None&#39;
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_34726</span><span class="o">/</span><span class="mf">367159761.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="nn">      4 # np.isin to do a boolean check on every element of the array and see if it is</span> in <span class="ni">a different list </span><span class="nt">(your list of interest)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># use np.where to get booleans where that condition is met, assign a new value if true, or do nothing if not true</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">movies</span><span class="p">[</span><span class="s1">&#39;UK_classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">movies</span><span class="o">.</span><span class="n">Certificate</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-G&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-Y&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-7&#39;</span><span class="p">]),</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="n">movies</span><span class="o">.</span><span class="n">classification</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">movies</span><span class="p">[</span><span class="s1">&#39;UK_classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">movies</span><span class="o">.</span><span class="n">Certificate</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;PG&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-PG&#39;</span><span class="p">]),</span> <span class="s1">&#39;PG&#39;</span><span class="p">,</span> <span class="n">movies</span><span class="o">.</span><span class="n">classification</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+  movies[&#39;classification&#39;] = &#39;None&#39;
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_35649/644592405.py:6: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5573</span>         <span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">5574</span>             <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-<span class="ne">-&gt; </span><span class="mi">5575</span>         <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5576</span> 
-<span class="g g-Whitespace">   </span><span class="mi">5577</span>     <span class="k">def</span> <span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  movies[&#39;classification&#39;] = np.where(np.isin(movies.Certificate, [&#39;G&#39;, &#39;TV-G&#39;, &#39;TV-Y&#39;, &#39;TV-7&#39;]), &#39;U&#39;, movies.classification)
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_35649/644592405.py:7: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
 
-<span class="ne">AttributeError</span>: &#39;DataFrame&#39; object has no attribute &#39;classification&#39;
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  movies[&#39;classification&#39;] = np.where(np.isin(movies.Certificate, [&#39;PG&#39;, &#39;TV-PG&#39;]), &#39;PG&#39;, movies.classification)
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movies</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Rating</th>
+      <th>Votes</th>
+      <th>Genre</th>
+      <th>Duration</th>
+      <th>Type</th>
+      <th>Certificate</th>
+      <th>Episodes</th>
+      <th>Nudity</th>
+      <th>Violence</th>
+      <th>Profanity</th>
+      <th>Alcohol</th>
+      <th>Frightening</th>
+      <th>classification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>No Time to Die</td>
+      <td>2021</td>
+      <td>7.6</td>
+      <td>107163.0</td>
+      <td>Action, Adventure, Thriller</td>
+      <td>163.0</td>
+      <td>Film</td>
+      <td>PG-13</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Moderate</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>Moderate</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>The Guilty</td>
+      <td>2021</td>
+      <td>6.3</td>
+      <td>64375.0</td>
+      <td>Crime, Drama, Thriller</td>
+      <td>90.0</td>
+      <td>Film</td>
+      <td>R</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Severe</td>
+      <td>None</td>
+      <td>Moderate</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>The Many Saints of Newark</td>
+      <td>2021</td>
+      <td>6.4</td>
+      <td>27145.0</td>
+      <td>Crime, Drama</td>
+      <td>120.0</td>
+      <td>Film</td>
+      <td>R</td>
+      <td>NaN</td>
+      <td>Moderate</td>
+      <td>Severe</td>
+      <td>Severe</td>
+      <td>Moderate</td>
+      <td>Moderate</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Venom: Let There Be Carnage</td>
+      <td>2021</td>
+      <td>6.4</td>
+      <td>30443.0</td>
+      <td>Action, Adventure, Sci-Fi</td>
+      <td>97.0</td>
+      <td>Film</td>
+      <td>PG-13</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>Moderate</td>
+      <td>Moderate</td>
+      <td>Mild</td>
+      <td>Moderate</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Dune</td>
+      <td>2021</td>
+      <td>8.3</td>
+      <td>84636.0</td>
+      <td>Action, Adventure, Drama</td>
+      <td>155.0</td>
+      <td>Film</td>
+      <td>PG-13</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>Moderate</td>
+      <td>None</td>
+      <td>Mild</td>
+      <td>Moderate</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6173</th>
+      <td>The Human Centipede II (Full Sequence)</td>
+      <td>2011</td>
+      <td>3.8</td>
+      <td>37492.0</td>
+      <td>Horror</td>
+      <td>91.0</td>
+      <td>Film</td>
+      <td>Not Rated</td>
+      <td>NaN</td>
+      <td>Severe</td>
+      <td>Severe</td>
+      <td>Severe</td>
+      <td>Mild</td>
+      <td>Severe</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>6174</th>
+      <td>Double Indemnity</td>
+      <td>1944</td>
+      <td>8.3</td>
+      <td>150448.0</td>
+      <td>Crime, Drama, Film-Noir</td>
+      <td>107.0</td>
+      <td>Film</td>
+      <td>Passed</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>Mild</td>
+      <td>None</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>6175</th>
+      <td>Before the Devil Knows You're Dead</td>
+      <td>2007</td>
+      <td>7.3</td>
+      <td>100668.0</td>
+      <td>Crime, Drama, Thriller</td>
+      <td>117.0</td>
+      <td>Film</td>
+      <td>R</td>
+      <td>NaN</td>
+      <td>Severe</td>
+      <td>Moderate</td>
+      <td>Severe</td>
+      <td>Severe</td>
+      <td>Severe</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>6176</th>
+      <td>Queen Bees</td>
+      <td>2021</td>
+      <td>6.0</td>
+      <td>887.0</td>
+      <td>Comedy, Drama, Romance</td>
+      <td>100.0</td>
+      <td>Film</td>
+      <td>PG-13</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Mild</td>
+      <td>Moderate</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>6177</th>
+      <td>Death Race</td>
+      <td>2008</td>
+      <td>6.3</td>
+      <td>203578.0</td>
+      <td>Action, Sci-Fi, Thriller</td>
+      <td>105.0</td>
+      <td>Film</td>
+      <td>R</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Severe</td>
+      <td>Severe</td>
+      <td>Mild</td>
+      <td>Moderate</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+<p>4446 rows × 15 columns</p>
+</div></div></div>
 </div>
 </section>
 </section>

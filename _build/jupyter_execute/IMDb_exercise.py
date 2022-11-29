@@ -227,13 +227,13 @@ movies[movies['Certificate']=='E']
 # In[11]:
 
 
-#first, create a new (empty) column
-movies['UK_classification'] = 'None'
+#first, create a new column with the default value 'None'
+movies['classification'] = 'None'
 
-# np.isin to do a boolean check on every element of the array and see if it is in a different list (your list of interest)
+#np.isin to do a boolean check on every element of the array and see if it is in a different list (your list of interest)
 # use np.where to get booleans where that condition is met, assign a new value if true, or do nothing if not true
-movies['UK_classification'] = np.where(np.isin(movies.Certificate, ['G', 'TV-G', 'TV-Y', 'TV-7']), 'U', movies.classification)
-movies['UK_classification'] = np.where(np.isin(movies.Certificate, ['PG', 'TV-PG']), 'PG', movies.classification)
+movies['classification'] = np.where(np.isin(movies.Certificate, ['G', 'TV-G', 'TV-Y', 'TV-7']), 'U', movies.classification)
+movies['classification'] = np.where(np.isin(movies.Certificate, ['PG', 'TV-PG']), 'PG', movies.classification)
 
 
 #the syntax for this is:
@@ -244,5 +244,17 @@ movies['UK_classification'] = np.where(np.isin(movies.Certificate, ['PG', 'TV-PG
 # finding where the movie certificate is either G, TV-G, TV-Y or TV-7
 # setting the value of 'classification' to 'U' if that movie meets the condition
 # if not, it sets the value of 'classification' to itself (i.e. it does nothing)
+
+
+
+# In[12]:
+
+
+movies
+
+
+# In[ ]:
+
+
 
 
