@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Movie data &#8212; Introduction to Statistics and Data Science</title>
+    <title>8.1. Movie data &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,6 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="8. Christmas vacation assignment" href="Assignment_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -112,7 +113,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="prepwork_intro.html">
    1. Preparatory Work
@@ -461,6 +462,23 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="bootstrap_TutorialExercises1.html">
      7.6. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Assignment_intro.html">
+   8. Christmas vacation assignment
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     8.1. Movie data
     </a>
    </li>
   </ul>
@@ -835,7 +853,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="movie-data">
-<h1>Movie data<a class="headerlink" href="#movie-data" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">8.1. </span>Movie data<a class="headerlink" href="#movie-data" title="Permalink to this heading">#</a></h1>
 <p>The file ‘imdb.csv’ contains data about 6178 movies and TV shows, which were scraped from the website <a href="https://www.imdb.com/">IMDb.com</a> (and which I downloaded from <a href="https://www.kaggle.com/datasets/mazenramadan/imdb-most-popular-films-and-series">Kaggle.com</a>)</p>
 <p>Your task is to investigate what makes a good movie and write up your claims in a blog-style report, “10 ingredients for a good movie”. You don’t have to have exactly 10 (try for at least 5!).</p>
 <p>Our metric of a ‘good movie’ shall be the IMDb rating (base on users’ votes). You may like to comment on whether this is a reliable metric.</p>
@@ -1607,10 +1625,52 @@ Name: Certificate, dtype: int64
 <p>You may find this example useful in creating a new column for UK classifications:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Sammi, how do I tidily create a new column where, say:</span>
-<span class="c1"># G, TV-G, TV-Y and TV-7 are reclassified as U; </span>
-<span class="c1"># PG and TV-PG are reclassified as PG, </span>
-<span class="c1"># etc</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#first, create a new (empty) column</span>
+<span class="n">movies</span><span class="p">[</span><span class="s1">&#39;UK_classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;None&#39;</span>
+
+<span class="c1"># np.isin to do a boolean check on every element of the array and see if it is in a different list (your list of interest)</span>
+<span class="c1"># use np.where to get booleans where that condition is met, assign a new value if true, or do nothing if not true</span>
+<span class="n">movies</span><span class="p">[</span><span class="s1">&#39;UK_classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">movies</span><span class="o">.</span><span class="n">Certificate</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-G&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-Y&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-7&#39;</span><span class="p">]),</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="n">movies</span><span class="o">.</span><span class="n">classification</span><span class="p">)</span>
+<span class="n">movies</span><span class="p">[</span><span class="s1">&#39;UK_classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">movies</span><span class="o">.</span><span class="n">Certificate</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;PG&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-PG&#39;</span><span class="p">]),</span> <span class="s1">&#39;PG&#39;</span><span class="p">,</span> <span class="n">movies</span><span class="o">.</span><span class="n">classification</span><span class="p">)</span>
+
+
+<span class="c1">#the syntax for this is:</span>
+<span class="c1"># np.where(set condition, do this if condition is met, otherwise do this)</span>
+<span class="c1"># np.isin(array_to_test, list of values you want to check if the element matches)</span>
+
+<span class="c1">#so the code is doing:</span>
+<span class="c1"># finding where the movie certificate is either G, TV-G, TV-Y or TV-7</span>
+<span class="c1"># setting the value of &#39;classification&#39; to &#39;U&#39; if that movie meets the condition</span>
+<span class="c1"># if not, it sets the value of &#39;classification&#39; to itself (i.e. it does nothing)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_34726/367159761.py:2: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  movies[&#39;UK_classification&#39;] = &#39;None&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_34726</span><span class="o">/</span><span class="mf">367159761.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">      4 # np.isin to do a boolean check on every element of the array and see if it is</span> in <span class="ni">a different list </span><span class="nt">(your list of interest)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># use np.where to get booleans where that condition is met, assign a new value if true, or do nothing if not true</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">movies</span><span class="p">[</span><span class="s1">&#39;UK_classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">movies</span><span class="o">.</span><span class="n">Certificate</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-G&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-Y&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-7&#39;</span><span class="p">]),</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="n">movies</span><span class="o">.</span><span class="n">classification</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">movies</span><span class="p">[</span><span class="s1">&#39;UK_classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">movies</span><span class="o">.</span><span class="n">Certificate</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;PG&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-PG&#39;</span><span class="p">]),</span> <span class="s1">&#39;PG&#39;</span><span class="p">,</span> <span class="n">movies</span><span class="o">.</span><span class="n">classification</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, name)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5573</span>         <span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">5574</span>             <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+<span class="ne">-&gt; </span><span class="mi">5575</span>         <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5576</span> 
+<span class="g g-Whitespace">   </span><span class="mi">5577</span>     <span class="k">def</span> <span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="ne">AttributeError</span>: &#39;DataFrame&#39; object has no attribute &#39;classification&#39;
 </pre></div>
 </div>
 </div>
@@ -1645,6 +1705,13 @@ Name: Certificate, dtype: int64
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Assignment_intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">8. </span>Christmas vacation assignment</p>
+        </div>
+    </a>
 </div>
             </footer>
         </div>

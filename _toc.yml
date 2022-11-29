@@ -71,4 +71,7 @@ chapters:
   - file: bootstrap_samplingIntro.ipynb
   - file: bootstrap_TheBootstrap.ipynb
   - file: bootstrap_TutorialExercises1.ipynb
-  
+- file: Assignment_intro.md
+  sections:
+  - file: IMDb_exercise.ipynb
+
