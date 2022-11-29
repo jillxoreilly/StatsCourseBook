@@ -734,8 +734,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mathsIQ_60</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/mathsIQ_60.csv&#39;</span><span class="p">)</span>
-<span class="n">mathsIQ_30k</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/mathsIQ_30k.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mathsIQ_60</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/mathsIQ_60.csv&#39;</span><span class="p">)</span>
+<span class="n">mathsIQ_30k</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/mathsIQ_30k.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -796,11 +796,19 @@ dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">85</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;participant IQ&#39;</span><span class="p">)</span>
+<span class="n">m</span><span class="o">=</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="o">=</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">m</span><span class="o">-</span><span class="n">s</span><span class="p">,</span><span class="n">m</span><span class="o">+</span><span class="n">s</span><span class="p">],[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span><span class="s1">&#39;r.-&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(0.5, 0, &#39;participant IQ&#39;)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>104.6
+11.366319559953567
 </pre></div>
 </div>
 <img alt="_images/Untitled31_6_1.png" src="_images/Untitled31_6_1.png" />
@@ -809,11 +817,19 @@ dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">85</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;participant IQ&#39;</span><span class="p">)</span>
+<span class="n">m</span><span class="o">=</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1500</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="o">=</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">m</span><span class="o">-</span><span class="n">s</span><span class="p">,</span><span class="n">m</span><span class="o">+</span><span class="n">s</span><span class="p">],[</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">],</span><span class="s1">&#39;r.-&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(0.5, 0, &#39;participant IQ&#39;)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>103.0726
+9.95302121607849
 </pre></div>
 </div>
 <img alt="_images/Untitled31_7_1.png" src="_images/Untitled31_7_1.png" />
@@ -835,13 +851,21 @@ dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span><span class="mi">109</span><span class="p">,</span><span class="mf">0.25</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;sample mean IQ&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()],[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">],</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()],[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">],</span><span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()],[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1600</span><span class="p">],</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="c1">#plt.plot([mathsIQ_60[&#39;IQ&#39;].mean(), mathsIQ_60[&#39;IQ&#39;].mean()],[0, 1000],&#39;r--&#39;)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">98.9</span><span class="p">,</span><span class="mf">109.1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">mu</span><span class="o">=</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">sgm</span><span class="o">=</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">60</span>
+<span class="n">p</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">sgm</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">freq</span><span class="o">=</span><span class="n">p</span><span class="o">*</span><span class="n">nReps</span><span class="o">*</span><span class="mf">0.25</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">freq</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7faa13db1100&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc4c0dfe3a0&gt;]
 </pre></div>
 </div>
 <img alt="_images/Untitled31_9_1.png" src="_images/Untitled31_9_1.png" />
@@ -857,11 +881,12 @@ dtype: float64
 <span class="n">freq</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))</span> <span class="o">*</span> <span class="n">nReps</span> <span class="o">*</span> <span class="mf">0.2</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">freq</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="n">m</span><span class="o">&gt;</span><span class="mf">104.7</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7faa0e79d670&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0998
 </pre></div>
 </div>
 <img alt="_images/Untitled31_10_1.png" src="_images/Untitled31_10_1.png" />
@@ -869,24 +894,36 @@ dtype: float64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span><span class="mi">109</span><span class="p">,</span><span class="mf">0.2</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;sample mean IQ&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()],[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">],</span><span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">-</span><span class="mf">1.96</span><span class="o">*</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">),</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">+</span><span class="mf">1.96</span><span class="o">*</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)],[</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">],</span><span class="s1">&#39;r.-&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">98.9</span><span class="p">,</span><span class="mf">109.1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))</span> <span class="o">*</span> <span class="n">nReps</span> <span class="o">*</span> <span class="mf">0.2</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">freq</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="n">m</span><span class="o">&gt;</span><span class="mf">104.7</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.366319559953567
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0998
 </pre></div>
 </div>
+<img alt="_images/Untitled31_11_1.png" src="_images/Untitled31_11_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">-</span><span class="mf">1.96</span><span class="o">*</span><span class="p">(</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">/</span><span class="p">(</span><span class="mi">60</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">+</span><span class="mf">1.96</span><span class="o">*</span><span class="p">(</span><span class="n">mathsIQ_60</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">/</span><span class="p">(</span><span class="mi">60</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.95302121607849
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>101.72392433092637
+107.47607566907362
 </pre></div>
 </div>
 </div>
@@ -947,7 +984,7 @@ dtype: float64
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_1313</span><span class="o">/</span><span class="mf">36559651.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_31028</span><span class="o">/</span><span class="mf">36559651.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">CI</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">m</span><span class="p">)]</span>
 
 <span class="ne">NameError</span>: name &#39;CI&#39; is not defined
@@ -957,58 +994,400 @@ dtype: float64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CI</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmp</span><span class="o">=</span><span class="p">((</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">165</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;participant IQ&#39;</span><span class="p">)</span>
+<span class="n">m</span><span class="o">=</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="o">=</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">m</span><span class="o">-</span><span class="n">s</span><span class="p">,</span><span class="n">m</span><span class="o">+</span><span class="n">s</span><span class="p">],[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span><span class="s1">&#39;r.-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">3000</span><span class="p">])</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">60</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()],[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3000</span><span class="p">],</span><span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">-</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">+</span><span class="n">mathsIQ_30k</span><span class="p">[</span><span class="s1">&#39;IQ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()],[</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span><span class="s1">&#39;r.-&#39;</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[array([102.25      , 104.33333333, 103.21666667, 103.3       ,
-        102.53333333, 103.48333333, 102.05      , 102.86666667,
-        103.28333333, 102.51666667, 104.43333333, 102.71666667,
-        102.91666667, 102.81666667, 104.05      , 103.65      ,
-        103.41666667, 102.88333333, 104.91666667, 102.75      ,
-        101.33333333, 106.35      , 103.61666667, 101.41666667,
-        103.96666667, 102.28333333, 102.66666667, 102.75      ,
-        105.45      , 104.31666667, 102.16666667, 103.68333333,
-        101.63333333, 102.31666667, 102.66666667, 103.53333333,
-        102.91666667, 103.23333333, 104.9       , 103.15      ,
-        102.38333333, 102.48333333, 102.11666667, 102.75      ,
-        102.51666667, 102.        , 103.16666667, 101.61666667,
-        102.76666667, 103.26666667, 101.48333333, 103.        ,
-        103.06666667, 103.16666667, 100.7       , 104.41666667,
-        104.05      , 102.6       , 104.65      , 102.85      ,
-        102.98333333, 102.25      , 101.78333333, 100.65      ,
-        102.46666667, 102.21666667, 103.1       , 103.16666667,
-        103.13333333, 102.81666667, 104.76666667, 100.31666667,
-        103.76666667, 105.26666667, 103.4       , 101.3       ,
-        104.2       , 102.36666667, 102.03333333, 101.35      ,
-        104.13333333, 105.46666667, 101.76666667, 104.66666667,
-        104.1       , 101.65      , 102.6       , 101.21666667,
-        102.21666667, 104.88333333, 102.43333333, 105.46666667,
-        102.78333333, 101.28333333, 104.46666667, 102.31666667,
-        101.53333333, 102.78333333, 102.21666667, 103.98333333]),
- array([ 9.06964578,  9.53613408, 10.07781868,  9.87429465, 10.70476952,
-         9.62428367,  8.34718059,  9.08615387, 10.3646918 ,  8.35340521,
-         9.26148699, 10.14987963,  7.19296188, 10.15889302,  9.19916172,
-         9.52040627,  9.79673357,  9.86019505, 11.55721459,  9.62099576,
-         9.91432223, 10.69266341, 10.68039812,  8.68134893, 12.05631794,
-        10.94375709,  8.59772667,  9.3511986 , 12.94633644, 12.66449952,
-         9.55655187, 12.10615709,  9.89430013,  8.88436384,  9.68778134,
-         9.49480976, 10.24329738, 11.49114127,  9.83370199,  8.37839231,
-         9.29933781, 10.39473737,  9.06677987, 10.04165055,  9.9872659 ,
-         9.65857834,  8.85699315,  9.71647503, 12.15906813,  9.85292982,
-         9.33099749,  9.27544599,  9.34075573,  9.22995614,  9.05968907,
-        10.70924148, 11.43652341, 10.27123678, 10.61630502, 11.18992434,
-        12.95165936, 10.27688702,  8.00654746,  7.68847916, 10.39795721,
-         9.25915336,  8.50662753,  9.8345063 ,  9.18079548,  8.61904015,
-         9.16398009,  8.98113214,  9.43014759, 10.99748302, 10.52068181,
-         8.2816931 , 11.82327495,  8.7720022 , 10.64841305,  7.32958944,
-         9.34728578, 10.1771873 ,  8.7843595 ,  9.76792861,  9.99949151,
-         9.42198115,  9.59908188, 10.01708992, 11.69106811, 11.52166959,
-         9.82450528, 11.16208271, 11.35123628,  8.14090252,  9.57126113,
-         8.96980182,  8.37766738, 11.05317144,  9.60947919, 10.91491231])]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>103.0726
+9.95302121607849
 </pre></div>
 </div>
+<img alt="_images/Untitled31_17_1.png" src="_images/Untitled31_17_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">165</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;participant IQ&#39;</span><span class="p">)</span>
+<span class="n">m</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">m</span><span class="o">-</span><span class="n">s</span><span class="p">,</span><span class="n">m</span><span class="o">+</span><span class="n">s</span><span class="p">],[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span><span class="s1">&#39;r.-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">3000</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">tmp</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">tmp</span><span class="o">.</span><span class="n">mean</span><span class="p">()],[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3000</span><span class="p">],</span><span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">tmp</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">-</span><span class="n">tmp</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span><span class="n">tmp</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">+</span><span class="n">tmp</span><span class="o">.</span><span class="n">std</span><span class="p">()],[</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span><span class="s1">&#39;r.-&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>103.07259999995794
+19.90604243215784
+</pre></div>
+</div>
+<img alt="_images/Untitled31_18_1.png" src="_images/Untitled31_18_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span><span class="o">=</span><span class="mi">10000</span>
+<span class="n">m</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">60</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">sample</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span><span class="mi">109</span><span class="p">,</span><span class="mf">0.25</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;sample mean IQ&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">tmp</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">tmp</span><span class="o">.</span><span class="n">mean</span><span class="p">()],[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">],</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="c1">#plt.plot([mathsIQ_60[&#39;IQ&#39;].mean(), mathsIQ_60[&#39;IQ&#39;].mean()],[0, 1000],&#39;r--&#39;)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">98.9</span><span class="p">,</span><span class="mf">109.1</span><span class="p">,</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">mu</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">sgm</span><span class="o">=</span><span class="n">tmp</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">60</span>
+<span class="n">p</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">sgm</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">freq</span><span class="o">=</span><span class="n">p</span><span class="o">*</span><span class="n">nReps</span><span class="o">*</span><span class="mf">0.25</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">freq</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f88f20e42e0&gt;]
+</pre></div>
+</div>
+<img alt="_images/Untitled31_19_1.png" src="_images/Untitled31_19_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">164</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">100000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">140</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Women&#39;s heights&quot;</span><span class="p">)</span>
+<span class="n">sample</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="n">mu</span><span class="o">=</span><span class="n">h</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">sigma</span><span class="o">=</span><span class="n">h</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">mu</span><span class="p">,</span><span class="n">mu</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">7000</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">])</span>
+
+<span class="n">m</span><span class="o">=</span><span class="n">sample</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">s</span><span class="o">=</span><span class="n">sample</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">7000</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f88f7554220&gt;]
+</pre></div>
+</div>
+<img alt="_images/Untitled31_21_1.png" src="_images/Untitled31_21_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span><span class="o">=</span><span class="mi">10000</span>
+<span class="n">mm</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<span class="n">si</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">10</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">samplei</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">mm</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">samplei</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">si</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">samplei</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">binwidth</span><span class="o">=</span><span class="mf">0.2</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">154</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="n">binwidth</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span>
+
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">154</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="n">binwidth</span><span class="p">)</span>
+<span class="n">p</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">p</span><span class="o">*</span><span class="n">nReps</span><span class="o">*</span><span class="n">binwidth</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">freq</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">mu</span><span class="p">,</span><span class="n">mu</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">400</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;sample mean&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Untitled31_23_0.png" src="_images/Untitled31_23_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">binwidth</span><span class="o">=</span><span class="mf">0.2</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">si</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="n">binwidth</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">],</span><span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">sigma</span><span class="p">,</span><span class="n">sigma</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">600</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;sampling distribution of s&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Untitled31_24_0.png" src="_images/Untitled31_24_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">binwidth</span><span class="o">=</span><span class="mf">0.2</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">154</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="n">binwidth</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span>
+
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">154</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="n">binwidth</span><span class="p">)</span>
+<span class="n">p</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">p</span><span class="o">*</span><span class="n">nReps</span><span class="o">*</span><span class="n">binwidth</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">freq</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">mu</span><span class="p">,</span><span class="n">mu</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">400</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">])</span>
+
+<span class="c1">#sample=np.random.choice(h,10,replace=False)</span>
+<span class="n">m</span><span class="o">=</span><span class="n">sample</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">s</span><span class="o">=</span><span class="n">sample</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">154</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="n">binwidth</span><span class="p">)</span>
+<span class="n">t</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">s</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">t</span><span class="o">*</span><span class="n">nReps</span><span class="o">*</span><span class="n">binwidth</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">freq</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">400</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;sample mean&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Untitled31_25_0.png" src="_images/Untitled31_25_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.825367541218218
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">154</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="n">binwidth</span><span class="p">)</span>
+
+
+<span class="n">y</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">s</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">y</span><span class="o">*</span><span class="n">nReps</span><span class="o">*</span><span class="n">binwidth</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">freq</span><span class="p">,</span><span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+
+<span class="n">t</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">s</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">t</span><span class="o">*</span><span class="n">nReps</span><span class="o">*</span><span class="n">binwidth</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">freq</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;sample mean&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Untitled31_27_0.png" src="_images/Untitled31_27_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">154</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="n">binwidth</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ss</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.5</span><span class="p">):</span>
+    <span class="n">t</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">ss</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))</span>
+    <span class="n">freq</span> <span class="o">=</span> <span class="n">t</span><span class="o">*</span><span class="n">nReps</span><span class="o">*</span><span class="n">binwidth</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">freq</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">ss</span><span class="o">-</span><span class="mf">7.5</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="n">t</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">s</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">t</span><span class="o">*</span><span class="n">nReps</span><span class="o">*</span><span class="n">binwidth</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">freq</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;sample mean&#39;</span><span class="p">)</span>
+
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f88f8d16130&gt;]
+</pre></div>
+</div>
+<img alt="_images/Untitled31_28_1.png" src="_images/Untitled31_28_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UKBrexdex</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/UKBrexdex.csv&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">UKBrexdex</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;score&#39;, ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/Untitled31_29_1.png" src="_images/Untitled31_29_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">UKBrexdex</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">],</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">kde_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;bw_adjust&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;score&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;score&#39;)
+</pre></div>
+</div>
+<img alt="_images/Untitled31_30_1.png" src="_images/Untitled31_30_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simd</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">gaussian_kde</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">simd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([31.91316655, 44.79063555, 80.3388749 , ...,  1.35064808,
+       61.14513037,  0.72765954])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">simd</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;score&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;score&#39;)
+</pre></div>
+</div>
+<img alt="_images/Untitled31_32_1.png" src="_images/Untitled31_32_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">simd</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">resample</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">kde_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;bw_adjust&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;score&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;score&#39;)
+</pre></div>
+</div>
+<img alt="_images/Untitled31_33_1.png" src="_images/Untitled31_33_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span><span class="o">=</span><span class="mi">10000</span>
+<span class="n">m</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">UKBrexdex</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">],</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">sample</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;score&#39;</span><span class="p">)</span>
+
+<span class="n">mu</span><span class="o">=</span><span class="n">UKBrexdex</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">m</span><span class="o">=</span><span class="n">thissample</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">mu</span><span class="p">,</span><span class="n">mu</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">600</span><span class="p">],</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">600</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8829e74520&gt;]
+</pre></div>
+</div>
+<img alt="_images/Untitled31_34_1.png" src="_images/Untitled31_34_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span><span class="o">=</span><span class="mi">10000</span>
+<span class="n">m</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<span class="c1">#thissample=np.random.choice(UKBrexdex[&#39;score&#39;],100)</span>
+    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">resample</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">thissample</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">resample</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;score&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">mu</span><span class="p">,</span><span class="n">mu</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">600</span><span class="p">],</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">thissample</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="n">thissample</span><span class="o">.</span><span class="n">mean</span><span class="p">()],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">600</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Untitled31_35_0.png" src="_images/Untitled31_35_0.png" />
 </div>
 </div>
 

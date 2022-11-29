@@ -111,7 +111,7 @@ for i in range(nReps):
 # In[4]:
 
 
-pets = pandas.read_csv('data/pets.csv')
+pets = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/pets.csv')
 pets
 
 

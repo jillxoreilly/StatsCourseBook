@@ -89,7 +89,7 @@ sns.kdeplot(UKBrexdex['score'],color='r')
 # In[5]:
 
 
-studentSample=pandas.read_csv('data/Brexdex_20students.csv')
+studentSample=pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/Brexdex_20students.csv')
 sns.histplot(studentSample['score'], bins=range(0,100,10), kde=True)
 plt.xlabel('score on BrexDex')
 plt.ylabel('frequency')

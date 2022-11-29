@@ -168,10 +168,32 @@ wb[wb['Subject']=='Biology']['College'].value_counts()
 
 # PLot their wellbeing scores (before the vac) in a violin plot
 
-# In[187]:
+# In[43]:
 
 
-sns.violinplot(data=wb[wb['Subject']=='Biology'], y='Score_preVac', x='College')
+sns.set_style('white')
+my_pal = {"Lonsdale": "r", "Beaufort": "b"}
+sns.violinplot(data=wb[wb['Subject']=='Biology'], y='Score_preVac', x='College', pallete=my_pal)
+plt.ylabel('wellbeing score')
+plt.show()
+
+
+# In[17]:
+
+
+bio=wb[wb['Subject']=='Biology']
+sns.set_style('white')
+sns.histplot(data=bio[bio['College']=='Lonsdale'], x='Score_preVac', bins=range(40,100,5), color=[0.75,0.75,0.75])
+plt.xlabel('wellbeing score')
+
+
+# In[18]:
+
+
+bio=wb[wb['Subject']=='Biology']
+sns.set_style('white')
+sns.histplot(data=bio[bio['College']=='Beaufort'], x='Score_preVac', bins=range(40,100,5), color=[0.75,0.75,0.75])
+plt.xlabel('wellbeing score')
 
 
 # It looks like Beaufort biologists had slightly higher wellbeing scores but how confident can we be in that difference?
@@ -179,6 +201,25 @@ sns.violinplot(data=wb[wb['Subject']=='Biology'], y='Score_preVac', x='College')
 # We need the sampling distribution for the difference of means for wellbeing score between colleges
 # 
 # We can adapt our bootstrap code to do this!
+
+# In[47]:
+
+
+bio=wb[wb['Subject']=='Biology']
+tmp=bio[bio['College']=='Beaufort']['Score_preVac']
+n=len(tmp)
+resample = np.random.choice(tmp,n,replace=True)
+
+sns.histplot(resample, bins=range(40,100,5), color=[0.75,0.75,1])
+plt.plot([resample.mean(),resample.mean()],[0,12],'b')
+plt.xlabel('wellbeing score')
+
+
+# In[35]:
+
+
+
+
 
 # In[ ]:
 
@@ -197,7 +238,7 @@ for i in range(nReps):
 sns.histplot(mDiff) # plot the sample means
 
 
-# In[199]:
+# In[11]:
 
 
 #ANSWER
@@ -216,7 +257,8 @@ for i in range(nReps):
     mDiff[i] = sample_Beaufort['Score_preVac'].mean()-sample_Lonsdale['Score_preVac'].mean() # mean wellbeing of Beaufort biologists minus mean wellbeing of Lonsdale biologists
     
 
-sns.histplot(mDiff) # plot the sample means
+sns.histplot(mDiff, color=[0.5,0.5,0.5]) # plot the sample means
+plt.xlabel('difference of sample means: Beaufort-Lonsdale')
 
 
 # In what proportion of (re)samples do Lonsdale biologists actually have higher mean wellbeing?
@@ -233,10 +275,16 @@ sum(mDiff<0)/len(mDiff)
 # 
 # Let's get an overview by plotting the data
 
-# In[212]:
+# In[12]:
 
 
-sns.scatterplot(data=wb, x='Score_preVac', y='Score_postVac')
+sns.set_style('white')
+sns.scatterplot(data=wb, x='Score_preVac', y='Score_postVac', color=[0.5, 0.5, 0.5])
+plt.xlabel('wellbeing score before vacation')
+plt.ylabel('wellbeing score after vacation')
+
+tmp=wb.sample(n,replace=True)
+sns.scatterplot(data=tmp, x='Score_preVac', y='Score_postVac', color='r')
 
 
 # It looks like there is a fairly strong correlation between wellbeing scores before and after the vacation for the same individual.
@@ -255,7 +303,7 @@ wb['Score_preVac'].corr(wb['Score_postVac'], method='spearman')
 # 
 # I can obtain this using bootstrapping:
 
-# In[291]:
+# In[7]:
 
 
 nReps=10000
@@ -266,7 +314,7 @@ for i in range(nReps):
     sample = wb.sample(n, replace=True)
     r[i] = sample['Score_preVac'].corr(sample['Score_postVac'], method='spearman')
 
-sns.histplot(r)
+sns.histplot(r, color=[0.5, 0.5, 0.5])
 plt.xlabel('sample correlation, $r_s$')
 plt.show()
 
