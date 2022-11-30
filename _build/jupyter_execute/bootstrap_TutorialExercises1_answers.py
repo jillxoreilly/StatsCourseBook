@@ -28,7 +28,7 @@ sns.set_theme()
 # In[2]:
 
 
-wb = pandas.read_csv('data/wellbeingSample.csv')
+wb = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/WellbeingSample.csv')
 wb
 
 
