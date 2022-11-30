@@ -80,7 +80,7 @@ movies
 # 
 # According to IMDb raters, yes they are. Or to be more accurate, the number of low-rated movies increased over time, whilst a steady flow of high rated movies was also maintained.
 
-# In[3]:
+# In[131]:
 
 
 sns.histplot(data=movies, x='Date', y='Rating')
@@ -91,7 +91,7 @@ plt.suptitle('Movie ratings over time', fontsize=16)
 
 # Rating was negatively correlated with year of release (Spearman's r = -0.29)
 
-# In[4]:
+# In[132]:
 
 
 movies[['Date','Rating']].corr(method='spearman')
@@ -106,14 +106,14 @@ movies[['Date','Rating']].corr(method='spearman')
 # 
 # In the plot below there is a small but perceptible advantage in ratings for movies with no Profanity - the average rating for a movie with no profanity was a third of one point (out of ten) higher than one with profanity!
 
-# In[5]:
+# In[133]:
 
 
 print('mean rating - no profanity = ' + str(movies[movies['Profanity']=='None']['Rating'].mean()))
 print('mean rating - with profanity = ' + str(movies[movies['Profanity']!='None']['Rating'].mean()))
 
 
-# In[6]:
+# In[134]:
 
 
 # plot ratings by 'alcohol content' of the movie
@@ -123,7 +123,7 @@ sns.violinplot(data=movies, x='Profanity', y='Rating', order=['None','Mild','Mod
 
 # That said, there was an explosion in profanity from the 1960s onwards - so maybe this just reflects the fact that the old classics are the best movies!
 
-# In[7]:
+# In[135]:
 
 
 sns.set_palette('rocket')
@@ -146,7 +146,7 @@ plt.suptitle('Distribution profanity ratings over time', fontsize=16)
 # 
 # We construct a bootstrapped confidence interval for the difference in ratings between movies with and without profanity:
 
-# In[8]:
+# In[136]:
 
 
 nReps = 10000
@@ -173,7 +173,7 @@ plt.xlabel('Difference of means: no profanity- profanity')
 # The movie certificates given are mostly US certificates but there are different schemes in use for movies shown in cinema and on TV. There are a fair few certificates in use in the database, some of which relate to only a few titles:
 # 
 
-# In[9]:
+# In[137]:
 
 
 movies['Certificate'].value_counts()
@@ -216,7 +216,7 @@ movies['Certificate'].value_counts()
 # 
 # There are also some remaining mysteries, for example, one certificate I was not able to understand was 'E': Google tells me that 'E' stands for educational or exempt but if I look which movies have this rating, I'm not so sure this is correct:
 
-# In[10]:
+# In[138]:
 
 
 movies[movies['Certificate']=='E']
@@ -224,11 +224,11 @@ movies[movies['Certificate']=='E']
 
 # You may find this example useful in creating a new column for UK classifications:
 
-# In[11]:
+# In[142]:
 
 
 #first, create a new column with the default value 'None'
-movies['classification'] = 'None'
+movies = movies.assign(classification = 'none')
 
 #np.isin to do a boolean check on every element of the array and see if it is in a different list (your list of interest)
 # use np.where to get booleans where that condition is met, assign a new value if true, or do nothing if not true
@@ -247,10 +247,10 @@ movies['classification'] = np.where(np.isin(movies.Certificate, ['PG', 'TV-PG'])
 
 
 
-# In[12]:
+# In[141]:
 
 
-movies
+movies[movies['classification']=='U']
 
 
 # In[ ]:
