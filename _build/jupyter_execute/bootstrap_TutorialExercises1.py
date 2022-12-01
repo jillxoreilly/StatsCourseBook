@@ -128,13 +128,19 @@ print('upper bound = ' + str(np.quantile(m,0.975)))
 
 # The confidence interval includes zero, meaning no change in wellbeing (or a negative change) is a plausible value for the population change in wellbeing over the vac
 
-# ## Is wellbeing higher in Lonsdale than in Beaufort engineering students?
+# ## Is wellbeing higher in Lonsdale than in Beaufort biology students?
 # 
 # Let's try bootstrapping something else!
 # 
 # Say we want to know if wellbeing (as measured before the vacation) is higher in biology students at Lonsdale or Beaufort college.
 # 
 # Let's have a look at the relevant data:
+
+# In[ ]:
+
+
+
+
 
 # In[ ]:
 
