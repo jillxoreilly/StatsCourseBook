@@ -74,4 +74,8 @@ chapters:
 - file: Assignment_intro.md
   sections:
   - file: IMDb_exercise.ipynb
+- file: Cheatsheet_intro.md
+  sections:
+  - file: coding_cheatsheet.ipynb
+  
 
