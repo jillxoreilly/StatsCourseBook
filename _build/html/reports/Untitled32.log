@@ -24,7 +24,7 @@ sns.violinplot(data=movies, x='Profanity', y='Rate', order=['None','Mild','Moder
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mValueError[0m                                Traceback (most recent call last)
-[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_34959/1297526665.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_58214/1297526665.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0;31m# plot ratings by 'alcohol content' of the movie[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      2[0m [0;31m# note that I have set the order of the violins to increasing alcohol, rather than the default order which wasn't meaningful[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 3[0;31m [0msns[0m[0;34m.[0m[0mviolinplot[0m[0;34m([0m[0mdata[0m[0;34m=[0m[0mmovies[0m[0;34m,[0m [0mx[0m[0;34m=[0m[0;34m'Profanity'[0m[0;34m,[0m [0my[0m[0;34m=[0m[0;34m'Rate'[0m[0;34m,[0m [0morder[0m[0;34m=[0m[0;34m[[0m[0;34m'None'[0m[0;34m,[0m[0;34m'Mild'[0m[0;34m,[0m[0;34m'Moderate'[0m[0;34m,[0m[0;34m'Severe'[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

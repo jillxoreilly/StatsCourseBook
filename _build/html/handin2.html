@@ -482,6 +482,23 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Cheatsheet_intro.html">
+   9. Python Cheatsheet
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="coding_cheatsheet.html">
+     9.1. Coding support sheet
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -1082,67 +1099,6 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heartAttack</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;AGE&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;LOS&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_35155</span><span class="o">/</span><span class="mf">4122011182.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heartAttack</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;AGE&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;LOS&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/seaborn/_decorators.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span>             <span class="p">)</span>
-<span class="nn">     45         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
-<span class="ne">---&gt; </span><span class="mi">46</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="k">return</span> <span class="n">inner_f</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/seaborn/axisgrid.py</span> in <span class="ni">jointplot</span><span class="nt">(x, y, data, kind, color, height, ratio, space, dropna, xlim, ylim, marginal_ticks, joint_kws, marginal_kws, hue, palette, hue_order, hue_norm, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2275</span>                 <span class="n">marg_y_kws</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">y_val</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2276</span> 
-<span class="ne">-&gt; </span><span class="mi">2277</span>         <span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="n">hue</span><span class="p">,</span> <span class="o">**</span><span class="n">marg_x_kws</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">grid</span><span class="o">.</span><span class="n">ax_marg_x</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2278</span>         <span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="n">hue</span><span class="p">,</span> <span class="o">**</span><span class="n">marg_y_kws</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">grid</span><span class="o">.</span><span class="n">ax_marg_y</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2279</span> 
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/seaborn/distributions.py</span> in <span class="ni">histplot</span><span class="nt">(data, x, y, hue, weights, stat, bins, binwidth, binrange, discrete, cumulative, common_bins, common_norm, multiple, element, fill, shrink, kde, kde_kws, line_kws, thresh, pthresh, pmax, cbar, cbar_ax, cbar_kws, palette, hue_order, hue_norm, color, log_scale, legend, ax, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1460</span>     <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">univariate</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1461</span> 
-<span class="ne">-&gt; </span><span class="mi">1462</span>         <span class="n">p</span><span class="o">.</span><span class="n">plot_univariate_histogram</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1463</span>             <span class="n">multiple</span><span class="o">=</span><span class="n">multiple</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1464</span>             <span class="n">element</span><span class="o">=</span><span class="n">element</span><span class="p">,</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/seaborn/distributions.py</span> in <span class="ni">plot_univariate_histogram</span><span class="nt">(self, multiple, element, fill, common_norm, common_bins, shrink, kde, kde_kws, color, legend, line_kws, estimate_kws, **plot_kws)</span>
-<span class="g g-Whitespace">    </span><span class="mi">563</span> 
-<span class="g g-Whitespace">    </span><span class="mi">564</span>                 <span class="n">plot_func</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">bar</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_variable</span> <span class="o">==</span> <span class="s2">&quot;x&quot;</span> <span class="k">else</span> <span class="n">ax</span><span class="o">.</span><span class="n">barh</span>
-<span class="ne">--&gt; </span><span class="mi">565</span>                 <span class="n">artists</span> <span class="o">=</span> <span class="n">plot_func</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">566</span>                     <span class="n">hist</span><span class="p">[</span><span class="s2">&quot;edges&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">567</span>                     <span class="n">hist</span><span class="p">[</span><span class="s2">&quot;heights&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">bottom</span><span class="p">,</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/__init__.py</span> in <span class="ni">inner</span><span class="nt">(ax, data, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1410</span>     <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1411</span>         <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1412</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="nb">map</span><span class="p">(</span><span class="n">sanitize_sequence</span><span class="p">,</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1413</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1414</span>         <span class="n">bound</span> <span class="o">=</span> <span class="n">new_sig</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/axes/_axes.py</span> in <span class="ni">bar</span><span class="nt">(self, x, height, width, bottom, align, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2393</span>                    <span class="n">hatch</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2394</span>         <span class="k">for</span> <span class="n">l</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">lw</span><span class="p">,</span> <span class="n">htch</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2395</span>             <span class="n">r</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2396</span>                 <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="n">w</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">h</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2397</span>                 <span class="n">facecolor</span><span class="o">=</span><span class="n">c</span><span class="p">,</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/matplotlib/patches.py</span> in <span class="ni">__init__</span><span class="nt">(self, xy, width, height, angle, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">731</span>             <span class="o">%</span><span class="p">(</span><span class="n">Patch</span><span class="p">:</span><span class="n">kwdoc</span><span class="p">)</span><span class="n">s</span>
-<span class="g g-Whitespace">    </span><span class="mi">732</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">733</span><span class="s2">         super().__init__(**kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">734</span><span class="s2">         self._x0 = xy[0]</span>
-<span class="g g-Whitespace">    </span><span class="mi">735</span><span class="s2">         self._y0 = xy[1]</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
