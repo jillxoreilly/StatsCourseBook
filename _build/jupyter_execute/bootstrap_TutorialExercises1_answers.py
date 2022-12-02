@@ -99,7 +99,7 @@ for i in range(nReps):
 sns.histplot(m) # plot the sample means
 
 
-# In[168]:
+# In[12]:
 
 
 # ANSWER
@@ -109,7 +109,7 @@ m = np.empty(nReps)
 n = len(wb[wb['Subject']=='Psychology'])
 
 for i in range(nReps):
-    sample = wb.sample(n, replace=True)
+    sample = wb[wb['Subject']=='Psychology'].sample(n, replace=True)
     m[i] = sample['Score_diff'].mean()
     
 sns.histplot(m) # plot the sample means
@@ -117,7 +117,7 @@ sns.histplot(m) # plot the sample means
 
 # We can also work out exactly what percentage of the samples have a negative change in wellbeing
 
-# In[170]:
+# In[13]:
 
 
 100 * sum(m<0)/len(m)

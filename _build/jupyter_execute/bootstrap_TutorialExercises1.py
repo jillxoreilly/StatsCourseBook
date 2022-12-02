@@ -107,7 +107,7 @@ sns.histplot(m) # plot the sample means
 100 * sum(m<0)/len(m)
 
 
-# I make it about 8.7% of random (re)samples in which the change in wellbeing is negative.
+# I make it about 11% of random (re)samples in which the change in wellbeing is negative.
 # 
 # This is some evidence that the change in wellbeing over the vacation is positive but would not be considered staatstically significant in general - more on statistical significance next term
 
