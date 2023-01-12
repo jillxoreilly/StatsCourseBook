@@ -20,7 +20,7 @@ import seaborn as sns
 
 # ## Example
 # 
-# <img src="images/rowingTeam.png" width=50% alt="There should be a picture of some apples here" >
+# <img src="images/rowingTeam.png" width=50% >
 # 
 # Here are the heights in cm of eight men on a rowing team
 
@@ -31,7 +31,7 @@ heights = pandas.read_csv('data/rowersHeights.csv')
 display(heights)
 
 
-# An observer notes that they men seem quite tall and hypothesises that rowers are generally tall as tall people can row faster.
+# An observer notes that the men seem quite tall, and hypothesises that rowers are generally tall as tall people can row faster.
 # 
 # Use a one-sample t-test to determine whether the mean height of the rowing team is 
 # significantly greater than the average height of men in the UK (175 cm).
@@ -48,8 +48,9 @@ display(heights)
 
 plot = sns.kdeplot(data = heights)
 sns.rugplot(data = heights, height=0.1)
-plot.set_xlabel("height (cm)", fontsize = 12)
-plot.set_ylabel("density", fontsize = 12)
+plt.xlabel("height (cm)", fontsize = 12)
+plt.ylabel("density", fontsize = 12)
+plt.show()
 
 
 # As usual, it's difficult to say if the data are normally distributed from a plot of a small sample - 
@@ -88,7 +89,9 @@ heights.describe()
 # It looks like the mean height of rowers (180.4cm) is above the population mean of 175cm.
 # 
 # Is this a big difference? It is less than one standard deviation above the mean: s=8.4 and (180.4-175)=5.4. 
-# It turns out (from the normal distribution) that if the average rower was an actual person, they would be taller than aabout 75% of others, so tall but not remarkably so. However, if the rowers are consistently quite tall (that is most of them are tall), they may as a group be significantly taller than average.
+# It turns out (from the normal distribution) that if the average rower was an actual person, they would be taller than about 75% of others, so tall but not remarkably so. 
+# 
+# However, another key element is the variability in the dataset - if the rowers are consistently quite tall (that is most of them are tall), they may as a group be significantly taller than average.
 
 # ### Carry out the test
 # 
@@ -103,7 +106,7 @@ stats.ttest_1samp(heights, 175, alternative='greater')
 
 # The inputs to stats.ttest_1samp are the sample (from our Pandas data frame <tt>heights</tt>) and the value to which they are to be compared (the average height of british men, 175cm),
 # and the argument <tt>alternative='greater'</tt>, which tells the computer to run a one tailed test 
-# that mean of the first input <tt>apples.MiracleGro</tt> is greater than the second <tt>apples.BrandX</tt>.
+# that mean of the first input <tt>heights</tt> is greater than the reference value <tt>175</tt>.
 # 
 # The outputs are <tt>statistic</tt> ($t=1.70$) and <tt>pvalue</tt> ($p=0.067$) - if this is less than our $\alpha$ value 0.5, there is a significant difference.
 # 
@@ -158,8 +161,9 @@ stats.ttest_1samp(heights, 175, alternative='greater')
 
 plot = sns.kdeplot(data = heights)
 sns.rugplot(data = heights, height=0.1)
-plot.set_xlabel("height (cm)", fontsize = 12)
-plot.set_ylabel("density", fontsize = 12)
+plt.xlabel("height (cm)", fontsize = 12)
+plt.ylabel("density", fontsize = 12)
+plt.show()
 
 
 # The mean height of the rowers was XXX.X cm and the standard deviation was X.XX cm.

@@ -1,43 +1,24 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Tutorial Exercises III - optional
+# # Permutation test for unpaired data
 # 
-# In this section we use our skills in creating <tt>for</tt> loops to investigate the properties of the mean and standard deviation
+# Say we are interested in whether students from Oxford of Cambridge earn more money five years after graduation.
 # 
-# This material will not be assessed but is presented for your interest (and to keep you busy if yo
+# We survey a small-ish number of students from each university and find that the income for Oxford students is sligtly higher. How can we determine whether this difference is real, or occurred due to chance?
+
+# ### Establishing the null distribution
 # 
-# ## Mean and sd as <i>estimators</i>
+# Even if the distribution of salaries for Oxford and Cambridge graduates was identical, we would not expect the mean salaries of Oxford and Cambridge graduates in our sample to be exactly the same. Just due to the random nature of sampling, there would be slightly more people with higher salaries, or more very high salaries, in one group or other. 
 # 
-# In the exercises and lecture this week, we calculated the mean and standard deviation of data. 
+# The question we need to answer whether the difference we observed is likely to have arisen due to chance in this way, or reflects a real difference in the underlying distribution of earnings for Oxford and Cambridge graduates.
 # 
-# Typically, our dataset is a <i>sample</i> from a larger population and we want to use the mean and sd not so much to describe our sample, as to describe the (likely) properties of the population from which they are drawn
+# In other words we need to know how what range of values the difference of mean salaries would take, if we were to draw more random samples of the same size as our actual sample.
+# 
+# To simulate this process of drawing many more samples, we use the data we do have (the salaries of the 40 graduates sureveyed) and randomly shuffle the labels of which graduate attended which university. In some of these random shuffles, more of the high salaries will be labelled 'Oxford' and in some, more of the high salaries will be labelled 'Cambridge'. How often will we get a difference of means as large as the one observed in our 'real' dataset?
+# 
+# #### Hang on, why are we relabelling the data?
+# 
+# According to the null hypothesis, all the graduates salaries are drawn from the same income distribution anyway. If that were true, a new sample would probably
 # 
 # 
-# 
-# For example:
-# We measure the height of 100 men (this is a sample)
-# We calculate the mean and standard deviation from the sample
-# We infer that the mean and standard deviation of the population
-
-# ### Set up Python libraries
-# 
-# As usual, run the code cell below to import the relevant Python libraries
-
-# In[1]:
-
-
-# Set-up Python libraries - you need to run this but you don't need to change it
-import numpy as np
-import matplotlib.pyplot as plt
-import scipy.stats as stats
-import pandas 
-import seaborn as sns
-sns.set_theme()
-
-
-# In[2]:
-
-
-###
-

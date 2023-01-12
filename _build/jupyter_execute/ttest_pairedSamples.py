@@ -55,6 +55,7 @@ plt.ylabel('heart rate: horror')
 
 # add the line x=y (ie a line from point(50,50) to (110,110)) for reference 
 plt.plot([50,110],[50,110],'k')
+plt.show()
 
 
 # It looks like
@@ -85,9 +86,10 @@ heartRates
 
 sns.kdeplot(data = heartRates,  x='diff')
 sns.rugplot(data = heartRates, x='diff', height=0.1,)
+plt.show()
 
 
-# The distribution looks fairly normal - for the sake of this example we can safely go ahead and use the t-test (although in real life I think it is always tricky to know if the data are really normally distributed)
+# The distribution looks fairly normal - for the sake of this example we can safely go ahead and use the t-test (although in real life I think it is always tricky to know if the data are really normally distributed, especially if the sample is small)
 
 # ### Hypotheses
 # 
@@ -155,7 +157,7 @@ stats.ttest_rel(heartRates.horror, heartRates.cookery, alternative='greater')
 # 
 # Such a large difference (in the expected direction) would occur 0.0123 (1.23%) of the time due to chance if the null hypothesis were true (if the TV show made no difference to the heart rate), hence the p value of 0.0123.
 # 
-# This diagram shows the expected distribubtion of t-values if the null were true, with our obtained t-value marked:
+# This diagram shows the expected distribution of t-values if the null hypothesis was true, with our obtained t-value marked:
 # 
 # <img src="images/ttestHorror.png" width=50% alt="There should be a picture of the t-distribution here" >
 # 
@@ -199,6 +201,7 @@ plt.ylabel('heart rate: horror')
 
 # add the line x=y (ie a line from point(50,50) to (110,110)) for reference 
 plt.plot([50,110],[50,110],'k')
+plt.show()
 
 
 # The mean increase in heart rate in the horror condition was X.XX beats per minute (condition means were XX.X bpm for cookery and XX.X for horror). The standard deviation of differences in heart rate was X.XX bpm (condition standard deviations were XX.X bpm for cookery and XX.X for horror). 

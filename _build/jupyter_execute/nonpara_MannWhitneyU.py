@@ -38,7 +38,7 @@ import seaborn as sns
 # 
 # A researcher hypothesises that when a person learns a new motor skill, imaginary practice (visualising performing the skill between sessions of actual practice) can enhance learning.
 # 
-# She decides to test the hypothesis by training people to juggle. The participants complete 1-hour juggling practice sessions each day until they can juggle for 2 minutes without dropping a ball. Participaants are randomly assigned to one of two groups: The Visualisation Group spend time between sessions visualising juggling, whilst the Standard Group do not.
+# She decides to test the hypothesis by training people to juggle. The participants complete 1-hour juggling practice sessions each day until they can juggle for 2 minutes without dropping a ball. Participants are randomly assigned to one of two groups: The Visualisation Group spend time between sessions visualising juggling, whilst the Standard Group do not.
 # 
 # The researcher records the number of sessions taken to reach criterion (2 min juggling without dropping the ball) for each participant.
 # 
@@ -56,10 +56,6 @@ import seaborn as sns
 # load the data and have a look
 pandas.read_csv('data/juggling.csv')
 
-
-# You might notice the strange term NaN in a couple of cells of the table.
-# 
-# This stands for "Not a Number" and in this case just represents a missing value - there were two fewer people in the visualisation group than the standard training group
 
 # Let's plot the data and see if they look Normally distributed.
 # 
@@ -79,12 +75,14 @@ sns.kdeplot(juggling_Std['SessionsToCriterion'], color='b', shade=True, label='S
 sns.kdeplot(juggling_Vis['SessionsToCriterion'], color='r', shade=True, label='Visualisation Training')
 
 # Plot individual data points
-sns.rugplot(juggling_Std['SessionsToCriterion'], color='b')
-sns.rugplot(juggling_Vis['SessionsToCriterion'], color='r')
+sns.swarmplot(juggling_Std['SessionsToCriterion'], color='b')
+sns.swarmplot(juggling_Vis['SessionsToCriterion'], color='r')
 
 # axis labels
 plt.xlabel("sessions to criterion", fontsize = 12)
 plt.ylabel("Density", fontsize = 12)
+
+plt.show()
 
 
 # The data do not look normal, as some people (especially in the standard group) took much longer to reach criterion (the distribution has positive skew).

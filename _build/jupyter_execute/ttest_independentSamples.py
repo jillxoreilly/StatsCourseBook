@@ -63,6 +63,8 @@ sns.rugplot(apples_MiracleGro["meanAppleWeight"], color='r')
 plt.xlabel("Mean weight of apples (g)", fontsize = 12)
 plt.ylabel("Density", fontsize = 12)
 
+plt.show()
+
 
 # It looks like both distributions are unimodal but a bit skewed. 
 # 
@@ -104,7 +106,7 @@ plt.ylabel("Density", fontsize = 12)
 display(apples)
 
 
-# We obtain some commonly used descriptive statistics using the <tt>describe()<tt> method in <tt>pandas</tt>
+# We obtain some commonly used descriptive statistics using the <tt>describe()</tt> method in <tt>pandas</tt>
 
 # In[5]:
 
@@ -138,7 +140,7 @@ stats.ttest_ind(apples_MiracleGro["meanAppleWeight"], apples_BrandX["meanAppleWe
 # and the argument <tt>alternative='greater'</tt>, which tells the computer to run a one tailed test 
 # that mean of the first input <tt>apples.MiracleGro</tt> is greater than the second <tt>apples.BrandX</tt>.
 # 
-# The outputs are <tt>statistic</tt> ($t=2.27$) and <tt>pvalue</tt> ($p=0.0177$) - if this is less than our $\alpha$ value 0.5, there is a significant difference.
+# The outputs are <tt>statistic</tt> ($t=2.35$) and <tt>pvalue</tt> ($p=0.0146$) - if this is less than our $\alpha$ value 0.5, there is a significant difference.
 # 
 # ### Degrees of freedom
 # 
@@ -146,13 +148,13 @@ stats.ttest_ind(apples_MiracleGro["meanAppleWeight"], apples_BrandX["meanAppleWe
 # 
 # In the case of the independent samples t-test $df = n_1 + n_2 - 2$ so in this case, df=18 and we can report out test results as:
 # 
-# $t(18) = 2.27, p=0.0177$ (one-tailed)
+# $t(18) = 2.35, p=0.0146$ (one-tailed)
 # 
 # ### Interpretation
 # 
-# Our t value of 2.27 means that the difference in mean apple weights between MiracleGro and BrandX trees is 2.27 times the standard error (where $ SE = s \sqrt{\frac{1}{n_1}+\frac{1}{n_2}}$).
+# Our t value of 2.35 means that the difference in mean apple weights between MiracleGro and BrandX trees is 2.35 times the standard error (where $ SE = s \sqrt{\frac{1}{n_1}+\frac{1}{n_2}}$).
 # 
-# Such a large difference (in the expected direction) would occur 0.0177 (1.77%) of the time due to chance if the null hypothesis were true (if MiracleGro was really no better than Brand X), hence the p value of 0.0177.
+# Such a large difference (in the expected direction) would occur 0.0146 (1.46%) of the time due to chance if the null hypothesis were true (if MiracleGro was really no better than Brand X), hence the p value of 0.0146.
 # 
 # This diagram shows the expected distribution of t-values if the null were true, with our obtained t-value marked:
 # 
@@ -215,6 +217,8 @@ sns.rugplot(apples_MiracleGro["meanAppleWeight"], color='r')
 plt.xlabel("Mean weight of apples (g)", fontsize = 12)
 plt.ylabel("Density", fontsize = 12)
 
+plt.show()
+
 
 # An independent samples t-test was therefore used to compare the means (alpha = XXX, XXX-tailed). 
 
@@ -224,7 +228,7 @@ plt.ylabel("Density", fontsize = 12)
 stats.ttest_ind(apples_MiracleGro["meanAppleWeight"], apples_BrandX["meanAppleWeight"], alternative='greater')
 
 
-# The weight of apples from the trees fertilized with MiracleGro was indeed found to be significantly higher: t(18) = 2.27, p=0.018.
+# The weight of apples from the trees fertilized with MiracleGro was indeed found to be significantly higher: t(18) = 2.35, p=0.0146.
 
 # ## Exercises
 # 

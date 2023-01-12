@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>One sample t-test &#8212; Introduction to Statistics and Data Science</title>
+    <title>9.1. One sample t-test &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="9.2. Paired Samples t-test" href="ttest_pairedSamples.html" />
+    <link rel="prev" title="9. The t-test" href="ttest_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -114,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="prepwork_intro.html">
    1. Preparatory Work
@@ -484,19 +486,73 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="ttest_intro.html">
+   9. The t-test
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     9.1. One sample t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_pairedSamples.html">
+     9.2. Paired Samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_independentSamples.html">
+     9.3. Independent samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_furtherExercises.html">
+     9.4. t-test further exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="nonpara_intro.html">
+   10. Non-parametric equivalents of the t-test
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_MannWhitneyU.html">
+     10.1. Set up Python libraries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="WilcoxonSignRank.html">
+     10.4. Set up Python libraries
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Cheatsheet_intro.html">
-   9. Python Cheatsheet
+   11. Python Cheatsheet
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="coding_cheatsheet.html">
-     9.1. Coding support sheet
+     11.1. Coding support sheet
     </a>
    </li>
   </ul>
@@ -859,7 +915,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="one-sample-t-test">
-<h1>One sample t-test<a class="headerlink" href="#one-sample-t-test" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">9.1. </span>One sample t-test<a class="headerlink" href="#one-sample-t-test" title="Permalink to this heading">#</a></h1>
 <section id="set-up-python-libraries">
 <h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
@@ -878,7 +934,7 @@ title="Print to PDF"
 </section>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
-<img src="images/rowingTeam.png" width=50% alt="There should be a picture of some apples here" >
+<img src="images/rowingTeam.png" width=50% >
 <p>Here are the heights in cm of eight men on a rowing team</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -946,7 +1002,7 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
-<p>An observer notes that they men seem quite tall and hypothesises that rowers are generally tall as tall people can row faster.</p>
+<p>An observer notes that the men seem quite tall, and hypothesises that rowers are generally tall as tall people can row faster.</p>
 <p>Use a one-sample t-test to determine whether the mean height of the rowing team is
 significantly greater than the average height of men in the UK (175 cm).</p>
 <section id="plot-the-data">
@@ -958,16 +1014,14 @@ as the sample size is so small</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heights</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heights</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;height (cm)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;height (cm)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;density&#39;)
-</pre></div>
-</div>
-<img alt="_images/ttest_oneSample_7_1.png" src="_images/ttest_oneSample_7_1.png" />
+<img alt="_images/ttest_oneSample_7_0.png" src="_images/ttest_oneSample_7_0.png" />
 </div>
 </div>
 <p>As usual, it’s difficult to say if the data are normally distributed from a plot of a small sample -
@@ -1055,7 +1109,8 @@ she thinks taller people are more likely to be good rowers</p>
 </div>
 <p>It looks like the mean height of rowers (180.4cm) is above the population mean of 175cm.</p>
 <p>Is this a big difference? It is less than one standard deviation above the mean: s=8.4 and (180.4-175)=5.4.
-It turns out (from the normal distribution) that if the average rower was an actual person, they would be taller than aabout 75% of others, so tall but not remarkably so. However, if the rowers are consistently quite tall (that is most of them are tall), they may as a group be significantly taller than average.</p>
+It turns out (from the normal distribution) that if the average rower was an actual person, they would be taller than about 75% of others, so tall but not remarkably so.</p>
+<p>However, another key element is the variability in the dataset - if the rowers are consistently quite tall (that is most of them are tall), they may as a group be significantly taller than average.</p>
 </section>
 <section id="carry-out-the-test">
 <h3>Carry out the test<a class="headerlink" href="#carry-out-the-test" title="Permalink to this heading">#</a></h3>
@@ -1075,7 +1130,7 @@ It turns out (from the normal distribution) that if the average rower was an act
 </div>
 <p>The inputs to stats.ttest_1samp are the sample (from our Pandas data frame <tt>heights</tt>) and the value to which they are to be compared (the average height of british men, 175cm),
 and the argument <tt>alternative=’greater’</tt>, which tells the computer to run a one tailed test
-that mean of the first input <tt>apples.MiracleGro</tt> is greater than the second <tt>apples.BrandX</tt>.</p>
+that mean of the first input <tt>heights</tt> is greater than the reference value <tt>175</tt>.</p>
 <p>The outputs are <tt>statistic</tt> (<span class="math notranslate nohighlight">\(t=1.70\)</span>) and <tt>pvalue</tt> (<span class="math notranslate nohighlight">\(p=0.067\)</span>) - if this is less than our <span class="math notranslate nohighlight">\(\alpha\)</span> value 0.5, there is a significant difference.</p>
 </section>
 <section id="degrees-of-freedom">
@@ -1114,16 +1169,14 @@ that mean of the first input <tt>apples.MiracleGro</tt> is greater than the seco
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heights</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heights</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;height (cm)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;height (cm)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;density&#39;)
-</pre></div>
-</div>
-<img alt="_images/ttest_oneSample_19_1.png" src="_images/ttest_oneSample_19_1.png" />
+<img alt="_images/ttest_oneSample_19_0.png" src="_images/ttest_oneSample_19_0.png" />
 </div>
 </div>
 <p>The mean height of the rowers was XXX.X cm and the standard deviation was X.XX cm.</p>
@@ -1237,6 +1290,20 @@ that mean of the first input <tt>apples.MiracleGro</tt> is greater than the seco
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="ttest_intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">9. </span>The t-test</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ttest_pairedSamples.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">9.2. </span>Paired Samples t-test</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
