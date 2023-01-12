@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Independent samples t-test &#8212; Introduction to Statistics and Data Science</title>
+    <title>9.3. Independent samples t-test &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="9.4. t-test further exercises" href="ttest_furtherExercises.html" />
+    <link rel="prev" title="9.2. Paired Samples t-test" href="ttest_pairedSamples.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -114,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="prepwork_intro.html">
    1. Preparatory Work
@@ -484,19 +486,73 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="ttest_intro.html">
+   9. The t-test
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_oneSample.html">
+     9.1. One sample t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_pairedSamples.html">
+     9.2. Paired Samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     9.3. Independent samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_furtherExercises.html">
+     9.4. t-test further exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="nonpara_intro.html">
+   10. Non-parametric equivalents of the t-test
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_MannWhitneyU.html">
+     10.1. Set up Python libraries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="WilcoxonSignRank.html">
+     10.4. Set up Python libraries
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Cheatsheet_intro.html">
-   9. Python Cheatsheet
+   11. Python Cheatsheet
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="coding_cheatsheet.html">
-     9.1. Coding support sheet
+     11.1. Coding support sheet
     </a>
    </li>
   </ul>
@@ -869,7 +925,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="independent-samples-t-test">
-<h1>Independent samples t-test<a class="headerlink" href="#independent-samples-t-test" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">9.3. </span>Independent samples t-test<a class="headerlink" href="#independent-samples-t-test" title="Permalink to this heading">#</a></h1>
 <section id="set-up-python-libraries">
 <h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
@@ -1059,14 +1115,13 @@ title="Print to PDF"
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Mean weight of apples (g)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Density&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Density&#39;)
-</pre></div>
-</div>
-<img alt="_images/ttest_independentSamples_7_1.png" src="_images/ttest_independentSamples_7_1.png" />
+<img alt="_images/ttest_independentSamples_7_0.png" src="_images/ttest_independentSamples_7_0.png" />
 </div>
 </div>
 <p>It looks like both distributions are unimodal but a bit skewed.</p>
@@ -1237,7 +1292,7 @@ There is a video explaining why here.</p>
 </table>
 </div></div></div>
 </div>
-<p>We obtain some commonly used descriptive statistics using the <tt>describe()<tt> method in <tt>pandas</tt></p>
+<p>We obtain some commonly used descriptive statistics using the <tt>describe()</tt> method in <tt>pandas</tt></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apples</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -1406,18 +1461,18 @@ There is a video explaining why here.</p>
 <p>The inputs to stats.ttest are the two samples to be compared (the values in the <tt>meanAppleWeight</tt> column from our separated Pandas data frames <tt>apples_BrandX</tt> and <tt>apples_MiracleGro</tt>)
 and the argument <tt>alternative=’greater’</tt>, which tells the computer to run a one tailed test
 that mean of the first input <tt>apples.MiracleGro</tt> is greater than the second <tt>apples.BrandX</tt>.</p>
-<p>The outputs are <tt>statistic</tt> (<span class="math notranslate nohighlight">\(t=2.27\)</span>) and <tt>pvalue</tt> (<span class="math notranslate nohighlight">\(p=0.0177\)</span>) - if this is less than our <span class="math notranslate nohighlight">\(\alpha\)</span> value 0.5, there is a significant difference.</p>
+<p>The outputs are <tt>statistic</tt> (<span class="math notranslate nohighlight">\(t=2.35\)</span>) and <tt>pvalue</tt> (<span class="math notranslate nohighlight">\(p=0.0146\)</span>) - if this is less than our <span class="math notranslate nohighlight">\(\alpha\)</span> value 0.5, there is a significant difference.</p>
 </section>
 <section id="degrees-of-freedom">
 <h3>Degrees of freedom<a class="headerlink" href="#degrees-of-freedom" title="Permalink to this heading">#</a></h3>
 <p>In a scientific write-up we also need to report the degrees of freedom of the test. This tells us how many observations (data-points) the test was based on, corrected for the number of means we had to estimate from the data in order to do the test.</p>
 <p>In the case of the independent samples t-test <span class="math notranslate nohighlight">\(df = n_1 + n_2 - 2\)</span> so in this case, df=18 and we can report out test results as:</p>
-<p><span class="math notranslate nohighlight">\(t(18) = 2.27, p=0.0177\)</span> (one-tailed)</p>
+<p><span class="math notranslate nohighlight">\(t(18) = 2.35, p=0.0146\)</span> (one-tailed)</p>
 </section>
 <section id="interpretation">
 <h3>Interpretation<a class="headerlink" href="#interpretation" title="Permalink to this heading">#</a></h3>
-<p>Our t value of 2.27 means that the difference in mean apple weights between MiracleGro and BrandX trees is 2.27 times the standard error (where <span class="math notranslate nohighlight">\( SE = s \sqrt{\frac{1}{n_1}+\frac{1}{n_2}}\)</span>).</p>
-<p>Such a large difference (in the expected direction) would occur 0.0177 (1.77%) of the time due to chance if the null hypothesis were true (if MiracleGro was really no better than Brand X), hence the p value of 0.0177.</p>
+<p>Our t value of 2.35 means that the difference in mean apple weights between MiracleGro and BrandX trees is 2.35 times the standard error (where <span class="math notranslate nohighlight">\( SE = s \sqrt{\frac{1}{n_1}+\frac{1}{n_2}}\)</span>).</p>
+<p>Such a large difference (in the expected direction) would occur 0.0146 (1.46%) of the time due to chance if the null hypothesis were true (if MiracleGro was really no better than Brand X), hence the p value of 0.0146.</p>
 <p>This diagram shows the expected distribution of t-values if the null were true, with our obtained t-value marked:</p>
 <img src="images/ttestApples.png" width=50% alt="There should be a picture of the t-distribution here" ></section>
 <section id="draw-conclusions">
@@ -1539,14 +1594,13 @@ that mean of the first input <tt>apples.MiracleGro</tt> is greater than the seco
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Mean weight of apples (g)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Density&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Density&#39;)
-</pre></div>
-</div>
-<img alt="_images/ttest_independentSamples_25_1.png" src="_images/ttest_independentSamples_25_1.png" />
+<img alt="_images/ttest_independentSamples_25_0.png" src="_images/ttest_independentSamples_25_0.png" />
 </div>
 </div>
 <p>An independent samples t-test was therefore used to compare the means (alpha = XXX, XXX-tailed).</p>
@@ -1562,7 +1616,7 @@ that mean of the first input <tt>apples.MiracleGro</tt> is greater than the seco
 </div>
 </div>
 </div>
-<p>The weight of apples from the trees fertilized with MiracleGro was indeed found to be significantly higher: t(18) = 2.27, p=0.018.</p>
+<p>The weight of apples from the trees fertilized with MiracleGro was indeed found to be significantly higher: t(18) = 2.35, p=0.0146.</p>
 </section>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
@@ -1603,6 +1657,20 @@ that mean of the first input <tt>apples.MiracleGro</tt> is greater than the seco
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="ttest_pairedSamples.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">9.2. </span>Paired Samples t-test</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ttest_furtherExercises.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">9.4. </span>t-test further exercises</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
