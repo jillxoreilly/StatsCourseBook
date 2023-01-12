@@ -24,7 +24,7 @@ import seaborn as sns
 
 # ## Toy example
 # 
-# [A toy example is an example witha  very small dataset, just to show how it works]
+# [A toy example is an example with a very small dataset, just to show how it works]
 # 
 # We are interested in whether cat owners or dog owners eat more yoghurt. We survey five cat owners and four dog owners and ask how many times in the last week they ate yogurt. We obtain the following data:
 
@@ -60,7 +60,7 @@ sns.stripplot(data=yog, x='Pet', y='Yoghurt', color=[0,0,0]) # this bit plots th
 # 
 # That is, would the result (on average cat owners eat yoghurt 2.9 more times per week) be very unlikely to occur due to chance, if the null hypothesis were true, ie if there were no pet-based differences in the number of times a person eats yoghurt? 
 # 
-# To answer this question, we need to know what values difference of mean yoghurt consuption (for [cat - dog] owners) we would get due to chance - if actually all the people cat- and dog onders) were drawn from some distribution where the number of times yoghurt is eaten does not depend on which pet you have. 
+# To answer this question, we need to know what values difference of mean yoghurt consuption (for [cat - dog] owners) we would get due to chance - if actually all the people, be they cat- and dog owners) were drawn from some distribution where the number of times yoghurt is eaten does not depend on which pet you have. 
 # 
 # If we drew lots of samples of 9 people from that yoghurt-eating population, even though there is no overall difference in yoghurt consumption between cat and dog owners, nonetheless we would almost always get some difference between the cat- and dog owners due to random chance. The distribution of these differences is called the <b>null distribution</b> of difference of means, that is, it is <b>the distribution we would expect to obtain if the null hypothesis were true</b>.
 # 
@@ -81,7 +81,7 @@ sns.stripplot(data=yog, x='Pet', y='Yoghurt', color=[0,0,0]) # this bit plots th
 #     <li> the outlier individual who ate loads of yoghurt was a cat owner
 # </ul>
 # 
-# What we are going to do is shuffle the data around to create many new (re)samples preserving the non-pet-related information but ignoring the pet of the yoghurt-eater. Using these simulated (shuffled) datasets we will work out how often we get a difference of 2.9 or more iin the mean numbver of times yoghurt is eaten, between cat- and dog owners. This is equivalent to determining how likely our difference is to have occurred due to chance.
+# What we are going to do is shuffle the data around to create many new (re)samples preserving the non-pet-related information but ignoring the pet of the yoghurt-eater. Using these simulated (shuffled) datasets we will work out how often we get a difference of 2.9 or more iin the mean number of times yoghurt is eaten, between cat- and dog owners. This is equivalent to determining how likely our difference is to have occurred due to chance.
 # 
 # 
 
@@ -116,11 +116,11 @@ yog_shuffled
 yog_shuffled[yog_shuffled['Pet']=='cat']['Yoghurt'].mean() - yog_shuffled[yog_shuffled['Pet']=='dog']['Yoghurt'].mean()
 
 
-# ### Visualizing randoms shuffles in the yoghurt data
+# ### Visualizing random shuffles in the yoghurt data
 # 
 # Let's see how the difference of means changes over a few random shuffles.
 # 
-# Below I generate 4 random shuffles of our yoghurt data (in which individuals are randomly relabelled as cat-= or dog-owners, maintaining the correct number of cat- and dog-owners), and plot the outcomes:
+# Below I generate 4 random shuffles of our yoghurt data (in which individuals are randomly relabelled as cat- or dog-owners, maintaining the correct number of cat- and dog-owners), and plot the outcomes:
 
 # In[7]:
 
@@ -147,9 +147,11 @@ dMeans = yog_shuffled[yog_shuffled['Pet']=='cat']['Yoghurt'].mean() - yog_shuffl
 print('mean difference for the last shuffle = ' + str(dMeans))
 
 
+# note that the difference of means (mean(x)-mean(y)) is NOT the same as the mean (pairwise) difference mean(x-y) that we used in the paired-data example
+
 # ### Plot the null distribution for a large number of shuffles
 # 
-# Now we can repeat the process for a large number of shuffles and get the mean number of times cat- and dog-owners eat yoghurt for each shuffle. The distribution of these differences of means is the null distribution to which our observed difference (the average for cat owners is 2.9 higher) is to be compared.
+# Now we can repeat the process for a large number of shuffles and get the mean number of times cat- and dog-owners eat yoghurt for each shuffle. The distribution of these differences of these means is the null distribution to which our observed difference (the average for cat owners is 2.9 higher) is to be compared.
 # 
 
 # In[9]:
@@ -171,11 +173,11 @@ print('proportion >2.9 = ' + str(100*np.mean(dMeans>2.9)) + '%')
 
 # ### The $𝑝$-value¶
 # 
-# We can also calculate the proportion of cases in which the difference of means for cat- minus dog-owners exceeds the value we observed in our original sample, 2.9. This proportion is about 19%. It tells us that if we simulate a situation in which pet ownership does not determine the number of times yoghurt is eaten (but preserving some other important features of the dataset like the high skew), there is still a 19% chance that we would get an apparent pet-based difference as large as the one we observed in our 'real' data.
+# We can also calculate the proportion of cases in which the difference of means for cat- minus dog-owners exceeds the value we observed in our original sample, 2.9. This proportion is about 18%. It tells us that if we simulate a situation in which pet ownership does not determine the number of times yoghurt is eaten (but preserving some other important features of the dataset like the high skew), there is still a 18% chance that we would get an apparent pet-based difference as large as the one we observed in our 'real' data.
 # 
 # The probability that the test statistic (in this case, the difference in mean times yoghurt is eaten) would be observed if the null hypothesis were true, is sometimes called the $𝑝$-value.
 # 
-# Our permutation test shows that the $𝑝$-value associated with the observed difference of means is 0.19.
+# Our permutation test shows that the $𝑝$-value associated with the observed difference of means is 0.18.
 # 
 # The result is considered statistically significant if $𝑝$ is smaller than some predetermined level, known as $\alpha$. Usually $\alpha=0.05$ or $\alpha=0.05$ is used, so the result is significant if $p=0.05$ or $p=0.01$. Our result would not normally be considered statistically significant (not even close).
 
@@ -183,7 +185,7 @@ print('proportion >2.9 = ' + str(100*np.mean(dMeans>2.9)) + '%')
 # 
 # Now you have seen how the permutation test works, we can learn how to run it more easily using the built in function <tt>scipy.stats.permutation_test</tt>
 # 
-# <b>Note-</b> You need scipy stats version > 1.8.0 to run this. You may need to check your version yb running the following code block.
+# <b>Note-</b> You need scipy stats version > 1.8.0 to run this. You should check your version by running the following code block.
 
 # In[10]:
 
@@ -217,7 +219,7 @@ stats.permutation_test((yog[yog['Pet']=='cat']['Yoghurt'], yog[yog['Pet']=='dog'
 
 # Firstly, to reassure you this is doing a very similar job to our home-made code, check the p-value (should be about 0.18). 
 # 
-# We can also plot the null distribution, which hopefully looks simimlar to what we got from the home-made code:
+# We can also plot the null distribution, which hopefully looks similar to what we got from the home-made code:
 
 # In[12]:
 
@@ -263,23 +265,21 @@ beans = np.array([10,20,30]) # another input array - have given it an arbitrary 
 jackfruit(sausages,beans)
 
 
-# Now we can see how we could run <tt>stats.permutation_test</tt> on our function <tt>jackfruit</tt> and our data <tt>sausages</tt> and <tt>beans</tt>
-
-# ## Another example
+# ## Recap
 # 
-# Let's go through another example. Take our college welfare data (made up data on the welfare of students at Lonsdale and Beaufort college).
+# To run a permutation test on unpaired data, we shuffled up all the data values (yoghurt counts!) and assigned some to the 'cat' group and some to the 'dog' group. The only thing we kept the same from our original dataset was the number of 'cat' and 'dog' people in each resample.
 # 
-# ### Import and view the data
+# For each shuffle we calculated the difference between the mean(yoghurt) for cat people and the mean(yoghurt) for dog people, ie the <b>difference of means</b>. 
+# 
+# Note that the difference of means [mean(x)-mean(y)] is not the same as the mean (pairwise) difference [mean(x-y)] as used in the paired-data permutation test.
+# 
+# Permutation testing in this way gives us a null distribution for the difference of means. Values of the difference of means that occur rarely in the null distriubtion are considered statistically significant.
+#     
+# To run the permutation test with <tt>scipy.stats</tt> we need the option `permutation_type='independent'`
+# 
 
-# In[15]:
+# In[ ]:
 
 
-wb = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/WellbeingSample.csv')
-wb
 
-
-# In[16]:
-
-
-Let's test
 

@@ -297,7 +297,7 @@ plt.show()
 
 # ### Defining a function
 # 
-# You will have come across this in datacamp but we haven't used it since. Don't be scared! It's unfamiliar but quite handy. On the other hand for a pairwise permutation test, the function I have given you for mDIff is always going to work, so if in doubbt you can just copy it :-)
+# You will have come across this in datacamp but we haven't used it since. Don't be scared! It's unfamiliar but quite handy. On the other hand for a pairwise permutation test, the function I have given you for mDiff is always going to work, so if in doubt you can just copy it :-)
 # 
 # A function is a little computer programme that takes in some information (in this case, it takes in two series, <tt>(socks.Husband, socks.Wife)</tt> and returns some value (in this case the mean difference <tt>mean(socks.Husband, socks.Wife)</tt>
 
@@ -334,6 +334,16 @@ bananas(cats,dogs)
 
 stats.permutation_test((cats, dogs), bananas, permutation_type='samples', alternative='two-sided', n_resamples=10000)
 
+
+# ## Recap
+# 
+# To run a permutation test on paired data, we randomly flipped some of the pairs so that the husband's sock count was assigned to the wife and vice versa. We did NOT move people between couples, as we want to retain the characteristic of the original dataset that high-sock husbands tend to have high-sock wives
+# 
+# For each shuffle we calculated the mean (pairwise) difference in the nummber of socks - husband-wife. 
+# 
+# Permutation testing in this way gives us a null distribution for the mean difference. Values of mean difference that occur rarely in the null distriubtion are considered statistically significant.
+#     
+# To run the permutation test with <tt>scipy.stats</tt> we need the option `permutation_type='samples'`
 
 # In[ ]:
 

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>12.2. Permutation test for paired data &#8212; Introduction to Statistics and Data Science</title>
+    <title>12.3. Permutation test for paired data &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="12.3. Permutation test for unpaired or independent samples data" href="permutation_independentSamples.html" />
-    <link rel="prev" title="12. Permutation Testing" href="permutation_intro.html" />
+    <link rel="next" title="12.4. Permutation test for unpaired or independent samples data" href="permutation_independentSamples.html" />
+    <link rel="prev" title="12.2. Learning Objectives" href="permutation_outcomes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -567,24 +567,34 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_outcomes.html">
+     12.2. Learning Objectives
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     12.2. Permutation test for paired data
+     12.3. Permutation test for paired data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_independentSamples.html">
-     12.3. Permutation test for unpaired or independent samples data
+     12.4. Permutation test for unpaired or independent samples data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_correlation.html">
-     12.4. Permutation test for correlation
+     12.5. Permutation test for correlation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_more.html">
-     12.5. Permutation testing - more practice
+     12.6. Permutation testing - more practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_TutorialExercises.html">
+     12.7. Tutorial exercises
     </a>
    </li>
   </ul>
@@ -891,6 +901,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -988,6 +1003,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -999,7 +1019,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="permutation-test-for-paired-data">
-<h1><span class="section-number">12.2. </span>Permutation test for paired data<a class="headerlink" href="#permutation-test-for-paired-data" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">12.3. </span>Permutation test for paired data<a class="headerlink" href="#permutation-test-for-paired-data" title="Permalink to this heading">#</a></h1>
 <p>We first look at the case of paired data - data in which we wish to compare two groups and each datapoint in one group has a counterpart in the other</p>
 <p>Experimental designs using paired data include matched pairs (eg brothers and sisters) and repeated measures (measurements of the same individual before- and after- an intervention, or on- and off-drug).</p>
 <section id="set-up-python-libraries">
@@ -1224,13 +1244,13 @@ To generate each new simulated dataset, we will randomly decide whether each cou
   <tbody>
     <tr>
       <th>0</th>
-      <td>12</td>
       <td>10</td>
+      <td>12</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>13</td>
       <td>17</td>
+      <td>13</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1254,8 +1274,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>6</th>
-      <td>18</td>
       <td>13</td>
+      <td>18</td>
     </tr>
     <tr>
       <th>7</th>
@@ -1264,13 +1284,13 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>8</th>
-      <td>27</td>
       <td>22</td>
+      <td>27</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>14</td>
       <td>22</td>
+      <td>14</td>
     </tr>
   </tbody>
 </table>
@@ -1321,8 +1341,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
   <tbody>
     <tr>
       <th>0</th>
-      <td>2</td>
       <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1331,8 +1351,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>2</th>
-      <td>5</td>
       <td>6</td>
+      <td>5</td>
     </tr>
   </tbody>
 </table>
@@ -1388,7 +1408,7 @@ To generate each new simulated dataset, we will randomly decide whether each cou
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = -2.6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = -2.4
 </pre></div>
 </div>
 </div>
@@ -1421,7 +1441,7 @@ To generate each new simulated dataset, we will randomly decide whether each cou
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/permutation_paired_19_0.png" src="_images/permutation_paired_19_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;6.6 = 0.09%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;6.6 = 0.06999999999999999%
 </pre></div>
 </div>
 </div>
@@ -1497,7 +1517,7 @@ To generate each new simulated dataset, we will randomly decide whether each cou
 </section>
 <section id="defining-a-function">
 <h3>Defining a function<a class="headerlink" href="#defining-a-function" title="Permalink to this heading">#</a></h3>
-<p>You will have come across this in datacamp but we haven’t used it since. Don’t be scared! It’s unfamiliar but quite handy. On the other hand for a pairwise permutation test, the function I have given you for mDIff is always going to work, so if in doubbt you can just copy it :-)</p>
+<p>You will have come across this in datacamp but we haven’t used it since. Don’t be scared! It’s unfamiliar but quite handy. On the other hand for a pairwise permutation test, the function I have given you for mDiff is always going to work, so if in doubt you can just copy it :-)</p>
 <p>A function is a little computer programme that takes in some information (in this case, it takes in two series, <tt>(socks.Husband, socks.Wife)</tt> and returns some value (in this case the mean difference <tt>mean(socks.Husband, socks.Wife)</tt></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1551,6 +1571,13 @@ To generate each new simulated dataset, we will randomly decide whether each cou
 </div>
 </section>
 </section>
+<section id="recap">
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this heading">#</a></h2>
+<p>To run a permutation test on paired data, we randomly flipped some of the pairs so that the husband’s sock count was assigned to the wife and vice versa. We did NOT move people between couples, as we want to retain the characteristic of the original dataset that high-sock husbands tend to have high-sock wives</p>
+<p>For each shuffle we calculated the mean (pairwise) difference in the nummber of socks - husband-wife.</p>
+<p>Permutation testing in this way gives us a null distribution for the mean difference. Values of mean difference that occur rarely in the null distriubtion are considered statistically significant.</p>
+<p>To run the permutation test with <tt>scipy.stats</tt> we need the option <code class="docutils literal notranslate"><span class="pre">permutation_type='samples'</span></code></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1580,17 +1607,17 @@ To generate each new simulated dataset, we will randomly decide whether each cou
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="permutation_intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="permutation_outcomes.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">12. </span>Permutation Testing</p>
+            <p class="prev-next-title"><span class="section-number">12.2. </span>Learning Objectives</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="permutation_independentSamples.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">12.3. </span>Permutation test for unpaired or independent samples data</p>
+        <p class="prev-next-title"><span class="section-number">12.4. </span>Permutation test for unpaired or independent samples data</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

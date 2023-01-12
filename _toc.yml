@@ -90,8 +90,10 @@ chapters:
   - file: coding_cheatsheet.ipynb
 - file: permutation_intro.md
   sections:
+  - file: permutation_outcomes.md
   - file: permutation_paired.ipynb
   - file: permutation_independentSamples.ipynb
   - file: permutation_correlation.ipynb
   - file: permutation_more.ipynb
+  - file: permutation_TutorialExercises.ipynb
 

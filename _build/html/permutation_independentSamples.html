@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>12.3. Permutation test for unpaired or independent samples data &#8212; Introduction to Statistics and Data Science</title>
+    <title>12.4. Permutation test for unpaired or independent samples data &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="12.4. Permutation test for correlation" href="permutation_correlation.html" />
-    <link rel="prev" title="12.2. Permutation test for paired data" href="permutation_paired.html" />
+    <link rel="next" title="12.5. Permutation test for correlation" href="permutation_correlation.html" />
+    <link rel="prev" title="12.3. Permutation test for paired data" href="permutation_paired.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -568,23 +568,33 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
+    <a class="reference internal" href="permutation_outcomes.html">
+     12.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="permutation_paired.html">
-     12.2. Permutation test for paired data
+     12.3. Permutation test for paired data
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     12.3. Permutation test for unpaired or independent samples data
+     12.4. Permutation test for unpaired or independent samples data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_correlation.html">
-     12.4. Permutation test for correlation
+     12.5. Permutation test for correlation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_more.html">
-     12.5. Permutation testing - more practice
+     12.6. Permutation testing - more practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_TutorialExercises.html">
+     12.7. Tutorial exercises
     </a>
    </li>
   </ul>
@@ -839,8 +849,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualizing-randoms-shuffles-in-the-yoghurt-data">
-     Visualizing randoms shuffles in the yoghurt data
+    <a class="reference internal nav-link" href="#visualizing-random-shuffles-in-the-yoghurt-data">
+     Visualizing random shuffles in the yoghurt data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -885,16 +895,9 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#another-example">
-   Another example
+  <a class="reference internal nav-link" href="#recap">
+   Recap
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#import-and-view-the-data">
-     Import and view the data
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -941,8 +944,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualizing-randoms-shuffles-in-the-yoghurt-data">
-     Visualizing randoms shuffles in the yoghurt data
+    <a class="reference internal nav-link" href="#visualizing-random-shuffles-in-the-yoghurt-data">
+     Visualizing random shuffles in the yoghurt data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -987,16 +990,9 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#another-example">
-   Another example
+  <a class="reference internal nav-link" href="#recap">
+   Recap
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#import-and-view-the-data">
-     Import and view the data
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -1009,7 +1005,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="permutation-test-for-unpaired-or-independent-samples-data">
-<h1><span class="section-number">12.3. </span>Permutation test for unpaired or independent samples data<a class="headerlink" href="#permutation-test-for-unpaired-or-independent-samples-data" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">12.4. </span>Permutation test for unpaired or independent samples data<a class="headerlink" href="#permutation-test-for-unpaired-or-independent-samples-data" title="Permalink to this heading">#</a></h1>
 <p>We now look at the case of unpaired data - data in which we wish to compare two groups but there are no particular links between individuals in one group and individuals in another group</p>
 <p>Examples of experimental designs using independent samples would be (say) a comparison of science and humanities students, or first- and final-year students, where the individuals in each group are distinct.</p>
 <section id="set-up-python-libraries">
@@ -1030,7 +1026,7 @@ title="Print to PDF"
 </section>
 <section id="toy-example">
 <h2>Toy example<a class="headerlink" href="#toy-example" title="Permalink to this heading">#</a></h2>
-<p>[A toy example is an example witha  very small dataset, just to show how it works]</p>
+<p>[A toy example is an example with a very small dataset, just to show how it works]</p>
 <p>We are interested in whether cat owners or dog owners eat more yoghurt. We survey five cat owners and four dog owners and ask how many times in the last week they ate yogurt. We obtain the following data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1148,7 +1144,7 @@ difference of means (cat-dog): 2.9000000000000004
 <section id="is-this-result-statistically-significant">
 <h3>Is this result statistically significant?<a class="headerlink" href="#is-this-result-statistically-significant" title="Permalink to this heading">#</a></h3>
 <p>That is, would the result (on average cat owners eat yoghurt 2.9 more times per week) be very unlikely to occur due to chance, if the null hypothesis were true, ie if there were no pet-based differences in the number of times a person eats yoghurt?</p>
-<p>To answer this question, we need to know what values difference of mean yoghurt consuption (for [cat - dog] owners) we would get due to chance - if actually all the people cat- and dog onders) were drawn from some distribution where the number of times yoghurt is eaten does not depend on which pet you have.</p>
+<p>To answer this question, we need to know what values difference of mean yoghurt consuption (for [cat - dog] owners) we would get due to chance - if actually all the people, be they cat- and dog owners) were drawn from some distribution where the number of times yoghurt is eaten does not depend on which pet you have.</p>
 <p>If we drew lots of samples of 9 people from that yoghurt-eating population, even though there is no overall difference in yoghurt consumption between cat and dog owners, nonetheless we would almost always get some difference between the cat- and dog owners due to random chance. The distribution of these differences is called the <b>null distribution</b> of difference of means, that is, it is <b>the distribution we would expect to obtain if the null hypothesis were true</b>.</p>
 </section>
 <section id="obtaining-the-null-distribution-by-permutation-testing">
@@ -1165,7 +1161,7 @@ difference of means (cat-dog): 2.9000000000000004
     <li> the number of times yoghurt is eaten tends to be higher for cat owners
     <li> the outlier individual who ate loads of yoghurt was a cat owner
 </ul>
-<p>What we are going to do is shuffle the data around to create many new (re)samples preserving the non-pet-related information but ignoring the pet of the yoghurt-eater. Using these simulated (shuffled) datasets we will work out how often we get a difference of 2.9 or more iin the mean numbver of times yoghurt is eaten, between cat- and dog owners. This is equivalent to determining how likely our difference is to have occurred due to chance.</p>
+<p>What we are going to do is shuffle the data around to create many new (re)samples preserving the non-pet-related information but ignoring the pet of the yoghurt-eater. Using these simulated (shuffled) datasets we will work out how often we get a difference of 2.9 or more iin the mean number of times yoghurt is eaten, between cat- and dog owners. This is equivalent to determining how likely our difference is to have occurred due to chance.</p>
 </section>
 <section id="run-the-simulation">
 <h3>Run the simulation<a class="headerlink" href="#run-the-simulation" title="Permalink to this heading">#</a></h3>
@@ -1211,7 +1207,7 @@ difference of means (cat-dog): 2.9000000000000004
   <tbody>
     <tr>
       <th>0</th>
-      <td>cat</td>
+      <td>dog</td>
       <td>0</td>
     </tr>
     <tr>
@@ -1226,12 +1222,12 @@ difference of means (cat-dog): 2.9000000000000004
     </tr>
     <tr>
       <th>3</th>
-      <td>dog</td>
+      <td>cat</td>
       <td>2</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>dog</td>
+      <td>cat</td>
       <td>13</td>
     </tr>
     <tr>
@@ -1251,7 +1247,7 @@ difference of means (cat-dog): 2.9000000000000004
     </tr>
     <tr>
       <th>8</th>
-      <td>cat</td>
+      <td>dog</td>
       <td>4</td>
     </tr>
   </tbody>
@@ -1266,16 +1262,16 @@ difference of means (cat-dog): 2.9000000000000004
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.3499999999999996
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="visualizing-randoms-shuffles-in-the-yoghurt-data">
-<h3>Visualizing randoms shuffles in the yoghurt data<a class="headerlink" href="#visualizing-randoms-shuffles-in-the-yoghurt-data" title="Permalink to this heading">#</a></h3>
+<section id="visualizing-random-shuffles-in-the-yoghurt-data">
+<h3>Visualizing random shuffles in the yoghurt data<a class="headerlink" href="#visualizing-random-shuffles-in-the-yoghurt-data" title="Permalink to this heading">#</a></h3>
 <p>Let’s see how the difference of means changes over a few random shuffles.</p>
-<p>Below I generate 4 random shuffles of our yoghurt data (in which individuals are randomly relabelled as cat-= or dog-owners, maintaining the correct number of cat- and dog-owners), and plot the outcomes:</p>
+<p>Below I generate 4 random shuffles of our yoghurt data (in which individuals are randomly relabelled as cat- or dog-owners, maintaining the correct number of cat- and dog-owners), and plot the outcomes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
@@ -1305,15 +1301,16 @@ difference of means (cat-dog): 2.9000000000000004
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = -4.3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = -2.5
 </pre></div>
 </div>
 </div>
 </div>
+<p>note that the difference of means (mean(x)-mean(y)) is NOT the same as the mean (pairwise) difference mean(x-y) that we used in the paired-data example</p>
 </section>
 <section id="plot-the-null-distribution-for-a-large-number-of-shuffles">
 <h3>Plot the null distribution for a large number of shuffles<a class="headerlink" href="#plot-the-null-distribution-for-a-large-number-of-shuffles" title="Permalink to this heading">#</a></h3>
-<p>Now we can repeat the process for a large number of shuffles and get the mean number of times cat- and dog-owners eat yoghurt for each shuffle. The distribution of these differences of means is the null distribution to which our observed difference (the average for cat owners is 2.9 higher) is to be compared.</p>
+<p>Now we can repeat the process for a large number of shuffles and get the mean number of times cat- and dog-owners eat yoghurt for each shuffle. The distribution of these differences of these means is the null distribution to which our observed difference (the average for cat owners is 2.9 higher) is to be compared.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1"># (number of shuffles)</span>
@@ -1332,8 +1329,8 @@ difference of means (cat-dog): 2.9000000000000004
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/permutation_independentSamples_18_0.png" src="_images/permutation_independentSamples_18_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;2.9 = 17.94%
+<img alt="_images/permutation_independentSamples_19_0.png" src="_images/permutation_independentSamples_19_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;2.9 = 18.69%
 </pre></div>
 </div>
 </div>
@@ -1341,16 +1338,16 @@ difference of means (cat-dog): 2.9000000000000004
 </section>
 <section id="the-p-value">
 <h3>The <span class="math notranslate nohighlight">\(𝑝\)</span>-value¶<a class="headerlink" href="#the-p-value" title="Permalink to this heading">#</a></h3>
-<p>We can also calculate the proportion of cases in which the difference of means for cat- minus dog-owners exceeds the value we observed in our original sample, 2.9. This proportion is about 19%. It tells us that if we simulate a situation in which pet ownership does not determine the number of times yoghurt is eaten (but preserving some other important features of the dataset like the high skew), there is still a 19% chance that we would get an apparent pet-based difference as large as the one we observed in our ‘real’ data.</p>
+<p>We can also calculate the proportion of cases in which the difference of means for cat- minus dog-owners exceeds the value we observed in our original sample, 2.9. This proportion is about 18%. It tells us that if we simulate a situation in which pet ownership does not determine the number of times yoghurt is eaten (but preserving some other important features of the dataset like the high skew), there is still a 18% chance that we would get an apparent pet-based difference as large as the one we observed in our ‘real’ data.</p>
 <p>The probability that the test statistic (in this case, the difference in mean times yoghurt is eaten) would be observed if the null hypothesis were true, is sometimes called the <span class="math notranslate nohighlight">\(𝑝\)</span>-value.</p>
-<p>Our permutation test shows that the <span class="math notranslate nohighlight">\(𝑝\)</span>-value associated with the observed difference of means is 0.19.</p>
+<p>Our permutation test shows that the <span class="math notranslate nohighlight">\(𝑝\)</span>-value associated with the observed difference of means is 0.18.</p>
 <p>The result is considered statistically significant if <span class="math notranslate nohighlight">\(𝑝\)</span> is smaller than some predetermined level, known as <span class="math notranslate nohighlight">\(\alpha\)</span>. Usually <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> or <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> is used, so the result is significant if <span class="math notranslate nohighlight">\(p=0.05\)</span> or <span class="math notranslate nohighlight">\(p=0.01\)</span>. Our result would not normally be considered statistically significant (not even close).</p>
 </section>
 </section>
 <section id="use-a-built-in-function">
 <h2>Use a built in function<a class="headerlink" href="#use-a-built-in-function" title="Permalink to this heading">#</a></h2>
 <p>Now you have seen how the permutation test works, we can learn how to run it more easily using the built in function <tt>scipy.stats.permutation_test</tt></p>
-<p><b>Note-</b> You need scipy stats version &gt; 1.8.0 to run this. You may need to check your version yb running the following code block.</p>
+<p><b>Note-</b> You need scipy stats version &gt; 1.8.0 to run this. You should check your version by running the following code block.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">scipy</span>
@@ -1402,7 +1399,7 @@ difference of means (cat-dog): 2.9000000000000004
 </div>
 </div>
 <p>Firstly, to reassure you this is doing a very similar job to our home-made code, check the p-value (should be about 0.18).</p>
-<p>We can also plot the null distribution, which hopefully looks simimlar to what we got from the home-made code:</p>
+<p>We can also plot the null distribution, which hopefully looks similar to what we got from the home-made code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">permutation_test</span><span class="p">((</span><span class="n">yog</span><span class="p">[</span><span class="n">yog</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;cat&#39;</span><span class="p">][</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">],</span> <span class="n">yog</span><span class="p">[</span><span class="n">yog</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;dog&#39;</span><span class="p">][</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">]),</span> <span class="n">dMeans</span><span class="p">,</span> <span class="n">permutation_type</span><span class="o">=</span><span class="s1">&#39;independent&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">,</span> <span class="n">n_resamples</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
@@ -1412,7 +1409,7 @@ difference of means (cat-dog): 2.9000000000000004
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/permutation_independentSamples_26_0.png" src="_images/permutation_independentSamples_26_0.png" />
+<img alt="_images/permutation_independentSamples_27_0.png" src="_images/permutation_independentSamples_27_0.png" />
 </div>
 </div>
 <p>The syntax is very similar to that which we used for the paired test.</p>
@@ -1452,157 +1449,15 @@ difference of means (cat-dog): 2.9000000000000004
 </div>
 </div>
 </div>
-<p>Now we can see how we could run <tt>stats.permutation_test</tt> on our function <tt>jackfruit</tt> and our data <tt>sausages</tt> and <tt>beans</tt></p>
 </section>
 </section>
-<section id="another-example">
-<h2>Another example<a class="headerlink" href="#another-example" title="Permalink to this heading">#</a></h2>
-<p>Let’s go through another example. Take our college welfare data (made up data on the welfare of students at Lonsdale and Beaufort college).</p>
-<section id="import-and-view-the-data">
-<h3>Import and view the data<a class="headerlink" href="#import-and-view-the-data" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wb</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/WellbeingSample.csv&#39;</span><span class="p">)</span>
-<span class="n">wb</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID_code</th>
-      <th>College</th>
-      <th>Subject</th>
-      <th>Score_preVac</th>
-      <th>Score_postVac</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>247610</td>
-      <td>Lonsdale</td>
-      <td>PPE</td>
-      <td>60</td>
-      <td>35</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>448590</td>
-      <td>Lonsdale</td>
-      <td>PPE</td>
-      <td>43</td>
-      <td>44</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>491100</td>
-      <td>Lonsdale</td>
-      <td>engineering</td>
-      <td>79</td>
-      <td>69</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>316150</td>
-      <td>Lonsdale</td>
-      <td>PPE</td>
-      <td>55</td>
-      <td>61</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>251870</td>
-      <td>Lonsdale</td>
-      <td>engineering</td>
-      <td>62</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>296</th>
-      <td>440570</td>
-      <td>Beaufort</td>
-      <td>history</td>
-      <td>75</td>
-      <td>70</td>
-    </tr>
-    <tr>
-      <th>297</th>
-      <td>826030</td>
-      <td>Beaufort</td>
-      <td>maths</td>
-      <td>52</td>
-      <td>49</td>
-    </tr>
-    <tr>
-      <th>298</th>
-      <td>856260</td>
-      <td>Beaufort</td>
-      <td>Biology</td>
-      <td>83</td>
-      <td>84</td>
-    </tr>
-    <tr>
-      <th>299</th>
-      <td>947060</td>
-      <td>Beaufort</td>
-      <td>engineering</td>
-      <td>62</td>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>300</th>
-      <td>165780</td>
-      <td>Beaufort</td>
-      <td>PPE</td>
-      <td>48</td>
-      <td>56</td>
-    </tr>
-  </tbody>
-</table>
-<p>301 rows × 5 columns</p>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Let</span><span class="s1">&#39;s test</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_53927/3511003451.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
-    <span class="n">Let</span><span class="s1">&#39;s test</span>
-              <span class="o">^</span>
-<span class="ne">SyntaxError</span>: EOL while scanning string literal
-</pre></div>
-</div>
-</div>
-</div>
-</section>
+<section id="recap">
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this heading">#</a></h2>
+<p>To run a permutation test on unpaired data, we shuffled up all the data values (yoghurt counts!) and assigned some to the ‘cat’ group and some to the ‘dog’ group. The only thing we kept the same from our original dataset was the number of ‘cat’ and ‘dog’ people in each resample.</p>
+<p>For each shuffle we calculated the difference between the mean(yoghurt) for cat people and the mean(yoghurt) for dog people, ie the <b>difference of means</b>.</p>
+<p>Note that the difference of means [mean(x)-mean(y)] is not the same as the mean (pairwise) difference [mean(x-y)] as used in the paired-data permutation test.</p>
+<p>Permutation testing in this way gives us a null distribution for the difference of means. Values of the difference of means that occur rarely in the null distriubtion are considered statistically significant.</p>
+<p>To run the permutation test with <tt>scipy.stats</tt> we need the option <code class="docutils literal notranslate"><span class="pre">permutation_type='independent'</span></code></p>
 </section>
 </section>
 
@@ -1637,13 +1492,13 @@ difference of means (cat-dog): 2.9000000000000004
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">12.2. </span>Permutation test for paired data</p>
+            <p class="prev-next-title"><span class="section-number">12.3. </span>Permutation test for paired data</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="permutation_correlation.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">12.4. </span>Permutation test for correlation</p>
+        <p class="prev-next-title"><span class="section-number">12.5. </span>Permutation test for correlation</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
