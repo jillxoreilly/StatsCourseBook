@@ -249,13 +249,13 @@ print('proportion >6.6 = ' + str(100*np.mean(mDiff>6.6)) + '%')
 # 
 # ### The $p$ value
 # 
-# We can also calculate the proportion of cases in which the mean difference in socks owned for [Husband-Wife] exceeds the value we observed in our original sample, 6.6. This proportion is about 6%. It tells us that if we simulate a situation in which sex does not determine the number of socks owned (but preserving some other important features of the dataset like the high skew, and the correlation between husabnds and their wives), there is still a 6% chance that we would get an apparent sex difference as large as the one we observed in our 'real' data.
+# We can also calculate the proportion of cases in which the mean difference in socks owned for [Husband-Wife] exceeds the value we observed in our original sample, 6.6. This proportion is about 0.06% (it will actually vary on each run of the permutation test as the permutations are random - but hopefully not much). It tells us that if we simulate a situation in which sex does not determine the number of socks owned (but preserving some other important features of the dataset like the high skew, and the correlation between husabnds and their wives), there is only a 0.06% chance that we would get an apparent sex difference as large as the one we observed in our 'real' data.
 # 
 # The probability that the test statistic (in this case, the mean difference in pairs of socks owned) would be observed if the null hypothesis were true, is sometimes called the <b><i>$p$-value</i></b>. 
 # 
-# Our permutation test shows that the $p$-value associated with the observed difference of means is 0.06.
+# Our permutation test shows that the $p$-value associated with the observed difference of means is 0.0006.
 # 
-# The result is considered statistically significant if $p$ is smaller than some predetermined level, known as $\alpha$. Usually $\alpha = 0.05$ or $\alpha = 0.01$ is used, so the result is significant if $p<0.05$ or $p<0.01$. Our result would not normally be considered statistically significant (although it is close).
+# The result is considered statistically significant if $p$ is smaller than some predetermined level, known as $\alpha$. Usually $\alpha = 0.05$ or $\alpha = 0.01$ is used, so the result is significant if $p<0.05$ or $p<0.01$. Our result is therefore statistically significant.
 
 # ## Use a built in function
 # 
@@ -271,6 +271,8 @@ scipy.version.version
 
 
 # If this is less than 1.8.0 you need to update it - see the technical note in the first page of this chapter
+# 
+# For those who are using Colab - check you followed the instructions at the top of this page
 
 # ### Syntax of <tt>stats.permutation_test</tt>
 # 

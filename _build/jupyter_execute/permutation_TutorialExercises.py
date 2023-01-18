@@ -66,7 +66,7 @@ wb
 # #### Test the following hypotheses:
 #     
 # 1. Wellbeing scores pre- and post-vac are correlated in engineering students
-# 2. There is a difference in the wellbeing scores of PPE students bbetween Beaufort or Lonsdale?
+# 2. There is a difference in the wellbeing scores of PPE students between Beaufort or Lonsdale (before the vacation)?
 # 3. Wellbeing over all students increases across the vacation
 # 
 # #### Slightly harder one:
