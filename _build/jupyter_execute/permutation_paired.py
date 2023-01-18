@@ -270,15 +270,7 @@ import scipy as scipy
 scipy.version.version
 
 
-# If this is less than 1.8.0 you need to update it -
-# 
-# Mac: open a terminal (Applications--Utilities--Terminal and type:
-# <tt> conda install -c conda-forge scipy=1.10.0 </tt>
-#                       
-# Windows: open an Anaconda terminal (spotlight search for anaconda and select the anaconda terminal app) and type:
-# <tt> conda install -c conda-forge scipy=1.10.0 </tt>
-# 
-# Please try and do this before the tutorial - otherwise your tutor will know you didn't read the prep work thoroughly ;-)
+# If this is less than 1.8.0 you need to update it - see the technical note in the first page of this chapter
 
 # ### Syntax of <tt>stats.permutation_test</tt>
 # 

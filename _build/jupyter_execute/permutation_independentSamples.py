@@ -194,47 +194,16 @@ import scipy as scipy
 scipy.version.version
 
 
-# If this is less than 1.8.0 you need to update it -
+# If this is less than 1.8.0 you need to update it - see the technical note on the first page of this section
 # 
-# First you can see if running this code block helps:
-
-# In[11]:
-
-
-get_ipython().system('pip install scipy==1.9.3')
-import scipy as scipy
-scipy.version.version
-
-
-# If your version is still <1.8.0 after running that, especially if you are on Windows, or you have an error message, you can try the following:
-
-# In[12]:
-
-
-get_ipython().system('pip3 install scipy==1.9.3')
-import scipy as scipy
-scipy.version.version
-
-
-# If that still didn't work try:
 # 
-# Mac: open a terminal (Applications--Utilities--Terminal) and type:
-# <tt> conda install -c conda-forge scipy=1.10.0 </tt>
-# or if that fails,
-# <tt> conda update scipy </tt>
-#                       
-# Windows: open an Anaconda terminal (spotlight search for anaconda and select the anaconda terminal app) and type:
-# <tt> conda install -c conda-forge scipy=1.10.0 </tt>
-# or if that fails,
-# <tt> conda update scipy </tt>
-#                       
-# Please try and do this before the tutorial - otherwise your tutor will know you didn't read the prep work thoroughly ;-)
+# For those who are using Colab - check you followed the instructions at the top of this page
 
 # ### Syntax of <tt>stats.permutation_test</tt>
 # 
 # Here is how we run the permutation test (same as the one we did with our own code above, although note how much more quickly this one runs!)
 
-# In[13]:
+# In[11]:
 
 
 def dMeans(x, y):
@@ -247,7 +216,7 @@ stats.permutation_test((yog[yog['Pet']=='cat']['Yoghurt'], yog[yog['Pet']=='dog'
 # 
 # We can also plot the null distribution, which hopefully looks similar to what we got from the home-made code:
 
-# In[14]:
+# In[12]:
 
 
 res = stats.permutation_test((yog[yog['Pet']=='cat']['Yoghurt'], yog[yog['Pet']=='dog']['Yoghurt']), dMeans, permutation_type='independent', alternative='greater', n_resamples=10000)
@@ -268,7 +237,7 @@ plt.show()
 # A function is a little computer programme that takes in some information (in this case, it takes in two series, (number of yogurts eaten by each cat owner, number of yogurts eaten by each dog owner) and returns some value (in this case the difference of means
 # 
 
-# In[15]:
+# In[13]:
 
 
 # define a function - note how this differs from the function for mean difference, in the paired example
@@ -278,7 +247,7 @@ def dMeans(x, y):
 
 # here's another example:
 
-# In[16]:
+# In[14]:
 
 
 # definte a new function that divides each element of x by 5 and each elemment of y by 2, and then adds up the results
