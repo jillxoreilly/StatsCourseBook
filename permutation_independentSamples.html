@@ -1235,17 +1235,17 @@ difference of means (cat-dog): 2.9000000000000004
     </tr>
     <tr>
       <th>3</th>
-      <td>cat</td>
+      <td>dog</td>
       <td>2</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>dog</td>
+      <td>cat</td>
       <td>13</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>dog</td>
+      <td>cat</td>
       <td>0</td>
     </tr>
     <tr>
@@ -1260,7 +1260,7 @@ difference of means (cat-dog): 2.9000000000000004
     </tr>
     <tr>
       <th>8</th>
-      <td>cat</td>
+      <td>dog</td>
       <td>4</td>
     </tr>
   </tbody>
@@ -1275,7 +1275,7 @@ difference of means (cat-dog): 2.9000000000000004
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5499999999999998
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.7
 </pre></div>
 </div>
 </div>
@@ -1314,7 +1314,7 @@ difference of means (cat-dog): 2.9000000000000004
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = -1.6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = -2.5
 </pre></div>
 </div>
 </div>
@@ -1343,7 +1343,7 @@ difference of means (cat-dog): 2.9000000000000004
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/permutation_independentSamples_19_0.png" src="_images/permutation_independentSamples_19_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;2.9 = 18.05%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;2.9 = 18.19%
 </pre></div>
 </div>
 </div>
@@ -1374,59 +1374,8 @@ difference of means (cat-dog): 2.9000000000000004
 </div>
 </div>
 </div>
-<p>If this is less than 1.8.0 you need to update it -</p>
-<p>First you can see if running this code block helps:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install <span class="nv">scipy</span><span class="o">==</span><span class="m">1</span>.9.3
-<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">scipy</span>
-<span class="n">scipy</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">version</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy==1.9.3 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (1.9.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&lt;1.26.0,&gt;=1.18.5 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from scipy==1.9.3) (1.21.5)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.9.3&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p>If your version is still &lt;1.8.0 after running that, especially if you are on Windows, or you have an error message, you can try the following:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install <span class="nv">scipy</span><span class="o">==</span><span class="m">1</span>.9.3
-<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">scipy</span>
-<span class="n">scipy</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">version</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy==1.9.3 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (1.9.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&lt;1.26.0,&gt;=1.18.5 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from scipy==1.9.3) (1.21.5)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.9.3&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p>If that still didn’t work try:</p>
-<p>Mac: open a terminal (Applications–Utilities–Terminal) and type:
-<tt> conda install -c conda-forge scipy=1.10.0 </tt>
-or if that fails,
-<tt> conda update scipy </tt></p>
-<p>Windows: open an Anaconda terminal (spotlight search for anaconda and select the anaconda terminal app) and type:
-<tt> conda install -c conda-forge scipy=1.10.0 </tt>
-or if that fails,
-<tt> conda update scipy </tt></p>
-<p>Please try and do this before the tutorial - otherwise your tutor will know you didn’t read the prep work thoroughly ;-)</p>
+<p>If this is less than 1.8.0 you need to update it - see the technical note on the first page of this section</p>
+<p>For those who are using Colab - check you followed the instructions at the top of this page</p>
 <section id="syntax-of-tt-stats-permutation-test-tt">
 <h3>Syntax of <tt>stats.permutation_test</tt><a class="headerlink" href="#syntax-of-tt-stats-permutation-test-tt" title="Permalink to this heading">#</a></h3>
 <p>Here is how we run the permutation test (same as the one we did with our own code above, although note how much more quickly this one runs!)</p>
@@ -1469,7 +1418,7 @@ or if that fails,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/permutation_independentSamples_31_0.png" src="_images/permutation_independentSamples_31_0.png" />
+<img alt="_images/permutation_independentSamples_27_0.png" src="_images/permutation_independentSamples_27_0.png" />
 </div>
 </div>
 <p>The syntax is very similar to that which we used for the paired test.</p>
