@@ -19,7 +19,13 @@ We will see how permutation tests are constructed using 'home made' code, and al
 
 ```{warning}
 You need <tt>scipy.stats</tt> version 1.8.0 or higher to run the permutation tests.
-There are instructions on how to check this and update if necessary, in the worked examples pages
+
+For those running Python on their own computer, there are instructions on how to check this and update if necessary,
+in the first page of the worked examples
+
+For those using Colab, there is a block you need to run within each
+page of worked examples
+
 Please attempt to implement this before the tutorial
 ```
 

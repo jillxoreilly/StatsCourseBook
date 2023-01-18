@@ -23,6 +23,22 @@ import pandas
 import seaborn as sns
 
 
+# ## Colab users
+# 
+# You need to use a more recent version of scipy.stats than the default. To do this run the following code block and *after* it has run, go to the menus at the top of colab and click `runtime-->Restart Runtime`
+
+# In[2]:
+
+
+# Set-up Python libraries - you need to run this but you don't need to change it
+get_ipython().system('pip install scipy==1.10.0')
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+import pandas 
+import seaborn as sns
+
+
 # ## Toy example
 # 
 # [A toy example is an example with a very small dataset, just to show how it works]
@@ -31,7 +47,7 @@ import seaborn as sns
 # 
 # We obtain sock-counts for the following informal sample of 10 couples:
 
-# In[2]:
+# In[3]:
 
 
 socks = pandas.DataFrame(data=[[10,12],[17,13],[48,20],[28,25],[23,18],[16,14],[18,13],[34,26],[27,22],[22,14]], columns=['Husband','Wife'])
@@ -44,7 +60,7 @@ socks
 #     <li> Why do I prefer the plot on the right? We are going to be interested in whether husbands have more socks than their wives or vice versa - I think this can be very clearly seen in the plot on the right (by inspecting whether the lines slope up or downwards) - however if there were 1000 couples in the sample rather than 10 this plot would be too crowded and hard to inspect
 # </ul>
 
-# In[3]:
+# In[4]:
 
 
 # Plotting code - don't get sidetracked by this, it's not that important
@@ -69,7 +85,7 @@ plt.show()
 # 
 # What is the mean difference in number of pairs of socks for [husband - wife]?
 
-# In[4]:
+# In[5]:
 
 
 np.mean(socks.Husband-socks.Wife)
@@ -121,7 +137,7 @@ np.mean(socks.Husband-socks.Wife)
 # Therefore, the only shuffling that we are allowed is to swap the labels 'Husband' and 'Wife' within couples. 
 # To generate each new simulated dataset, we will randomly decide whether each couple from the original dataset gets flipped.
 
-# In[5]:
+# In[6]:
 
 
 socks_shuffled = socks.copy()  # work on a copy of the original dataframe
@@ -140,7 +156,7 @@ socks_shuffled
 # 
 # Try running the code block below a few times and keep an eye on how the dataframe changes - note that in the original dataframe the man always has an odd number of pairs of socks.
 
-# In[6]:
+# In[7]:
 
 
 df = pandas.DataFrame(data=[[1,2],[3,4],[5,6]], columns=['Husband','Wife'])
@@ -163,7 +179,7 @@ df_shuffled
 # 
 # Below I generate 4 random shuffles of our sock data (in which some husbands and wives are randomly flipped), and plot the outcomes:
 
-# In[7]:
+# In[8]:
 
 
 for n in range(4):
@@ -196,7 +212,7 @@ plt.show()
 # 
 # We are interested in the mean difference in pairs of socks owned [husband-wife]. For each shuffle this is obtained as follows:
 
-# In[8]:
+# In[9]:
 
 
 mDiff = np.mean(socks_shuffled.Husband - socks_shuffled.Wife)
@@ -207,7 +223,7 @@ print('mean difference for the last shuffle = ' + str(mDiff))
 # 
 # Now we can repeat the process for a large number of shuffles and get the mean difference in pairs of socks owned [husband-wife] for each shuffle. The distribution of these difference is the null distribution to which our observed difference (husbands own 6.6 more pairs) is to be compared.
 
-# In[9]:
+# In[10]:
 
 
 nReps = 10000 # (number of shuffles)
@@ -245,9 +261,9 @@ print('proportion >6.6 = ' + str(100*np.mean(mDiff>6.6)) + '%')
 # 
 # Now you have seen how the permutation test works, we can learn how to run it more easily using the built in function <tt>scipy.stats.permutation_test</tt>
 # 
-# <b>Note-</b> You need scipy stats version > 1.8.0 to run this. You may need to check your version by running the following code block.
+# <b>Note-</b> For those NOT using colab - You need scipy stats version > 1.8.0 to run this. You may need to check your version by running the following code block.
 
-# In[10]:
+# In[11]:
 
 
 import scipy as scipy
@@ -268,7 +284,7 @@ scipy.version.version
 # 
 # Here is how we run the permutation test (same as the one we did with our own code above, although note how much more quickly this one runs!)
 
-# In[11]:
+# In[12]:
 
 
 def mDiff(x, y):
@@ -279,9 +295,9 @@ stats.permutation_test((socks.Husband, socks.Wife), mDiff, permutation_type='sam
 
 # Firstly, to reassure you this is doing a very similar job to our home-made code, check the p-value (should be about 0.06). 
 # 
-# We can also plot the null distribution, which hopefully looks simimlar to what we got from the home-made code:
+# We can also plot the null distribution, which hopefully looks similar to what we got from the home-made code:
 
-# In[12]:
+# In[13]:
 
 
 res = stats.permutation_test((socks.Husband, socks.Wife), mDiff, permutation_type='samples', alternative='two-sided', n_resamples=10000)
@@ -301,7 +317,7 @@ plt.show()
 # 
 # A function is a little computer programme that takes in some information (in this case, it takes in two series, <tt>(socks.Husband, socks.Wife)</tt> and returns some value (in this case the mean difference <tt>mean(socks.Husband, socks.Wife)</tt>
 
-# In[13]:
+# In[14]:
 
 
 # define a function
@@ -314,7 +330,7 @@ mDiff(socks.Husband, socks.Wife)
 
 # Here's another example:
 
-# In[14]:
+# In[15]:
 
 
 # definte a new function that divides one element of each pair by the other, and then adds up the result across pairs
@@ -329,7 +345,7 @@ bananas(cats,dogs)
 
 # Now we can see how we could run <tt>stats.permutation_test</tt> on our function <tt>bananas</tt> and our data <tt>cats</tt> and <tt>dogs</tt>
 
-# In[15]:
+# In[16]:
 
 
 stats.permutation_test((cats, dogs), bananas, permutation_type='samples', alternative='two-sided', n_resamples=10000)
@@ -339,9 +355,9 @@ stats.permutation_test((cats, dogs), bananas, permutation_type='samples', altern
 # 
 # To run a permutation test on paired data, we randomly flipped some of the pairs so that the husband's sock count was assigned to the wife and vice versa. We did NOT move people between couples, as we want to retain the characteristic of the original dataset that high-sock husbands tend to have high-sock wives
 # 
-# For each shuffle we calculated the mean (pairwise) difference in the nummber of socks - husband-wife. 
+# For each shuffle we calculated the mean (pairwise) difference in the number of socks - husband-wife. 
 # 
-# Permutation testing in this way gives us a null distribution for the mean difference. Values of mean difference that occur rarely in the null distriubtion are considered statistically significant.
+# Permutation testing in this way gives us a null distribution for the mean difference. Values of mean difference that occur rarely in the null distribution are considered statistically significant.
 #     
 # To run the permutation test with <tt>scipy.stats</tt> we need the option `permutation_type='samples'`
 

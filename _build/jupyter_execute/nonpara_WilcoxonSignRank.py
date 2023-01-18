@@ -1,6 +1,22 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # The Wilcoxon Sign-Rank Test
+# 
+# 
+# The t-test is valid only when the data within each group (for independent samples t-test) or the pairwise differences (for paired samples t-test) are Normally distributed
+# 
+# As we have seen in the lecture, many real life data distributions are normal, but many others are not.
+# 
+# For non-Normal data we can use non-parametric tests, which do not assume that the data are drawn from a Normal distribution.
+# 
+# 
+# The Wilcoxon Sign-Rank Test is a test for paired samples. It tests whether the median difference between the members of each pair is greater than zero. As such it is often considered to be a non-parametric equivalent for the <b>paired samples</b> t-test.
+# 
+# The Wilcoxon Sign-rank test is <b>not</b> the same as the Wilcoxon Rank Sum test (Mann Whitney U test) which is for independent samples
+# 
+# We will us a Python function called <tt>wilcoxon</tt> from the <tt>scipy.stats</tt> package to run the test
+
 # ## Set up Python libraries
 # 
 # As usual, run the code cell below to import the relevant Python libraries
@@ -15,24 +31,6 @@ import scipy.stats as stats
 import pandas 
 import seaborn as sns
 
-
-# # Non parametric tests
-# 
-# This week we are looking at non-parametric equivalents of the t-test.
-# 
-# The t-test is valid only when the data within each group (for independent samples t-test) or the pairwise differences (for paired samples t-test) are Normally distributed
-# 
-# As we have seen in the lecture, many real life data distributions are normal, but many others are not.
-# 
-# For non-Normal data we can use non-parametric tests, which do not assume that the data are drawn from a Normal distribution.
-
-# # The Wilcoxon Sign-Rank Test
-# 
-# This is a test for paired samples. It tests whether the median difference between the members of each pair is greater than zero. As such it is often considered to be a non-parametric equivalent for the paired samples t-test.
-# 
-# The Wilcoxon Sign-rank test is <b>not</b> the same as the Wilcoxon Rank Sum test (Mann Whitney U test) which is for independent samples
-# 
-# We will us a Python function called <tt>wilcoxon</tt> from the <tt>scipy.stats</tt> package to run the test
 
 # ## Example: the Sign-Rank Test
 # 
@@ -75,7 +73,7 @@ plt.xlabel("independence: first born")
 plt.ylabel("independence: second born")
 
 # add the line x=y (ie a line from point(50,50) to (110,110)) for reference 
-plt.plot([0,20],[0,20],'k')
+plt.plot([0,20],[0,20],'r--')
 
 
 # Comments:
@@ -123,7 +121,7 @@ sns.rugplot(birthOrder["Diff"], height=0.1, color='b')
 
 # ### Descriptive statistics
 # 
-# We obtain the relevant descriptive statistics. For the t-test we reported the summary statistics (mean, s.d. and $n$) that went into the formula for $t$. The same approach won't quite work here as the test is not based on summary statistics. However, common sense suggests that reporting the median for each group, a measure of spread, and the sample size would give the reader an idea of the data.
+# We obtain the relevant descriptive statistics. For the t-test we reported the summary statistics (mean, s.d. and $n$) that went into the formula for $t$. The same approach won't quite work here as the test is not based on summary statistics. However, common sense suggests that reporting the median for each group, a measure of spread based on ranks (namely the IQR), and the sample size would give the reader an idea of the data.
 # 
 
 # In[6]:
@@ -168,22 +166,19 @@ stats.wilcoxon(birthOrder['FirstBorn'],birthOrder['SecondBorn'],alternative='two
 # 
 # ### How to do the test (if you were doing it with pencil and paper)
 # 
-# <ol>
-# <li>Obtain the difference (in independence score) for each pair
+# 1. Obtain the difference (in independence score) for each pair
 # 
-# <li>Rank the differences regardless of sign (e.g. a difference of +4 is greater than a difference of -3, which is greater than a difference of +2). Remove pairs with zero difference
+# 1. Rank the differences regardless of sign (e.g. a difference of +4 is greater than a difference of -3, which is greater than a difference of +2). Remove pairs with zero difference
 # 
-# <li>Calculate the sum of ranks assigned to pairs with a positive difference (first-born more independent than second-born) - this is $R+$
-# <li>Calculate the sum of ranks assigned to pairs with a negative difference (first-born more independent than second-born) - this is $R-$
+# 1. Calculate the sum of ranks assigned to pairs with a positive difference (first-born more independent than second-born) - this is $R+$
+# 1. Calculate the sum of ranks assigned to pairs with a negative difference (first-born more independent than second-born) - this is $R-$
 # 
-# <li>The test statistic $T$ is either:
-#     <ul>    <li> $R+$ if we expect positive differences to have the larger ranks (in this case, that equates to expecting first-borns to have higher scores)
-#     <li> $R-$  if we expect negative differences to have the larger ranks (in this case, that equates to expecting second-borns to have higher scores)
-#     <li> The smaller of $R+$ and $R-$ for a two tailed test (as in the example, we have no a-prior hypothesis about direction of effect)
-# </ul>
-# <br>    
+# 1. The test statistic $T$ is either:
+#     * $R+$ if we expect positive differences to have the larger ranks (in this case, that equates to expecting first-borns to have higher scores)
+#     * $R-$  if we expect negative differences to have the larger ranks (in this case, that equates to expecting second-borns to have higher scores)
+#     * The smaller of $R+$ and $R-$ for a two tailed test (as in the example, we have no a-prior hypothesis about direction of effect)
 # 
-# <li>$T$ is compared with a null distribution (the expected distribubtion of $T$ obtained in samples drawn from a population in which there is no true difference between groups)
+# 1. $T$ is compared with a null distribution (the expected distribubtion of $T$ obtained in samples drawn from a population in which there is no true difference between groups)
 # </ol>
 # 
 # ### Step 1: Obtain the differences
@@ -254,7 +249,7 @@ print('T = ' + str(T))
 # 
 # ### What do we mean by "If the null were true"?
 # 
-# If the null were true, the first- and second-obrn siblings should be equally likely to be more independent. If this were true, high- and low-ranked differences would occur randomly in favour of the first-born and second-born sibling. So each rank (in this case, the ranks 1-20, as we have 20 sibling pairs) might equally likely feed into $R+$ or $R-$
+# If the null were true, the first- and second-born siblings should be equally likely to be more independent. If this were true, high- and low-ranked differences would occur randomly in favour of the first-born and second-born sibling. So each rank (in this case, the ranks 1-20, as we have 20 sibling pairs) might equally likely feed into $R+$ or $R-$
 # 
 # ### Estalbishing the null by complete enumeration
 # 
@@ -289,6 +284,7 @@ isPos
 # In[14]:
 
 
+# calculate R+ and R-
 Rplus=sum(ranks[isPos])
 Rminus=sum(ranks[~isPos])
 
@@ -299,10 +295,12 @@ print('R- = ' + str(Rminus))
 # In[15]:
 
 
+# T is the smaller of R+,R-
 T = min(Rplus, Rminus)
-T=Rplus
 print('T = ' + str(T))
 
+
+# Phew! That was one simulated sample. Now we will make a loop to do it 10 000 times!
 
 # In[16]:
 
@@ -321,26 +319,26 @@ for i in range(nReps):
     T = min(Rplus, Rminus)
     simulated_T[i]=T
 
-freq = np.empty(maxT+1)    
-for j in np.arange(maxT):
-    freq[j] = np.count_nonzero(simulated_T == j)/nReps
 
+# Now we can plot a histogram of the simulated values of T - note that the distribution looks like it has been 'sliced in half', because  of the way we calculate $T$ (it is always the smaller of the two rank-sums)
+# 
+# We can also calculate the p-value of our observed value of T, $T=46$ by working out the proportion of simmulated samples in which T<=46
 
 # In[17]:
 
 
-plt.bar(range(maxT+1), height=freq)
+sns.histplot(simulated_T)
 plt.xlabel('Simulated T value')
 plt.ylabel('frequency out of ' + str(nReps) + ' tries')
 plt.show()
 
+print('proportion of simulated datasets in which T<=46 = ' + str(np.mean(simulated_T<=46)))
 
-# In[18]:
 
-
-p = sum(freq[:46])
-p
-
+# We obtain a value of $T$ as extreme as the one in our real dataset about 2.5% of the time. 
+# 
+# The p value of the test, which is the same as the proportion of simulated datasets in which T<=46, is about 0.025 or 2.5% (it will vary slightly each time you run the code as the null distribubtion is built from random samples). This is not a bad match for the value we got from the built-in function, which was 0.0266 or 2.66%
+# 
 
 # In[ ]:
 

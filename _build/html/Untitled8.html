@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Climate example &#8212; Introduction to Statistics and Data Science</title>
+    <title>Sort out scipy.stats version &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -501,6 +499,115 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="permutation_intro.html">
+   10. Permutation Testing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_outcomes.html">
+     10.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_technicalnote.html">
+     10.3. Sort out
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.stats
+      </span>
+     </code>
+     version
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_paired.html">
+     10.4. Permutation test for paired data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_independentSamples.html">
+     10.5. Permutation test for unpaired or independent samples data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_correlation.html">
+     10.6. Permutation test for correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_more.html">
+     10.7. Permutation testing - more practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_TutorialExercises.html">
+     10.8. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="classictests_intro.html">
+   11. Classic tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_intro.html">
+     11.3. The t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_independentSamples.html">
+     11.4. Independent samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_pairedSamples.html">
+     11.5. Paired Samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_oneSample.html">
+     11.6. One sample t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_intro.html">
+     11.7. Non-parametric equivalents of the t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_MannWhitneyU.html">
+     11.8. The Mann Whitney U, or Wilcoxon Rank Sum Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_WilcoxonSignRank.html">
+     11.9. The Wilcoxon Sign-Rank Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_furtherExercises.html">
+     11.11. Tutorial Exercises:
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     -test and non-parametric equivalents
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -703,124 +810,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example">
-   Example
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set-up-python-libraries">
-     Set up Python libraries
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-and-inspect-the-data">
-     Load and inspect the data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot-the-data">
-     Plot the data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculate-the-correlation">
-     Calculate the correlation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#outliers">
-     Outliers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#remove-outlier">
-     Remove outlier
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Climate example</h1>
+                <h1>Sort out scipy.stats version</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example">
-   Example
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set-up-python-libraries">
-     Set up Python libraries
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-and-inspect-the-data">
-     Load and inspect the data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot-the-data">
-     Plot the data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculate-the-correlation">
-     Calculate the correlation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#outliers">
-     Outliers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#remove-outlier">
-     Remove outlier
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -828,611 +834,94 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="climate-example">
-<h1>Climate example<a class="headerlink" href="#climate-example" title="Permalink to this heading">#</a></h1>
-<section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
-<p>We will look at a dataset containing carbon emissions, GDP and population for 247 countries (data from 2018)./</p>
-<p>These data came from <a href="https://ourworldindata.org/">Our World in Data</a>, a fabulous Oxford-based organization that provides datasets and visualizations addressing global issues.</p>
-<section id="set-up-python-libraries">
-<h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h3>
-<p>As usual, run the code cell below to import the relevant Python libraries</p>
+  <section id="sort-out-scipy-stats-version">
+<h1>Sort out <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> version<a class="headerlink" href="#sort-out-scipy-stats-version" title="Permalink to this heading">#</a></h1>
+<p>This section is for those running Python on their own computers.</p>
+<p>If you are using Colab, please follow the instruvctions in each notebook.</p>
+<p>This week we use a function <code class="docutils literal notranslate"><span class="pre">scipy.stats.permutation_test()</span></code></p>
+<p>You need scipy stats version &gt; 1.8.0 to run this.</p>
+<p>You should check your version by running the following code block.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
-<span class="kn">import</span> <span class="nn">pandas</span> 
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span> <span class="c1"># use pretty defaults</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="load-and-inspect-the-data">
-<h3>Load and inspect the data<a class="headerlink" href="#load-and-inspect-the-data" title="Permalink to this heading">#</a></h3>
-<p>Load the data from the file CO2vGDP.csv</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2vGDP</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/CO2vGDP.csv&#39;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">CO2vGDP</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">scipy</span>
+<span class="n">scipy</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">version</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>CO2</th>
-      <th>GDP</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Afghanistan</td>
-      <td>0.2245</td>
-      <td>1934.555054</td>
-      <td>36686788</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Albania</td>
-      <td>1.6422</td>
-      <td>11104.166020</td>
-      <td>2877019</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Algeria</td>
-      <td>3.8241</td>
-      <td>14228.025390</td>
-      <td>41927008</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Angola</td>
-      <td>0.7912</td>
-      <td>7771.441895</td>
-      <td>31273538</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Argentina</td>
-      <td>4.0824</td>
-      <td>18556.382810</td>
-      <td>44413592</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>159</th>
-      <td>Venezuela</td>
-      <td>4.1602</td>
-      <td>10709.950200</td>
-      <td>29825652</td>
-    </tr>
-    <tr>
-      <th>160</th>
-      <td>Vietnam</td>
-      <td>2.3415</td>
-      <td>6814.142090</td>
-      <td>94914328</td>
-    </tr>
-    <tr>
-      <th>161</th>
-      <td>Yemen</td>
-      <td>0.3503</td>
-      <td>2284.889893</td>
-      <td>30790514</td>
-    </tr>
-    <tr>
-      <th>162</th>
-      <td>Zambia</td>
-      <td>0.4215</td>
-      <td>3534.033691</td>
-      <td>17835898</td>
-    </tr>
-    <tr>
-      <th>163</th>
-      <td>Zimbabwe</td>
-      <td>0.8210</td>
-      <td>1611.405151</td>
-      <td>15052191</td>
-    </tr>
-  </tbody>
-</table>
-<p>164 rows × 4 columns</p>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.9.0&#39;
+</pre></div>
 </div>
-<p><b>Aside</b> -
-I notice that the GDP values contain loads of decimal places which makes them hard to read.
-Let’s just round those:</p>
+</div>
+</div>
+<p>If the reported version is less than 1.8.0 you need to update it -</p>
+<p>First you can see if running this code block helps (the output of the code cell is the new version number, but it may thro:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2vGDP</span><span class="p">[</span><span class="s1">&#39;GDP&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">CO2vGDP</span><span class="p">[</span><span class="s1">&#39;GDP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">()</span>
-<span class="n">display</span><span class="p">(</span><span class="n">CO2vGDP</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install <span class="nv">scipy</span><span class="o">==</span><span class="m">1</span>.9.3
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">scipy</span>
+<span class="n">scipy</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">version</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>CO2</th>
-      <th>GDP</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Afghanistan</td>
-      <td>0.2245</td>
-      <td>1935.0</td>
-      <td>36686788</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Albania</td>
-      <td>1.6422</td>
-      <td>11104.0</td>
-      <td>2877019</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Algeria</td>
-      <td>3.8241</td>
-      <td>14228.0</td>
-      <td>41927008</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Angola</td>
-      <td>0.7912</td>
-      <td>7771.0</td>
-      <td>31273538</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Argentina</td>
-      <td>4.0824</td>
-      <td>18556.0</td>
-      <td>44413592</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>159</th>
-      <td>Venezuela</td>
-      <td>4.1602</td>
-      <td>10710.0</td>
-      <td>29825652</td>
-    </tr>
-    <tr>
-      <th>160</th>
-      <td>Vietnam</td>
-      <td>2.3415</td>
-      <td>6814.0</td>
-      <td>94914328</td>
-    </tr>
-    <tr>
-      <th>161</th>
-      <td>Yemen</td>
-      <td>0.3503</td>
-      <td>2285.0</td>
-      <td>30790514</td>
-    </tr>
-    <tr>
-      <th>162</th>
-      <td>Zambia</td>
-      <td>0.4215</td>
-      <td>3534.0</td>
-      <td>17835898</td>
-    </tr>
-    <tr>
-      <th>163</th>
-      <td>Zimbabwe</td>
-      <td>0.8210</td>
-      <td>1611.0</td>
-      <td>15052191</td>
-    </tr>
-  </tbody>
-</table>
-<p>164 rows × 4 columns</p>
-</div></div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting scipy==1.9.3
+</pre></div>
 </div>
-<p>It is easier to comapre the values now as the larger GDPs actually take up more space!</p>
-</section>
-<section id="plot-the-data">
-<h3>Plot the data<a class="headerlink" href="#plot-the-data" title="Permalink to this heading">#</a></h3>
-<p>Let’s plot the data. A scatterplot is a good choice for bivariate data such as these.</p>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached scipy-1.9.3-cp39-cp39-macosx_10_9_x86_64.whl (34.3 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&lt;1.26.0,&gt;=1.18.5 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from scipy==1.9.3) (1.21.5)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: scipy
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: scipy
+    Found existing installation: scipy 1.9.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Uninstalling scipy-1.9.0:
+      Successfully uninstalled scipy-1.9.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed scipy-1.9.3
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.9.0&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If your version is still &lt;1.8.0 after running that, especially if you are on Windows, or you have an error message, you can try the following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CO2vGDP</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;GDP&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;CO2&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;GDP: $/person/year&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;CO2 emissions: tonnes/person/year&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install <span class="nv">scipy</span><span class="o">==</span><span class="m">1</span>.9.3
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">scipy</span>
+<span class="n">scipy</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">version</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;CO2 emissions: tonnes/person/year&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy==1.9.3 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (1.9.3)
+Requirement already satisfied: numpy&lt;1.26.0,&gt;=1.18.5 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from scipy==1.9.3) (1.21.5)
 </pre></div>
 </div>
-<img alt="_images/Untitled8_9_1.png" src="_images/Untitled8_9_1.png" />
-</div>
-</div>
-<p>Let’s find the UK on that graph:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CO2vGDP</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;GDP&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;CO2&#39;</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CO2vGDP</span><span class="p">[</span><span class="n">CO2vGDP</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;United Kingdom&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;GDP&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;CO2&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1"># see what I did there to plot the UK in red?</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;GDP: $/person/year&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;CO2 emissions: tonnes/person/year&#39;</span><span class="p">)</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.9.0&#39;
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;CO2 emissions: tonnes/person/year&#39;)
-</pre></div>
 </div>
-<img alt="_images/Untitled8_11_1.png" src="_images/Untitled8_11_1.png" />
-</div>
-</div>
-</section>
-<section id="calculate-the-correlation">
-<h3>Calculate the correlation<a class="headerlink" href="#calculate-the-correlation" title="Permalink to this heading">#</a></h3>
-<p>We can calculate the correlation using the built in function <tt>pandas.df.corr()</tt></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2vGDP</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>CO2</th>
-      <th>GDP</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>CO2</th>
-      <td>1.000000</td>
-      <td>0.795215</td>
-      <td>-0.003745</td>
-    </tr>
-    <tr>
-      <th>GDP</th>
-      <td>0.795215</td>
-      <td>1.000000</td>
-      <td>-0.054502</td>
-    </tr>
-    <tr>
-      <th>population</th>
-      <td>-0.003745</td>
-      <td>-0.054502</td>
-      <td>1.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Humph, population was included in my correlation matrix, which I didn’t really want.</p>
-<p>The function <tt>pandas.df.corr()</tt> returns the matrix of correlations between all pairs of variables in your dataframe.</p>
-<p>This isn’t a ibg problem in the current case, but if you had a big dataframe with many irrelevant columns, it would be an issue, because we don’t want the reader to have to search through a huge correlation matrix to find the correlation we are interested in.</p>
-<p>Annoyingly, the only way to avoid this is to create a new dataframe with only the columns you want to correlate, like this:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2vGDP_reduced</span> <span class="o">=</span> <span class="n">CO2vGDP</span><span class="p">[[</span><span class="s1">&#39;CO2&#39;</span><span class="p">,</span><span class="s1">&#39;GDP&#39;</span><span class="p">]]</span> <span class="c1"># new dataframe has only columns &#39;CO2&#39; and &#39;GDP&#39;</span>
-<span class="n">CO2vGDP_reduced</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>CO2</th>
-      <th>GDP</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>CO2</th>
-      <td>1.000000</td>
-      <td>0.795215</td>
-    </tr>
-    <tr>
-      <th>GDP</th>
-      <td>0.795215</td>
-      <td>1.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>The correlation between GDP and C02 looks quite high, 0.79.</p>
-</section>
-<section id="outliers">
-<h3>Outliers<a class="headerlink" href="#outliers" title="Permalink to this heading">#</a></h3>
-<p>Looking at our scatterplot, I can see a problem - there is one bad outlier with very high GDP and high CO2 emissions.</p>
-<p>Any guesses what this country is?</p>
-<p>We can find out by sorting the dataframe by GDP:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2vGDP</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;GDP&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># sort in descending order to put the richest country at the top</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>CO2</th>
-      <th>GDP</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>122</th>
-      <td>Qatar</td>
-      <td>38.4397</td>
-      <td>153764.0</td>
-      <td>2766743</td>
-    </tr>
-    <tr>
-      <th>112</th>
-      <td>Norway</td>
-      <td>8.3307</td>
-      <td>84580.0</td>
-      <td>5312321</td>
-    </tr>
-    <tr>
-      <th>154</th>
-      <td>United Arab Emirates</td>
-      <td>16.0112</td>
-      <td>76398.0</td>
-      <td>9140172</td>
-    </tr>
-    <tr>
-      <th>133</th>
-      <td>Singapore</td>
-      <td>7.9898</td>
-      <td>68402.0</td>
-      <td>5814543</td>
-    </tr>
-    <tr>
-      <th>79</th>
-      <td>Kuwait</td>
-      <td>23.1008</td>
-      <td>65521.0</td>
-      <td>4317190</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>108</th>
-      <td>Niger</td>
-      <td>0.0830</td>
-      <td>965.0</td>
-      <td>22577060</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>Democratic Republic of Congo</td>
-      <td>0.0331</td>
-      <td>859.0</td>
-      <td>87087352</td>
-    </tr>
-    <tr>
-      <th>85</th>
-      <td>Liberia</td>
-      <td>0.2252</td>
-      <td>818.0</td>
-      <td>4889396</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>Burundi</td>
-      <td>0.0608</td>
-      <td>651.0</td>
-      <td>11493476</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>Central African Republic</td>
-      <td>0.0471</td>
-      <td>623.0</td>
-      <td>5094795</td>
-    </tr>
-  </tbody>
-</table>
-<p>164 rows × 4 columns</p>
-</div></div></div>
-</div>
-<p>It’s Qatar - maybe not what you expected?</p>
-</section>
-<section id="remove-outlier">
-<h3>Remove outlier<a class="headerlink" href="#remove-outlier" title="Permalink to this heading">#</a></h3>
-<p>Let’s exclude Qatar from our dataset and re-calculate the correlation.</p>
-<p>We erase the values for Qatar data values for CO2 and GDP for Qatar to <tt>Nan</tt> but in this case, since they are not misrecorded but just unusual values, let’s not do that, as we don’t want to hide the data point.</p>
-<p>Instead we conduct the correlation on the dataframe excluding Qatar:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2vGDP</span><span class="p">[</span><span class="n">CO2vGDP</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;Qatar&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>CO2</th>
-      <th>GDP</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>CO2</th>
-      <td>1.000000</td>
-      <td>0.732445</td>
-      <td>0.007057</td>
-    </tr>
-    <tr>
-      <th>GDP</th>
-      <td>0.732445</td>
-      <td>1.000000</td>
-      <td>-0.050659</td>
-    </tr>
-    <tr>
-      <th>population</th>
-      <td>0.007057</td>
-      <td>-0.050659</td>
-      <td>1.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Hm, the correlation went down from <span class="math notranslate nohighlight">\(r\)</span>=0.79 to <span class="math notranslate nohighlight">\(r\)</span>=0.073 - lower but still strong</p>
-<p>Here’s a plot of the data with Qatar excluded</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CO2vGDP</span><span class="p">[</span><span class="n">CO2vGDP</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;Qatar&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;GDP&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;CO2&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;GDP: $/person/year&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;CO2 emissions: tonnes/person/year&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;CO2 emissions: tonnes/person/year&#39;)
-</pre></div>
-</div>
-<img alt="_images/Untitled8_22_1.png" src="_images/Untitled8_22_1.png" />
-</div>
-</div>
-<p>We no longer have an obvious outlier, but we do have a problem, called heteroscedasticity</p>
-<p>Heteroscedasticty is when the variance of the data in <span class="math notranslate nohighlight">\(y\)</span> depends on the value in <span class="math notranslate nohighlight">\(x\)</span>. In this case, CO2 emissions are more variable for high income countries (which can be high- or low poluting) compared to low income countries</p>
-<p>This property violates the assumptions of the c</p>
-</section>
-</section>
+<p>If that still didn’t work try:</p>
+<p>Mac: open a terminal (Applications–Utilities–Terminal) and type:
+<tt> conda install -c conda-forge scipy=1.10.0 </tt>
+or if that fails,
+<tt> conda update scipy </tt></p>
+<p>Windows: open an Anaconda terminal (spotlight search for anaconda and select the anaconda terminal app) and type:
+<tt> conda install -c conda-forge scipy=1.10.0 </tt>
+or if that fails,
+<tt> conda update scipy </tt></p>
+<p>Please try and do this before the tutorial - otherwise your tutor will know you didn’t read the prep work thoroughly ;-)</p>
 </section>
 
     <script type="text/x-thebe-config">

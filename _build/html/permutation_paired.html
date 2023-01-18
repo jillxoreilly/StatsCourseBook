@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>10.3. Permutation test for paired data &#8212; Introduction to Statistics and Data Science</title>
+    <title>10.4. Permutation test for paired data &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10.4. Permutation test for unpaired or independent samples data" href="permutation_independentSamples.html" />
-    <link rel="prev" title="10.2. Learning Objectives" href="permutation_outcomes.html" />
+    <link rel="next" title="10.5. Permutation test for unpaired or independent samples data" href="permutation_independentSamples.html" />
+    <link rel="prev" title="10.3. Sort out scipy.stats version" href="permutation_technicalnote.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -518,29 +518,96 @@ const thebe_selector_output = ".output, .cell_output"
      10.2. Learning Objectives
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_technicalnote.html">
+     10.3. Sort out
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.stats
+      </span>
+     </code>
+     version
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     10.3. Permutation test for paired data
+     10.4. Permutation test for paired data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_independentSamples.html">
-     10.4. Permutation test for unpaired or independent samples data
+     10.5. Permutation test for unpaired or independent samples data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_correlation.html">
-     10.5. Permutation test for correlation
+     10.6. Permutation test for correlation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_more.html">
-     10.6. Permutation testing - more practice
+     10.7. Permutation testing - more practice
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_TutorialExercises.html">
-     10.7. Tutorial exercises
+     10.8. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="classictests_intro.html">
+   11. Classic tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_intro.html">
+     11.3. The t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_independentSamples.html">
+     11.4. Independent samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_pairedSamples.html">
+     11.5. Paired Samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_oneSample.html">
+     11.6. One sample t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_intro.html">
+     11.7. Non-parametric equivalents of the t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_MannWhitneyU.html">
+     11.8. The Mann Whitney U, or Wilcoxon Rank Sum Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_WilcoxonSignRank.html">
+     11.9. The Wilcoxon Sign-Rank Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_furtherExercises.html">
+     11.11. Tutorial Exercises:
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     -test and non-parametric equivalents
     </a>
    </li>
   </ul>
@@ -775,6 +842,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#colab-users">
+   Colab users
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#toy-example">
    Toy example
   </a>
@@ -877,6 +949,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#colab-users">
+   Colab users
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#toy-example">
    Toy example
   </a>
@@ -965,7 +1042,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="permutation-test-for-paired-data">
-<h1><span class="section-number">10.3. </span>Permutation test for paired data<a class="headerlink" href="#permutation-test-for-paired-data" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">10.4. </span>Permutation test for paired data<a class="headerlink" href="#permutation-test-for-paired-data" title="Permalink to this heading">#</a></h1>
 <p>We first look at the case of paired data - data in which we wish to compare two groups and each datapoint in one group has a counterpart in the other</p>
 <p>Experimental designs using paired data include matched pairs (eg brothers and sisters) and repeated measures (measurements of the same individual before- and after- an intervention, or on- and off-drug).</p>
 <section id="set-up-python-libraries">
@@ -979,6 +1056,29 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
 <span class="kn">import</span> <span class="nn">pandas</span> 
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="colab-users">
+<h2>Colab users<a class="headerlink" href="#colab-users" title="Permalink to this heading">#</a></h2>
+<p>You need to use a more recent version of scipy.stats than the default. To do this run the following code block and <em>after</em> it has run, go to the menus at the top of colab and click <code class="docutils literal notranslate"><span class="pre">runtime--&gt;Restart</span> <span class="pre">Runtime</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="o">!</span>pip install <span class="nv">scipy</span><span class="o">==</span><span class="m">1</span>.10.0
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy==1.10.0 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (1.10.0)
+Requirement already satisfied: numpy&lt;1.27.0,&gt;=1.19.5 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from scipy==1.10.0) (1.21.5)
 </pre></div>
 </div>
 </div>
@@ -1098,7 +1198,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/permutation_paired_6_0.png" src="_images/permutation_paired_6_0.png" />
+<img alt="_images/permutation_paired_8_0.png" src="_images/permutation_paired_8_0.png" />
 </div>
 </div>
 <p>We can see that there is one couple in which the wife owns more socks and nine in which the husband owns more.
@@ -1195,8 +1295,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>1</th>
-      <td>17</td>
       <td>13</td>
+      <td>17</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1220,13 +1320,13 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>6</th>
-      <td>13</td>
       <td>18</td>
+      <td>13</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>26</td>
       <td>34</td>
+      <td>26</td>
     </tr>
     <tr>
       <th>8</th>
@@ -1235,8 +1335,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>9</th>
-      <td>22</td>
       <td>14</td>
+      <td>22</td>
     </tr>
   </tbody>
 </table>
@@ -1292,13 +1392,13 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>1</th>
-      <td>3</td>
       <td>4</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>6</td>
       <td>5</td>
+      <td>6</td>
     </tr>
   </tbody>
 </table>
@@ -1334,7 +1434,7 @@ To generate each new simulated dataset, we will randomly decide whether each cou
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/permutation_paired_15_0.png" src="_images/permutation_paired_15_0.png" />
+<img alt="_images/permutation_paired_17_0.png" src="_images/permutation_paired_17_0.png" />
 </div>
 </div>
 <p>We note that:</p>
@@ -1354,7 +1454,7 @@ To generate each new simulated dataset, we will randomly decide whether each cou
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = -2.4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = 5.0
 </pre></div>
 </div>
 </div>
@@ -1386,8 +1486,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/permutation_paired_19_0.png" src="_images/permutation_paired_19_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;6.6 = 0.06999999999999999%
+<img alt="_images/permutation_paired_21_0.png" src="_images/permutation_paired_21_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;6.6 = 0.11%
 </pre></div>
 </div>
 </div>
@@ -1405,7 +1505,7 @@ To generate each new simulated dataset, we will randomly decide whether each cou
 <section id="use-a-built-in-function">
 <h2>Use a built in function<a class="headerlink" href="#use-a-built-in-function" title="Permalink to this heading">#</a></h2>
 <p>Now you have seen how the permutation test works, we can learn how to run it more easily using the built in function <tt>scipy.stats.permutation_test</tt></p>
-<p><b>Note-</b> You need scipy stats version &gt; 1.8.0 to run this. You may need to check your version by running the following code block.</p>
+<p><b>Note-</b> For those NOT using colab - You need scipy stats version &gt; 1.8.0 to run this. You may need to check your version by running the following code block.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">scipy</span>
@@ -1444,7 +1544,7 @@ To generate each new simulated dataset, we will randomly decide whether each cou
 </div>
 </div>
 <p>Firstly, to reassure you this is doing a very similar job to our home-made code, check the p-value (should be about 0.06).</p>
-<p>We can also plot the null distribution, which hopefully looks simimlar to what we got from the home-made code:</p>
+<p>We can also plot the null distribution, which hopefully looks similar to what we got from the home-made code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">permutation_test</span><span class="p">((</span><span class="n">socks</span><span class="o">.</span><span class="n">Husband</span><span class="p">,</span> <span class="n">socks</span><span class="o">.</span><span class="n">Wife</span><span class="p">),</span> <span class="n">mDiff</span><span class="p">,</span> <span class="n">permutation_type</span><span class="o">=</span><span class="s1">&#39;samples&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;two-sided&#39;</span><span class="p">,</span> <span class="n">n_resamples</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
@@ -1454,7 +1554,7 @@ To generate each new simulated dataset, we will randomly decide whether each cou
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/permutation_paired_27_0.png" src="_images/permutation_paired_27_0.png" />
+<img alt="_images/permutation_paired_29_0.png" src="_images/permutation_paired_29_0.png" />
 </div>
 </div>
 <p>However, the syntax may be a bit unfamiliar.</p>
@@ -1520,8 +1620,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
 <section id="recap">
 <h2>Recap<a class="headerlink" href="#recap" title="Permalink to this heading">#</a></h2>
 <p>To run a permutation test on paired data, we randomly flipped some of the pairs so that the husband’s sock count was assigned to the wife and vice versa. We did NOT move people between couples, as we want to retain the characteristic of the original dataset that high-sock husbands tend to have high-sock wives</p>
-<p>For each shuffle we calculated the mean (pairwise) difference in the nummber of socks - husband-wife.</p>
-<p>Permutation testing in this way gives us a null distribution for the mean difference. Values of mean difference that occur rarely in the null distriubtion are considered statistically significant.</p>
+<p>For each shuffle we calculated the mean (pairwise) difference in the number of socks - husband-wife.</p>
+<p>Permutation testing in this way gives us a null distribution for the mean difference. Values of mean difference that occur rarely in the null distribution are considered statistically significant.</p>
 <p>To run the permutation test with <tt>scipy.stats</tt> we need the option <code class="docutils literal notranslate"><span class="pre">permutation_type='samples'</span></code></p>
 </section>
 </section>
@@ -1553,17 +1653,17 @@ To generate each new simulated dataset, we will randomly decide whether each cou
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="permutation_outcomes.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="permutation_technicalnote.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">10.2. </span>Learning Objectives</p>
+            <p class="prev-next-title"><span class="section-number">10.3. </span>Sort out <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> version</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="permutation_independentSamples.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10.4. </span>Permutation test for unpaired or independent samples data</p>
+        <p class="prev-next-title"><span class="section-number">10.5. </span>Permutation test for unpaired or independent samples data</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

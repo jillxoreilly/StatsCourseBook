@@ -80,9 +80,20 @@ chapters:
 - file: permutation_intro.md
   sections:
   - file: permutation_outcomes.md
+  - file: permutation_technicalnote.ipynb
   - file: permutation_paired.ipynb
   - file: permutation_independentSamples.ipynb
   - file: permutation_correlation.ipynb
   - file: permutation_more.ipynb
   - file: permutation_TutorialExercises.ipynb
+- file: classictests_intro.md
+  sections:
+  - file: ttest_intro.md
+  - file: ttest_independentSamples.ipynb
+  - file: ttest_pairedSamples.ipynb
+  - file: ttest_oneSample.ipynb
+  - file: nonpara_intro.md
+  - file: nonpara_MannWhitneyU.ipynb
+  - file: nonpara_WilcoxonSignRank.ipynb
+  - file: ttest_furtherExercises.ipynb
 

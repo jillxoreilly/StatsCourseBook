@@ -20,9 +20,25 @@ import pandas
 import seaborn as sns
 
 
-# ### Import and view the data
+# ## Colab users
+# 
+# You need to use a more recent version of scipy.stats than the default. To do this run the following code block and *after* it has run, go to the menus at the top of colab and click `runtime-->Restart Runtime`
 
 # In[2]:
+
+
+# Set-up Python libraries - you need to run this but you don't need to change it
+get_ipython().system('pip install scipy==1.10.0')
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+import pandas 
+import seaborn as sns
+
+
+# ### Import and view the data
+
+# In[3]:
 
 
 wb = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/WellbeingSample.csv')

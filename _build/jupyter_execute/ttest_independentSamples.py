@@ -20,7 +20,8 @@ import seaborn as sns
 
 # ## Example
 # 
-# <img src="images/appleTree.jpg" width=30% alt="There should be a picture of some apples here" >
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/appletree.jpg" width=30% >
+# 
 # 
 # Below we have data on the average weight, in grams, of apples from each of 20 apple trees.
 # 
@@ -158,7 +159,7 @@ stats.ttest_ind(apples_MiracleGro["meanAppleWeight"], apples_BrandX["meanAppleWe
 # 
 # This diagram shows the expected distribution of t-values if the null were true, with our obtained t-value marked:
 # 
-# <img src="images/ttestApples.png" width=50% alt="There should be a picture of the t-distribution here" >
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/ttestApples.png" width=50% alt="There should be a picture of the t-distribution here" >
 
 # ### Draw conclusions
 # 

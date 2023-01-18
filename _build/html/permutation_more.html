@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>10.6. Permutation testing - more practice &#8212; Introduction to Statistics and Data Science</title>
+    <title>10.7. Permutation testing - more practice &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10.7. Tutorial exercises" href="permutation_TutorialExercises.html" />
-    <link rel="prev" title="10.5. Permutation test for correlation" href="permutation_correlation.html" />
+    <link rel="next" title="10.8. Tutorial exercises" href="permutation_TutorialExercises.html" />
+    <link rel="prev" title="10.6. Permutation test for correlation" href="permutation_correlation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -519,28 +519,95 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="permutation_technicalnote.html">
+     10.3. Sort out
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.stats
+      </span>
+     </code>
+     version
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="permutation_paired.html">
-     10.3. Permutation test for paired data
+     10.4. Permutation test for paired data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_independentSamples.html">
-     10.4. Permutation test for unpaired or independent samples data
+     10.5. Permutation test for unpaired or independent samples data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_correlation.html">
-     10.5. Permutation test for correlation
+     10.6. Permutation test for correlation
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     10.6. Permutation testing - more practice
+     10.7. Permutation testing - more practice
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_TutorialExercises.html">
-     10.7. Tutorial exercises
+     10.8. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="classictests_intro.html">
+   11. Classic tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_intro.html">
+     11.3. The t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_independentSamples.html">
+     11.4. Independent samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_pairedSamples.html">
+     11.5. Paired Samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_oneSample.html">
+     11.6. One sample t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_intro.html">
+     11.7. Non-parametric equivalents of the t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_MannWhitneyU.html">
+     11.8. The Mann Whitney U, or Wilcoxon Rank Sum Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_WilcoxonSignRank.html">
+     11.9. The Wilcoxon Sign-Rank Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_furtherExercises.html">
+     11.11. Tutorial Exercises:
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     -test and non-parametric equivalents
     </a>
    </li>
   </ul>
@@ -1051,7 +1118,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="permutation-testing-more-practice">
-<h1><span class="section-number">10.6. </span>Permutation testing - more practice<a class="headerlink" href="#permutation-testing-more-practice" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">10.7. </span>Permutation testing - more practice<a class="headerlink" href="#permutation-testing-more-practice" title="Permalink to this heading">#</a></h1>
 <p>We will work with the (made up) wellbeing survey data that we used for the exercises on bootstrapping.</p>
 <p>The aim of these exercises is to give you some practice running permutation tests and deciding what to permute and what your test statistic is in each case!</p>
 <section id="set-up-python-libraries">
@@ -1628,13 +1695,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">10.5. </span>Permutation test for correlation</p>
+            <p class="prev-next-title"><span class="section-number">10.6. </span>Permutation test for correlation</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="permutation_TutorialExercises.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10.7. </span>Tutorial exercises</p>
+        <p class="prev-next-title"><span class="section-number">10.8. </span>Tutorial exercises</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

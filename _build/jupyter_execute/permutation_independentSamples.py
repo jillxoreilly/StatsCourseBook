@@ -185,7 +185,7 @@ print('proportion >2.9 = ' + str(100*np.mean(dMeans>2.9)) + '%')
 # 
 # Now you have seen how the permutation test works, we can learn how to run it more easily using the built in function <tt>scipy.stats.permutation_test</tt>
 # 
-# <b>Note-</b> You need scipy stats version > 1.8.0 to run this. You should check your version by running the following code block.
+# <b>Note-</b> For those NOT using colab - You need scipy stats version > 1.8.0 to run this. You should check your version by running the following code block.
 
 # In[10]:
 
@@ -196,19 +196,45 @@ scipy.version.version
 
 # If this is less than 1.8.0 you need to update it -
 # 
-# Mac: open a terminal (Applications--Utilities--Terminal and type:
+# First you can see if running this code block helps:
+
+# In[11]:
+
+
+get_ipython().system('pip install scipy==1.9.3')
+import scipy as scipy
+scipy.version.version
+
+
+# If your version is still <1.8.0 after running that, especially if you are on Windows, or you have an error message, you can try the following:
+
+# In[12]:
+
+
+get_ipython().system('pip3 install scipy==1.9.3')
+import scipy as scipy
+scipy.version.version
+
+
+# If that still didn't work try:
+# 
+# Mac: open a terminal (Applications--Utilities--Terminal) and type:
 # <tt> conda install -c conda-forge scipy=1.10.0 </tt>
+# or if that fails,
+# <tt> conda update scipy </tt>
 #                       
 # Windows: open an Anaconda terminal (spotlight search for anaconda and select the anaconda terminal app) and type:
 # <tt> conda install -c conda-forge scipy=1.10.0 </tt>
-# 
+# or if that fails,
+# <tt> conda update scipy </tt>
+#                       
 # Please try and do this before the tutorial - otherwise your tutor will know you didn't read the prep work thoroughly ;-)
 
 # ### Syntax of <tt>stats.permutation_test</tt>
 # 
 # Here is how we run the permutation test (same as the one we did with our own code above, although note how much more quickly this one runs!)
 
-# In[11]:
+# In[13]:
 
 
 def dMeans(x, y):
@@ -221,7 +247,7 @@ stats.permutation_test((yog[yog['Pet']=='cat']['Yoghurt'], yog[yog['Pet']=='dog'
 # 
 # We can also plot the null distribution, which hopefully looks similar to what we got from the home-made code:
 
-# In[12]:
+# In[14]:
 
 
 res = stats.permutation_test((yog[yog['Pet']=='cat']['Yoghurt'], yog[yog['Pet']=='dog']['Yoghurt']), dMeans, permutation_type='independent', alternative='greater', n_resamples=10000)
@@ -242,7 +268,7 @@ plt.show()
 # A function is a little computer programme that takes in some information (in this case, it takes in two series, (number of yogurts eaten by each cat owner, number of yogurts eaten by each dog owner) and returns some value (in this case the difference of means
 # 
 
-# In[13]:
+# In[15]:
 
 
 # define a function - note how this differs from the function for mean difference, in the paired example
@@ -252,7 +278,7 @@ def dMeans(x, y):
 
 # here's another example:
 
-# In[14]:
+# In[16]:
 
 
 # definte a new function that divides each element of x by 5 and each elemment of y by 2, and then adds up the results
@@ -271,7 +297,8 @@ jackfruit(sausages,beans)
 # 
 # For each shuffle we calculated the difference between the mean(yoghurt) for cat people and the mean(yoghurt) for dog people, ie the <b>difference of means</b>. 
 # 
-# Note that the difference of means [mean(x)-mean(y)] is not the same as the mean (pairwise) difference [mean(x-y)] as used in the paired-data permutation test.
+# Note that the difference of means [mean(x)-mean(y)] is not the same as the mean (pairwise) difference [mean(x-y)] as used in the paired-data permutation test. 
+# (To be precise, the point estimate *is* the same but the variance on that estimate is different, and the two emasures are conceptually distinct)
 # 
 # Permutation testing in this way gives us a null distribution for the difference of means. Values of the difference of means that occur rarely in the null distriubtion are considered statistically significant.
 #     

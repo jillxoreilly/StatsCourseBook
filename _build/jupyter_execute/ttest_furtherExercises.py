@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # t-test further exercises
+# # Tutorial Exercises: $t$-test and non-parametric equivalents
 # 
-# Here are some more exercises on the t-test.
+# Here are some more exercises on comparing means using the t-test and non-parametric equivalents
 # 
-# These exercises are very similar to what you did in the t-test examples so in most cases you will be able to copy and adapt code and text from the examples.
+# These exercises are very similar to what you did in the t-test and Mann-Whitney/Wilcoxon examples so in most cases you will be able to copy and adapt code and text from the examples.
 
 # ### Set up Python libraries
 # 
@@ -22,11 +22,9 @@ import pandas
 import seaborn as sns
 
 
-# 
-
 # ## 1. Whose peaches are heavier?
 # 
-# <img src="images/peaches.png" width=30% alt="There should be a picture of some peaches here" >
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/peaches.png" width=30% alt="There should be a picture of some peaches here" >
 # 
 # 
 # Mr Robinson’s juice factory buys peaches from farmers by the tray. Each tray contains 50 peaches. Farmer McDonald claims that this is unfair as his peaches are juicier and therefore weigh more than the peaches of his rival, Mr McGregor. 
@@ -34,7 +32,7 @@ import seaborn as sns
 # Mr Robinson weighs eight trays of Farmer McDonald’s peaches and 8 trays of Mr McGregor’s peaches. 
 # The weights, in kilograms are given in the file peaches.csv
 # 
-# Investigate whether McDonald's claim is justified by testing for a difference in weight between McDonald and McGregor's peaches.
+# Investigate whether McDonald's claim is justified by testing for a difference in weight between McDonald and McGregor's peaches. Use both a parametric and non-parametric test.
 
 # a) Load the data into a Pandas dataframe
 
@@ -46,7 +44,7 @@ import seaborn as sns
 
 # b) Plot the data and comment. 
 # 
-# A Kernel desity estimate plot (to show the distribution) and rug plot (to show individual data points) would be a good choice here.
+# A Kernel desity estimate plot (to show the distribution) and rug plot (to show individual data points) would be a good choice here. You should comment on whether the data appear to be Normally distriubted and hence the suitability of the t-test. 
 
 # In[3]:
 
@@ -54,36 +52,33 @@ import seaborn as sns
 # your text here to plot the data
 
 
-# c) Obtain relevant descriptive statistics
+# d) We can assume (based on the Central Limit Theorem) that these data points are normally distributed. Explain why.
+
+# < Your text here explaining why the data shoudl be Normal according to the CLT >
+
+# e) Conduct a t-test to test Farmer McDonald's claim
+# 
+# * State your hypotheses
+# * State relevant descriptive statistics
+# * Carry out the test using the ubilt in function from <tt>scipy.stats</tt> with appropriate option choices
+# * State your conclusions
 
 # In[4]:
 
 
-# your code here to get descriptive statistics
+< Your answer here! You will need to add additional cells >
 
 
-# < your text here reporting the relevant descriptive statistics >
-
-# d) We can assume (based on the Central Limit Theorem) that these data points are normally distributed. Explain why.
-
-# < Your text here explaining why the data are Normal >
-
-# e) Conduct a t-test to test Farmer McDonald's claim
-
-# In[5]:
-
-
-# your code here to run the t-test
-# think about whether you need independent or paired samples
-
-
-# f) Write up your report as if for a scientific publication. Use the examples in the t-test exercises as a model.
-
-# < Your report here! You will probably need to add additional cells >
+# f) Conduct an appropriate non-parametric test of Farmer McDonald's claim
+# 
+# * State your hypotheses
+# * State relevant descriptive statistics
+# * Carry out the test using the ubilt in function from <tt>scipy.stats</tt> with appropriate option choices
+# * State your conclusions
 
 # ## 2. IQ and vitamins
 # 
-# <img src="images/vitamins.jpg" width=50% alt="There should be a picture of some vitamin pills here" >
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/vitamins.jpg" width=50% alt="There should be a picture of some vitamin pills here" >
 # 
 # The VitalVit company claim that after taking their VitalVit supplement, IQ is increased. 
 # 
@@ -101,7 +96,7 @@ import seaborn as sns
 
 # c. Load the data into a Pandas dataframe
 
-# In[6]:
+# In[22]:
 
 
 # your code here to load the data from file "data/peaches.csv" into a pandas dataframe
@@ -111,24 +106,32 @@ import seaborn as sns
 # A scatterplot would be a good choice as these are paired data. 
 # You could add the line of equality (line x=y) to the graph so we can see whether most people score higer on the IQ test before or after taking VitalVit
 
-# In[7]:
+# In[24]:
 
 
 # Your code here for a scatter plot. 
 # You can find an example in the workbook on paired sample t-test
 
 
-# e. IQ scores aare normally distributed by design (the tests are designed to yeild a normal distribution of scores). Therefore we can use a t-test to compare the scores from before and aafter taking VitalVit. Implement the t-test
+# IQ scores are normally distributed by design (the tests are designed to yeild a normal distribution of scores). Therefore we should be able to use a t-test to compare the scores from before and after taking VitalVit. We will carry out both the (parametric) t-test and a suitable non-parametric test
 
-# In[8]:
+# e) Conduct a t-test to test Farmer McDonald's claim
+# 
+# * State your hypotheses
+# * State relevant descriptive statistics
+# * Carry out the test using the ubilt in function from <tt>scipy.stats</tt> with appropriate option choices
+# * State your conclusions
 
+# < Your answer here! You will need to add additional cells >
 
-# Your code here. Think about whether you need a paired or independent samples t-test.
+# f) Conduct a suitable non-parametric test to test Farmer McDonald's claim
+# 
+# * State your hypotheses
+# * State relevant descriptive statistics
+# * Carry out the test using the ubilt in function from <tt>scipy.stats</tt> with appropriate option choices
+# * State your conclusions
 
-
-# f. Write up your report as if for a scientific publication. You can use the examples in the t-test exercises as a model.
-
-# < Your report here. You will probably need to add more cells. >
+# < Your answer here. You will probably need to add more cells. >
 
 # ## 3. Who has the tallest students?
 # 
@@ -147,8 +150,16 @@ import seaborn as sns
 # 
 # You can use the write-up sections of the t-test example notebooks as a model
 
-# In[9]:
+# In[4]:
 
 
-# Your code and text here! You will need to add more cells.
+# load the data and have a look
+heights = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/heightsCollege.csv')
+display(heights)
+
+
+# In[ ]:
+
+
+
 

@@ -1,20 +1,12 @@
 # The t-test
 
-This week we are introducing the concept of hypothesis testing, and looking at one of the most commonly used statistical tests, the t-test.
+The t-test is a test for difference of means. It is suitable for data
+drawn from a normal distribution, even if the sample size is small.
 
-After this week you should be able to carry out, using <tt>scipy.stats:</tt>
+The t-test comes in three versions:
 
-<ul>
- <li>   Independent samples t-test
-<li>    Paired sample t-test
- <li>   Single sample t-test 
-</ul>
+* independent samples
+* paired samples
+* single sample (against a reference value)
 
-There are videos explaining the logic of each of these tests on the website.
-
-You should also understand the following theoretical concepts:
-
-<ul>
-<li>    Paired samples and repeated measures designs vs independent samples designs
-<li>   Assumption underlying a statistical test, and specifically the assumptions of normality and independence underlying the t-test
-</ul>
+These are reviewed in the following pages

@@ -20,7 +20,7 @@ import seaborn as sns
 
 # ## Example
 # 
-# <img src="images/rowingTeam.png" width=50% >
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/rowingTeam.png" width=50% >
 # 
 # Here are the heights in cm of eight men on a rowing team
 
@@ -124,9 +124,9 @@ stats.ttest_1samp(heights, 175, alternative='greater')
 # 
 # Such a large difference (in the expected direction) would occur 0.067 (6.7%) of the time due to chance if the null hypothesis were true (rowers were no taller than other men), hence the p value of 0.067. This is higher than our alpha value (0.05) so the test is not significant.
 # 
-# This diagram shows the expected distribubtion of t-values if the null were true, with our obtained t-value marked:
+# This diagram shows the expected distribution of t-values if the null were true, with our obtained t-value marked:
 # 
-# <img src="images/ttestRowing.png" width=50% alt="There should be a picture of the t-distribution here" >
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/ttestRowing.png" width=50% alt="There should be a picture of the t-distribution here" >
 
 # ### Draw conclusions
 # 

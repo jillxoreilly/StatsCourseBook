@@ -20,7 +20,7 @@ import seaborn as sns
 
 # ## Example
 # 
-# <img src="images/horror.jpg" width=30% alt="There should be a picture from a horror movie here" >
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/horror.jpg" width=30% alt="There should be a picture from a horror movie here" >
 # 
 # A scientist hypothesises that watching horror movies raises the heart rate in human subjects. 
 # She measures the heart rate of 20 volunteers watching a horror movie, 
@@ -159,7 +159,7 @@ stats.ttest_rel(heartRates.horror, heartRates.cookery, alternative='greater')
 # 
 # This diagram shows the expected distribution of t-values if the null hypothesis was true, with our obtained t-value marked:
 # 
-# <img src="images/ttestHorror.png" width=50% alt="There should be a picture of the t-distribution here" >
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/ttestHorror.png" width=50% alt="There should be a picture of the t-distribution here" >
 # 
 # 
 # 

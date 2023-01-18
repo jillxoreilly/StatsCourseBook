@@ -1,6 +1,22 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # The Mann Whitney U, or Wilcoxon Rank Sum Test
+# 
+# The t-test is valid only when the data within each group (for independent samples t-test) or the pairwise differences (for paired samples t-test) are Normally distributed
+# 
+# As we have seen in the lecture, many real life data distributions are normal, but many others are not.
+# 
+# For non-Normal data we can use non-parametric tests, which do not assume that the data are drawn from a Normal distribution.
+# 
+# ### Independent samples
+# 
+# The Mann Whitney U, or Wilcoxon Rank Sum Test is a test for a difference in median between two independent samples. As such it is often considered to be a non-parametric equivalent for the independent samples t-test.
+# 
+# The terms Mann Whitney U and Wilcoxon Rank Sum are used interchangeably in a lot of literature and statistical packages, although technically the Mann Whitney version, which came slightly later, is correct in a greater range of cases. 
+# 
+# The Python function we will use is called Mann-Whitney but you will see the same test elsewhere called Rank Sum or Wilcoxon Rank Sum.
+
 # ## Set up Python libraries
 # 
 # As usual, run the code cell below to import the relevant Python libraries
@@ -16,25 +32,7 @@ import pandas
 import seaborn as sns
 
 
-# # Non parametric tests
-# 
-# This week we are looking at non-parametric equivalents of the t-test.
-# 
-# The t-test is valid only when the data within each group (for independent samples t-test) or the pairwise differences (for paired samples t-test) are Normally distributed
-# 
-# As we have seen in the lecture, many real life data distributions are normal, but many others are not.
-# 
-# For non-Normal data we can use non-parametric tests, which do not assume that the data are drawn from a Normal distribution.
-
-# # The Mann Whitney U, or Wilcoxon Rank Sum Test
-# 
-# This is a test for a difference in median between two independent samples. As such it is often considered to be a non-parametric equivalent for the independent samples t-test.
-# 
-# The terms Mann Whitney U and Wilcoxon Rank Sum are used interchangeably in a lot of literature and statistical packages, although technically the Mann Whitney version, which came slightly later, is correct in a greater range of cases. 
-# 
-# The Python function we will use is called Mann-Whitney but you will see the same test elsewhere called Rank Sum or Wilcoxon Rank Sum.
-
-# ## Example: Mann Whitney or Wilcoxon Rank Sum test
+# ## Example: motor learning and visualization
 # 
 # A researcher hypothesises that when a person learns a new motor skill, imaginary practice (visualising performing the skill between sessions of actual practice) can enhance learning.
 # 
@@ -71,12 +69,13 @@ juggling_Std = juggling[juggling['Group']=='Standard']
 juggling_Vis = juggling[juggling['Group']=='Visualisation']
 
 # Plot the KDE (distribution)
-sns.kdeplot(juggling_Std['SessionsToCriterion'], color='b', shade=True, label='Standard Training')
-sns.kdeplot(juggling_Vis['SessionsToCriterion'], color='r', shade=True, label='Visualisation Training')
+sns.kdeplot(data=juggling_Std, x='SessionsToCriterion', color='b', shade=True, label='Standard Training')
+sns.kdeplot(data=juggling_Vis, x='SessionsToCriterion', color='r', shade=True, label='Visualisation Training')
+
 
 # Plot individual data points
-sns.swarmplot(juggling_Std['SessionsToCriterion'], color='b')
-sns.swarmplot(juggling_Vis['SessionsToCriterion'], color='r')
+sns.rugplot(data=juggling_Std, x='SessionsToCriterion', color='b')
+sns.rugplot(data=juggling_Vis, x='SessionsToCriterion', color='r')
 
 # axis labels
 plt.xlabel("sessions to criterion", fontsize = 12)
@@ -87,7 +86,7 @@ plt.show()
 
 # The data do not look normal, as some people (especially in the standard group) took much longer to reach criterion (the distribution has positive skew).
 # 
-# Even if the data were not grossly non-Normal, it would be hard to be confident of a normal distribution with such a small sample, unless there waas some theoretical reason (for example, relating to the Central Limit Theorem) why the data should be normal. In this case, we might even have expected a positive skew as it is possible for an individual to take maany many more than the median number of sessions to reach criterion, but impossible to take many many fewer sessions (as we cannot take fewer than zero sessions; data values are <i>bounded below</i>).
+# Even if the data were not grossly non-Normal, it would be hard to be confident of a normal distribution with such a small sample, unless there waas some theoretical reason (for example, relating to the Central Limit Theorem) why the data should be normal. In this case, we might even have expected a positive skew as it is possible for an individual to take many many more than the median number of sessions to reach criterion, but impossible to take many many fewer sessions (as we cannot take fewer than zero sessions; data values are <i>bounded below</i>).
 # 
 # We therefore turn to the Mann Whitney non-parametric test.
 
@@ -102,7 +101,7 @@ plt.show()
 # We will test at the $\alpha = 0.05$ significance level
 # 
 # <ul>
-#     <li> note we are testing for a difference of mediaans here, not a difference of means as in the t-test
+#     <li> note we are testing for a difference of medians here, not a difference of means as in the t-test
 # </ul>
 
 # ### Descriptive statistics
@@ -188,12 +187,12 @@ juggling.sort_values('Rank')
 
 
 # Note the following:
-# <ul>
-# <li> The lowest value has rank 1
-# <li> The highest value has rank $n_1 + n_2$, ie the total number of data points across both groups together
-# <li> Tied values are given the average of the ranks they would have got (ranks 1 and 2 are tied so both get 1.5)
-# <li> Many of the higher ranked values are in the Standard group, hinting that most of the slowest participants to reach criterion were in the Standard Group
-# <li> Many of the lower ranked values are in the Visualisation group, hinting that most of the fastest participants to reach criterion were in the Visualisation Group
+# 
+# * The lowest value has rank 1
+# * The highest value has rank $n_1 + n_2$, ie the total number of data points across both groups together
+# * Tied values are given the average of the ranks they would have got (ranks 1 and 2 are tied so both get 1.5)
+# * Many of the higher ranked values are in the Standard group, hinting that most of the slowest participants to reach criterion were in the Standard Group
+# * Many of the lower ranked values are in the Visualisation group, hinting that most of the fastest participants to reach criterion were in the Visualisation Group
 
 # ### Calculate the test statistic
 # 
@@ -249,10 +248,8 @@ print('U2 = ' + str(U2))
 # 
 # More precisely:
 # 
-# <ul> 
-#     <li> If the value we have chosen as $U$ is associated with the sample we expect to have higher ranks, we need to know the probability of getting a $U$ value this large or larger, if the null were true
-#     <li> Conversely if the value we have chosen as $U$ is associated with the sample we expect to have lower ranks, we need to know the probabbility of getting a $U$ value this small or smaller, if the null were true
-# </ul>
+# * If the value we have chosen as $U$ is associated with the sample we expect to have higher ranks, we need to know the probability of getting a $U$ value this large or larger, if the null were true
+# * Conversely if the value we have chosen as $U$ is associated with the sample we expect to have lower ranks, we need to know the probabbility of getting a $U$ value this small or smaller, if the null were true
 # 
 # In the current example, $U$ ended up being the $U$ value for the Standard training regime, which we expected to have more of the higher ranks (more of the people who needed longer to reach the criterion for fluent juggling).
 # 
@@ -367,17 +364,20 @@ for i in range(nReps):
     U = max(U1, U2)
     simulated_U[i] = U
 
-freq = np.empty(maxU+1)
 
-for j in np.arange(maxU):
-    freq[j] = np.count_nonzero(simulated_U == j)
+# Finally we plot a histogram of our U values, and count the proportion of times U exceeds the value from our actual dataset, $U=91$
 
-
-# In[163]:
+# In[19]:
 
 
+sns.histplot(simulated_U, bins=np.arange(0,100,1))
+print('proportion of simulated datasets in which U>=91 = ' + str(np.mean(simulated_U>=91)))
 
 
+# We obtain a value of $U$ as extreme as the one in our real dataset less than 1% of the time. 
+# 
+# The p value of the test, which is the same as the proportion of simulated datasets in which U>=91, is aout 0.001, or 0.01%  (it will vary slightly each time you run the code as the null distribubtion is built from random samples). This is not a bad match for the value we got from the built-in function, which was 0.00089 or 0.009%
+# 
 
 # In[ ]:
 
