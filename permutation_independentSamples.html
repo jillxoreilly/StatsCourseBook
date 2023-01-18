@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>10.4. Permutation test for unpaired or independent samples data &#8212; Introduction to Statistics and Data Science</title>
+    <title>10.5. Permutation test for unpaired or independent samples data &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10.5. Permutation test for correlation" href="permutation_correlation.html" />
-    <link rel="prev" title="10.3. Permutation test for paired data" href="permutation_paired.html" />
+    <link rel="next" title="10.6. Permutation test for correlation" href="permutation_correlation.html" />
+    <link rel="prev" title="10.4. Permutation test for paired data" href="permutation_paired.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -519,28 +519,95 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="permutation_technicalnote.html">
+     10.3. Sort out
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.stats
+      </span>
+     </code>
+     version
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="permutation_paired.html">
-     10.3. Permutation test for paired data
+     10.4. Permutation test for paired data
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     10.4. Permutation test for unpaired or independent samples data
+     10.5. Permutation test for unpaired or independent samples data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_correlation.html">
-     10.5. Permutation test for correlation
+     10.6. Permutation test for correlation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_more.html">
-     10.6. Permutation testing - more practice
+     10.7. Permutation testing - more practice
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_TutorialExercises.html">
-     10.7. Tutorial exercises
+     10.8. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="classictests_intro.html">
+   11. Classic tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_intro.html">
+     11.3. The t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_independentSamples.html">
+     11.4. Independent samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_pairedSamples.html">
+     11.5. Paired Samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_oneSample.html">
+     11.6. One sample t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_intro.html">
+     11.7. Non-parametric equivalents of the t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_MannWhitneyU.html">
+     11.8. The Mann Whitney U, or Wilcoxon Rank Sum Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_WilcoxonSignRank.html">
+     11.9. The Wilcoxon Sign-Rank Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_furtherExercises.html">
+     11.11. Tutorial Exercises:
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     -test and non-parametric equivalents
     </a>
    </li>
   </ul>
@@ -951,7 +1018,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="permutation-test-for-unpaired-or-independent-samples-data">
-<h1><span class="section-number">10.4. </span>Permutation test for unpaired or independent samples data<a class="headerlink" href="#permutation-test-for-unpaired-or-independent-samples-data" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">10.5. </span>Permutation test for unpaired or independent samples data<a class="headerlink" href="#permutation-test-for-unpaired-or-independent-samples-data" title="Permalink to this heading">#</a></h1>
 <p>We now look at the case of unpaired data - data in which we wish to compare two groups but there are no particular links between individuals in one group and individuals in another group</p>
 <p>Examples of experimental designs using independent samples would be (say) a comparison of science and humanities students, or first- and final-year students, where the individuals in each group are distinct.</p>
 <section id="set-up-python-libraries">
@@ -1163,7 +1230,7 @@ difference of means (cat-dog): 2.9000000000000004
     </tr>
     <tr>
       <th>2</th>
-      <td>dog</td>
+      <td>cat</td>
       <td>5</td>
     </tr>
     <tr>
@@ -1173,12 +1240,12 @@ difference of means (cat-dog): 2.9000000000000004
     </tr>
     <tr>
       <th>4</th>
-      <td>cat</td>
+      <td>dog</td>
       <td>13</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>cat</td>
+      <td>dog</td>
       <td>0</td>
     </tr>
     <tr>
@@ -1193,7 +1260,7 @@ difference of means (cat-dog): 2.9000000000000004
     </tr>
     <tr>
       <th>8</th>
-      <td>dog</td>
+      <td>cat</td>
       <td>4</td>
     </tr>
   </tbody>
@@ -1208,7 +1275,7 @@ difference of means (cat-dog): 2.9000000000000004
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.3499999999999996
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5499999999999998
 </pre></div>
 </div>
 </div>
@@ -1247,7 +1314,7 @@ difference of means (cat-dog): 2.9000000000000004
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = -2.5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = -1.6
 </pre></div>
 </div>
 </div>
@@ -1276,7 +1343,7 @@ difference of means (cat-dog): 2.9000000000000004
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/permutation_independentSamples_19_0.png" src="_images/permutation_independentSamples_19_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;2.9 = 18.69%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;2.9 = 18.05%
 </pre></div>
 </div>
 </div>
@@ -1293,7 +1360,7 @@ difference of means (cat-dog): 2.9000000000000004
 <section id="use-a-built-in-function">
 <h2>Use a built in function<a class="headerlink" href="#use-a-built-in-function" title="Permalink to this heading">#</a></h2>
 <p>Now you have seen how the permutation test works, we can learn how to run it more easily using the built in function <tt>scipy.stats.permutation_test</tt></p>
-<p><b>Note-</b> You need scipy stats version &gt; 1.8.0 to run this. You should check your version by running the following code block.</p>
+<p><b>Note-</b> For those NOT using colab - You need scipy stats version &gt; 1.8.0 to run this. You should check your version by running the following code block.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">scipy</span>
@@ -1302,16 +1369,63 @@ difference of means (cat-dog): 2.9000000000000004
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.10.0&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.9.3&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <p>If this is less than 1.8.0 you need to update it -</p>
-<p>Mac: open a terminal (Applications–Utilities–Terminal and type:
-<tt> conda install -c conda-forge scipy=1.10.0 </tt></p>
+<p>First you can see if running this code block helps:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install <span class="nv">scipy</span><span class="o">==</span><span class="m">1</span>.9.3
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">scipy</span>
+<span class="n">scipy</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">version</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy==1.9.3 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (1.9.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&lt;1.26.0,&gt;=1.18.5 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from scipy==1.9.3) (1.21.5)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.9.3&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If your version is still &lt;1.8.0 after running that, especially if you are on Windows, or you have an error message, you can try the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install <span class="nv">scipy</span><span class="o">==</span><span class="m">1</span>.9.3
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">scipy</span>
+<span class="n">scipy</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">version</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy==1.9.3 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (1.9.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&lt;1.26.0,&gt;=1.18.5 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from scipy==1.9.3) (1.21.5)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.9.3&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If that still didn’t work try:</p>
+<p>Mac: open a terminal (Applications–Utilities–Terminal) and type:
+<tt> conda install -c conda-forge scipy=1.10.0 </tt>
+or if that fails,
+<tt> conda update scipy </tt></p>
 <p>Windows: open an Anaconda terminal (spotlight search for anaconda and select the anaconda terminal app) and type:
-<tt> conda install -c conda-forge scipy=1.10.0 </tt></p>
+<tt> conda install -c conda-forge scipy=1.10.0 </tt>
+or if that fails,
+<tt> conda update scipy </tt></p>
 <p>Please try and do this before the tutorial - otherwise your tutor will know you didn’t read the prep work thoroughly ;-)</p>
 <section id="syntax-of-tt-stats-permutation-test-tt">
 <h3>Syntax of <tt>stats.permutation_test</tt><a class="headerlink" href="#syntax-of-tt-stats-permutation-test-tt" title="Permalink to this heading">#</a></h3>
@@ -1355,7 +1469,7 @@ difference of means (cat-dog): 2.9000000000000004
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/permutation_independentSamples_27_0.png" src="_images/permutation_independentSamples_27_0.png" />
+<img alt="_images/permutation_independentSamples_31_0.png" src="_images/permutation_independentSamples_31_0.png" />
 </div>
 </div>
 <p>The syntax is very similar to that which we used for the paired test.</p>
@@ -1401,7 +1515,8 @@ difference of means (cat-dog): 2.9000000000000004
 <h2>Recap<a class="headerlink" href="#recap" title="Permalink to this heading">#</a></h2>
 <p>To run a permutation test on unpaired data, we shuffled up all the data values (yoghurt counts!) and assigned some to the ‘cat’ group and some to the ‘dog’ group. The only thing we kept the same from our original dataset was the number of ‘cat’ and ‘dog’ people in each resample.</p>
 <p>For each shuffle we calculated the difference between the mean(yoghurt) for cat people and the mean(yoghurt) for dog people, ie the <b>difference of means</b>.</p>
-<p>Note that the difference of means [mean(x)-mean(y)] is not the same as the mean (pairwise) difference [mean(x-y)] as used in the paired-data permutation test.</p>
+<p>Note that the difference of means [mean(x)-mean(y)] is not the same as the mean (pairwise) difference [mean(x-y)] as used in the paired-data permutation test.
+(To be precise, the point estimate <em>is</em> the same but the variance on that estimate is different, and the two emasures are conceptually distinct)</p>
 <p>Permutation testing in this way gives us a null distribution for the difference of means. Values of the difference of means that occur rarely in the null distriubtion are considered statistically significant.</p>
 <p>To run the permutation test with <tt>scipy.stats</tt> we need the option <code class="docutils literal notranslate"><span class="pre">permutation_type='independent'</span></code></p>
 </section>
@@ -1438,13 +1553,13 @@ difference of means (cat-dog): 2.9000000000000004
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">10.3. </span>Permutation test for paired data</p>
+            <p class="prev-next-title"><span class="section-number">10.4. </span>Permutation test for paired data</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="permutation_correlation.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10.5. </span>Permutation test for correlation</p>
+        <p class="prev-next-title"><span class="section-number">10.6. </span>Permutation test for correlation</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
