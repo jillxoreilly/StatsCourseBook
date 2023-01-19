@@ -193,6 +193,7 @@ print('proportion >0.80 = ' + str(100*np.mean(c>0.80)) + '%')
 def correlate(x, y):
     tmp = np.corrcoef(x,y)
     c[i] = tmp[0][1] 
+    return c
 
 
 # Thereafter we have to run <tt>stats.permutation_test</tt>, but using the option `permutation_type='pairings'`, which shuffles the data in such a way as to keep all the broccoli values in the broccoi column, but re-pair them with different people's IQs in each shuffle.

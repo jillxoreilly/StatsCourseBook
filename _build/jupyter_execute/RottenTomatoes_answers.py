@@ -70,6 +70,12 @@ movies.loc[(movies['Run Time (min)']==0),['Run Time (min)']]=np.nan
 # One movie had a recorded release date in the far future (2110) - release date for this movie was set to NaN
 # </font>
 
+# In[4]:
+
+
+movies.loc[(movies['Run Time (min)']<120)]
+
+
 # #### b) Plot the relationship between Budget and Gross Turnover
 # 
 # <ul>
@@ -77,7 +83,7 @@ movies.loc[(movies['Run Time (min)']==0),['Run Time (min)']]=np.nan
 #     <li> Add the line x=y so we can see which movies made a profit and which made a loss
 # </ul>
 
-# In[4]:
+# In[5]:
 
 
 # make a scatterplot
@@ -95,7 +101,7 @@ plt.plot([0,250],[0,250],'r')
 # </ul>
 # Support your answer with descriptive statistics where appropriate
 
-# In[5]:
+# In[6]:
 
 
 # supporting calculations
@@ -122,7 +128,7 @@ print('% with budget below $100M: ' + str(100* len(movies[movies['Budget ($M)']<
 # <li>Briefly justify your choice of correlation method
 # </ul>
 
-# In[6]:
+# In[7]:
 
 
 # your code here for the correlation
@@ -136,7 +142,7 @@ movies['US Gross ($M)'].corr(movies['Budget ($M)'], method='spearman')
 # #### e) Add a column to the dataframe for 'Profit ($M)'
 #  ... Where profit is defined as Gross Turnover minus Budget
 
-# In[7]:
+# In[8]:
 
 
 # Your code here to add the column ['Profit ($M)']
@@ -157,14 +163,14 @@ movies
 #     </ul>
 # </ul>
 
-# In[8]:
+# In[9]:
 
 
 # Your code here for the scatterplot
 sns.scatterplot(data=movies, x='Budget ($M)', y='Profit ($M)', alpha=0.5)
 
 
-# In[9]:
+# In[10]:
 
 
 # Your code here for the correlations
@@ -187,7 +193,7 @@ print(movies['Budget ($M)'].corr(movies['Profit ($M)'], method='pearson'))
 # 
 # This should be defined as Profit/Budget
 
-# In[10]:
+# In[11]:
 
 
 # Your code here to add the column ['Profit ($M)']
@@ -204,7 +210,7 @@ movies['Profit per $']=movies['Profit ($M)']/movies['Budget ($M)']
 # </ul>
 # Make them as three subplots in a single figure to keep things tidy
 
-# In[11]:
+# In[12]:
 
 
 # Your code here
@@ -230,7 +236,7 @@ plt.tight_layout()
 #     <li> Movies with a budget above \$100M
 # </ul>
 
-# In[12]:
+# In[13]:
 
 
 #### Your code here for the 95% confidence interval: Movies with a budget below $50M 
@@ -245,7 +251,7 @@ for i in range(nReps):
 print('95% CI: [' + str(np.quantile(m, 0.025)) + ',' + str(np.quantile(m, 0.975)) + ']')
 
 
-# In[13]:
+# In[14]:
 
 
 #### Your code here for the 95% confidence interval: Movies with a budget above $100M 
