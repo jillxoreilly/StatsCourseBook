@@ -483,8 +483,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="ttest_intro.html">
-   9. The t-test
+  <a class="reference internal" href="Cheatsheet_intro.html">
+   9. Python Cheatsheet
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -493,30 +493,15 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="ttest_oneSample.html">
-     9.1. One sample t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_pairedSamples.html">
-     9.2. Paired Samples t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_independentSamples.html">
-     9.3. Independent samples t-test
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_furtherExercises.html">
-     9.4. t-test further exercises
+    <a class="reference internal" href="coding_cheatsheet.html">
+     9.1. Coding support sheet
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="Cheatsheet_intro.html">
-   10. Python Cheatsheet
+  <a class="reference internal" href="permutation_intro.html">
+   10. Permutation Testing
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
   <label for="toctree-checkbox-10">
@@ -525,8 +510,100 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="coding_cheatsheet.html">
-     10.1. Coding support sheet
+    <a class="reference internal" href="permutation_outcomes.html">
+     10.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_technicalnote.html">
+     10.3. Sort out
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.stats
+      </span>
+     </code>
+     version
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_paired.html">
+     10.4. Permutation test for paired data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_independentSamples.html">
+     10.5. Permutation test for unpaired or independent samples data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_correlation.html">
+     10.6. Permutation test for correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_more.html">
+     10.7. Permutation testing - more practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_TutorialExercises.html">
+     10.8. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="classictests_intro.html">
+   11. Classic tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_intro.html">
+     11.3. The t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_independentSamples.html">
+     11.4. Independent samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_pairedSamples.html">
+     11.5. Paired Samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_oneSample.html">
+     11.6. One sample t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_intro.html">
+     11.7. Non-parametric equivalents of the t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_MannWhitneyU.html">
+     11.8. The Mann Whitney U, or Wilcoxon Rank Sum Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_WilcoxonSignRank.html">
+     11.9. The Wilcoxon Sign-Rank Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_furtherExercises.html">
+     11.11. Tutorial Exercises:
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     -test and non-parametric equivalents
     </a>
    </li>
   </ul>
@@ -1100,6 +1177,144 @@ title="Print to PDF"
 Three movies had a recorded run time of zero minutes - run times for these movies were set to NaN
 <p>One movie had a recorded release date in the far future (2110) - release date for this movie was set to NaN
 </font></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movies</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;Run Time (min)&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">120</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Movie</th>
+      <th>US Gross ($M)</th>
+      <th>Budget ($M)</th>
+      <th>Run Time (min)</th>
+      <th>Critic Score (Rotten Tomatoes)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2012.0</td>
+      <td>Parental Guidance</td>
+      <td>77.264926</td>
+      <td>25.0</td>
+      <td>105.0</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2012.0</td>
+      <td>The Impossible</td>
+      <td>19.019882</td>
+      <td>40.0</td>
+      <td>114.0</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2012.0</td>
+      <td>The Guilt Trip</td>
+      <td>37.134215</td>
+      <td>40.0</td>
+      <td>95.0</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2012.0</td>
+      <td>Playing for Keeps</td>
+      <td>13.102272</td>
+      <td>35.0</td>
+      <td>105.0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2012.0</td>
+      <td>Killing Them Softly</td>
+      <td>15.026056</td>
+      <td>15.0</td>
+      <td>97.0</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>603</th>
+      <td>2008.0</td>
+      <td>Rambo</td>
+      <td>42.754105</td>
+      <td>47.5</td>
+      <td>92.0</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>604</th>
+      <td>2008.0</td>
+      <td>Mad Money</td>
+      <td>20.688843</td>
+      <td>22.0</td>
+      <td>104.0</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>605</th>
+      <td>2008.0</td>
+      <td>27 Dresses</td>
+      <td>76.808654</td>
+      <td>30.0</td>
+      <td>111.0</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>606</th>
+      <td>2008.0</td>
+      <td>Cloverfield</td>
+      <td>80.048433</td>
+      <td>25.0</td>
+      <td>85.0</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <th>608</th>
+      <td>2008.0</td>
+      <td>One Missed Call</td>
+      <td>26.890041</td>
+      <td>20.0</td>
+      <td>87.0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>491 rows × 6 columns</p>
+</div></div></div>
+</div>
 </section>
 <section id="b-plot-the-relationship-between-budget-and-gross-turnover">
 <h3>b) Plot the relationship between Budget and Gross Turnover<a class="headerlink" href="#b-plot-the-relationship-between-budget-and-gross-turnover" title="Permalink to this heading">#</a></h3>
@@ -1117,10 +1332,10 @@ Three movies had a recorded run time of zero minutes - run times for these movie
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8fb052fa00&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc83e63b9a0&gt;]
 </pre></div>
 </div>
-<img alt="_images/RottenTomatoes_answers_8_1.png" src="_images/RottenTomatoes_answers_8_1.png" />
+<img alt="_images/RottenTomatoes_answers_9_1.png" src="_images/RottenTomatoes_answers_9_1.png" />
 </div>
 </div>
 </section>
@@ -1357,7 +1572,7 @@ I used Spearman's correlation due to heteroscedasticity in the dataset
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Budget ($M)&#39;, ylabel=&#39;Profit ($M)&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/RottenTomatoes_answers_18_1.png" src="_images/RottenTomatoes_answers_18_1.png" />
+<img alt="_images/RottenTomatoes_answers_19_1.png" src="_images/RottenTomatoes_answers_19_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1425,7 +1640,7 @@ Make them as three subplots in a single figure to keep things tidy<div class="ce
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/RottenTomatoes_answers_24_0.png" src="_images/RottenTomatoes_answers_24_0.png" />
+<img alt="_images/RottenTomatoes_answers_25_0.png" src="_images/RottenTomatoes_answers_25_0.png" />
 </div>
 </div>
 </section>
@@ -1451,7 +1666,7 @@ Make them as three subplots in a single figure to keep things tidy<div class="ce
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95% CI: [1.0071731371808677,1.9016544298518434]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95% CI: [1.0117091894459747,1.9060546425237623]
 </pre></div>
 </div>
 </div>
@@ -1472,7 +1687,7 @@ Make them as three subplots in a single figure to keep things tidy<div class="ce
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95% CI: [0.0049440357292980614,0.24904397072764978]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95% CI: [0.006404708927074424,0.2502300460817305]
 </pre></div>
 </div>
 </div>
