@@ -884,8 +884,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#do-history-students-have-higher-wellbeing-than-maths-students-before-the-vacation">
-   2. Do history students have higher wellbeing than maths students (before the vacation)?
+  <a class="reference internal nav-link" href="#do-does-wellbeing-before-the-vacation-differ-between-history-and-maths-students">
+   2. Do does wellbeing (before the vacation) differ between history and maths students?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1029,8 +1029,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#do-history-students-have-higher-wellbeing-than-maths-students-before-the-vacation">
-   2. Do history students have higher wellbeing than maths students (before the vacation)?
+  <a class="reference internal nav-link" href="#do-does-wellbeing-before-the-vacation-differ-between-history-and-maths-students">
+   2. Do does wellbeing (before the vacation) differ between history and maths students?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1452,8 +1452,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=1.0491803278688525, pvalue=0.21087891210878912, null_distribution=array([ 0.19672131,  0.45901639,  1.60655738, ...,  3.7704918 ,
-        0.75409836, -0.52459016]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=1.0491803278688525, pvalue=0.2206779322067793, null_distribution=array([-1.37704918,  0.45901639,  0.29508197, ..., -0.62295082,
+        0.45901639, -1.57377049]))
 </pre></div>
 </div>
 </div>
@@ -1476,8 +1476,8 @@ title="Print to PDF"
 <p>We hypothesised that wellbeing increased over the vacation. We compared wellbeing in engineering students (n=61) before and after the vacation using a paired samples permutation test. There was no significant increase in wellbeing after the vacation (mean difference is an increase of 1.049 points, p=0.214, one tailed).</p>
 </section>
 </section>
-<section id="do-history-students-have-higher-wellbeing-than-maths-students-before-the-vacation">
-<h2>2. Do history students have higher wellbeing than maths students (before the vacation)?<a class="headerlink" href="#do-history-students-have-higher-wellbeing-than-maths-students-before-the-vacation" title="Permalink to this heading">#</a></h2>
+<section id="do-does-wellbeing-before-the-vacation-differ-between-history-and-maths-students">
+<h2>2. Do does wellbeing (before the vacation) differ between history and maths students?<a class="headerlink" href="#do-does-wellbeing-before-the-vacation-differ-between-history-and-maths-students" title="Permalink to this heading">#</a></h2>
 <p>We hypothesise that students studying different subjects may have different levels of wellbeing but we don’t have an a priori expectation about which subjects will have higher wellbeing.</p>
 <p>Test the hypothesis using a permutation test.</p>
 <p>Let’s get just the prevacation wellbeing scores for history students an just maths students:</p>
@@ -1525,7 +1525,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>It’s a two-tailed test because our hypothesis is non-directional (we don’t have particular predictions abbout which subject we might have higher wellbeing, we are just interested in whether there is a difference) so we need alternative=’two-sided’</p>
+<p>It’s a two-tailed test because our hypothesis is non-directional (we don’t have particular predictions about which subject we might have higher wellbeing, we are just interested in whether there is a difference) so we need alternative=’two-sided’</p>
 <p>We will test at the 5% (<span class="math notranslate nohighlight">\(𝛼=0.05\)</span>) level</p>
 </section>
 <section id="id3">
@@ -1538,8 +1538,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=3.486388384755003, pvalue=0.17298270172982702, null_distribution=array([-2.43738657, -2.35027223,  2.26678766, ...,  0.52450091,
-       -1.21778584, -2.26315789]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=3.486388384755003, pvalue=0.1725827417258274, null_distribution=array([-0.95644283, -2.00181488, -4.52813067, ...,  1.83121597,
+       -2.52450091,  2.87658802]))
 </pre></div>
 </div>
 </div>
@@ -1580,7 +1580,7 @@ title="Print to PDF"
 </section>
 <section id="are-welfare-scores-pre-and-post-vac-correlated-for-biology-students">
 <h2>3. Are welfare scores pre- and post-vac correlated for biology students?<a class="headerlink" href="#are-welfare-scores-pre-and-post-vac-correlated-for-biology-students" title="Permalink to this heading">#</a></h2>
-<p>We hypothesise that there is a strong individual difference effect on welfare scores and that scores pre- and post-vac are correlated. Lat’s say the sample we have availablbe to test this are biology students.</p>
+<p>We hypothesise that there is a strong individual difference effect on welfare scores and that scores pre- and post-vac are correlated. Let’s say the sample we have availablbe to test this are biology students.</p>
 <p>Test the hypothesis using a permutation test.</p>
 <p>Let’s get two series containing the data we need:</p>
 <div class="cell docutils container">
@@ -1625,7 +1625,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>It’s a one-tailed test because our hypothesis is directional (we expect the students with the highest wellbeing before the vac also have highest wellbeing after the vac, hence we expect a positive correlation coefficient), so we need <code class="docutils literal notranslate"><span class="pre">alternative='greater</span></code>)</p>
+<p>It’s a bit ambiguous whether a one- or two-tailed test is needed here.</p>
+<p>The question does not state the expected direction of effect, which would suggest a two tailed test.</p>
+<p>However, there is really only one reasonable direction in which a correlation could be expected, namely a positive correlation (we expect the students with the highest wellbeing before the vac also have highest wellbeing after the vac, hence we expect a positive correlation coefficient) - the reverse (students with high wellbeing before the vac have low wellbeing after) is nonsensical. So on the basis of common sense you could argue for a one-tailed test (and hence use <code class="docutils literal notranslate"><span class="pre">alternative='greater</span></code>).</p>
+<p>Either of these is an acceptable answer as long as you briefly explain your decision.</p>
 <p>We will test at the 5% (<span class="math notranslate nohighlight">\(𝛼=0.05\)</span>) level</p>
 </section>
 <section id="id8">
@@ -1638,8 +1641,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=0.7401813753937694, pvalue=9.999000099990002e-05, null_distribution=array([-0.1437708 ,  0.18092094, -0.1237281 , ...,  0.02140869,
-       -0.03498732, -0.19505246]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=0.7401813753937694, pvalue=9.999000099990002e-05, null_distribution=array([-0.09235091, -0.26236829, -0.11405231, ...,  0.09425354,
+       -0.07369046,  0.03979269]))
 </pre></div>
 </div>
 </div>
