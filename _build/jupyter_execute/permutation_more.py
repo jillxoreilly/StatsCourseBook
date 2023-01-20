@@ -119,7 +119,7 @@ stats.permutation_test((post,pre), mDiff, alternative='greater', permutation_typ
 # We hypothesised that wellbeing increased over the vacation. We compared wellbeing in engineering students (n=61) before and after the vacation using a paired samples permutation test. There was no significant increase in wellbeing after the vacation (mean difference is an increase of 1.049 points, p=0.214, one tailed).
 #                                                                                    
 
-# ### 2. Do history students have higher wellbeing than maths students (before the vacation)?
+# ### 2. Do does wellbeing (before the vacation) differ between history and maths students?
 # 
 # We hypothesise that students studying different subjects may have different levels of wellbeing but we don't have an a priori expectation about which subjects will have higher wellbeing. 
 # 
@@ -167,7 +167,7 @@ def dMeans(x,y):
     return np.mean(x)-np.mean(y)
 
 
-# It's a two-tailed test because our hypothesis is non-directional (we don't have particular predictions abbout which subject we might have higher wellbeing, we are just interested in whether there is a difference) so we need alternative='two-sided'
+# It's a two-tailed test because our hypothesis is non-directional (we don't have particular predictions about which subject we might have higher wellbeing, we are just interested in whether there is a difference) so we need alternative='two-sided'
 # 
 # We will test at the 5% ($𝛼=0.05$) level
 # 
@@ -215,7 +215,7 @@ plt.show()
 
 # ### 3. Are welfare scores pre- and post-vac correlated for biology students?
 # 
-# We hypothesise that there is a strong individual difference effect on welfare scores and that scores pre- and post-vac are correlated. Lat's say the sample we have availablbe to test this are biology students.
+# We hypothesise that there is a strong individual difference effect on welfare scores and that scores pre- and post-vac are correlated. Let's say the sample we have availablbe to test this are biology students.
 # 
 # Test the hypothesis using a permutation test.
 # 
@@ -259,7 +259,13 @@ def mycorr(x,y):
     return c[0,1]
 
 
-# It's a one-tailed test because our hypothesis is directional (we expect the students with the highest wellbeing before the vac also have highest wellbeing after the vac, hence we expect a positive correlation coefficient), so we need `alternative='greater`)
+# It's a bit ambiguous whether a one- or two-tailed test is needed here.
+# 
+# The question does not state the expected direction of effect, which would suggest a two tailed test.
+# 
+# However, there is really only one reasonable direction in which a correlation could be expected, namely a positive correlation (we expect the students with the highest wellbeing before the vac also have highest wellbeing after the vac, hence we expect a positive correlation coefficient) - the reverse (students with high wellbeing before the vac have low wellbeing after) is nonsensical. So on the basis of common sense you could argue for a one-tailed test (and hence use `alternative='greater`).
+# 
+# Either of these is an acceptable answer as long as you briefly explain your decision.
 # 
 # We will test at the 5% ($𝛼=0.05$) level
 # 
