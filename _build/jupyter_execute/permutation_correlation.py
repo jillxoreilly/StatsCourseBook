@@ -192,7 +192,7 @@ print('proportion >0.80 = ' + str(100*np.mean(c>0.80)) + '%')
 
 def correlate(x, y):
     tmp = np.corrcoef(x,y)
-    c[i] = tmp[0][1] 
+    c = tmp[0][1] 
     return c
 
 
