@@ -38,7 +38,7 @@ import seaborn as sns
 
 
 # load the data and have a look
-heartRates = pandas.read_csv('data/HeartRates.csv')
+heartRates = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/HeartRates.csv')
 display(heartRates)
 
 

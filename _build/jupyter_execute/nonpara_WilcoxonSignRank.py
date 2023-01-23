@@ -56,7 +56,7 @@ import seaborn as sns
 
 
 # load the data and have a look
-pandas.read_csv('data/BirthOrderIndependence.csv')
+pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/BirthOrderIndependence.csv')
 
 
 # ### Scatterplot

@@ -519,28 +519,39 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="permutation_technicalnote.html">
+     10.3. Sort out
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.stats
+      </span>
+     </code>
+     version
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="permutation_paired.html">
-     10.3. Permutation test for paired data
+     10.4. Permutation test for paired data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_independentSamples.html">
-     10.4. Permutation test for unpaired or independent samples data
+     10.5. Permutation test for unpaired or independent samples data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_correlation.html">
-     10.5. Permutation test for correlation
+     10.6. Permutation test for correlation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_more.html">
-     10.6. Permutation testing - more practice
+     10.7. Permutation testing - more practice
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_TutorialExercises.html">
-     10.7. Tutorial exercises
+     10.8. Tutorial exercises
     </a>
    </li>
   </ul>
@@ -555,11 +566,6 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_intro.html">
-     11.3. The t-test
-    </a>
-   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ttest_intro.html">
      11.3. The t-test
@@ -1057,7 +1063,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the data and have a look</span>
-<span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/juggling.csv&#39;</span><span class="p">)</span>
+<span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/juggling.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1820,8 +1826,8 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 5, 15, 11,  3, 20, 19, 14, 17, 12,  4, 10,  6, 16,  2,  7,  9, 13,
-        1, 18,  8])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([20,  2, 16, 18, 15, 19,  3, 17,  7,  4,  1,  8, 10,  5,  9, 12,  6,
+       11, 14, 13])
 </pre></div>
 </div>
 </div>
@@ -1835,7 +1841,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>130
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>122
 </pre></div>
 </div>
 </div>
@@ -1850,7 +1856,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>64.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>56.0
 </pre></div>
 </div>
 </div>
@@ -1864,7 +1870,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>88
 </pre></div>
 </div>
 </div>
@@ -1879,7 +1885,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>35.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43.0
 </pre></div>
 </div>
 </div>
@@ -1893,7 +1899,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>64.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>56.0
 </pre></div>
 </div>
 </div>
@@ -1937,7 +1943,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of simulated datasets in which U&gt;=91 = 0.0008
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of simulated datasets in which U&gt;=91 = 0.001
 </pre></div>
 </div>
 <img alt="_images/nonpara_MannWhitneyU_40_1.png" src="_images/nonpara_MannWhitneyU_40_1.png" />

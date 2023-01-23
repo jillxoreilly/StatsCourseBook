@@ -27,7 +27,7 @@ import seaborn as sns
 # In[2]:
 
 
-heights = pandas.read_csv('data/rowersHeights.csv')
+heights = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/rowersHeights.csv')
 display(heights)
 
 

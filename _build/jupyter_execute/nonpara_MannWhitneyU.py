@@ -52,7 +52,7 @@ import seaborn as sns
 
 
 # load the data and have a look
-pandas.read_csv('data/juggling.csv')
+pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/juggling.csv')
 
 
 # Let's plot the data and see if they look Normally distributed.

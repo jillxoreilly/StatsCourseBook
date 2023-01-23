@@ -519,28 +519,39 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="permutation_technicalnote.html">
+     10.3. Sort out
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.stats
+      </span>
+     </code>
+     version
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="permutation_paired.html">
-     10.3. Permutation test for paired data
+     10.4. Permutation test for paired data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_independentSamples.html">
-     10.4. Permutation test for unpaired or independent samples data
+     10.5. Permutation test for unpaired or independent samples data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_correlation.html">
-     10.5. Permutation test for correlation
+     10.6. Permutation test for correlation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_more.html">
-     10.6. Permutation testing - more practice
+     10.7. Permutation testing - more practice
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_TutorialExercises.html">
-     10.7. Tutorial exercises
+     10.8. Tutorial exercises
     </a>
    </li>
   </ul>
@@ -1100,7 +1111,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the data and have a look</span>
-<span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/BirthOrderIndependence.csv&#39;</span><span class="p">)</span>
+<span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/BirthOrderIndependence.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1250,7 +1261,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ffc7ef36850&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd65bf91730&gt;]
 </pre></div>
 </div>
 <img alt="_images/nonpara_WilcoxonSignRank_6_1.png" src="_images/nonpara_WilcoxonSignRank_6_1.png" />
@@ -2059,8 +2070,8 @@ R- = 46.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False, False,  True, False,  True,  True,  True, False,
-       False,  True, False,  True,  True,  True,  True,  True,  True,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False,  True, False, False, False,  True, False,  True,
+        True, False,  True,  True,  True, False,  True, False, False,
        False, False])
 </pre></div>
 </div>
@@ -2078,8 +2089,8 @@ R- = 46.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R+ = 129
-R- = 81
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R+ = 84
+R- = 126
 </pre></div>
 </div>
 </div>
@@ -2093,7 +2104,7 @@ R- = 81
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T = 81
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T = 84
 </pre></div>
 </div>
 </div>
@@ -2133,7 +2144,7 @@ R- = 81
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/nonpara_WilcoxonSignRank_37_0.png" src="_images/nonpara_WilcoxonSignRank_37_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of simulated datasets in which T&lt;=46 = 0.0247
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of simulated datasets in which T&lt;=46 = 0.03
 </pre></div>
 </div>
 </div>
