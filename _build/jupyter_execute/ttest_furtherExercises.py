@@ -30,7 +30,7 @@ import seaborn as sns
 # Mr Robinson’s juice factory buys peaches from farmers by the tray. Each tray contains 50 peaches. Farmer McDonald claims that this is unfair as his peaches are juicier and therefore weigh more than the peaches of his rival, Mr McGregor. 
 # 
 # Mr Robinson weighs eight trays of Farmer McDonald’s peaches and 8 trays of Mr McGregor’s peaches. 
-# The weights, in kilograms are given in the file peaches.csv
+# The weights, in kilograms are given in the file peaches.csv found at https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/peaches.csv
 # 
 # Investigate whether McDonald's claim is justified by testing for a difference in weight between McDonald and McGregor's peaches. Use both a parametric and non-parametric test.
 
@@ -39,7 +39,7 @@ import seaborn as sns
 # In[2]:
 
 
-# your code here to load the data from file "data/peaches.csv" into a pandas dataframe
+#Your code here to load the data - check previous examples if unsure how to do this
 
 
 # b) Plot the data and comment. 
@@ -54,7 +54,7 @@ import seaborn as sns
 
 # d) We can assume (based on the Central Limit Theorem) that these data points are normally distributed. Explain why.
 
-# < Your text here explaining why the data shoudl be Normal according to the CLT >
+# < Your text here explaining why the data should be Normal according to the CLT >
 
 # e) Conduct a t-test to test Farmer McDonald's claim
 # 
@@ -63,11 +63,7 @@ import seaborn as sns
 # * Carry out the test using the ubilt in function from <tt>scipy.stats</tt> with appropriate option choices
 # * State your conclusions
 
-# In[4]:
-
-
-< Your answer here! You will need to add additional cells >
-
+# < Your answer here! You will need to add additional cells >
 
 # f) Conduct an appropriate non-parametric test of Farmer McDonald's claim
 # 
@@ -84,7 +80,7 @@ import seaborn as sns
 # 
 # They run a trial in which 22 participants complete a baseline IQ test, then take VitalVit for six weeks, then complete another IQ test.
 # 
-# The participants' scores can be found in the data file VitalVit.csv
+# The participants' scores can be found in the data file VitalVit.csv at https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/vitalVit.csv
 
 # a. What kind of design is this.
 
@@ -96,17 +92,17 @@ import seaborn as sns
 
 # c. Load the data into a Pandas dataframe
 
-# In[22]:
+# In[4]:
 
 
-# your code here to load the data from file "data/peaches.csv" into a pandas dataframe
+#Your code here to load the data - check previous examples if unsure how to do this
 
 
 # d. Plot the data and comment. 
 # A scatterplot would be a good choice as these are paired data. 
 # You could add the line of equality (line x=y) to the graph so we can see whether most people score higer on the IQ test before or after taking VitalVit
 
-# In[24]:
+# In[5]:
 
 
 # Your code here for a scatter plot. 
@@ -115,7 +111,7 @@ import seaborn as sns
 
 # IQ scores are normally distributed by design (the tests are designed to yeild a normal distribution of scores). Therefore we should be able to use a t-test to compare the scores from before and after taking VitalVit. We will carry out both the (parametric) t-test and a suitable non-parametric test
 
-# e) Conduct a t-test to test Farmer McDonald's claim
+# e) Conduct a t-test to test VitalVit's claim
 # 
 # * State your hypotheses
 # * State relevant descriptive statistics
@@ -124,7 +120,7 @@ import seaborn as sns
 
 # < Your answer here! You will need to add additional cells >
 
-# f) Conduct a suitable non-parametric test to test Farmer McDonald's claim
+# f) Conduct a suitable non-parametric test to test VitalVit's claim
 # 
 # * State your hypotheses
 # * State relevant descriptive statistics
@@ -137,7 +133,7 @@ import seaborn as sns
 # 
 # A student from Lonsdale college claims that Lonsdale students are taller than students from Beaufort college.
 # 
-# Heights of 30 randomly selected male undergraduates from each college are found int the file data/heightsCollege.csv
+# Heights of 30 randomly selected male undergraduates from each college are found in the file heightsCollege.csv found at https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/heightsCollege.csv
 # 
 # Test the student's hypothesis using a t-test (this is justified as heights are generally normally distributed) and write up your report as if for a scientific publication. Your report should include the following elements:
 # 
@@ -150,12 +146,10 @@ import seaborn as sns
 # 
 # You can use the write-up sections of the t-test example notebooks as a model
 
-# In[4]:
+# In[6]:
 
 
-# load the data and have a look
-heights = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/heightsCollege.csv')
-display(heights)
+#Your code here to load the data - check previous examples if unsure how to do this
 
 
 # In[ ]:
