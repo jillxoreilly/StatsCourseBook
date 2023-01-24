@@ -518,28 +518,39 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="permutation_technicalnote.html">
+     10.3. Sort out
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.stats
+      </span>
+     </code>
+     version
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="permutation_paired.html">
-     10.3. Permutation test for paired data
+     10.4. Permutation test for paired data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_independentSamples.html">
-     10.4. Permutation test for unpaired or independent samples data
+     10.5. Permutation test for unpaired or independent samples data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_correlation.html">
-     10.5. Permutation test for correlation
+     10.6. Permutation test for correlation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_more.html">
-     10.6. Permutation testing - more practice
+     10.7. Permutation testing - more practice
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="permutation_TutorialExercises.html">
-     10.7. Tutorial exercises
+     10.8. Tutorial exercises
     </a>
    </li>
   </ul>
@@ -554,11 +565,6 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="ttest_intro.html">
-     11.3. The t-test
-    </a>
-   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ttest_intro.html">
      11.3. The t-test
@@ -923,12 +929,12 @@ title="Print to PDF"
 <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/peaches.png" width=30% alt="There should be a picture of some peaches here" >
 <p>Mr Robinson’s juice factory buys peaches from farmers by the tray. Each tray contains 50 peaches. Farmer McDonald claims that this is unfair as his peaches are juicier and therefore weigh more than the peaches of his rival, Mr McGregor.</p>
 <p>Mr Robinson weighs eight trays of Farmer McDonald’s peaches and 8 trays of Mr McGregor’s peaches.
-The weights, in kilograms are given in the file peaches.csv</p>
+The weights, in kilograms are given in the file peaches.csv found at https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/peaches.csv</p>
 <p>Investigate whether McDonald’s claim is justified by testing for a difference in weight between McDonald and McGregor’s peaches. Use both a parametric and non-parametric test.</p>
 <p>a) Load the data into a Pandas dataframe</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here to load the data from file &quot;data/peaches.csv&quot; into a pandas dataframe</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Your code here to load the data - check previous examples if unsure how to do this</span>
 </pre></div>
 </div>
 </div>
@@ -943,7 +949,7 @@ The weights, in kilograms are given in the file peaches.csv</p>
 </div>
 </div>
 <p>d) We can assume (based on the Central Limit Theorem) that these data points are normally distributed. Explain why.</p>
-<p>&lt; Your text here explaining why the data shoudl be Normal according to the CLT &gt;</p>
+<p>&lt; Your text here explaining why the data should be Normal according to the CLT &gt;</p>
 <p>e) Conduct a t-test to test Farmer McDonald’s claim</p>
 <ul class="simple">
 <li><p>State your hypotheses</p></li>
@@ -951,21 +957,7 @@ The weights, in kilograms are given in the file peaches.csv</p>
 <li><p>Carry out the test using the ubilt in function from <tt>scipy.stats</tt> with appropriate option choices</p></li>
 <li><p>State your conclusions</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">Your</span> <span class="n">answer</span> <span class="n">here</span><span class="o">!</span> You will need to add additional cells &gt;
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_29366/1956171379.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
-    <span class="o">&lt;</span> <span class="n">Your</span> <span class="n">answer</span> <span class="n">here</span><span class="o">!</span> You will need to add additional cells &gt;
-    <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
+<p>&lt; Your answer here! You will need to add additional cells &gt;</p>
 <p>f) Conduct an appropriate non-parametric test of Farmer McDonald’s claim</p>
 <ul class="simple">
 <li><p>State your hypotheses</p></li>
@@ -979,7 +971,7 @@ The weights, in kilograms are given in the file peaches.csv</p>
 <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/vitamins.jpg" width=50% alt="There should be a picture of some vitamin pills here" >
 <p>The VitalVit company claim that after taking their VitalVit supplement, IQ is increased.</p>
 <p>They run a trial in which 22 participants complete a baseline IQ test, then take VitalVit for six weeks, then complete another IQ test.</p>
-<p>The participants’ scores can be found in the data file VitalVit.csv</p>
+<p>The participants’ scores can be found in the data file VitalVit.csv at https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/vitalVit.csv</p>
 <p>a. What kind of design is this.</p>
 <p>&lt; your answer here &gt;</p>
 <p>b. What are the advantages and possible disadvantages of this type of design? Should the company have done something different or additional to rule out confounding factors?</p>
@@ -987,7 +979,7 @@ The weights, in kilograms are given in the file peaches.csv</p>
 <p>c. Load the data into a Pandas dataframe</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here to load the data from file &quot;data/peaches.csv&quot; into a pandas dataframe</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Your code here to load the data - check previous examples if unsure how to do this</span>
 </pre></div>
 </div>
 </div>
@@ -1004,7 +996,7 @@ You could add the line of equality (line x=y) to the graph so we can see whether
 </div>
 </div>
 <p>IQ scores are normally distributed by design (the tests are designed to yeild a normal distribution of scores). Therefore we should be able to use a t-test to compare the scores from before and after taking VitalVit. We will carry out both the (parametric) t-test and a suitable non-parametric test</p>
-<p>e) Conduct a t-test to test Farmer McDonald’s claim</p>
+<p>e) Conduct a t-test to test VitalVit’s claim</p>
 <ul class="simple">
 <li><p>State your hypotheses</p></li>
 <li><p>State relevant descriptive statistics</p></li>
@@ -1012,7 +1004,7 @@ You could add the line of equality (line x=y) to the graph so we can see whether
 <li><p>State your conclusions</p></li>
 </ul>
 <p>&lt; Your answer here! You will need to add additional cells &gt;</p>
-<p>f) Conduct a suitable non-parametric test to test Farmer McDonald’s claim</p>
+<p>f) Conduct a suitable non-parametric test to test VitalVit’s claim</p>
 <ul class="simple">
 <li><p>State your hypotheses</p></li>
 <li><p>State relevant descriptive statistics</p></li>
@@ -1024,7 +1016,7 @@ You could add the line of equality (line x=y) to the graph so we can see whether
 <section id="who-has-the-tallest-students">
 <h2>3. Who has the tallest students?<a class="headerlink" href="#who-has-the-tallest-students" title="Permalink to this heading">#</a></h2>
 <p>A student from Lonsdale college claims that Lonsdale students are taller than students from Beaufort college.</p>
-<p>Heights of 30 randomly selected male undergraduates from each college are found int the file data/heightsCollege.csv</p>
+<p>Heights of 30 randomly selected male undergraduates from each college are found in the file heightsCollege.csv found at https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/heightsCollege.csv</p>
 <p>Test the student’s hypothesis using a t-test (this is justified as heights are generally normally distributed) and write up your report as if for a scientific publication. Your report should include the following elements:</p>
 <ul>
     <li> A plot of the data to show the data distribution
@@ -1035,189 +1027,10 @@ You could add the line of equality (line x=y) to the graph so we can see whether
 <p>You can use the write-up sections of the t-test example notebooks as a model</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the data and have a look</span>
-<span class="n">heights</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/heightsCollege.csv&#39;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Your code here to load the data - check previous examples if unsure how to do this</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>lonsdale</th>
-      <th>beaufort</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>183.76</td>
-      <td>182.64</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>192.84</td>
-      <td>178.86</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>164.19</td>
-      <td>178.76</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>186.04</td>
-      <td>173.41</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>182.23</td>
-      <td>186.13</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>170.85</td>
-      <td>178.07</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>176.96</td>
-      <td>174.00</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>182.40</td>
-      <td>188.46</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>205.05</td>
-      <td>177.43</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>199.39</td>
-      <td>174.88</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>170.55</td>
-      <td>176.94</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>201.24</td>
-      <td>173.06</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>185.08</td>
-      <td>171.16</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>179.56</td>
-      <td>196.68</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>185.00</td>
-      <td>190.59</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>178.57</td>
-      <td>181.15</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>179.13</td>
-      <td>170.20</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>190.43</td>
-      <td>172.94</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>189.86</td>
-      <td>177.76</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>189.92</td>
-      <td>184.54</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>184.70</td>
-      <td>169.68</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>171.55</td>
-      <td>162.69</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>185.02</td>
-      <td>168.86</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>191.41</td>
-      <td>181.33</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>183.42</td>
-      <td>181.74</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>187.24</td>
-      <td>182.16</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>185.09</td>
-      <td>178.09</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>177.88</td>
-      <td>180.29</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>182.06</td>
-      <td>175.67</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>174.49</td>
-      <td>185.03</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 </section>

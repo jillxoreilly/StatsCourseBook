@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Spearman’s Rank Correlation &#8212; Introduction to Statistics and Data Science</title>
+    <title>Sensitivity, power, reproducibility &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -501,6 +501,115 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="permutation_intro.html">
+   10. Permutation Testing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_outcomes.html">
+     10.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_technicalnote.html">
+     10.3. Sort out
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       scipy.stats
+      </span>
+     </code>
+     version
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_paired.html">
+     10.4. Permutation test for paired data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_independentSamples.html">
+     10.5. Permutation test for unpaired or independent samples data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_correlation.html">
+     10.6. Permutation test for correlation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_more.html">
+     10.7. Permutation testing - more practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="permutation_TutorialExercises.html">
+     10.8. Tutorial exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="classictests_intro.html">
+   11. Classic tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_intro.html">
+     11.3. The t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_independentSamples.html">
+     11.4. Independent samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_pairedSamples.html">
+     11.5. Paired Samples t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_oneSample.html">
+     11.6. One sample t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_intro.html">
+     11.7. Non-parametric equivalents of the t-test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_MannWhitneyU.html">
+     11.8. The Mann Whitney U, or Wilcoxon Rank Sum Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nonpara_WilcoxonSignRank.html">
+     11.9. The Wilcoxon Sign-Rank Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ttest_furtherExercises.html">
+     11.11. Tutorial Exercises:
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     -test and non-parametric equivalents
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -726,33 +835,88 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#climate-example">
-   Climate Example
+  <a class="reference internal nav-link" href="#set-up-python-libraries">
+   Set up Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hypothetical-example">
+   Hypothetical example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eyeballing-the-data">
+   Eyeballing the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specificity">
+   Specificity
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set-up-python-libraries">
-     Set up Python libraries
+    <a class="reference internal nav-link" href="#our-example">
+     Our example:
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-and-inspect-the-data">
-     Load and inspect the data
+    <a class="reference internal nav-link" href="#specificity-or-probability-of-a-type-1-error">
+     Specificity or probability of a Type 1 error
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-to-we-get-the-p-value-for-a-correlation">
+       How to we get the p-value for a correlation?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#back-to-probability-of-a-type-1-errror">
+       Back to probability of a Type 1 errror
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#power">
+   Power
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#power-by-simulation">
+     Power by simulation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sample-size">
+   Sample size
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-probability-of-a-type-1-error-does-not-depend-on-sample-size">
+     The probability of a Type 1 error does not depend on sample size
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     Spearman’s Rank Correlation
+     The probability of a Type 1 error
+     <em>
+      does
+     </em>
+     not depend on sample size
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-equation">
-     The equation
+    <a class="reference internal nav-link" href="#power-in-practice">
+     Power in practice
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#spearman-pearson-on-ranks">
-     Spearman = Pearson on Ranks
+    <a class="reference internal nav-link" href="#clinically-significant-effect-size">
+     Clinically significant effect size
     </a>
    </li>
   </ul>
@@ -766,7 +930,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Spearman’s Rank Correlation</h1>
+                <h1>Sensitivity, power, reproducibility</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -777,33 +941,88 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#climate-example">
-   Climate Example
+  <a class="reference internal nav-link" href="#set-up-python-libraries">
+   Set up Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hypothetical-example">
+   Hypothetical example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eyeballing-the-data">
+   Eyeballing the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specificity">
+   Specificity
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set-up-python-libraries">
-     Set up Python libraries
+    <a class="reference internal nav-link" href="#our-example">
+     Our example:
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-and-inspect-the-data">
-     Load and inspect the data
+    <a class="reference internal nav-link" href="#specificity-or-probability-of-a-type-1-error">
+     Specificity or probability of a Type 1 error
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-to-we-get-the-p-value-for-a-correlation">
+       How to we get the p-value for a correlation?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#back-to-probability-of-a-type-1-errror">
+       Back to probability of a Type 1 errror
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#power">
+   Power
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#power-by-simulation">
+     Power by simulation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sample-size">
+   Sample size
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-probability-of-a-type-1-error-does-not-depend-on-sample-size">
+     The probability of a Type 1 error does not depend on sample size
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     Spearman’s Rank Correlation
+     The probability of a Type 1 error
+     <em>
+      does
+     </em>
+     not depend on sample size
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-equation">
-     The equation
+    <a class="reference internal nav-link" href="#power-in-practice">
+     Power in practice
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#spearman-pearson-on-ranks">
-     Spearman = Pearson on Ranks
+    <a class="reference internal nav-link" href="#clinically-significant-effect-size">
+     Clinically significant effect size
     </a>
    </li>
   </ul>
@@ -818,14 +1037,17 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="spearman-s-rank-correlation">
-<h1>Spearman’s Rank Correlation<a class="headerlink" href="#spearman-s-rank-correlation" title="Permalink to this heading">#</a></h1>
-<section id="climate-example">
-<h2>Climate Example<a class="headerlink" href="#climate-example" title="Permalink to this heading">#</a></h2>
-<p>We will again use the a dataset containing carbon emissions, GDP and population for 164 countries (data from 2018).</p>
-<p>These data came from <a href="https://ourworldindata.org/">Our World in Data</a>, a fabulous Oxford-based organization that provides datasets and visualizations addressing global issues.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="sensitivity-power-reproducibility">
+<h1>Sensitivity, power, reproducibility<a class="headerlink" href="#sensitivity-power-reproducibility" title="Permalink to this heading">#</a></h1>
+<p>As we saw in the lecture, the concepts of sensitivity and power are concerned with controlling the rate of type I and type II errors respectively, where type I errors are false positives and type II errors are false negatives.</p>
+<img src="images/t1t2_error.png" width=80% >
+<p>Think about it this way:</p>
+<ul class="simple">
+<li><p>When we are talking about sensitivity (controlling type I errors) we are proposing that the true population effect is zero (say, correlation and we are interested in the probability of obtaining a certain value of a test statstistic (say, correlation r=0.25) due to chance.</p></li>
+<li><p>When we are talking about power (controlling type II errors) we are proposing that the true populaiton effect is non-zero (say correlation and we are interested in how frequently we fail to reject the null hypothesis.</p></li>
+</ul>
 <section id="set-up-python-libraries">
-<h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h3>
+<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -835,19 +1057,84 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
 <span class="kn">import</span> <span class="nn">pandas</span> 
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span> <span class="c1"># use pretty defaults</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="load-and-inspect-the-data">
-<h3>Load and inspect the data<a class="headerlink" href="#load-and-inspect-the-data" title="Permalink to this heading">#</a></h3>
-<p>Load the data from the file CO2vGDP.csv.</p>
+<section id="hypothetical-example">
+<h2>Hypothetical example<a class="headerlink" href="#hypothetical-example" title="Permalink to this heading">#</a></h2>
+<p>Experiments in social psychology have been criticised for reporting implausibly large correlations based on small sample sizes. This caused quite a controversy a few years back and the debate on reproducibility continues on Twitter (I believe).</p>
+<p>https://www.scientificamerican.com/article/brain-scan-results-overstated/</p>
+<p>This issue is not specific to psychology, the same problem has been reported in other fields, such as genetics of disease.</p>
+<p>Let’s consider a hypothetical case.</p>
+<p>I conduct an experiment on <a href="https://en.wikipedia.org/wiki/Risk_aversion">risk aversion</a> in 50 participants, looking at how much money they are prepared to stake on a gamble in order to win a larger amount.</p>
+<img src="images/roulette.png" width=50% >
+<p>For each participant I also obtain a trait anxiety measure based on a questionairre.</p>
+<p>Then I calculate the correlation coefficient, Pearson’s r, between trait anxiety and risk aversion across my sample of 50 participants.</p>
+<ul class="simple">
+<li><p>I observe a correlation of r=0.25</p></li>
+</ul>
+<p>Can I trust this result?</p>
+</section>
+<section id="eyeballing-the-data">
+<h2>Eyeballing the data<a class="headerlink" href="#eyeballing-the-data" title="Permalink to this heading">#</a></h2>
+<p>What does a correlation of 0.25 look like for 50 data points?
+Here are some examples of datasets that actually have r=0.25:</p>
+<img src="images/r25_examples.png" width=100% >
+<p>Would you trust those correlations?</p>
+</section>
+<section id="specificity">
+<h2>Specificity<a class="headerlink" href="#specificity" title="Permalink to this heading">#</a></h2>
+<p>A Type 1 error occurs when the null hypothesis is true (as it is for our simulated population with zero correlation), but is nonetheless rejected.</p>
+<p>The specificity of a test is the probability of avoiding a Type 1 Error, if the null is true. So say the null hypothesis is true and we test at the <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05 level. The probability of a Type 1 error is (by definition) 5% and the specificity of the test is 95%.</p>
+<p>In this section we check that we do indeed get a false positive (ie a Type 1 error) 5% of the time when testing at the <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05 level in a population here the null is true.</p>
+<section id="our-example">
+<h3>Our example:<a class="headerlink" href="#our-example" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H_0}\)</span> Under the null hypothesis there is no correlation between anxiety scores and rish aversion</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> Under the alternative hypothesis, there is a correlation</p></li>
+</ul>
+<p>Let’s start by generating a large dataset with 25000 pairs in it (so 2 columns, 25000 rows), with a correlation between columns of zero. Don’t worry too much about this code block as you will not be asked to replicate this by yourself.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2vGDP</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/CO2vGDP.csv&#39;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">CO2vGDP</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code to generate the population with zero correlation - don&#39;t worry about understanding this bit</span>
+
+<span class="n">rho</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># the desired correlation</span>
+
+<span class="c1"># desired mean and sd of variables in columns 0 and 1</span>
+<span class="n">m0</span><span class="o">=</span><span class="mi">50</span>
+<span class="n">m1</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">s0</span><span class="o">=</span><span class="mf">4.5</span>
+<span class="n">s1</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="n">c</span><span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="n">rho</span><span class="p">],[</span><span class="n">rho</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span> <span class="c1"># the correlation matrix that we want in the simulated dataset</span>
+
+<span class="c1"># make two columns of numbers with the desired correlation (mean of each column is zero, sd is 1)</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">c</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">25000</span><span class="p">)</span>
+
+<span class="c1"># scale the variables to get correct mean and sd</span>
+<span class="n">tmp</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">tmp</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">s0</span><span class="p">)</span><span class="o">+</span><span class="n">m0</span>
+<span class="n">tmp</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">tmp</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">s1</span><span class="p">)</span><span class="o">+</span><span class="n">m1</span>
+<span class="n">pop_rZero</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;anxiety&#39;</span><span class="p">,</span><span class="s1">&#39;risk aversion&#39;</span><span class="p">])</span>
+
+<span class="c1"># plot scatterplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">pop_rZero</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;anxiety&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;risk aversion&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Untitled9_5_0.png" src="_images/Untitled9_5_0.png" />
+</div>
+</div>
+<p>The generated dataset has two columns and 25,000 rows.</p>
+<p>The correlation between the two columns should be close to the <tt>r</tt> value we set, ie zero.</p>
+<p>The scatterplot definitely looks like there is no correlation!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check that the actual correlation is in the 10000 simulated samples</span>
+<span class="n">pop_rZero</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -870,612 +1157,351 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Country</th>
-      <th>CO2</th>
-      <th>GDP</th>
-      <th>population</th>
+      <th>anxiety</th>
+      <th>risk aversion</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>Afghanistan</td>
-      <td>0.2245</td>
-      <td>1934.555054</td>
-      <td>36686788</td>
+      <th>anxiety</th>
+      <td>1.000000</td>
+      <td>-0.006784</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>Albania</td>
-      <td>1.6422</td>
-      <td>11104.166020</td>
-      <td>2877019</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Algeria</td>
-      <td>3.8241</td>
-      <td>14228.025390</td>
-      <td>41927008</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Angola</td>
-      <td>0.7912</td>
-      <td>7771.441895</td>
-      <td>31273538</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Argentina</td>
-      <td>4.0824</td>
-      <td>18556.382810</td>
-      <td>44413592</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>159</th>
-      <td>Venezuela</td>
-      <td>4.1602</td>
-      <td>10709.950200</td>
-      <td>29825652</td>
-    </tr>
-    <tr>
-      <th>160</th>
-      <td>Vietnam</td>
-      <td>2.3415</td>
-      <td>6814.142090</td>
-      <td>94914328</td>
-    </tr>
-    <tr>
-      <th>161</th>
-      <td>Yemen</td>
-      <td>0.3503</td>
-      <td>2284.889893</td>
-      <td>30790514</td>
-    </tr>
-    <tr>
-      <th>162</th>
-      <td>Zambia</td>
-      <td>0.4215</td>
-      <td>3534.033691</td>
-      <td>17835898</td>
-    </tr>
-    <tr>
-      <th>163</th>
-      <td>Zimbabwe</td>
-      <td>0.8210</td>
-      <td>1611.405151</td>
-      <td>15052191</td>
+      <th>risk aversion</th>
+      <td>-0.006784</td>
+      <td>1.000000</td>
     </tr>
   </tbody>
 </table>
-<p>164 rows × 4 columns</p>
 </div></div></div>
 </div>
-<p>We noted previously that our climate dataset is not suitable for a ‘normal’ Pearson’s correlation because it has one of the three freatures that violate the assumptions of Pearson’s correlation:</p>
-<ul>
-    <li> Non-Straight-Line relationship between $x$ and $y$
-    <li> Heteroscedasticity
-    <li> Outliers
-</ul>
-<p>In this case the problem was heteroscedasticity</p>
+</section>
+<section id="specificity-or-probability-of-a-type-1-error">
+<h3>Specificity or probability of a Type 1 error<a class="headerlink" href="#specificity-or-probability-of-a-type-1-error" title="Permalink to this heading">#</a></h3>
+<p>A Type 1 error occurs when the null hypothesis is true (as it is for our simulated population with zero correlation), but is nonetheless rejected.</p>
+<p>If I choose an alpha value of 0.05, this means I would reject the null hypothesis if the <span class="math notranslate nohighlight">\(p\)</span>-value for my obtained correlation is less than 0.05.</p>
+<p>By definition, for random samples from a population with no correlation, this should happen 5% of the time.</p>
+<section id="how-to-we-get-the-p-value-for-a-correlation">
+<h4>How to we get the p-value for a correlation?<a class="headerlink" href="#how-to-we-get-the-p-value-for-a-correlation" title="Permalink to this heading">#</a></h4>
+<p>For a given values of Pearson’s <span class="math notranslate nohighlight">\(r\)</span>, we can work out a t-score using the equation:</p>
+<div class="math notranslate nohighlight">
+\[ t=\frac{r}{\sqrt{(1-r^2)(n-2)}} \]</div>
+<p>and then the p value is obtained from the <span class="math notranslate nohighlight">\(t_{n-2}\)</span> distribution.</p>
+<p>However you can get straight to the <span class="math notranslate nohighlight">\(p\)</span>-value by using <tt>scipy.stats</tt> - note that we are using <tt>scipy.stats</tt> as the other correlation functions we met in <tt>numpy</tt> and <tt>pandas</tt> do not return a <span class="math notranslate nohighlight">\(p\)</span>-value.</p>
+<p>For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;anxiety&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;risk aversion&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=0.11994144059194592, pvalue=0.4067287974607673)
+</pre></div>
+</div>
+</div>
+</div>
+<p>… and to return just the p-value as a single number:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;anxiety&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;risk aversion&#39;</span><span class="p">])</span>
+<span class="n">res</span><span class="o">.</span><span class="n">pvalue</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4067287974607673
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="back-to-probability-of-a-type-1-errror">
+<h4>Back to probability of a Type 1 errror<a class="headerlink" href="#back-to-probability-of-a-type-1-errror" title="Permalink to this heading">#</a></h4>
+<p>Let’s try drawing 10000 samples from our no-correlation population and see how often we do get a significant result!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span><span class="o">=</span><span class="mi">10000</span>
+<span class="n">sampleSize</span><span class="o">=</span><span class="mi">50</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;anxiety&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;risk aversion&#39;</span><span class="p">])</span>
+    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">pvalue</span>
+    
+<span class="c1"># How many of our 10000 sammples had p&lt;0.05?</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0564
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hopefully the proportion of samples from the no-correlation distribution with p&lt;0.05 is about…. 0.05.</p>
+</section>
+</section>
+</section>
+<section id="power">
+<h2>Power<a class="headerlink" href="#power" title="Permalink to this heading">#</a></h2>
+<p>A Type 2 error occurs hen the alternative hypothesis is true, but we fail to reject the null.</p>
+<p>The probability of correctly rejecting the null when <span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> is true is the sensitivity or power of a test. So if the probability of a Type 2 error for a given test is 20%, the sensitivity or power of the test is 80%.</p>
+<section id="power-by-simulation">
+<h3>Power by simulation<a class="headerlink" href="#power-by-simulation" title="Permalink to this heading">#</a></h3>
+<p>We can investigate power in our correlation example using the same simulation approach as above, but now we need to <i>assume the true population correlation <span class="math notranslate nohighlight">\(\rho\)</span> is 0.25<i></p>
+<p>First, I’m going to generate a population (25 000 pairs of values) in which the true correlation between two variables (let’s call them ‘anxiety’ and ‘risk aversion’) is 0.25. Again don’t worry too much about understanding this code block.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code to generate the population with a correlation of rho - don&#39;t worry about understanding this bit</span>
+
+<span class="n">rho</span><span class="o">=</span><span class="mf">0.25</span> <span class="c1"># the desired correlation</span>
+
+<span class="c1"># desired mean and sd of variables in columns 0 and 1</span>
+<span class="n">m0</span><span class="o">=</span><span class="mi">50</span>
+<span class="n">m1</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">s0</span><span class="o">=</span><span class="mf">4.5</span>
+<span class="n">s1</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="n">c</span><span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="n">rho</span><span class="p">],[</span><span class="n">rho</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span> <span class="c1"># the correlation matrix that we want in the simulated dataset</span>
+
+<span class="c1"># make two columns of numbers with the desired correlation (mean of each column is zero, sd is 1)</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">c</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">25000</span><span class="p">)</span>
+
+<span class="c1"># scale the variables to get correct mean and sd</span>
+<span class="n">tmp</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">tmp</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">s0</span><span class="p">)</span><span class="o">+</span><span class="n">m0</span>
+<span class="n">tmp</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">tmp</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">s1</span><span class="p">)</span><span class="o">+</span><span class="n">m1</span>
+<span class="n">pop_rNonZero</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;anxiety&#39;</span><span class="p">,</span><span class="s1">&#39;risk aversion&#39;</span><span class="p">])</span>
+
+<span class="c1"># plot scatterplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">pop_rNonZero</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;anxiety&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;risk aversion&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Untitled9_17_0.png" src="_images/Untitled9_17_0.png" />
+</div>
+</div>
+<p>Hopefully the scatterplot shows some data with a weak correlation (the datapoints are no longer spread on a circle, but stretched into an oval shape).</p>
+<p>We can check the correlation in the full population of 25000 samples, hopefully this should be close to 0.25.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>anxiety</th>
+      <th>risk aversion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>anxiety</th>
+      <td>1.000000</td>
+      <td>0.251163</td>
+    </tr>
+    <tr>
+      <th>risk aversion</th>
+      <td>0.251163</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The question for our <em>power analysis</em> is, for samples of size n=50, what proportion of the time will I obtain a significant correlation (reject the null)?</p>
+<p>To answer that question I am going to draw samples of size 50 from the population <em>which actually has <span class="math notranslate nohighlight">\(r\)</span>=0.25</em> and obtain the sample correlation for each of those samples and its p value using <tt>scipy.stats</tt>. I can then ask in what proportion of simulated samples <span class="math notranslate nohighlight">\(p&lt;0.05\)</span>, ie in what proportion of the simulated samples we manage to reject the null.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span><span class="o">=</span><span class="mi">1000</span>
+<span class="n">sampleSize</span><span class="o">=</span><span class="mi">50</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;anxiety&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;risk aversion&#39;</span><span class="p">])</span>
+    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">pvalue</span>
+    
+<span class="c1"># How many of our 10000 samples had p&lt;0.05?</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.422
+</pre></div>
+</div>
+</div>
+</div>
+<p>In my simulation I manage to reject the null is 41% of simulations. SO my test has a power of 41%</p>
+<img src="images/Minion_what.jpg" width=15% >
+<p>Yes, that’s right. In a population where the <em>true</em> correlation between two variables (anxiety and risk aversion) is 0.25, for samples of size 50, I will fail to detect a significant correlation (ie, I will make a Type 2 error) over half the time.</p>
+</section>
+</section>
+<section id="sample-size">
+<h2>Sample size<a class="headerlink" href="#sample-size" title="Permalink to this heading">#</a></h2>
+<section id="the-probability-of-a-type-1-error-does-not-depend-on-sample-size">
+<h3>The probability of a Type 1 error does not depend on sample size<a class="headerlink" href="#the-probability-of-a-type-1-error-does-not-depend-on-sample-size" title="Permalink to this heading">#</a></h3>
+<p>Statistical tests are designed to control the probability of a type 1 error. When calculating the critical value of the test statistic (in the case of correlation, the test statistic is <span class="math notranslate nohighlight">\(r\)</span> and the critical value is minimum <span class="math notranslate nohighlight">\(r\)</span> value that would be considered significant for a given sample size <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(n\)</span> is directly taken into account. Therefore, the probably of a type 1 error is fixed regardless of sample size.</p>
 </section>
 <section id="id1">
-<h3>Spearman’s Rank Correlation<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
-<p>We therefore use a rank-based form of correlation called Spearman’s rank correlation coefficient <span class="math notranslate nohighlight">\(r_s\)</span>, which does not rely on the same assumptions as Pearson’s correlation.</p>
-<p><span class="math notranslate nohighlight">\(r_s\)</span> can be calculated using the same built-in function <tt>pandas.df.corr()</tt>:</p>
+<h3>The probability of a Type 1 error <em>does</em> not depend on sample size<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>The above is <em>not</em> true for type 2 error. The probability of Type 2 error (and hence the power of the test) varies with sample size.</p>
+<p>If we increase the sample size, the power of the test increases.</p>
+<p>Let’s try it! Change the sample size in the code block below to 10,100 and 1000. How does the power change</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2vGDP</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span><span class="o">=</span><span class="mi">1000</span>
+<span class="n">sampleSize</span><span class="o">=</span><span class="mi">50</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;anxiety&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;risk aversion&#39;</span><span class="p">])</span>
+    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">pvalue</span>
+    
+<span class="c1"># How many of our 10000 samples had p&lt;0.05?</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;power = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)))</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>CO2</th>
-      <th>GDP</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>CO2</th>
-      <td>1.000000</td>
-      <td>0.914369</td>
-      <td>-0.098554</td>
-    </tr>
-    <tr>
-      <th>GDP</th>
-      <td>0.914369</td>
-      <td>1.000000</td>
-      <td>-0.122920</td>
-    </tr>
-    <tr>
-      <th>population</th>
-      <td>-0.098554</td>
-      <td>-0.122920</td>
-      <td>1.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 42.9%
+</pre></div>
 </div>
-<p>The ‘methods’ available are Pearson (‘normal’ correlation), Spearman (rank based) and Kendal (rarely used). The default (the method used if no method is specified) is Pearson - we can see this by comparing the results with method specified as Pearson and no method specified:</p>
+</div>
+</div>
+<p>We can loop over different sample sizes and plot how power increases as sample size increases:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2vGDP</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;pearson&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">power</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">)):</span>
+    <span class="n">nReps</span><span class="o">=</span><span class="mi">1000</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+    <span class="n">sampleSize</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+        <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;anxiety&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;risk aversion&#39;</span><span class="p">])</span>
+        <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">pvalue</span>
+    
+    <span class="n">power</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span>
+    
+<span class="c1"># plot the results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">power</span><span class="p">,</span><span class="s1">&#39;k.-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">n</span><span class="p">)],[</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.8</span><span class="p">],</span><span class="s1">&#39;r--&#39;</span><span class="p">)</span> <span class="c1"># reference line for 80% power</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;sample size&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;power&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>CO2</th>
-      <th>GDP</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>CO2</th>
-      <td>1.000000</td>
-      <td>0.795214</td>
-      <td>-0.003745</td>
-    </tr>
-    <tr>
-      <th>GDP</th>
-      <td>0.795214</td>
-      <td>1.000000</td>
-      <td>-0.054502</td>
-    </tr>
-    <tr>
-      <th>population</th>
-      <td>-0.003745</td>
-      <td>-0.054502</td>
-      <td>1.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<img alt="_images/Untitled9_26_0.png" src="_images/Untitled9_26_0.png" />
 </div>
+</div>
+<p>The relationship between sample size and power is slightly bumpy as we checked only 1000 simulated samples at each sample size. If you increased nReps to 10,000 the curve would look smoother (but the simulation ould take a long time to run).</p>
+<p>Conventionally a power of 80% (indicated by the red dashed line on the graph) is considered desirable. What sample size do we need to get power of 80%? It looks from the graph like you would need around n=120. Let’s re-run a finer grained simulation in that range:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2vGDP</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span><span class="mi">130</span><span class="p">)</span>
+<span class="n">power</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">)):</span>
+    <span class="n">nReps</span><span class="o">=</span><span class="mi">100000</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+    <span class="n">sampleSize</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+        <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;anxiety&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;risk aversion&#39;</span><span class="p">])</span>
+        <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">pvalue</span>
+    
+    <span class="n">power</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">power</span><span class="p">,</span><span class="s1">&#39;k.-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">n</span><span class="p">)],[</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.8</span><span class="p">],</span><span class="s1">&#39;r--&#39;</span><span class="p">)</span> <span class="c1"># reference line for 80% power</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;sample size&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;power&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_6973</span><span class="o">/</span><span class="mf">2083475829.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">11</span>         <span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;anxiety&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;risk aversion&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">pvalue</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> 
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_stats_py.py</span> in <span class="ni">pearsonr</span><span class="nt">(x, y, alternative)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4439</span> 
+<span class="g g-Whitespace">   </span><span class="mi">4440</span>     <span class="n">xmean</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">4441</span>     <span class="n">ymean</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4442</span> 
+<span class="g g-Whitespace">   </span><span class="mi">4443</span>     <span class="c1"># By using `astype(dtype)`, we ensure that the intermediate calculations</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>CO2</th>
-      <th>GDP</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>CO2</th>
-      <td>1.000000</td>
-      <td>0.795214</td>
-      <td>-0.003745</td>
-    </tr>
-    <tr>
-      <th>GDP</th>
-      <td>0.795214</td>
-      <td>1.000000</td>
-      <td>-0.054502</td>
-    </tr>
-    <tr>
-      <th>population</th>
-      <td>-0.003745</td>
-      <td>-0.054502</td>
-      <td>1.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/numpy/core/_methods.py</span> in <span class="ni">_mean</span><span class="nt">(a, axis, dtype, out, keepdims, where)</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span>     <span class="n">is_float16_result</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span> 
+<span class="ne">--&gt; </span><span class="mi">167</span>     <span class="n">rcount</span> <span class="o">=</span> <span class="n">_count_reduce_items</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">168</span>     <span class="k">if</span> <span class="n">rcount</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">where</span> <span class="ow">is</span> <span class="kc">True</span> <span class="k">else</span> <span class="n">umr_any</span><span class="p">(</span><span class="n">rcount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">169</span>         <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Mean of empty slice.&quot;</span><span class="p">,</span> <span class="ne">RuntimeWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/numpy/core/_methods.py</span> in <span class="ni">_count_reduce_items</span><span class="nt">(arr, axis, keepdims, where)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>         <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>             <span class="n">axis</span> <span class="o">=</span> <span class="p">(</span><span class="n">axis</span><span class="p">,)</span>
+<span class="ne">---&gt; </span><span class="mi">74</span>         <span class="n">items</span> <span class="o">=</span> <span class="n">nt</span><span class="o">.</span><span class="n">intp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>         <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axis</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span>             <span class="n">items</span> <span class="o">*=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">mu</span><span class="o">.</span><span class="n">normalize_axis_index</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">arr</span><span class="o">.</span><span class="n">ndim</span><span class="p">)]</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 </section>
-<section id="the-equation">
-<h3>The equation<a class="headerlink" href="#the-equation" title="Permalink to this heading">#</a></h3>
-<p>Let’s check our understanding by calculating Spearman’s correlation coefficient oursleves.</p>
-<p>The equation is:</p>
-<div class="math notranslate nohighlight">
-\[ r_s = 6 \sum{\frac{d^2}{n(n^2 - 2)}} \]</div>
-<p>… where d is the difference in ranks between paired datapoints.</p>
-<p>Let’s walk that through.</p>
-<p>First, we create new columns containing the rank of each datapoint -</p>
-<ul>
-    <li>the lowest GDP will have rank 1 and the highest will have rank 165
-    <li>the lowest CO2 emissions will have rank 1 and the highest will have rank 165
-    <li>the GDP aand CO2 ranks for each country need not match, but if GDP and CO2 are correlated, 
-    <li>high-ranked countries for GDP should also be high-ranked for CO2
-</ul><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2vGDP</span><span class="p">[</span><span class="s1">&#39;CO2_rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">CO2vGDP</span><span class="p">[</span><span class="s1">&#39;CO2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span>
-<span class="n">CO2vGDP</span><span class="p">[</span><span class="s1">&#39;GDP_rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">CO2vGDP</span><span class="p">[</span><span class="s1">&#39;GDP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span>
-
-<span class="c1"># We can see these most clearly if we sort the dataframe before displaying</span>
-<span class="n">display</span><span class="p">(</span><span class="n">CO2vGDP</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;CO2&#39;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>CO2</th>
-      <th>GDP</th>
-      <th>population</th>
-      <th>CO2_rank</th>
-      <th>GDP_rank</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>39</th>
-      <td>Democratic Republic of Congo</td>
-      <td>0.0331</td>
-      <td>859.381714</td>
-      <td>87087352</td>
-      <td>1.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>Central African Republic</td>
-      <td>0.0471</td>
-      <td>623.488892</td>
-      <td>5094795</td>
-      <td>2.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>Burundi</td>
-      <td>0.0608</td>
-      <td>651.358887</td>
-      <td>11493476</td>
-      <td>3.0</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>Chad</td>
-      <td>0.0675</td>
-      <td>2046.363159</td>
-      <td>15604213</td>
-      <td>4.0</td>
-      <td>24.0</td>
-    </tr>
-    <tr>
-      <th>108</th>
-      <td>Niger</td>
-      <td>0.0830</td>
-      <td>964.660095</td>
-      <td>22577060</td>
-      <td>5.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>128</th>
-      <td>Saudi Arabia</td>
-      <td>18.4541</td>
-      <td>50304.750000</td>
-      <td>35018132</td>
-      <td>160.0</td>
-      <td>154.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Bahrain</td>
-      <td>20.7778</td>
-      <td>39498.765630</td>
-      <td>1487346</td>
-      <td>161.0</td>
-      <td>143.0</td>
-    </tr>
-    <tr>
-      <th>79</th>
-      <td>Kuwait</td>
-      <td>23.1008</td>
-      <td>65520.738280</td>
-      <td>4317190</td>
-      <td>162.0</td>
-      <td>160.0</td>
-    </tr>
-    <tr>
-      <th>148</th>
-      <td>Trinidad and Tobago</td>
-      <td>29.1223</td>
-      <td>28549.408200</td>
-      <td>1504707</td>
-      <td>163.0</td>
-      <td>128.0</td>
-    </tr>
-    <tr>
-      <th>122</th>
-      <td>Qatar</td>
-      <td>38.4397</td>
-      <td>153764.171900</td>
-      <td>2766743</td>
-      <td>164.0</td>
-      <td>164.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>164 rows × 6 columns</p>
-</div></div></div>
-</div>
-<p>You can see that countries with low ranks for CO2 do tend to have low ranks for GDP.</p>
-<p>Let’s plot the data, and the ranked data, on scatterplots. You can see that the ranked data do not have the same heteroscedasticity issue as the data themselves.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CO2vGDP</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;CO2&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;GDP&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CO2vGDP</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;CO2_rank&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;GDP_rank&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="c1"># shift the plots sideways so they don&#39;t overlap</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/Untitled9_13_0.png" src="_images/Untitled9_13_0.png" />
-</div>
-</div>
-<p>To continue the process of applying the equation, we make a new column containing the difference of ranks:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2vGDP</span><span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">CO2vGDP</span><span class="p">[</span><span class="s1">&#39;CO2_rank&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">CO2vGDP</span><span class="p">[</span><span class="s1">&#39;GDP_rank&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>… and apply the formula:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">CO2vGDP</span><span class="p">)</span>
-
-<span class="n">r_s</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">6</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">CO2vGDP</span><span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;r = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">r_s</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r = 0.9143657031126717
-</pre></div>
-</div>
-</div>
-</div>
-<p>Ta-daa! This should match the value from the built in function.</p>
+<section id="power-in-practice">
+<h3>Power in practice<a class="headerlink" href="#power-in-practice" title="Permalink to this heading">#</a></h3>
+<p>Power is defined as the proportion of the time we would expect to get a statistically significant effect in samples of size <span class="math notranslate nohighlight">\(n\)</span>, given that there is a true effect of a certain size (for example <span class="math notranslate nohighlight">\(r\)</span>=0.25) in the population.</p>
+<p>An obvious problem with this is that in a real experiment you wouldn’t know the true effect sizze in the underlying population - that is what you are trying to measure! So how can you calculate the power for a given planned sample size, or the sample size needed to achieve 80% power, in advance?</p>
+<p>The honest answer is that often this is not possible. Sometimes we can estimate the effect size (such as the correlation in the underlying population) fromm looking at similar studies in the literature, but usually such guesses will give only a very rough estimate of the effect size that will arise in our planned experiment.</p>
 </section>
-<section id="spearman-pearson-on-ranks">
-<h3>Spearman = Pearson on Ranks<a class="headerlink" href="#spearman-pearson-on-ranks" title="Permalink to this heading">#</a></h3>
-<p>The equation for Spearman’s <span class="math notranslate nohighlight">\(r_s\)</span> looks pretty weird, doesn’t it? What is that 6 doing there?!</p>
-<p>I can’t tell you the derivation (although I believe I did once know it), but I can tell you a fun thing.</p>
-<p>Spearman’s <span class="math notranslate nohighlight">\(r_s\)</span> is exactly the same value as Pearson’s <span class="math notranslate nohighlight">\(r\)</span> claculated on the ranks.</p>
-<p>Let’s try it!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make a new dataframe with only ranks</span>
-<span class="n">CO2vGDP_ranks</span> <span class="o">=</span> <span class="n">CO2vGDP</span><span class="p">[[</span><span class="s1">&#39;CO2_rank&#39;</span><span class="p">,</span><span class="s1">&#39;GDP_rank&#39;</span><span class="p">]]</span>
-<span class="n">display</span><span class="p">(</span><span class="n">CO2vGDP_ranks</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>CO2_rank</th>
-      <th>GDP_rank</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>16.0</td>
-      <td>22.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>58.0</td>
-      <td>73.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>94.0</td>
-      <td>93.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>41.0</td>
-      <td>59.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>99.0</td>
-      <td>104.0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>159</th>
-      <td>100.0</td>
-      <td>72.0</td>
-    </tr>
-    <tr>
-      <th>160</th>
-      <td>77.0</td>
-      <td>55.0</td>
-    </tr>
-    <tr>
-      <th>161</th>
-      <td>24.0</td>
-      <td>26.0</td>
-    </tr>
-    <tr>
-      <th>162</th>
-      <td>29.0</td>
-      <td>36.0</td>
-    </tr>
-    <tr>
-      <th>163</th>
-      <td>44.0</td>
-      <td>14.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>164 rows × 2 columns</p>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate **Pearson&#39;s** correlation on the ranks</span>
-<span class="n">CO2vGDP_ranks</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;pearson&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>CO2_rank</th>
-      <th>GDP_rank</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>CO2_rank</th>
-      <td>1.000000</td>
-      <td>0.914369</td>
-    </tr>
-    <tr>
-      <th>GDP_rank</th>
-      <td>0.914369</td>
-      <td>1.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Yep, the correlation is 0.9138 - the exact same value as <span class="math notranslate nohighlight">\(r_s\)</span></p>
+<section id="clinically-significant-effect-size">
+<h3>Clinically significant effect size<a class="headerlink" href="#clinically-significant-effect-size" title="Permalink to this heading">#</a></h3>
+<p>One context in which power can definitely be meaningfully defined, is when we kno hat size of effect we would <em>car about</em>, even if we don’t know hat the underlying effect sizze in the population is.</p>
+<p>Say for example we are testing a new analgesic drug. We may not kno how much the drug will ruduce pain scores (the true effect sizze) but we can certainly define a minimum effect size that would be clinically meaningful You could say that you would only consider the effect of the drug clinically significant if there is a 10% change in pain scores (otherwise, the drug won’t be worth taking). That is different from statstistical significance - if you test enough patients you could detect a statstically significant result even for a very small change in clinical outcome but it still wouldn’t mean your drug is an effective painkiller.</p>
+<p>If we conduct a power analysis assuming that the effect size in the population is the minimmum clincally significant effect, this will tell us how many participants we need to detect such a clinically significant effect with (say) 80% power. By definition a smaller effect would need more participants to detect it (but we wouldn’t be interested in such a small effect from a clinical persoective, so that doesn’t matter). Any effect larger than the minimum clinically significant effect ould have more than 80% power, as larger effects are easier to detect.</p>
 </section>
 </section>
 </section>
