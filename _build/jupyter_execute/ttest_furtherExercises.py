@@ -32,6 +32,8 @@ import seaborn as sns
 # Mr Robinson weighs eight trays of Farmer McDonald’s peaches and 8 trays of Mr McGregor’s peaches. 
 # The weights, in kilograms are given in the file peaches.csv found at https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/peaches.csv
 # 
+# * Throughout the coures you have been loading files directly from my Github repository using `pandas.read_csv` using ready made code - below you will need to copy and modify an example to read the file peaches.csv from that same repository
+# 
 # Investigate whether McDonald's claim is justified by testing for a difference in weight between McDonald and McGregor's peaches. Use both a parametric and non-parametric test.
 
 # a) Load the data into a Pandas dataframe
