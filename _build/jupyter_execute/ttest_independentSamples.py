@@ -147,9 +147,9 @@ stats.ttest_ind(apples_MiracleGro["meanAppleWeight"], apples_BrandX["meanAppleWe
 # 
 # In a scientific write-up we also need to report the degrees of freedom of the test. This tells us how many observations (data-points) the test was based on, corrected for the number of means we had to estimate from the data in order to do the test.
 # 
-# In the case of the independent samples t-test $df = n_1 + n_2 - 2$ so in this case, df=18 and we can report out test results as:
+# In the case of the independent samples t-test $df = n_1 + n_2 - 2$ so in this case, df=(10+12-2)=20 and we can report out test results as:
 # 
-# $t(18) = 2.35, p=0.0146$ (one-tailed)
+# $t(20) = 2.35, p=0.0146$ (one-tailed)
 # 
 # ### Interpretation
 # 

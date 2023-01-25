@@ -120,7 +120,7 @@ stats.ttest_1samp(heights, 175, alternative='greater')
 # 
 # ### Interpretation
 # 
-# Our t value of 1.67 means that the difference between the mean height of the rowers and the standard value (175cm, the mean height of British men) is 1.67 times the standard error (where $ SE = s \sqrt{\frac{1}{n_1}+\frac{1}{n_2}}$).
+# Our t value of 1.67 means that the difference between the mean height of the rowers and the standard value (175cm, the mean height of British men) is 1.67 times the standard error (where $ SE = \frac{s}{\sqrt{n}}$).
 # 
 # Such a large difference (in the expected direction) would occur 0.067 (6.7%) of the time due to chance if the null hypothesis were true (rowers were no taller than other men), hence the p value of 0.067. This is higher than our alpha value (0.05) so the test is not significant.
 # 
