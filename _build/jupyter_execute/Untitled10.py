@@ -1,81 +1,87 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Python skills check
-# 
-# You should work through this before the tutorial. The idea is for you to find the relevant code snippets int he worked examples you have just read, and modify them to work for your requirements here
-# 
-# ## Oxford weather station data
-# 
-# We will work with historical data from the Oxford weather station
-# 
-# <img src= "https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/OxfordSnow.jpg" width="50%"  />
-
-# ### Set up Python libraries
-# 
-# As usual, run the code cell below to import the relevant Python libraries
-
 # In[1]:
 
 
-# Set-up Python libraries - you need to run this but you don't need to change it
+#Set-up Python libraries - you need to run this but you don't need to change it
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 import pandas 
 import seaborn as sns
 sns.set_theme()
+sns.set_style('whitegrid')
 
-
-# ### Load and inspect the data
-# 
-# Let's load some historical data about the weather in Oxford, from the file "OxfordWeather.csv"
 
 # In[2]:
 
 
-weather = pandas.read_csv("https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/OxfordWeather.csv")
-display(weather)
+clouds=pandas.read_csv('data/cloudSeeding.csv')
+clouds
 
-
-# ### Correlation and covariance
-# 
-# Create a plot to show the relationship between mean temp (Tmean) and rainfall
 
 # In[3]:
 
 
-sns.scatterplot(data=weather, x='Tmean', y='Rainfall_mm')
+sns.kdeplot(data=clouds, x='rainfall', hue='status')
+sns.rugplot(data=clouds, x='rainfall', hue='status')
+plt.show()
 
-
-# If I want to measure the correlation between Tmean and rainfall, which method should I use?
-# 
-# Using the appropriate method, obtain the full correlation matrix for the <tt>weather</tt> dataframe
 
 # In[4]:
 
 
-weather.corr(method = 'spearman')
+sns.stripplot(data=clouds, x='rainfall', y='status')
+plt.show()
 
-
-# ... and just the correlation between Tmean and rainfall
 
 # In[5]:
 
 
-weather['Tmean'].corr(weather['Rainfall_mm'], method = 'spearman')
+stats.mannwhitneyu(clouds[clouds['status']=='Seeded']['rainfall'],
+                   clouds[clouds['status']=='Unseeded']['rainfall'],alternative='greater')
 
-
-# Obtain the covariance between Tmin and Tmax
 
 # In[6]:
 
 
-weather['Tmax'].cov(weather['Tmin'])
+stats.ttest_ind(clouds[clouds['status']=='Seeded']['rainfall'],
+                clouds[clouds['status']=='Unseeded']['rainfall'],alternative='greater')
 
 
 # In[7]:
 
 
-The end!
+def dMeans(a,y):
+    return np.mean(x)-np.mean(y)
+    
+stats.permutation_test((clouds[clouds['status']=='Seeded']['rainfall'],
+                       clouds[clouds['status']=='Unseeded']['rainfall']),
+                       dMeans,
+                       permutation_type='independent', alternative='greater')
+
+
+# In[28]:
+
+
+x=range(0,4000)
+y = stats.norm.pdf(x,clouds[clouds['status']=='Seeded']['rainfall'].mean(),clouds[clouds['status']=='Seeded']['rainfall'].std())
+plt.plot(x,y,'b')
+sns.kdeplot(data=clouds, x='rainfall', hue='status')
+sns.rugplot(data=clouds, x='rainfall', hue='status')
+y = stats.norm.pdf(x,clouds[clouds['status']=='Unseeded']['rainfall'].mean(),clouds[clouds['status']=='Seeded']['rainfall'].std())
+plt.plot(x,y,'r')
+
+
+# In[22]:
+
+
+
+
+
+# In[ ]:
+
+
+stats.mannwhitneyu(clouds[clouds['status']=='Seeded']['rainfall'],clouds[clouds['status']=='Unseeded']['rainfall'],alternative='greater')
 

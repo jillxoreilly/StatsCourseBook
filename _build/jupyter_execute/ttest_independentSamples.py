@@ -49,7 +49,7 @@ pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/
 # In[3]:
 
 
-apples = pandas.read_csv('data/AppleWeights.csv')
+apples = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/AppleWeights.csv')
 
 # let's make separate dataframes for the two brands of fertilizer
 apples_BrandX = apples[apples["Fertilizer"]=="BrandX"]
@@ -194,7 +194,7 @@ stats.ttest_ind(apples_MiracleGro["meanAppleWeight"], apples_BrandX["meanAppleWe
 # In[8]:
 
 
-apples = pandas.read_csv('data/AppleWeights.csv')
+apples = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/AppleWeights.csv')
 apples.groupby(["Fertilizer"]).describe()
 
 
@@ -202,8 +202,6 @@ apples.groupby(["Fertilizer"]).describe()
 
 # In[9]:
 
-
-apples = pandas.read_csv('data/AppleWeights.csv')
 
 # let's make separate dataframes for the two brands of fertilizer
 apples_BrandX = apples[apples["Fertilizer"]=="BrandX"]

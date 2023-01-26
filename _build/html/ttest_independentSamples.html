@@ -1156,7 +1156,7 @@ title="Print to PDF"
 <p>As we saw in the session on plotting, a good choice here will be a KDE plot (to get an estimate of the shape of the distribution) and a rug plot (individual data values as the KDE plot is based on only a small sample)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apples</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/AppleWeights.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apples</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/AppleWeights.csv&#39;</span><span class="p">)</span>
 
 <span class="c1"># let&#39;s make separate dataframes for the two brands of fertilizer</span>
 <span class="n">apples_BrandX</span> <span class="o">=</span> <span class="n">apples</span><span class="p">[</span><span class="n">apples</span><span class="p">[</span><span class="s2">&quot;Fertilizer&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;BrandX&quot;</span><span class="p">]</span>
@@ -1552,7 +1552,7 @@ that mean of the first input <tt>apples.MiracleGro</tt> is greater than the seco
 <p>The mean apple weight was measured for each of XX trees fertilized with MiracleGro (mean of mean apple weights over XX trees XXX.Xg, sd of mean apple weights over 100 trees, XXX.Xg) and XX trees fertilized with Brand X (mean over XX trees XXX.Xg, sd XXX.Xg).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apples</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/AppleWeights.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apples</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/AppleWeights.csv&#39;</span><span class="p">)</span>
 <span class="n">apples</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Fertilizer&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1635,9 +1635,7 @@ that mean of the first input <tt>apples.MiracleGro</tt> is greater than the seco
 <p>Theoretical considerations suggest that data for each group of trees should be drawn from a normal distribution: as individual data points were themselves the means of large samples (all apples from a given tree), these data points should follow a normal distribubtion due to the Central Limit Theorem. This was supported by a plot of the data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apples</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/AppleWeights.csv&#39;</span><span class="p">)</span>
-
-<span class="c1"># let&#39;s make separate dataframes for the two brands of fertilizer</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s make separate dataframes for the two brands of fertilizer</span>
 <span class="n">apples_BrandX</span> <span class="o">=</span> <span class="n">apples</span><span class="p">[</span><span class="n">apples</span><span class="p">[</span><span class="s2">&quot;Fertilizer&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;BrandX&quot;</span><span class="p">]</span>
 <span class="n">apples_MiracleGro</span> <span class="o">=</span> <span class="n">apples</span><span class="p">[</span><span class="n">apples</span><span class="p">[</span><span class="s2">&quot;Fertilizer&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;MiracleGro&quot;</span><span class="p">]</span>
 
