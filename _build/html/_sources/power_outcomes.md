@@ -40,7 +40,7 @@ size.
 
 This is rather involved and you would not be expected to
 reproduce it independently, but you should understand conceptually
-what was done and be able to copy the code blocks an mmdify them to
+what was done and be able to copy the code blocks an modify them to
 run a power analysis for a different value of $r$ or $d$
 
 This material is covered in the Jupyter Notebooks in this section

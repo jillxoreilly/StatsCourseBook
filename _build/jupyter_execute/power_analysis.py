@@ -41,7 +41,7 @@ import seaborn as sns
 # What does a correlation of 0.25 look like for 50 data points?
 # Here are some examples of datasets that actually have r=0.25:
 # 
-# <img src="images/r25_examples.png" width=100% >
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/r25_examples.png" width=100% >
 # 
 # Would you trust those correlations?
 
@@ -220,7 +220,7 @@ p = np.empty(nReps)
 
 for i in range(nReps):
     sample = pop_rNonZero.sample(n=sampleSize)
-    p[i] = stats.pearsonr(sample['Maths'], sample['French'], alternative='greater')
+    p[i] = stats.pearsonr(sample['Maths'], sample['French'], alternative='greater').pvalue
     
 # How many of our 10000 samples had p<0.05?
 np.mean(p<0.05)
@@ -229,7 +229,7 @@ np.mean(p<0.05)
 # In my simulation I manage to reject the null in about 41% of simulations (note the exact value you get will vary slightly each time you run the simulation). So my test has a power of 41%
 # 
 # 
-# <img src="images/Minion_what.jpg" width=15% >
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Minion_what.jpg" width=15% >
 # 
 # Yes, that's right. In a population where the *true* correlation between two variables (scores on Maths and French tests) is 0.25, for samples of size 50, I will fail to detect a significant correlation (ie, I will make a Type 2 error) over half the time.
 # 
@@ -237,7 +237,7 @@ np.mean(p<0.05)
 # 
 # Try changing $n$ in the code block below to be smaller (eg $n$=25) or larger ($n$=150) and see what happens to the power.
 
-# In[15]:
+# In[10]:
 
 
 nReps=1000
@@ -269,7 +269,7 @@ np.mean(p<0.05)
 # Let's try it! Change the sample size in the code block below to 10,100 and 1000. How does the power change
 # 
 
-# In[17]:
+# In[11]:
 
 
 nReps=1000
@@ -286,7 +286,7 @@ print('power = ' + str(100*(np.mean(p<0.05))) + '%')
 
 # We can loop over different sample sizes and plot how power increases as sample size increases:
 
-# In[29]:
+# In[12]:
 
 
 n=range(2,150,10)
@@ -317,7 +317,7 @@ plt.show()
 # 
 # 
 
-# In[31]:
+# In[13]:
 
 
 n=range(95,106)
@@ -353,11 +353,11 @@ plt.show()
 # 
 # ### Clinically significant effect size
 # 
-# One context in which power can definitely be meaningfully defined, is when we kno hat size of effect we would *care about*, even if we don't know what the underlying effect size in the population is. 
+# One context in which power can definitely be meaningfully defined, is when we know what size of effect we would *care about*, even if we don't know what the underlying effect size in the population is. 
 # 
-# Say for example we are testing a new analgesic drug. We may not kno how much the drug will ruduce pain scores (the true effect sizze) but we can certainly define a minimum effect size that would be clinically meaningful You could say that you would only consider the effect of the drug clinically significant if there is a 10% change in pain scores (otherwise, the drug won't be worth taking). That is different from statstistical significance - if you test enough patients you could detect a statstically significant result even for a very small change in clinical outcome but it still wouldn't mean your drug is an effective painkiller.
+# Say for example we are testing a new analgesic drug. We may not know how much the drug will reduce pain scores (the true effect size) but we can certainly define a minimum effect size that would be clinically meaningful. You could say that you would only consider the effect of the drug clinically significant if there is a 10% change in pain scores (otherwise, the drug won't be worth taking). That is different from statstistical significance - if you test enough patients you could detect a statstically significant result even for a very small change in clinical outcome but it still wouldn't mean your drug is an effective painkiller.
 # 
-# If we conduct a power analysis assuming that the effect size in the population is the minimmum clincally significant effect, this will tell us how many participants we need to detect such a clinically significant effect with (say) 80% power. By definition a smaller effect would need more participants to detect it (but we wouldn't be interested in such a small effect from a clinical perspective, so that doesn't matter). Any effect larger than the minimum clinically significant effect ould have more than 80% power, as larger effects are easier to detect.
+# If we conduct a power analysis assuming that the effect size in the population is the minimum clincally significant effect, this will tell us how many participants we need to detect such a clinically significant effect with (say) 80% power. By definition a smaller effect would need more participants to detect it (but we wouldn't be interested in such a small effect from a clinical perspective, so that doesn't matter). Any effect larger than the minimum clinically significant effect would have more than 80% power, as larger effects are easier to detect.
 
 # # Power of a t-test
 # 
@@ -372,10 +372,10 @@ plt.show()
 # 
 # He measures the heights of 12 geography students an 10 psychology students, which are given in the dataframe below:
 
-# In[47]:
+# In[48]:
 
 
-heights=pandas.read_csv('data/PsyGeogHeights.csv')
+heights=pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/PsyGeogHeights.csv')
 heights
 
 
@@ -389,7 +389,7 @@ heights.groupby('subject')['height'].mean()
 
 # ... and conduct a t-test to see if the difference of means is significant:
 
-# In[94]:
+# In[49]:
 
 
 psy = heights[heights['subject']=='psychology']['height']
@@ -408,7 +408,7 @@ stats.ttest_ind(geog,psy,alternative='greater')
 # 
 # We can visualise how much the populations overlap by plotting them:
 
-# In[81]:
+# In[50]:
 
 
 # plot KDEs
@@ -440,7 +440,7 @@ plt.show()
 # 
 # Let's implement that:
 
-# In[79]:
+# In[51]:
 
 
 # calculate shared standard deviation s
@@ -472,31 +472,53 @@ d
 
 # So the difference in mean heights between psychology and geography students is 0.76 standard deviations.
 # 
-# Note that in dividing the difference by the standard deviations, we are quantifying the overlap between the two distributions independent of the data values themselves - for example here are another dataset with the same effect size:
+# ### Effect size is standardized
+# 
+# Note that in dividing the difference by the standard deviations, we are quantifying the overlap between the two distributions independent of the data values themselves - for example here are another dataset with the same effect size, comparing the weights of black and grey sheep:
 
-# In[75]:
+# In[52]:
 
 
-cats=pandas.read_csv('data/catWeights.csv')
+sheep=pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/SheepWeights.csv')
+blackSheep = sheep[sheep['woolColor']=='black']['weight']
+greySheep = sheep[sheep['woolColor']=='grey']['weight']
+
+stats.ttest_ind(blackSheep, greySheep, alternative='greater')
+
+
+# Let's plot both distribtions, which both have $d=0.760$ - 
+# 
+# we see that though the spread of the distributions differs, the overlap is the same. 
+# 
+# This is the factor that determines the effect size.
+
+# In[57]:
+
+
 # plot KDEs
-sns.kdeplot(data=cats[cats['fur']=='black']['weight'],color=[1,0,0], shade=True)
-sns.kdeplot(data=cats[cats['fur']=='grey']['weight'],color=[0,0,1], shade=True)
-# plot datapoints
-sns.rugplot(data=cats[cats['fur']=='black']['weight'],color=[0,0,1], height=0.1)
-sns.rugplot(data=cats[cats['fur']=='grey']['weight'],color=[1,0,0], height=0.1)
+plt.subplot(2,1,1)
+sns.kdeplot(data=geog, color=[1,0,0], shade=True)
+sns.kdeplot(data=psy, color=[0,0,1], shade=True)
+plt.xlim([50,300])
+plt.ylim([0,0.08])
 
-plt.legend({'black cat','grey cat'})
-plt.xlabel('weight (kg)')
+# plot KDEs
+plt.subplot(2,1,2)
+sns.kdeplot(data=blackSheep, color=[1,0,0], shade=True)
+sns.kdeplot(data=greySheep, color=[0,0,1], shade=True)
+plt.xlim([50,300])
+plt.ylim([0,0.08])
+
+plt.tight_layout()
 plt.show()
 
-
-# It's more striking if you see them on the same axis:
 
 # Hence we can this of our effect size is a 'pure' measure of the overlap between the groups.
 # 
 # ### Power: Simulate a dataset with $d = 0.760$
 # 
 # We are assuming the data are normally distributed so if we create two datasets that are normally distributed with a standard deviation of 1, and a difference of means of 0.760, they will have an effect size for difference of means of $d = 0.760$
+# 
 
 # In[93]:
 
@@ -510,6 +532,9 @@ sns.kdeplot(data=b, color=[0,0,1], shade=True)
 plt.legend({'a','b'})
 plt.show()
 
+
+# 
+# Note that the overlap between distriubtions for the simulated data is indeed similar to the overlap between psy/geog students' heights and black/grey sheep's heights
 
 # ### Draw 10000 random samples and see how often we get a significant effect
 # 
@@ -661,10 +686,10 @@ analysis = # your code here
 # 
 # Let's look at the brother-sister heights data.
 
-# In[20]:
+# In[24]:
 
 
-heights=pandas.read_csv('data/BrotherSisterData.csv')
+heights=pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/BrotherSisterData.csv')
 heights
 
 

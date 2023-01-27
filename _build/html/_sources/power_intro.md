@@ -18,7 +18,7 @@ generally fixed at 5% (or whatever alpha value we use) for any sample
 size, the probability of a Type 2 error is much larger in small
 samples
 
-In opther words, sometimes our sample is just too small to reliably
+In other words, sometimes our sample is just too small to reliably
 detect an effect even if there is one
 
 To assess the sample size needed to detect an effect of a certain

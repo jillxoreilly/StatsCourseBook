@@ -966,6 +966,11 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#effect-size-is-standardized">
+       Effect size is standardized
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#power-simulate-a-dataset-with-d-0-760">
        Power: Simulate a dataset with
        <span class="math notranslate nohighlight">
@@ -1139,6 +1144,11 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#effect-size-is-standardized">
+       Effect size is standardized
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#power-simulate-a-dataset-with-d-0-760">
        Power: Simulate a dataset with
        <span class="math notranslate nohighlight">
@@ -1231,7 +1241,7 @@ title="Print to PDF"
 <h2>Eyeballing the data<a class="headerlink" href="#eyeballing-the-data" title="Permalink to this heading">#</a></h2>
 <p>What does a correlation of 0.25 look like for 50 data points?
 Here are some examples of datasets that actually have r=0.25:</p>
-<img src="images/r25_examples.png" width=100% >
+<img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/r25_examples.png" width=100% >
 <p>Would you trust those correlations?</p>
 </section>
 <section id="specificity">
@@ -1315,11 +1325,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.001658</td>
+      <td>0.009912</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.001658</td>
+      <td>0.009912</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1348,7 +1358,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=-0.0299748611960755, pvalue=0.41814562473567)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=0.19797332906467124, pvalue=0.08407692886484094)
 </pre></div>
 </div>
 </div>
@@ -1361,7 +1371,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.41814562473567
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.08407692886484094
 </pre></div>
 </div>
 </div>
@@ -1386,7 +1396,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0968
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0998
 </pre></div>
 </div>
 </div>
@@ -1470,11 +1480,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.239097</td>
+      <td>0.249535</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.239097</td>
+      <td>0.249535</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1491,7 +1501,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
     <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
-    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span>
     
 <span class="c1"># How many of our 10000 samples had p&lt;0.05?</span>
 <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span>
@@ -1499,27 +1509,13 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="ne">TypeError</span>: float() argument must be a string or a number, not &#39;PearsonRResult&#39;
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_22276</span><span class="o">/</span><span class="mf">3587976242.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> 
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># How many of our 10000 samples had p&lt;0.05?</span>
-
-<span class="ne">ValueError</span>: setting an array element with a sequence.
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.552
 </pre></div>
 </div>
 </div>
 </div>
 <p>In my simulation I manage to reject the null in about 41% of simulations (note the exact value you get will vary slightly each time you run the simulation). So my test has a power of 41%</p>
-<img src="images/Minion_what.jpg" width=15% >
+<img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Minion_what.jpg" width=15% >
 <p>Yes, that’s right. In a population where the <em>true</em> correlation between two variables (scores on Maths and French tests) is 0.25, for samples of size 50, I will fail to detect a significant correlation (ie, I will make a Type 2 error) over half the time.</p>
 <p>This would be true for any data with a true correlation of 0.25 and sample size of 50 - <span class="math notranslate nohighlight">\(n\)</span>=50 is really not enough to detect a weakish correlation.</p>
 <p>Try changing <span class="math notranslate nohighlight">\(n\)</span> in the code block below to be smaller (eg <span class="math notranslate nohighlight">\(n\)</span>=25) or larger (<span class="math notranslate nohighlight">\(n\)</span>=150) and see what happens to the power.</p>
@@ -1539,7 +1535,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.445
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.528
 </pre></div>
 </div>
 </div>
@@ -1574,7 +1570,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 41.9%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 53.900000000000006%
 </pre></div>
 </div>
 </div>
@@ -1637,7 +1633,25 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/power_analysis_29_0.png" src="_images/power_analysis_29_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_22756</span><span class="o">/</span><span class="mf">1790469651.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">11</span>         <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> 
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">power</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_stats_py.py</span> in <span class="ni">pearsonr</span><span class="nt">(x, y, alternative)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4443</span>     <span class="c1"># By using `astype(dtype)`, we ensure that the intermediate calculations</span>
+<span class="g g-Whitespace">   </span><span class="mi">4444</span>     <span class="c1"># use at least 64 bit floating point.</span>
+<span class="ne">-&gt; </span><span class="mi">4445</span>     <span class="n">xm</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span> <span class="o">-</span> <span class="n">xmean</span>
+<span class="g g-Whitespace">   </span><span class="mi">4446</span>     <span class="n">ym</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span> <span class="o">-</span> <span class="n">ymean</span>
+<span class="g g-Whitespace">   </span><span class="mi">4447</span> 
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -1650,9 +1664,9 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <p>Unfortunately, it is often impossible to have an accurate estimate of the expected effect size in advance. Sometimes we can estimate the effect size (such as the correlation in the underlying population) from looking at similar studies in the literature, but usually such guesses will give only a very rough estimate of the effect size that will arise in our planned experiment. An alternative is to conduct a pilot experiment to determine effect size - this is more likely to be practical in the context of a large study (such as a drug trial) than a small-scale experiment (such as an undergraduate psychology project).</p>
 <section id="clinically-significant-effect-size">
 <h2>Clinically significant effect size<a class="headerlink" href="#clinically-significant-effect-size" title="Permalink to this heading">#</a></h2>
-<p>One context in which power can definitely be meaningfully defined, is when we kno hat size of effect we would <em>care about</em>, even if we don’t know what the underlying effect size in the population is.</p>
-<p>Say for example we are testing a new analgesic drug. We may not kno how much the drug will ruduce pain scores (the true effect sizze) but we can certainly define a minimum effect size that would be clinically meaningful You could say that you would only consider the effect of the drug clinically significant if there is a 10% change in pain scores (otherwise, the drug won’t be worth taking). That is different from statstistical significance - if you test enough patients you could detect a statstically significant result even for a very small change in clinical outcome but it still wouldn’t mean your drug is an effective painkiller.</p>
-<p>If we conduct a power analysis assuming that the effect size in the population is the minimmum clincally significant effect, this will tell us how many participants we need to detect such a clinically significant effect with (say) 80% power. By definition a smaller effect would need more participants to detect it (but we wouldn’t be interested in such a small effect from a clinical perspective, so that doesn’t matter). Any effect larger than the minimum clinically significant effect ould have more than 80% power, as larger effects are easier to detect.</p>
+<p>One context in which power can definitely be meaningfully defined, is when we know what size of effect we would <em>care about</em>, even if we don’t know what the underlying effect size in the population is.</p>
+<p>Say for example we are testing a new analgesic drug. We may not know how much the drug will reduce pain scores (the true effect size) but we can certainly define a minimum effect size that would be clinically meaningful. You could say that you would only consider the effect of the drug clinically significant if there is a 10% change in pain scores (otherwise, the drug won’t be worth taking). That is different from statstistical significance - if you test enough patients you could detect a statstically significant result even for a very small change in clinical outcome but it still wouldn’t mean your drug is an effective painkiller.</p>
+<p>If we conduct a power analysis assuming that the effect size in the population is the minimum clincally significant effect, this will tell us how many participants we need to detect such a clinically significant effect with (say) 80% power. By definition a smaller effect would need more participants to detect it (but we wouldn’t be interested in such a small effect from a clinical perspective, so that doesn’t matter). Any effect larger than the minimum clinically significant effect would have more than 80% power, as larger effects are easier to detect.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="power-of-a-t-test">
@@ -1664,7 +1678,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <p>He measures the heights of 12 geography students an 10 psychology students, which are given in the dataframe below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/PsyGeogHeights.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/PsyGeogHeights.csv&#39;</span><span class="p">)</span>
 <span class="n">heights</span>
 </pre></div>
 </div>
@@ -1941,29 +1955,55 @@ Name: height, dtype: float64
 </div>
 </div>
 <p>So the difference in mean heights between psychology and geography students is 0.76 standard deviations.</p>
-<p>Note that in dividing the difference by the standard deviations, we are quantifying the overlap between the two distributions independent of the data values themselves - for example here are another dataset with the same effect size:</p>
+<section id="effect-size-is-standardized">
+<h3>Effect size is standardized<a class="headerlink" href="#effect-size-is-standardized" title="Permalink to this heading">#</a></h3>
+<p>Note that in dividing the difference by the standard deviations, we are quantifying the overlap between the two distributions independent of the data values themselves - for example here are another dataset with the same effect size, comparing the weights of black and grey sheep:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cats</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/catWeights.csv&#39;</span><span class="p">)</span>
-<span class="c1"># plot KDEs</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">cats</span><span class="p">[</span><span class="n">cats</span><span class="p">[</span><span class="s1">&#39;fur&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;black&#39;</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">cats</span><span class="p">[</span><span class="n">cats</span><span class="p">[</span><span class="s1">&#39;fur&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;grey&#39;</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1"># plot datapoints</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">cats</span><span class="p">[</span><span class="n">cats</span><span class="p">[</span><span class="s1">&#39;fur&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;black&#39;</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">cats</span><span class="p">[</span><span class="n">cats</span><span class="p">[</span><span class="s1">&#39;fur&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;grey&#39;</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sheep</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/SheepWeights.csv&#39;</span><span class="p">)</span>
+<span class="n">blackSheep</span> <span class="o">=</span> <span class="n">sheep</span><span class="p">[</span><span class="n">sheep</span><span class="p">[</span><span class="s1">&#39;woolColor&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;black&#39;</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span>
+<span class="n">greySheep</span> <span class="o">=</span> <span class="n">sheep</span><span class="p">[</span><span class="n">sheep</span><span class="p">[</span><span class="s1">&#39;woolColor&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;grey&#39;</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">({</span><span class="s1">&#39;black cat&#39;</span><span class="p">,</span><span class="s1">&#39;grey cat&#39;</span><span class="p">})</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;weight (kg)&#39;</span><span class="p">)</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">blackSheep</span><span class="p">,</span> <span class="n">greySheep</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ttest_indResult(statistic=2.7302167062312117, pvalue=0.006447500504148314)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s plot both distribtions, which both have <span class="math notranslate nohighlight">\(d=0.760\)</span> -</p>
+<p>we see that though the spread of the distributions differs, the overlap is the same.</p>
+<p>This is the factor that determines the effect size.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot KDEs</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">geog</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">psy</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span><span class="mi">300</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.08</span><span class="p">])</span>
+
+<span class="c1"># plot KDEs</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">blackSheep</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">greySheep</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span><span class="mi">300</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.08</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/power_analysis_47_0.png" src="_images/power_analysis_47_0.png" />
+<img alt="_images/power_analysis_49_0.png" src="_images/power_analysis_49_0.png" />
 </div>
 </div>
-<p>It’s more striking if you see them on the same axis:</p>
 <p>Hence we can this of our effect size is a ‘pure’ measure of the overlap between the groups.</p>
+</section>
 <section id="power-simulate-a-dataset-with-d-0-760">
 <h3>Power: Simulate a dataset with <span class="math notranslate nohighlight">\(d = 0.760\)</span><a class="headerlink" href="#power-simulate-a-dataset-with-d-0-760" title="Permalink to this heading">#</a></h3>
 <p>We are assuming the data are normally distributed so if we create two datasets that are normally distributed with a standard deviation of 1, and a difference of means of 0.760, they will have an effect size for difference of means of <span class="math notranslate nohighlight">\(d = 0.760\)</span></p>
@@ -1981,9 +2021,10 @@ Name: height, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/power_analysis_50_0.png" src="_images/power_analysis_50_0.png" />
+<img alt="_images/power_analysis_51_0.png" src="_images/power_analysis_51_0.png" />
 </div>
 </div>
+<p>Note that the overlap between distriubtions for the simulated data is indeed similar to the overlap between psy/geog students’ heights and black/grey sheep’s heights</p>
 </section>
 <section id="draw-10000-random-samples-and-see-how-often-we-get-a-significant-effect">
 <h3>Draw 10000 random samples and see how often we get a significant effect<a class="headerlink" href="#draw-10000-random-samples-and-see-how-often-we-get-a-significant-effect" title="Permalink to this heading">#</a></h3>
@@ -2165,7 +2206,7 @@ required alpha = 0.20952367203411126
 <p>Let’s look at the brother-sister heights data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/BrotherSisterData.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/BrotherSisterData.csv&#39;</span><span class="p">)</span>
 <span class="n">heights</span>
 </pre></div>
 </div>
