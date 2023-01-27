@@ -62,7 +62,7 @@ pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/
 # In[3]:
 
 
-juggling = pandas.read_csv('data/juggling.csv')
+juggling = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/juggling.csv')
 
 # make new dataframes for the Standard and Visualisation groups
 juggling_Std = juggling[juggling['Group']=='Standard']

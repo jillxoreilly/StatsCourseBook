@@ -66,7 +66,7 @@ pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/
 # In[3]:
 
 
-birthOrder = pandas.read_csv('data/BirthOrderIndependence.csv')
+birthOrder = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/BirthOrderIndependence.csv')
 
 plt.scatter(data = birthOrder, x="FirstBorn", y="SecondBorn")
 plt.xlabel("independence: first born")

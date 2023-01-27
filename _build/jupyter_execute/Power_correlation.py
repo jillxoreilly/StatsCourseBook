@@ -28,7 +28,7 @@ import pandas
 import seaborn as sns
 
 
-# ### Hypothetical example
+# # Power of a Correlation
 # 
 # I collect data on end-ofyear exam scores in Maths and French for 50 high school studehts. Then I calculate the correlation coefficient, Pearson's r, between Maths and French scores across my sample of 50 participants.
 # 
@@ -125,7 +125,7 @@ pop_rZero.corr()
 
 
 sample = pop_rZero.sample(n=50)
-stats.pearsonr(sample['Maths'], sample['French'])
+stats.pearsonr(sample['Maths'], sample['French'], alternative='greater')
 
 
 # ... and to return just the p-value as a single number:
@@ -133,8 +133,7 @@ stats.pearsonr(sample['Maths'], sample['French'])
 # In[5]:
 
 
-res = stats.pearsonr(sample['Maths'], sample['French'])
-res.pvalue
+stats.pearsonr(sample['Maths'], sample['French'], alternative='greater').pvalue
 
 
 # #### Back to probability of a Type 1 errror
@@ -150,8 +149,7 @@ p = np.empty(nReps)
 
 for i in range(nReps):
     sample = pop_rZero.sample(n=sampleSize)
-    res = stats.pearsonr(sample['Maths'], sample['French'])
-    p[i] = res.pvalue
+    p[i] = stats.pearsonr(sample['Maths'], sample['French'], alternative='greater').pvalue
     
 # How many of our 10000 sammples had p<0.05?
 np.mean(p<0.05)
@@ -222,8 +220,7 @@ p = np.empty(nReps)
 
 for i in range(nReps):
     sample = pop_rNonZero.sample(n=sampleSize)
-    res = stats.pearsonr(sample['Maths'], sample['French'])
-    p[i] = res.pvalue
+    p[i] = stats.pearsonr(sample['Maths'], sample['French'], alternative='greater')
     
 # How many of our 10000 samples had p<0.05?
 np.mean(p<0.05)
@@ -240,7 +237,7 @@ np.mean(p<0.05)
 # 
 # Try changing $n$ in the code block below to be smaller (eg $n$=25) or larger ($n$=150) and see what happens to the power.
 
-# In[10]:
+# In[15]:
 
 
 nReps=1000
@@ -249,8 +246,7 @@ p = np.empty(nReps)
 
 for i in range(nReps):
     sample = pop_rNonZero.sample(n=sampleSize)
-    res = stats.pearsonr(sample['Maths'], sample['French'])
-    p[i] = res.pvalue
+    p[i] = stats.pearsonr(sample['Maths'], sample['French'], alternative='greater').pvalue
     
 # How many of our 10000 samples had p<0.05?
 np.mean(p<0.05)
@@ -273,7 +269,7 @@ np.mean(p<0.05)
 # Let's try it! Change the sample size in the code block below to 10,100 and 1000. How does the power change
 # 
 
-# In[11]:
+# In[17]:
 
 
 nReps=1000
@@ -282,8 +278,7 @@ p = np.empty(nReps)
 
 for i in range(nReps):
     sample = pop_rNonZero.sample(n=sampleSize)
-    res = stats.pearsonr(sample['Maths'], sample['French'])
-    p[i] = res.pvalue
+    p[i] = stats.pearsonr(sample['Maths'], sample['French'], alternative='greater').pvalue
     
 # How many of our 10000 samples had p<0.05?
 print('power = ' + str(100*(np.mean(p<0.05))) + '%')
@@ -291,7 +286,7 @@ print('power = ' + str(100*(np.mean(p<0.05))) + '%')
 
 # We can loop over different sample sizes and plot how power increases as sample size increases:
 
-# In[12]:
+# In[29]:
 
 
 n=range(2,150,10)
@@ -304,8 +299,7 @@ for s in range(len(n)):
 
     for i in range(nReps):
         sample = pop_rNonZero.sample(n=sampleSize)
-        res = stats.pearsonr(sample['Maths'], sample['French'])
-        p[i] = res.pvalue
+        p[i] = stats.pearsonr(sample['Maths'], sample['French'], alternative='greater').pvalue
     
     power[s]=np.mean(p<0.05)
     
@@ -323,10 +317,10 @@ plt.show()
 # 
 # 
 
-# In[13]:
+# In[31]:
 
 
-n=range(120,130)
+n=range(95,106)
 power = np.empty(len(n))
 
 for s in range(len(n)):
@@ -336,8 +330,7 @@ for s in range(len(n)):
 
     for i in range(nReps):
         sample = pop_rNonZero.sample(n=sampleSize)
-        res = stats.pearsonr(sample['Maths'], sample['French'])
-        p[i] = res.pvalue
+        p[i] = stats.pearsonr(sample['Maths'], sample['French'], alternative='greater').pvalue
     
     power[s]=np.mean(p<0.05)
     
@@ -349,7 +342,7 @@ plt.xticks(range(min(n),max(n),5))
 plt.show()
 
 
-# ### Power in practice
+# # Power calculations in practice
 # 
 # Power is defined as the proportion of the time we would expect to get a statistically significant effect in samples of size $n$, given that there is a true effect of a certain size (for example $r$=0.25) in the population. 
 # 
@@ -365,6 +358,62 @@ plt.show()
 # Say for example we are testing a new analgesic drug. We may not kno how much the drug will ruduce pain scores (the true effect sizze) but we can certainly define a minimum effect size that would be clinically meaningful You could say that you would only consider the effect of the drug clinically significant if there is a 10% change in pain scores (otherwise, the drug won't be worth taking). That is different from statstistical significance - if you test enough patients you could detect a statstically significant result even for a very small change in clinical outcome but it still wouldn't mean your drug is an effective painkiller.
 # 
 # If we conduct a power analysis assuming that the effect size in the population is the minimmum clincally significant effect, this will tell us how many participants we need to detect such a clinically significant effect with (say) 80% power. By definition a smaller effect would need more participants to detect it (but we wouldn't be interested in such a small effect from a clinical persoective, so that doesn't matter). Any effect larger than the minimum clinically significant effect ould have more than 80% power, as larger effects are easier to detect.
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[32]:
+
+
+# import required modules
+from math import sqrt
+from statsmodels.stats.power import TTestIndPower
+  
+#calculation of effect size
+# size of samples in pilot study
+n1, n2 = 4, 4
+  
+# variance of samples in pilot study
+s1, s2 = 5**2, 5**2
+  
+# calculate the pooled standard deviation 
+# (Cohen's d)
+s = sqrt(((n1 - 1) * s1 + (n2 - 1) * s2) / (n1 + n2 - 2))
+  
+# means of the samples
+u1, u2 = 90, 85
+  
+# calculate the effect size
+d = (u1 - u2) / s
+print(f'Effect size: {d}')
+  
+# factors for power analysis
+alpha = 0.05
+power = 0.8
+  
+# perform power analysis to find sample size 
+# for given effect
+obj = TTestIndPower()
+n = obj.solve_power(effect_size=d, alpha=alpha, power=power, 
+                    ratio=1, alternative='two-sided')
+  
+print('Sample size/Number needed in each group: {:.3f}'.format(n))
+
 
 # In[ ]:
 
