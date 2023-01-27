@@ -1199,7 +1199,7 @@ title="Print to PDF"
 <p>As we saw in the session on plotting, a good choice here will be a KDE plot (to get an estimate of the shape of the distribution) and a rug plot (individual data values as the KDE plot is based on only a small sample)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">juggling</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/juggling.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">juggling</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/juggling.csv&#39;</span><span class="p">)</span>
 
 <span class="c1"># make new dataframes for the Standard and Visualisation groups</span>
 <span class="n">juggling_Std</span> <span class="o">=</span> <span class="n">juggling</span><span class="p">[</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Standard&#39;</span><span class="p">]</span>
@@ -1826,8 +1826,8 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([20, 14,  4, 16,  6,  9, 18, 19,  1, 12,  8, 15,  3,  2, 10,  5,  7,
-       13, 11, 17])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 2, 16,  1, 13,  3, 11,  9, 15, 12,  8, 19,  6, 10,  7, 17,  4, 20,
+       18, 14,  5])
 </pre></div>
 </div>
 </div>
@@ -1841,7 +1841,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>127
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>109
 </pre></div>
 </div>
 </div>
@@ -1856,7 +1856,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>61.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43.0
 </pre></div>
 </div>
 </div>
@@ -1870,7 +1870,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>83
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>101
 </pre></div>
 </div>
 </div>
@@ -1885,7 +1885,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>56.0
 </pre></div>
 </div>
 </div>
@@ -1899,7 +1899,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>61.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>56.0
 </pre></div>
 </div>
 </div>
@@ -1943,7 +1943,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of simulated datasets in which U&gt;=91 = 0.0011
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of simulated datasets in which U&gt;=91 = 0.0015
 </pre></div>
 </div>
 <img alt="_images/nonpara_MannWhitneyU_40_1.png" src="_images/nonpara_MannWhitneyU_40_1.png" />

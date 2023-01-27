@@ -1249,7 +1249,7 @@ title="Print to PDF"
 <p>In the case of paired data, the most effective way to get a sense of the data is a scatterplot:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birthOrder</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/BirthOrderIndependence.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birthOrder</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/BirthOrderIndependence.csv&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">birthOrder</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;FirstBorn&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;SecondBorn&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;independence: first born&quot;</span><span class="p">)</span>
@@ -1261,7 +1261,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd65bf91730&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd972690760&gt;]
 </pre></div>
 </div>
 <img alt="_images/nonpara_WilcoxonSignRank_6_1.png" src="_images/nonpara_WilcoxonSignRank_6_1.png" />
@@ -2070,9 +2070,9 @@ R- = 46.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False,  True, False, False, False,  True, False,  True,
-        True, False,  True,  True,  True, False,  True, False, False,
-       False, False])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True, False,  True,  True,  True, False,  True,  True, False,
+       False, False, False,  True, False,  True, False,  True,  True,
+        True,  True])
 </pre></div>
 </div>
 </div>
@@ -2089,8 +2089,8 @@ R- = 46.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R+ = 84
-R- = 126
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R+ = 130
+R- = 80
 </pre></div>
 </div>
 </div>
@@ -2104,7 +2104,7 @@ R- = 126
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T = 84
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T = 80
 </pre></div>
 </div>
 </div>
@@ -2144,7 +2144,7 @@ R- = 126
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/nonpara_WilcoxonSignRank_37_0.png" src="_images/nonpara_WilcoxonSignRank_37_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of simulated datasets in which T&lt;=46 = 0.03
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of simulated datasets in which T&lt;=46 = 0.0269
 </pre></div>
 </div>
 </div>
