@@ -610,6 +610,28 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="power_intro.html">
+   12. Power analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_outcomes.html">
+     12.2. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_analysis.html">
+     12.3. Sensitivity, power, reproducibility
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -932,6 +954,62 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#power-of-a-t-test">
+   Power of a t-test
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#effect-size">
+     Effect size
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#power-simulate-a-dataset-with-d-0-760">
+       Power: Simulate a dataset with
+       <span class="math notranslate nohighlight">
+        \(d = 0.760\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#draw-10000-random-samples-and-see-how-often-we-get-a-significant-effect">
+       Draw 10000 random samples and see how often we get a significant effect
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#built-in-function-for-power">
+     Built in function for power
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#running-it">
+       Running it
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#note-on-effect-size">
+       Note on effect size
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#paired-sample-t-test">
+   Paired sample t-test
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#another-example">
+     another example
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -1045,6 +1123,62 @@ title="Print to PDF"
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#clinically-significant-effect-size">
      Clinically significant effect size
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#power-of-a-t-test">
+   Power of a t-test
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#effect-size">
+     Effect size
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#power-simulate-a-dataset-with-d-0-760">
+       Power: Simulate a dataset with
+       <span class="math notranslate nohighlight">
+        \(d = 0.760\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#draw-10000-random-samples-and-see-how-often-we-get-a-significant-effect">
+       Draw 10000 random samples and see how often we get a significant effect
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#built-in-function-for-power">
+     Built in function for power
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#running-it">
+       Running it
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#note-on-effect-size">
+       Note on effect size
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#paired-sample-t-test">
+   Paired sample t-test
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#another-example">
+     another example
     </a>
    </li>
   </ul>
@@ -1180,11 +1314,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.006947</td>
+      <td>-0.003867</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.006947</td>
+      <td>-0.003867</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1213,7 +1347,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=-0.14579983101771288, pvalue=0.15617673087416384)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=0.1577983624048257, pvalue=0.1368776207643046)
 </pre></div>
 </div>
 </div>
@@ -1226,7 +1360,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.15617673087416384
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1368776207643046
 </pre></div>
 </div>
 </div>
@@ -1251,7 +1385,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0979
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0931
 </pre></div>
 </div>
 </div>
@@ -1335,11 +1469,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.256647</td>
+      <td>0.250858</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.256647</td>
+      <td>0.250858</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1371,7 +1505,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
 
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_19091</span><span class="o">/</span><span class="mf">3587976242.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_22269</span><span class="o">/</span><span class="mf">3587976242.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">7</span>     <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
@@ -1515,56 +1649,721 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <p>Unfortunately, it is often impossible to have an accurate estimate of the expected effect size in advance. Sometimes we can estimate the effect size (such as the correlation in the underlying population) from looking at similar studies in the literature, but usually such guesses will give only a very rough estimate of the effect size that will arise in our planned experiment. An alternative is to conduct a pilot experiment to determine effect size - this is more likely to be practical in the context of a large study (such as a drug trial) than a small-scale experiment (such as an undergraduate psychology project).</p>
 <section id="clinically-significant-effect-size">
 <h2>Clinically significant effect size<a class="headerlink" href="#clinically-significant-effect-size" title="Permalink to this heading">#</a></h2>
-<p>One context in which power can definitely be meaningfully defined, is when we kno hat size of effect we would <em>car about</em>, even if we don’t know hat the underlying effect sizze in the population is.</p>
+<p>One context in which power can definitely be meaningfully defined, is when we kno hat size of effect we would <em>care about</em>, even if we don’t know what the underlying effect size in the population is.</p>
 <p>Say for example we are testing a new analgesic drug. We may not kno how much the drug will ruduce pain scores (the true effect sizze) but we can certainly define a minimum effect size that would be clinically meaningful You could say that you would only consider the effect of the drug clinically significant if there is a 10% change in pain scores (otherwise, the drug won’t be worth taking). That is different from statstistical significance - if you test enough patients you could detect a statstically significant result even for a very small change in clinical outcome but it still wouldn’t mean your drug is an effective painkiller.</p>
-<p>If we conduct a power analysis assuming that the effect size in the population is the minimmum clincally significant effect, this will tell us how many participants we need to detect such a clinically significant effect with (say) 80% power. By definition a smaller effect would need more participants to detect it (but we wouldn’t be interested in such a small effect from a clinical persoective, so that doesn’t matter). Any effect larger than the minimum clinically significant effect ould have more than 80% power, as larger effects are easier to detect.</p>
+<p>If we conduct a power analysis assuming that the effect size in the population is the minimmum clincally significant effect, this will tell us how many participants we need to detect such a clinically significant effect with (say) 80% power. By definition a smaller effect would need more participants to detect it (but we wouldn’t be interested in such a small effect from a clinical perspective, so that doesn’t matter). Any effect larger than the minimum clinically significant effect ould have more than 80% power, as larger effects are easier to detect.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="power-of-a-t-test">
+<h1>Power of a t-test<a class="headerlink" href="#power-of-a-t-test" title="Permalink to this heading">#</a></h1>
+<p>Let us now look at power analysis for a t-test for difference of means.</p>
+<p>A researcher hypothesises that geography students are taller than psychology students.</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}:\)</span> The mean heights of psychology (<span class="math notranslate nohighlight">\(\mu_p\)</span>) and geography (<span class="math notranslate nohighlight">\(\mu_g\)</span>) students are the same; <span class="math notranslate nohighlight">\(\mu_p = \mu_g\)</span></p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_a}:\)</span> The mean heights of geography students is greater than the mean height of psychology students; <span class="math notranslate nohighlight">\(\mu_g &gt; \mu_p\)</span></p>
+<p>He measures the heights of 12 geography students an 10 psychology students, which are given in the dataframe below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import required modules</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
-<span class="kn">from</span> <span class="nn">statsmodels.stats.power</span> <span class="kn">import</span> <span class="n">TTestIndPower</span>
-  
-<span class="c1">#calculation of effect size</span>
-<span class="c1"># size of samples in pilot study</span>
-<span class="n">n1</span><span class="p">,</span> <span class="n">n2</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span>
-  
-<span class="c1"># variance of samples in pilot study</span>
-<span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="o">=</span> <span class="mi">5</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="o">**</span><span class="mi">2</span>
-  
-<span class="c1"># calculate the pooled standard deviation </span>
-<span class="c1"># (Cohen&#39;s d)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(((</span><span class="n">n1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">s1</span> <span class="o">+</span> <span class="p">(</span><span class="n">n2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">s2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>
-  
-<span class="c1"># means of the samples</span>
-<span class="n">u1</span><span class="p">,</span> <span class="n">u2</span> <span class="o">=</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">85</span>
-  
-<span class="c1"># calculate the effect size</span>
-<span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">u1</span> <span class="o">-</span> <span class="n">u2</span><span class="p">)</span> <span class="o">/</span> <span class="n">s</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Effect size: </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-  
-<span class="c1"># factors for power analysis</span>
-<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
-<span class="n">power</span> <span class="o">=</span> <span class="mf">0.8</span>
-  
-<span class="c1"># perform power analysis to find sample size </span>
-<span class="c1"># for given effect</span>
-<span class="n">obj</span> <span class="o">=</span> <span class="n">TTestIndPower</span><span class="p">()</span>
-<span class="n">n</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="n">power</span><span class="p">,</span> 
-                    <span class="n">ratio</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;two-sided&#39;</span><span class="p">)</span>
-  
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sample size/Number needed in each group: </span><span class="si">{:.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/PsyGeogHeights.csv&#39;</span><span class="p">)</span>
+<span class="n">heights</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Effect size: 1.0
-Sample size/Number needed in each group: 16.715
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>studentID</th>
+      <th>subject</th>
+      <th>height</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>186640</td>
+      <td>psychology</td>
+      <td>154.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>588140</td>
+      <td>psychology</td>
+      <td>156.3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>977390</td>
+      <td>psychology</td>
+      <td>165.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>948470</td>
+      <td>psychology</td>
+      <td>162.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>564360</td>
+      <td>psychology</td>
+      <td>162.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>604180</td>
+      <td>psychology</td>
+      <td>159.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>770760</td>
+      <td>psychology</td>
+      <td>166.1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>559170</td>
+      <td>psychology</td>
+      <td>165.9</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>213240</td>
+      <td>psychology</td>
+      <td>163.7</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>660220</td>
+      <td>psychology</td>
+      <td>165.6</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>311550</td>
+      <td>psychology</td>
+      <td>163.1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>249170</td>
+      <td>psychology</td>
+      <td>176.6</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>139690</td>
+      <td>geography</td>
+      <td>171.6</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>636160</td>
+      <td>geography</td>
+      <td>171.5</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>649650</td>
+      <td>geography</td>
+      <td>154.6</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>595280</td>
+      <td>geography</td>
+      <td>162.6</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>772880</td>
+      <td>geography</td>
+      <td>164.4</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>174880</td>
+      <td>geography</td>
+      <td>168.6</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>767580</td>
+      <td>geography</td>
+      <td>175.3</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>688870</td>
+      <td>geography</td>
+      <td>168.4</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>723650</td>
+      <td>geography</td>
+      <td>183.5</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>445960</td>
+      <td>geography</td>
+      <td>164.1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s calculate the sample mean for each subject group:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;subject&#39;</span><span class="p">)[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_continuous_distns.py:6832: RuntimeWarning: invalid value encountered in _nct_sf
-  return np.clip(_boost._nct_sf(x, df, nc), 0, 1)
-/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_continuous_distns.py:6826: RuntimeWarning: invalid value encountered in _nct_cdf
-  return np.clip(_boost._nct_cdf(x, df, nc), 0, 1)
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>subject
+geography     168.460
+psychology    163.325
+Name: height, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>… and conduct a t-test to see if the difference of means is significant:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psy</span> <span class="o">=</span> <span class="n">heights</span><span class="p">[</span><span class="n">heights</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;psychology&#39;</span><span class="p">][</span><span class="s1">&#39;height&#39;</span><span class="p">]</span>
+<span class="n">geog</span> <span class="o">=</span> <span class="n">heights</span><span class="p">[</span><span class="n">heights</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;geography&#39;</span><span class="p">][</span><span class="s1">&#39;height&#39;</span><span class="p">]</span>
+
+<span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">geog</span><span class="p">,</span><span class="n">psy</span><span class="p">,</span><span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ttest_indResult(statistic=1.7743564827449236, pvalue=0.04561467878556142)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The difference is <em>just</em> significant at <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05 - our <span class="math notranslate nohighlight">\(p\)</span>-value is 0.0456</p>
+<section id="effect-size">
+<h2>Effect size<a class="headerlink" href="#effect-size" title="Permalink to this heading">#</a></h2>
+<p>The mean height of the geography students is 5.14 cm greater than the mean height of the psychology students</p>
+<p>Is this a large difference? Would it be obvious in a psychology-geography student party who is a psychology student and who is a geography student, just from their heights?</p>
+<p>We can visualise how much the populations overlap by plotting them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot KDEs</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">geog</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">psy</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># plot datapoints</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">geog</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">psy</span> <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">({</span><span class="s1">&#39;geog&#39;</span><span class="p">,</span><span class="s1">&#39;psy&#39;</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Power_correlation_39_0.png" src="_images/Power_correlation_39_0.png" />
+</div>
+</div>
+<p>Hm, no, we probably could not tell who is a psychology student and who is a geography student, just from their heights, but it looks like there is a difference between the groups overall.</p>
+<p>We can quantify the size of the difference as:</p>
+<div class="math notranslate nohighlight">
+\[ d = \frac{\bar{x_g}-\bar{x_p}}{s} \]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bar{x_g}\)</span> is the mean height of our sample of geography students</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{x_p}\)</span> is the mean height of our sample of psychology students</p></li>
+<li><p><span class="math notranslate nohighlight">\(s\)</span> is the <em>shared standard deviation estimate</em> basaed on the standard deviations of the samples, <span class="math notranslate nohighlight">\(s_p\)</span> and <span class="math notranslate nohighlight">\(s_g\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ s = \sqrt{\frac{(n_p-1)s_p^2 + (n_g-1)s_g^2)}{n_p + n_g - 2}} \]</div>
+<p>oof!</p>
+<p>Let’s implement that:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate shared standard deviation s</span>
+
+<span class="n">xP</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">xG</span> <span class="o">=</span> <span class="n">geog</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">sP</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">sG</span> <span class="o">=</span> <span class="n">geog</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="n">nP</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">nG</span> <span class="o">=</span> <span class="n">geog</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+<span class="n">s</span><span class="o">=</span><span class="p">(((</span><span class="n">nP</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">sP</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">nG</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">sG</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">nP</span><span class="o">+</span><span class="n">nG</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span> <span class="c1"># **0.5 means &#39;to the power of a half&#39; ie square root</span>
+<span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.758944074335872
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(s\)</span> is an estimate of the standard deviation of heights, based on both groups, so it should be similar to the standard deviation of each of the individual groups.</p>
+<p>Now we can calculate our effect size:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cohen&#39;s d</span>
+<span class="n">d</span><span class="o">=</span><span class="p">(</span><span class="n">xG</span><span class="o">-</span><span class="n">xP</span><span class="p">)</span><span class="o">/</span><span class="n">s</span>
+<span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7597340566106963
+</pre></div>
+</div>
+</div>
+</div>
+<p>So the difference in mean heights between psychology and geography students is 0.76 standard deviations.</p>
+<p>Note that in dividing the difference by the standard deviations, we are quantifying the overlap between the two distributions independent of the data values themselves - for example here are another dataset with the same effect size:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cats</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/catWeights.csv&#39;</span><span class="p">)</span>
+<span class="c1"># plot KDEs</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">cats</span><span class="p">[</span><span class="n">cats</span><span class="p">[</span><span class="s1">&#39;fur&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;black&#39;</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">cats</span><span class="p">[</span><span class="n">cats</span><span class="p">[</span><span class="s1">&#39;fur&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;grey&#39;</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># plot datapoints</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">cats</span><span class="p">[</span><span class="n">cats</span><span class="p">[</span><span class="s1">&#39;fur&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;black&#39;</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">cats</span><span class="p">[</span><span class="n">cats</span><span class="p">[</span><span class="s1">&#39;fur&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;grey&#39;</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">({</span><span class="s1">&#39;black cat&#39;</span><span class="p">,</span><span class="s1">&#39;grey cat&#39;</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;weight (kg)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Power_correlation_47_0.png" src="_images/Power_correlation_47_0.png" />
+</div>
+</div>
+<p>It’s more striking if you see them on the same axis:</p>
+<p>Hence we can this of our effect size is a ‘pure’ measure of the overlap between the groups.</p>
+<section id="power-simulate-a-dataset-with-d-0-760">
+<h3>Power: Simulate a dataset with <span class="math notranslate nohighlight">\(d = 0.760\)</span><a class="headerlink" href="#power-simulate-a-dataset-with-d-0-760" title="Permalink to this heading">#</a></h3>
+<p>We are assuming the data are normally distributed so if we create two datasets that are normally distributed with a standard deviation of 1, and a difference of means of 0.760, they will have an effect size for difference of means of <span class="math notranslate nohighlight">\(d = 0.760\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,(</span><span class="mi">10000</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.760</span><span class="p">,</span><span class="mi">1</span><span class="p">,(</span><span class="mi">10000</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">b</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Power_correlation_50_0.png" src="_images/Power_correlation_50_0.png" />
+</div>
+</div>
+</section>
+<section id="draw-10000-random-samples-and-see-how-often-we-get-a-significant-effect">
+<h3>Draw 10000 random samples and see how often we get a significant effect<a class="headerlink" href="#draw-10000-random-samples-and-see-how-often-we-get-a-significant-effect" title="Permalink to this heading">#</a></h3>
+<p>Now we simulate drawing many samples from our population with <span class="math notranslate nohighlight">\(d=0.760\)</span>, conducting an independent samples t-test on each one, and counting what proportion are significant.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">pVals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample_a</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span> <span class="c1"># pick 12 random datapoints from a</span>
+    <span class="n">sample_b</span><span class="o">=</span><span class="n">b</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span> <span class="c1"># pick 8 random datapoints from b</span>
+    
+    <span class="n">pVals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">sample_b</span><span class="p">,</span> <span class="n">sample_a</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span> <span class="c1"># t-test on my random samples</span>
+    
+<span class="n">power</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">pVals</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span> <span class="c1"># count proportion of p values that are &lt;0.05</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;power = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">power</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 46.910000000000004%
+</pre></div>
+</div>
+</div>
+</div>
+<p>The power is 46.9% which means if there is a real effect of size <span class="math notranslate nohighlight">\(d=0.760\)</span>, with the sample sizes of 12 and 8, we would detect it about 47% of the time.</p>
+<p>If we increased the sample sizes, the power would increase:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># increase sample sizes from 12 and 8, to 120 and 80</span>
+<span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">pVals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample_a</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span> <span class="c1"># pick 12 random datapoints from a</span>
+    <span class="n">sample_b</span><span class="o">=</span><span class="n">b</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span> <span class="c1"># pick 8 random datapoints from b</span>
+    
+    <span class="n">pVals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">sample_b</span><span class="p">,</span> <span class="n">sample_a</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span>
+    
+<span class="n">power</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">pVals</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;power = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">power</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="built-in-function-for-power">
+<h2>Built in function for power<a class="headerlink" href="#built-in-function-for-power" title="Permalink to this heading">#</a></h2>
+<p>There is a built in function in a package called <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for doing power analysis.</p>
+<p>You can use it to find the power for a given sample size:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import required modules</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.power</span> <span class="kn">import</span> <span class="n">TTestIndPower</span>
+    
+<span class="c1"># perform power analysis to find sample size </span>
+<span class="c1"># run the power analysis relating alpha, d, n1, n2 </span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">TTestIndPower</span><span class="p">()</span>
+
+<span class="c1"># solve for sample size</span>
+<span class="n">power</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="mf">0.760</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">nobs1</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">12</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;larger&#39;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;power = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">power</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 48.29582456481827%
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is hopefully not a bad match to our homemade code above (it won’t be a perfect match as our homemade one is based on random sampling)</p>
+<p>Instead of calculating the power for a given sample size, we can calculate the sample size required to achieve a given power (say 80%). As our samples are independent and have different sizes, we assumme the ratio is fixed (12 psychology students to 8 geography, or 120 psychology to 80 geography):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># solve for sample size</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="mf">0.760</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">nobs1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">12</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;larger&#39;</span><span class="p">)</span>
+  
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;required sample size: n1 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;; n2 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n1</span><span class="o">*</span><span class="mi">12</span><span class="o">/</span><span class="mi">8</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>required sample size: n1 = 18.405740901828487; n2 = 27.60861135274273
+</pre></div>
+</div>
+</div>
+</div>
+<p>The syntax for the power analysis is a bit fiddly so let’s recap it:</p>
+<p>There is a four way relationship between:</p>
+<ul class="simple">
+<li><p>sample size(s) (<code class="docutils literal notranslate"><span class="pre">nobs</span></code>)</p></li>
+<li><p>alpha values (<code class="docutils literal notranslate"><span class="pre">alpha</span></code>)</p></li>
+<li><p>effect size (<code class="docutils literal notranslate"><span class="pre">effect</span> <span class="pre">size</span></code>)</p></li>
+<li><p>power</p></li>
+</ul>
+<p>If we know three of them, we can work out the fourth.</p>
+<p>… note that we specify the samples size thus:</p>
+<ul class="simple">
+<li><p>size of group 1 is <code class="docutils literal notranslate"><span class="pre">nobs</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ratio</span></code> tells us the ratio n2/n1</p></li>
+</ul>
+<section id="running-it">
+<h3>Running it<a class="headerlink" href="#running-it" title="Permalink to this heading">#</a></h3>
+<p>When we run power analysis using <code class="docutils literal notranslate"><span class="pre">TTestIndPower</span></code> we first run an analysis that models the relationship between the four factors for the test in question (independent samples t-test in this case, but it could have been a paired t-test, or something else that we haven’e met yet like an ANOVA or Chi Square test):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analysis</span> <span class="o">=</span> <span class="n">TTestIndPower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we solve the equations, giving the computer three out of the four values and setting the fourth to <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># solve for power</span>
+<span class="n">power</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="mf">0.760</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">nobs1</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">12</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;larger&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;power = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">power</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+
+<span class="c1"># solve for sample size</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="mf">0.760</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">nobs1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">12</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;larger&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;required sample size: n1 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;; n2 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n1</span><span class="o">*</span><span class="mi">12</span><span class="o">/</span><span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># what alpha value would you need to use to have a power of 80% with the sammple sizes 8,12?</span>
+<span class="c1"># solve for sample size</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="mf">0.760</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nobs1</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">12</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;larger&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;required alpha = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 48.29582456481827%
+required sample size: n1 = 18.405740901828487; n2 = 27.60861135274273
+required alpha = 0.20952367203411126
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="note-on-effect-size">
+<h3>Note on effect size<a class="headerlink" href="#note-on-effect-size" title="Permalink to this heading">#</a></h3>
+<p>In this case we worked out the effect size in our actual sample of 12 psychologists and 8 geographers, as 0.760, and conducted a power analysis using that effect size. This is sometimes called a post-hoc power analysis. It told us that we should have tested 19 and 28 people rather than 12 and 8. This isn’t quite the intended purpose of poewr analysis (to work out the required sample size in advance) but is how power analysis is often used in reality - to evaluate post hoc, or after the fact, whether a study was sufficiently well powered.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="paired-sample-t-test">
+<h1>Paired sample t-test<a class="headerlink" href="#paired-sample-t-test" title="Permalink to this heading">#</a></h1>
+<p>There is a version of the power analysis for paired samples t-test (indeed, there are versions for various analyses, although not for correlation annoyingly).</p>
+<p>The version for paired samples t-test is called <code class="docutils literal notranslate"><span class="pre">TTestPower()</span></code> as opposed to <code class="docutils literal notranslate"><span class="pre">TTestIndPower</span></code></p>
+<p>See if you can work out how to use this to find the sample size required for 80% power for an effect size of <span class="math notranslate nohighlight">\(d=0.5\)</span>, testing at <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import required modules</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.power</span> <span class="kn">import</span> <span class="n">TTestPower</span>
+
+<span class="c1"># run an analysis that models the relationship between the four factors </span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="c1"># your code here</span>
+
+<span class="c1"># solve for n</span>
+<span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_21720/3955565404.py&quot;</span><span class="gt">, line </span><span class="mi">5</span>
+    <span class="n">analysis</span> <span class="o">=</span> <span class="c1">#</span>
+               <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<section id="another-example">
+<h2>another example<a class="headerlink" href="#another-example" title="Permalink to this heading">#</a></h2>
+<p>… think back to how we calculated d, see if you can run one from the raw data.</p>
+<p>Let’s look at the brother-sister heights data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/BrotherSisterData.csv&#39;</span><span class="p">)</span>
+<span class="n">heights</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>brother</th>
+      <th>sister</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>174</td>
+      <td>172</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>183</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>154</td>
+      <td>148</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>172</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>172</td>
+      <td>165</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>161</td>
+      <td>159</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>167</td>
+      <td>159</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>172</td>
+      <td>164</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>195</td>
+      <td>188</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>189</td>
+      <td>175</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>161</td>
+      <td>160</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>181</td>
+      <td>177</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>175</td>
+      <td>168</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>170</td>
+      <td>169</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>175</td>
+      <td>165</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>169</td>
+      <td>164</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>169</td>
+      <td>163</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>180</td>
+      <td>176</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>180</td>
+      <td>176</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>180</td>
+      <td>172</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>175</td>
+      <td>170</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>162</td>
+      <td>157</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>175</td>
+      <td>172</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>181</td>
+      <td>179</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>173</td>
+      <td>171</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>conduct a paired t-test to see if brothers are taller than sisters - it’s highly significant</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_rel</span><span class="p">(</span><span class="n">heights</span><span class="p">[</span><span class="s1">&#39;brother&#39;</span><span class="p">],</span><span class="n">heights</span><span class="p">[</span><span class="s1">&#39;sister&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TtestResult(statistic=5.742269354639271, pvalue=6.442462549436049e-06, df=24)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We need to calculate <span class="math notranslate nohighlight">\(d\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[ d = \frac{\bar{x_b}-\bar{x_s}}{s} \]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bar{x_b}\)</span> is the mean height of our sample of brothers</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{x_s}\)</span> is the mean height of our sample of sisters</p></li>
+<li><p><span class="math notranslate nohighlight">\(s\)</span> is the <em>shared standard deviation estimate</em> basaed on the standard deviations of the samples, <span class="math notranslate nohighlight">\(s_b\)</span> and <span class="math notranslate nohighlight">\(s_s\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ s = \sqrt{\frac{(n_b-1)s_bb^2 + (n_g-1)s_s^2)}{n_b + n_s - 2}} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The we can run the power model for the paired test, and solve for power:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import required modules</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.power</span> <span class="kn">import</span> <span class="n">TTestPower</span>
+
+<span class="c1"># run an analysis that models the relationship between the four factors </span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="c1"># your code here</span>
+
+<span class="c1"># solve for power</span>
+<span class="c1"># your code here</span>
 </pre></div>
 </div>
 </div>

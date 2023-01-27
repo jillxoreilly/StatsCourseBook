@@ -96,4 +96,8 @@ chapters:
   - file: nonpara_MannWhitneyU.ipynb
   - file: nonpara_WilcoxonSignRank.ipynb
   - file: ttest_furtherExercises.ipynb
+- file: power_intro.md
+  sections:
+  - file: power_outcomes.md
+  - file: power_analysis.ipynb
 

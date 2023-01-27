@@ -153,7 +153,7 @@ stats.ttest_rel(heartRates.horror, heartRates.cookery, alternative='greater')
 # 
 # ### Interpretation
 # 
-# Our t value of 2.27 means that the mean increase in heart rate from the cookery to horror conditions is 2.44 times the standard error (where $ SE = \frac{s}{\sqrt{n}}$). 
+# Our t value of 2.27 means that the mean increase in heart rate from the cookery to horror conditions is 2.27 times the standard error (where $ SE = \frac{s}{\sqrt{n}}$). 
 # 
 # Such a large difference (in the expected direction) would occur 0.0123 (1.23%) of the time due to chance if the null hypothesis were true (if the TV show made no difference to the heart rate), hence the p value of 0.0123.
 # 
