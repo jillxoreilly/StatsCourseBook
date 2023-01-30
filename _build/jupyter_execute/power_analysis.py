@@ -5,7 +5,7 @@
 # 
 # As we saw in the lecture, the concepts of sensitivity and power are concerned with controlling the rate of type I and type II errors respectively, where type I errors are false positives and type II errors are false negatives.
 # 
-# <img src="images/t1t2_error.png" width=80% >
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/t1t2_error.png" width=80% >
 # 
 # Think about it this way:
 # * When we are talking about sensitivity (controlling type I errors) we are proposing that the true population effect is zero (say, correlation and we are interested in the probability of obtaining a certain value of a test statstistic (say, correlation r=0.25) due to chance.
@@ -165,7 +165,7 @@ np.mean(p<0.05)
 # 
 # ### Power by simulation
 # 
-# We can investigate power in our correlation example using the same simulation approach as above, but now we need to <i>assume the true population correlation $\rho$ is 0.25<i>
+# We can investigate power in our correlation example using the same simulation approach as above, but now we need to <i>assume the true population correlation $\rho$ is 0.25</i>
 # 
 # First, I'm going to generate a population (25 000 pairs of values) in which the true correlation between two variables (let's call them 'anxiety' and 'risk aversion') is 0.25. Again don't worry too much about understanding this code block.
 

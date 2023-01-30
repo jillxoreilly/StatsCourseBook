@@ -100,4 +100,5 @@ chapters:
   sections:
   - file: power_outcomes.md
   - file: power_analysis.ipynb
+  - file: power_placeholder.md
 

@@ -4,7 +4,7 @@ In previous weeks we focussed on testing how likely a given result was
 to occur due to chance, if the null hypothesis were true (chance of a
 Type 1 error).
 
-This week we are thinking abbout the *other* type of error, Type 2.
+This week we are thinking about the *other* type of error, Type 2.
 
 Type 2 errors occur when the alternative hypothesis is actually true
 (eg, there is a difference in means between groups) but we fail to
@@ -32,7 +32,7 @@ We will cover two examples:
 
 We will see how power analyses can be constructed using 'home made'
 code, and also learn to run them for t-test using a built in function
-in <tt>statsmodels</tt>. The same bbuilt-in function can run power
+in <tt>statsmodels</tt>. The same built-in function can run power
 analysis for many statistical tests we will meet later in the course, including regression, ANOVA and
 Chi Square (although not correlation, annoyingly).
 
