@@ -99,6 +99,8 @@ chapters:
 - file: power_intro.md
   sections:
   - file: power_outcomes.md
+  - file: power_conceptCheck.md
   - file: power_analysis.ipynb
   - file: power_placeholder.md
+  - file: CSVreading_instructions.ipynb
 
