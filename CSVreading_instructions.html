@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>6. The Central Limit Theorem &#8212; Introduction to Statistics and Data Science</title>
+    <title>12.10. Loading data from a .csv file &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6.2. Learning Objectives" href="CLT_outcomes.html" />
-    <link rel="prev" title="5.10. Tutorial Exercises II" href="binomial_TutorialExercises2.html" />
+    <link rel="prev" title="12.9. Tutorial work and Hand in assignment" href="power_placeholder.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -391,11 +390,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="CLT_intro.html">
    6. The Central Limit Theorem
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
@@ -610,16 +609,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="power_intro.html">
    12. Power analysis
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="power_outcomes.html">
      12.2. Learning Objectives
@@ -640,8 +639,8 @@ const thebe_selector_output = ".output, .cell_output"
      12.9. Tutorial work and Hand in assignment
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CSVreading_instructions.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      12.10. Loading data from a .csv file
     </a>
    </li>
@@ -698,6 +697,53 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/CSVreading_instructions.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/CSVreading_instructions.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -737,7 +783,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2FCLT_intro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2FCSVreading_instructions.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -765,7 +811,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/CLT_intro.md"
+        <a href="_sources/CSVreading_instructions.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -776,7 +822,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -825,8 +871,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tasks-for-this-week">
-   6.1. Tasks for this week
+  <a class="reference internal nav-link" href="#subdirectories">
+   Subdirectories
   </a>
  </li>
 </ul>
@@ -838,7 +884,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>The Central Limit Theorem</h1>
+                <h1>Loading data from a .csv file</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -849,8 +895,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tasks-for-this-week">
-   6.1. Tasks for this week
+  <a class="reference internal nav-link" href="#subdirectories">
+   Subdirectories
   </a>
  </li>
 </ul>
@@ -863,50 +909,768 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="the-central-limit-theorem">
-<h1><span class="section-number">6. </span>The Central Limit Theorem<a class="headerlink" href="#the-central-limit-theorem" title="Permalink to this heading">#</a></h1>
-<p>This week we will be thinking about random variability across samples</p>
-<p>Often, we have a relatively small sample of data, and want to infer
-from it something about the properties of a parent or population
-distribution. For example I measure the heights of 10 men and
-calculate the mean - this gives me an estimate of the mean height of
-all men, but how much would my estimate change if I had randomly
-selected 10 different men for my sample?</p>
-<p>We start by looking at the unusual case in which the population or
-parent distribution is available to us. We will simulate the process of drawing many samples of size n
-from a parent distribution, and taking the mean of each sample. The
-distribution of these means, known as the <b>sampling distribution of
-the mean</b>, describes the expected random variability in the mean
-for different samples.</p>
-<p>We see that due to the Central Limit Theorem, when n is large enough
-(above about 50) the sampling distribution of the mean is well
-approximated by a normal distribution, whose standard deviation is the
-standard error of the mean.</p>
-<p>We then look at how our understanding of random varibility in the
-sample mean can be used to construct a confidence interval for the
-parent/population mean, even when the only data available are a
-small(ish) sample of that population</p>
-<section id="tasks-for-this-week">
-<h2><span class="section-number">6.1. </span>Tasks for this week<a class="headerlink" href="#tasks-for-this-week" title="Permalink to this heading">#</a></h2>
-<p><b>Conceptual material</b> is covered in the lecture. In addition to the
-live lecture, you can find lecture videos on Canvas.</p>
-<p>Please work through the guided exercises in this section (everything
-<i>except</i> the page labelled “Tutorial Exercises”) in advance of
-the computer-based tutorial session.</p>
-<p>To complete the guided exercises you will need to either:</p>
-<ul>
-<li>open the pages in Google Colab (simply click the Colab button on each page), or
-<li>download them as Jupyter Notbooks to your own computer and work
-with them locally (eg in Spyder)
-</ul>
-<p>If you find something difficult or have questions, you can discuss
-with your tutor in the computer-based tutoral session.</p>
-<p>This week is particularly heavy on conceptual material, so please do
-discuss the guided exercises and tutorial exercises with your tutor to
-make sure you understand</p>
-</section>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="loading-data-from-a-csv-file">
+<h1><span class="section-number">12.10. </span>Loading data from a .csv file<a class="headerlink" href="#loading-data-from-a-csv-file" title="Permalink to this heading">#</a></h1>
+<p>This section covers how to load data from a csv file saved on your own computer</p>
+<p>You need to do this for the hand-in assignment set in 3rd week so make sure you try it, and check with your tutor in class if stuck.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
+</div>
+</div>
+<p>In this course you have generally worked with data in Pandas.</p>
+<p>To get the data into pandas, you usually run a readymade code block like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the data and have a look</span>
+<span class="n">heartRates</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/HeartRates.csv&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">heartRates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cookery</th>
+      <th>horror</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>60.4</td>
+      <td>72.9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>53.9</td>
+      <td>57.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>54.4</td>
+      <td>68.3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>60.0</td>
+      <td>57.4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>67.7</td>
+      <td>58.7</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>56.2</td>
+      <td>47.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>61.9</td>
+      <td>71.8</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>58.9</td>
+      <td>62.1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>65.6</td>
+      <td>68.6</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>54.6</td>
+      <td>73.8</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>85.2</td>
+      <td>93.1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>87.8</td>
+      <td>94.8</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>90.5</td>
+      <td>111.4</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>92.7</td>
+      <td>89.7</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>85.4</td>
+      <td>97.4</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>77.5</td>
+      <td>90.9</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>81.3</td>
+      <td>83.9</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>79.7</td>
+      <td>86.9</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>96.8</td>
+      <td>90.1</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>81.9</td>
+      <td>75.4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s take a closer look at that.</p>
+<p>You are using a function called <code class="docutils literal notranslate"><span class="pre">pandas.read_csv()</span></code></p>
+<p>Inside the brackets is a URL for an online file repository (my Github if you are interested), from which the file will be read.</p>
+<p>I place all the datafiles for the course on my online repository so I can edit them as needed. However, in ‘real life’ your data wouldn’t be on my github, they would be in a csv file on your own computer.</p>
+<ul class="simple">
+<li><p>Download the datafile CloudSeeding.csv from this week’s page on Canvas and place it in the same directory (folder) as the downloaded copy of this Jupyter notebook</p></li>
+</ul>
+<p>Now try running this code block:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clouds</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;CloudSeeding.csv&#39;</span><span class="p">)</span>
+<span class="n">clouds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>status</th>
+      <th>rainfall</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Unseeded</td>
+      <td>1202.6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Unseeded</td>
+      <td>830.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Unseeded</td>
+      <td>372.4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Unseeded</td>
+      <td>345.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Unseeded</td>
+      <td>321.2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Unseeded</td>
+      <td>244.3</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Unseeded</td>
+      <td>163.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Unseeded</td>
+      <td>147.8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Unseeded</td>
+      <td>95.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Unseeded</td>
+      <td>87.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Unseeded</td>
+      <td>81.2</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Unseeded</td>
+      <td>68.5</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Unseeded</td>
+      <td>47.3</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Unseeded</td>
+      <td>41.1</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Unseeded</td>
+      <td>36.6</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Unseeded</td>
+      <td>29.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Unseeded</td>
+      <td>28.6</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Unseeded</td>
+      <td>26.3</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Unseeded</td>
+      <td>26.1</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Unseeded</td>
+      <td>24.4</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Unseeded</td>
+      <td>21.7</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Unseeded</td>
+      <td>17.3</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Unseeded</td>
+      <td>11.5</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Unseeded</td>
+      <td>4.9</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Unseeded</td>
+      <td>4.9</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Unseeded</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Seeded</td>
+      <td>2745.6</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Seeded</td>
+      <td>1697.8</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Seeded</td>
+      <td>1656.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Seeded</td>
+      <td>978.0</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Seeded</td>
+      <td>703.4</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Seeded</td>
+      <td>489.1</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Seeded</td>
+      <td>430.0</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Seeded</td>
+      <td>334.1</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Seeded</td>
+      <td>302.8</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Seeded</td>
+      <td>274.7</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Seeded</td>
+      <td>274.7</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Seeded</td>
+      <td>255.0</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Seeded</td>
+      <td>242.5</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Seeded</td>
+      <td>200.7</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Seeded</td>
+      <td>198.6</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Seeded</td>
+      <td>129.6</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Seeded</td>
+      <td>119.0</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Seeded</td>
+      <td>118.3</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>Seeded</td>
+      <td>115.3</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>Seeded</td>
+      <td>92.4</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>Seeded</td>
+      <td>40.6</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Seeded</td>
+      <td>32.7</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>Seeded</td>
+      <td>31.4</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>Seeded</td>
+      <td>17.5</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>Seeded</td>
+      <td>7.7</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Seeded</td>
+      <td>4.1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>OOh, it worked!</p>
+<section id="subdirectories">
+<h2>Subdirectories<a class="headerlink" href="#subdirectories" title="Permalink to this heading">#</a></h2>
+<p>Say you have all your Jupyter Notebooks (including this one) in a nice tidy folder (or directory) called <code class="docutils literal notranslate"><span class="pre">StatsClassWeek3</span></code> and you don’t want lots of messy csv files lying around in there.</p>
+<p>No problem - in your file browser, go to the folder <code class="docutils literal notranslate"><span class="pre">StatsClassWeek3</span></code> and cerate a new folder (or directory) called <code class="docutils literal notranslate"><span class="pre">data</span></code>. Place the csv file <code class="docutils literal notranslate"><span class="pre">CloudSeeding.csv</span></code> in the folder <code class="docutils literal notranslate"><span class="pre">data</span></code></p>
+<p>Now we run the following code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clouds</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/CloudSeeding.csv&#39;</span><span class="p">)</span>
+<span class="n">clouds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>status</th>
+      <th>rainfall</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Unseeded</td>
+      <td>1202.6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Unseeded</td>
+      <td>830.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Unseeded</td>
+      <td>372.4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Unseeded</td>
+      <td>345.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Unseeded</td>
+      <td>321.2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Unseeded</td>
+      <td>244.3</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Unseeded</td>
+      <td>163.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Unseeded</td>
+      <td>147.8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Unseeded</td>
+      <td>95.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Unseeded</td>
+      <td>87.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Unseeded</td>
+      <td>81.2</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Unseeded</td>
+      <td>68.5</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Unseeded</td>
+      <td>47.3</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Unseeded</td>
+      <td>41.1</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Unseeded</td>
+      <td>36.6</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Unseeded</td>
+      <td>29.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Unseeded</td>
+      <td>28.6</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Unseeded</td>
+      <td>26.3</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Unseeded</td>
+      <td>26.1</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Unseeded</td>
+      <td>24.4</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Unseeded</td>
+      <td>21.7</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Unseeded</td>
+      <td>17.3</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Unseeded</td>
+      <td>11.5</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Unseeded</td>
+      <td>4.9</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Unseeded</td>
+      <td>4.9</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Unseeded</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Seeded</td>
+      <td>2745.6</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Seeded</td>
+      <td>1697.8</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Seeded</td>
+      <td>1656.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Seeded</td>
+      <td>978.0</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Seeded</td>
+      <td>703.4</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Seeded</td>
+      <td>489.1</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Seeded</td>
+      <td>430.0</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Seeded</td>
+      <td>334.1</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Seeded</td>
+      <td>302.8</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Seeded</td>
+      <td>274.7</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Seeded</td>
+      <td>274.7</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Seeded</td>
+      <td>255.0</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Seeded</td>
+      <td>242.5</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Seeded</td>
+      <td>200.7</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Seeded</td>
+      <td>198.6</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Seeded</td>
+      <td>129.6</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Seeded</td>
+      <td>119.0</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Seeded</td>
+      <td>118.3</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>Seeded</td>
+      <td>115.3</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>Seeded</td>
+      <td>92.4</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>Seeded</td>
+      <td>40.6</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Seeded</td>
+      <td>32.7</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>Seeded</td>
+      <td>31.4</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>Seeded</td>
+      <td>17.5</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>Seeded</td>
+      <td>7.7</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Seeded</td>
+      <td>4.1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The slash in the commmand <code class="docutils literal notranslate"><span class="pre">pandas.read_csv('data/CloudSeeding.csv')</span></code> just means that <code class="docutils literal notranslate"><span class="pre">data</span></code> is the name of a folder and <code class="docutils literal notranslate"><span class="pre">CloudSeeding.csv</span></code> is inside that folder</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -936,19 +1700,12 @@ make sure you understand</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="binomial_TutorialExercises2.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="power_placeholder.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5.10. </span>Tutorial Exercises II</p>
+            <p class="prev-next-title"><span class="section-number">12.9. </span>Tutorial work and Hand in assignment</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="CLT_outcomes.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.2. </span>Learning Objectives</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

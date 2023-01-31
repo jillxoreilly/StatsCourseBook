@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>12.3. Sensitivity, power, reproducibility &#8212; Introduction to Statistics and Data Science</title>
+    <title>12.4. Sensitivity, power, reproducibility &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,7 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="12.2. Learning Objectives" href="power_outcomes.html" />
+    <link rel="next" title="12.9. Tutorial work and Hand in assignment" href="power_placeholder.html" />
+    <link rel="prev" title="12.3. Concepts Review" href="power_conceptCheck.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -626,9 +627,24 @@ const thebe_selector_output = ".output, .cell_output"
      12.2. Learning Objectives
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_conceptCheck.html">
+     12.3. Concepts Review
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     12.3. Sensitivity, power, reproducibility
+     12.4. Sensitivity, power, reproducibility
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_placeholder.html">
+     12.9. Tutorial work and Hand in assignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CSVreading_instructions.html">
+     12.10. Loading data from a .csv file
     </a>
    </li>
   </ul>
@@ -859,7 +875,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   12.3. Sensitivity, power, reproducibility
+   12.4. Sensitivity, power, reproducibility
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -871,7 +887,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#power-of-a-correlation">
-   12.4. Power of a Correlation
+   12.5. Power of a Correlation
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -945,7 +961,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#power-calculations-in-practice">
-   12.5. Power calculations in practice
+   12.6. Power calculations in practice
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -957,7 +973,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#power-of-a-t-test">
-   12.6. Power of a t-test
+   12.7. Power of a t-test
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -1006,7 +1022,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#paired-sample-t-test">
-   12.7. Paired sample t-test
+   12.8. Paired sample t-test
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -1037,7 +1053,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   12.3. Sensitivity, power, reproducibility
+   12.4. Sensitivity, power, reproducibility
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -1049,7 +1065,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#power-of-a-correlation">
-   12.4. Power of a Correlation
+   12.5. Power of a Correlation
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -1123,7 +1139,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#power-calculations-in-practice">
-   12.5. Power calculations in practice
+   12.6. Power calculations in practice
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -1135,7 +1151,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#power-of-a-t-test">
-   12.6. Power of a t-test
+   12.7. Power of a t-test
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -1184,7 +1200,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#paired-sample-t-test">
-   12.7. Paired sample t-test
+   12.8. Paired sample t-test
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -1205,7 +1221,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="sensitivity-power-reproducibility">
-<h1><span class="section-number">12.3. </span>Sensitivity, power, reproducibility<a class="headerlink" href="#sensitivity-power-reproducibility" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">12.4. </span>Sensitivity, power, reproducibility<a class="headerlink" href="#sensitivity-power-reproducibility" title="Permalink to this heading">#</a></h1>
 <p>As we saw in the lecture, the concepts of sensitivity and power are concerned with controlling the rate of type I and type II errors respectively, where type I errors are false positives and type II errors are false negatives.</p>
 <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/t1t2_error.png" width=80% >
 <p>Think about it this way:</p>
@@ -1231,7 +1247,7 @@ title="Print to PDF"
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="power-of-a-correlation">
-<h1><span class="section-number">12.4. </span>Power of a Correlation<a class="headerlink" href="#power-of-a-correlation" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">12.5. </span>Power of a Correlation<a class="headerlink" href="#power-of-a-correlation" title="Permalink to this heading">#</a></h1>
 <p>I collect data on end-ofyear exam scores in Maths and French for 50 high school studehts. Then I calculate the correlation coefficient, Pearson’s r, between Maths and French scores across my sample of 50 participants.</p>
 <ul class="simple">
 <li><p>I observe a correlation of r=0.25</p></li>
@@ -1665,7 +1681,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="power-calculations-in-practice">
-<h1><span class="section-number">12.5. </span>Power calculations in practice<a class="headerlink" href="#power-calculations-in-practice" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">12.6. </span>Power calculations in practice<a class="headerlink" href="#power-calculations-in-practice" title="Permalink to this heading">#</a></h1>
 <p>Power is defined as the proportion of the time we would expect to get a statistically significant effect in samples of size <span class="math notranslate nohighlight">\(n\)</span>, given that there is a true effect of a certain size (for example <span class="math notranslate nohighlight">\(r\)</span>=0.25) in the population.</p>
 <p>An obvious problem with this is that in a real experiment you wouldn’t know the true effect sizze in the underlying population - that is what you are trying to measure! So how can you calculate the power for a given planned sample size, or the sample size needed to achieve 80% power, in advance?</p>
 <p>Unfortunately, it is often impossible to have an accurate estimate of the expected effect size in advance. Sometimes we can estimate the effect size (such as the correlation in the underlying population) from looking at similar studies in the literature, but usually such guesses will give only a very rough estimate of the effect size that will arise in our planned experiment. An alternative is to conduct a pilot experiment to determine effect size - this is more likely to be practical in the context of a large study (such as a drug trial) than a small-scale experiment (such as an undergraduate psychology project).</p>
@@ -1677,7 +1693,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="power-of-a-t-test">
-<h1><span class="section-number">12.6. </span>Power of a t-test<a class="headerlink" href="#power-of-a-t-test" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">12.7. </span>Power of a t-test<a class="headerlink" href="#power-of-a-t-test" title="Permalink to this heading">#</a></h1>
 <p>Let us now look at power analysis for a t-test for difference of means.</p>
 <p>A researcher hypothesises that geography students are taller than psychology students.</p>
 <p><span class="math notranslate nohighlight">\(\mathcal{H_o}:\)</span> The mean heights of psychology (<span class="math notranslate nohighlight">\(\mu_p\)</span>) and geography (<span class="math notranslate nohighlight">\(\mu_g\)</span>) students are the same; <span class="math notranslate nohighlight">\(\mu_p = \mu_g\)</span></p>
@@ -2181,7 +2197,7 @@ required alpha = 0.20952367203411126
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="paired-sample-t-test">
-<h1><span class="section-number">12.7. </span>Paired sample t-test<a class="headerlink" href="#paired-sample-t-test" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">12.8. </span>Paired sample t-test<a class="headerlink" href="#paired-sample-t-test" title="Permalink to this heading">#</a></h1>
 <p>There is a version of the power analysis for paired samples t-test (indeed, there are versions for various analyses, although not for correlation annoyingly).</p>
 <p>The version for paired samples t-test is called <code class="docutils literal notranslate"><span class="pre">TTestPower()</span></code> as opposed to <code class="docutils literal notranslate"><span class="pre">TTestIndPower</span></code></p>
 <p>See if you can work out how to use this to find the sample size required for 80% power for an effect size of <span class="math notranslate nohighlight">\(d=0.5\)</span>, testing at <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05.</p>
@@ -2447,12 +2463,19 @@ required alpha = 0.20952367203411126
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="power_outcomes.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="power_conceptCheck.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">12.2. </span>Learning Objectives</p>
+            <p class="prev-next-title"><span class="section-number">12.3. </span>Concepts Review</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="power_placeholder.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">12.9. </span>Tutorial work and Hand in assignment</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
