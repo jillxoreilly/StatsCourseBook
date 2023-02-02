@@ -113,7 +113,7 @@ pop_rZero.corr()
 # 
 # For a given values of Pearson's $r$, we can work out a t-score using the equation:
 # 
-# $$ t=\frac{r}{\sqrt{(1-r^2)(n-2)}} $$
+# $$ t=\frac{r\sqrt{n-2}}{\sqrt{1-r^2}} $$
 # 
 # and then the p value is obtained from the $t_{n-2}$ distribution.
 # 
@@ -149,9 +149,8 @@ p = np.empty(nReps)
 
 for i in range(nReps):
     sample = pop_rZero.sample(n=sampleSize)
-    p[i] = stats.pearsonr(sample['Maths'], sample['French'], alternative='greater').pvalue
-    
-# How many of our 10000 sammples had p<0.05?
+    p[i] = stats.pearsonr(sample['Maths'], sample['French']).pvalue
+# How many of our 10000 samples had p<0.05?
 np.mean(p<0.05)
 
 
@@ -703,14 +702,12 @@ stats.ttest_rel(heights['brother'],heights['sister'])
 
 # We need to calculate $d$ as:
 # 
-# $$ d = \frac{\bar{x_b}-\bar{x_s}}{s} $$
+# $$ d = \frac{\overline{x_b-x_s}}{s} $$
 # 
 # where:
-# * $\bar{x_b}$ is the mean height of our sample of brothers
-# * $\bar{x_s}$ is the mean height of our sample of sisters
-# * $s$ is the *shared standard deviation estimate* basaed on the standard deviations of the samples, $s_b$ and $s_s$:
+# * $\overline{x_b-x_s}$ is the mean height difference for (brother-sister)
+# * $s$ is the standard deviation of the differences
 # 
-# $$ s = \sqrt{\frac{(n_b-1)s_bb^2 + (n_g-1)s_s^2)}{n_b + n_s - 2}} $$
 
 # In[ ]:
 
