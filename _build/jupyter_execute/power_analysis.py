@@ -113,7 +113,7 @@ pop_rZero.corr()
 # 
 # For a given values of Pearson's $r$, we can work out a t-score using the equation:
 # 
-# $$ t=\frac{r\sqrt{n-2}}{\sqrt{1-r^2}} $$
+# $$ t=\frac{r\sqrt{n-2}}{\sqrt{(1-r^2)}} $$
 # 
 # and then the p value is obtained from the $t_{n-2}$ distribution.
 # 
@@ -125,7 +125,7 @@ pop_rZero.corr()
 
 
 sample = pop_rZero.sample(n=50)
-stats.pearsonr(sample['Maths'], sample['French'], alternative='greater')
+stats.pearsonr(sample['Maths'], sample['French'])
 
 
 # ... and to return just the p-value as a single number:
@@ -133,7 +133,7 @@ stats.pearsonr(sample['Maths'], sample['French'], alternative='greater')
 # In[5]:
 
 
-stats.pearsonr(sample['Maths'], sample['French'], alternative='greater').pvalue
+stats.pearsonr(sample['Maths'], sample['French']).pvalue
 
 
 # #### Back to probability of a Type 1 errror
@@ -219,7 +219,7 @@ p = np.empty(nReps)
 
 for i in range(nReps):
     sample = pop_rNonZero.sample(n=sampleSize)
-    p[i] = stats.pearsonr(sample['Maths'], sample['French'], alternative='greater').pvalue
+    p[i] = stats.pearsonr(sample['Maths'], sample['French']).pvalue
     
 # How many of our 10000 samples had p<0.05?
 np.mean(p<0.05)
@@ -245,7 +245,7 @@ p = np.empty(nReps)
 
 for i in range(nReps):
     sample = pop_rNonZero.sample(n=sampleSize)
-    p[i] = stats.pearsonr(sample['Maths'], sample['French'], alternative='greater').pvalue
+    p[i] = stats.pearsonr(sample['Maths'], sample['French']).pvalue
     
 # How many of our 10000 samples had p<0.05?
 np.mean(p<0.05)
@@ -277,7 +277,7 @@ p = np.empty(nReps)
 
 for i in range(nReps):
     sample = pop_rNonZero.sample(n=sampleSize)
-    p[i] = stats.pearsonr(sample['Maths'], sample['French'], alternative='greater').pvalue
+    p[i] = stats.pearsonr(sample['Maths'], sample['French']).pvalue
     
 # How many of our 10000 samples had p<0.05?
 print('power = ' + str(100*(np.mean(p<0.05))) + '%')
@@ -298,7 +298,7 @@ for s in range(len(n)):
 
     for i in range(nReps):
         sample = pop_rNonZero.sample(n=sampleSize)
-        p[i] = stats.pearsonr(sample['Maths'], sample['French'], alternative='greater').pvalue
+        p[i] = stats.pearsonr(sample['Maths'], sample['French']).pvalue
     
     power[s]=np.mean(p<0.05)
     
@@ -319,17 +319,17 @@ plt.show()
 # In[13]:
 
 
-n=range(95,106)
+n=range(115,125)
 power = np.empty(len(n))
 
 for s in range(len(n)):
-    nReps=100000
+    nReps=10000
     p = np.empty(nReps)
     sampleSize=n[s]
 
     for i in range(nReps):
         sample = pop_rNonZero.sample(n=sampleSize)
-        p[i] = stats.pearsonr(sample['Maths'], sample['French'], alternative='greater').pvalue
+        p[i] = stats.pearsonr(sample['Maths'], sample['French']).pvalue
     
     power[s]=np.mean(p<0.05)
     
@@ -371,7 +371,7 @@ plt.show()
 # 
 # He measures the heights of 12 geography students an 10 psychology students, which are given in the dataframe below:
 
-# In[48]:
+# In[30]:
 
 
 heights=pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/PsyGeogHeights.csv')
@@ -380,7 +380,7 @@ heights
 
 # Let's calculate the sample mean for each subject group:
 
-# In[48]:
+# In[31]:
 
 
 heights.groupby('subject')['height'].mean()
@@ -388,7 +388,7 @@ heights.groupby('subject')['height'].mean()
 
 # ... and conduct a t-test to see if the difference of means is significant:
 
-# In[49]:
+# In[32]:
 
 
 psy = heights[heights['subject']=='psychology']['height']
@@ -407,7 +407,7 @@ stats.ttest_ind(geog,psy,alternative='greater')
 # 
 # We can visualise how much the populations overlap by plotting them:
 
-# In[50]:
+# In[33]:
 
 
 # plot KDEs
@@ -439,7 +439,7 @@ plt.show()
 # 
 # Let's implement that:
 
-# In[51]:
+# In[34]:
 
 
 # calculate shared standard deviation s
@@ -461,7 +461,7 @@ s
 
 # Now we can calculate our effect size:
 
-# In[68]:
+# In[35]:
 
 
 # Cohen's d
@@ -475,7 +475,7 @@ d
 # 
 # Note that in dividing the difference by the standard deviations, we are quantifying the overlap between the two distributions independent of the data values themselves - for example here are another dataset with the same effect size, comparing the weights of black and grey sheep:
 
-# In[52]:
+# In[36]:
 
 
 sheep=pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/SheepWeights.csv')
@@ -491,7 +491,7 @@ stats.ttest_ind(blackSheep, greySheep, alternative='greater')
 # 
 # This is the factor that determines the effect size.
 
-# In[57]:
+# In[37]:
 
 
 # plot KDEs
@@ -519,7 +519,7 @@ plt.show()
 # We are assuming the data are normally distributed so if we create two datasets that are normally distributed with a standard deviation of 1, and a difference of means of 0.760, they will have an effect size for difference of means of $d = 0.760$
 # 
 
-# In[93]:
+# In[38]:
 
 
 a = np.random.normal(0,1,(10000,1))
@@ -539,7 +539,7 @@ plt.show()
 # 
 # Now we simulate drawing many samples from our population with $d=0.760$, conducting an independent samples t-test on each one, and counting what proportion are significant.
 
-# In[121]:
+# In[39]:
 
 
 nReps = 10000
@@ -559,7 +559,7 @@ print('power = ' + str(power*100) + '%')
 # 
 # If we increased the sample sizes, the power would increase:
 
-# In[117]:
+# In[40]:
 
 
 # increase sample sizes from 12 and 8, to 120 and 80
@@ -582,7 +582,7 @@ print('power = ' + str(power*100) + '%')
 # 
 # You can use it to find the power for a given sample size:
 
-# In[5]:
+# In[41]:
 
 
 # import required modules
@@ -602,7 +602,7 @@ print('power = ' + str(power*100) + '%')
 # 
 # Instead of calculating the power for a given sample size, we can calculate the sample size required to achieve a given power (say 80%). As our samples are independent and have different sizes, we assumme the ratio is fixed (12 psychology students to 8 geography, or 120 psychology to 80 geography):
 
-# In[6]:
+# In[42]:
 
 
 # solve for sample size
@@ -629,7 +629,7 @@ print('required sample size: n1 = ' + str(n1) + '; n2 = ' + str(n1*12/8))
 # 
 # When we run power analysis using `TTestIndPower` we first run an analysis that models the relationship between the four factors for the test in question (independent samples t-test in this case, but it could have been a paired t-test, or something else that we haven'e met yet like an ANOVA or Chi Square test):
 
-# In[ ]:
+# In[43]:
 
 
 analysis = TTestIndPower()
@@ -637,7 +637,7 @@ analysis = TTestIndPower()
 
 # Then we solve the equations, giving the computer three out of the four values and setting the fourth to `None`:
 
-# In[11]:
+# In[44]:
 
 
 # solve for power
@@ -666,7 +666,7 @@ print('required alpha = ' + str(alpha))
 # 
 # See if you can work out how to use this to find the sample size required for 80% power for an effect size of $d=0.5$, testing at $\alpha$=0.05.
 
-# In[9]:
+# In[45]:
 
 
 # import required modules
@@ -685,7 +685,7 @@ analysis = # your code here
 # 
 # Let's look at the brother-sister heights data.
 
-# In[24]:
+# In[46]:
 
 
 heights=pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/BrotherSisterData.csv')
@@ -694,7 +694,7 @@ heights
 
 # conduct a paired t-test to see if brothers are taller than sisters - it's highly significant
 
-# In[22]:
+# In[47]:
 
 
 stats.ttest_rel(heights['brother'],heights['sister'])
