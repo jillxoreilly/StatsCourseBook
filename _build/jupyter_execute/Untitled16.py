@@ -1,22 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Normal distribution
+# # Regression models in Python
 # 
-# In this section we simulate some data from a normal distribution
-# 
-# ## Heights example
-# 
-# Let's simulate a dataset with the heights of 10,000 men and 10,000 women, based on our knowledge that
-# <ul>
-#     <li> height is normally distributed
-#     <li> we know the mean and sd of mens' and womens' heights in the UK
-# </ul>
+# We will be using the statsmodels package in Python, so we will need to import this along with the other Python packages we have been using.
 # 
 # 
 # ### Set up Python libraries
 # 
 # As usual, run the code cell below to import the relevant Python libraries
+# 
 
 # In[1]:
 
@@ -27,84 +20,127 @@ import matplotlib.pyplot as plt
 import scipy.stats as stats
 import pandas 
 import seaborn as sns
-sns.set_theme() # use pretty defaults
+import statsomdel.api as sm
+import statsmodels.formula.api as smf
 
 
-# ### Create the simulated dataset
+# ## Life satisfaction full dataset
 # 
-# We use the function <tt>np.random</tt>
+# Let's import the full dataset for life satisfaction vs GDP
+
+# In[ ]:
+
+
+#
+
+
+# ### Data cleaning
+# 
+# We are working with real data here! We need to examine it and take any necessary steps to clean the data before we begin analysis. 
+# 
+# * What steps do you need to take to clean the data? 
+# * Are there any data points that look wrong (e.g., too low or too high)? Change any suspicious values to ‘NaN’.
+# * How many missing data points do you have on lifesat? 
+# * How many missing data points do you have on GDP per capita?
+# 
+
+# In[1]:
+
+
+# your code here to clean the data
+
+
+# * How many valid data points do you have? 
+# 
+# 
+# ### Describing the data
+# 
+# Let’s begin with some descriptive analysis before running our first regression model. 
+# 
+# Run a scatterplot. Be sure to plot $y$ on the $y$-axis and $x$ on the $x$-axis. 
+# (If you are not sure which is which, discuss with your tutor).
+# 
+
+# In[ ]:
+
+
+# your code here for a scatterplot
+
+
+# * What are your initial conclusions about the relationship between GDP and life satisfaction? 
+# 
+# ### Regression model
+# 
+# It’s time to run the regression model. 
+# 
+# The basic code is added for you, but you need to complete it. 
+# 
+# Where do you tell Python which is the $y$ variable, and which is the $x$?
+
+# In[ ]:
+
+
+# code for regression model
+
+
+# Look at the Python regression output. 
+# 
+# * Find the intercept and the slope. 
+# * Write out the regression equation (on your computer or by hand on paper). 
+# * Make notes on how to interpret the intercept and the slope. E.g., “the intercept is the average life satisfaction in a country with…” And “the slope of x.xx means that for every additional $1000 in GDP…”
+# 
+# ### Regression plot
+# 
+# Let’s add the regression line to the scatterplot in Python. Here’s the code:
 # 
 
 # In[2]:
 
 
-men = np.random.normal(175,7, [10000])
-women = np.random.normal(162,7, [10000])
-
-sns.histplot(men, color='b', label='men')
-sns.histplot(women, color='r', label='women')
-plt.legend()
-plt.show()
+# Code for scatterplot with regression line.
 
 
+# Eyeballing the scatterplot, how well do you think the regression line fits the data points? Do you think there are any outliers? We can see that several countries with very large GDPs are below the regression line. Also, that many countries with very low GDP are a long way from the regression line. We can examine potential outliers more systematically, by asking Python to calculate residuals (and predicted values) for us.
+
+# In[ ]:
+
+
+# Code for generating and storing y-hat and residuals for each data point.
+
+
+# Can you find the sum of squared residuals? 
+
+# In[ ]:
+
+
+# Code for squaring then adding up all the residuals.
+
+
+# 1. How meaningful is the sum of squared residuals (or “sum of squared error” - SSE)? What does it tell us?
+#     * We know this is the minimized residual. Because this line is fitted using the method of least squares, there is no other line that could fit the data with a lower SSE. 
+#     
+# Sort and display the data and find any very large residuals (remember outliers could have a positive or negative residual. Look for both!). Choose the 6 largest residuals (in absolute terms). Which countries are they? Are they in the same region, are they rich or poor? 
 # 
-# <ul>
-# <li>Where in the code do we specify the mean of the desired distribution?
-# <li>Where in the code do we specify the sd of the desired distribution?
-# <li>Where in the code do we specify the sample size to be simulated?
-# </ul>
-
-# ### The PDF and CMF
+# Now change the life satisfaction for these six countries to ‘NaN’ so that we can exclude them from the analysis. Store the data with the excluded outliers with a new name. Then re-run the regression, and the scatterplot with regression line.
 # 
-# We can plot the theoretical distriubtion or Probabbility Density Function of the normal distribution using <tt>scipy.stats</tt>.
-# 
-# This is similar to plotting the PMF of the binomial: 
 
-# In[3]:
+# In[ ]:
 
 
-x = range(140,190,1)
-p_x = stats.norm.pdf(x,162,7)
-freq = p_x*10000 #(get expected frequencies by multiplying by n)
-
-sns.histplot(women, bins=range(140,190,1), color='r', label='women')
-plt.plot(x, freq, 'k.-')
-plt.show()
+# your code here!
 
 
-# If we want to know what proportion of women are over 180cm (6') tall, we can work it out using the CDF - the proportion <i>greater than</i> 1800cm tall is 1-CDF(180)
-
-# In[4]:
+# In[ ]:
 
 
-1 - stats.norm.cdf(180,162,7)
 
 
-# ... about half of one percent, or one in two hundred women are over 180cm/6' tall.
 
-# <ul>
-#     <li>Can you check what proportion of simulated women were over 180cm tall? 
-#     <li>Does it match the value from the theoretical CDF quite well?
-# </ul>
+# In[ ]:
 
-# ## Z-score
-# 
-# For normally distributed variables, we sometimes refer to the Z_score of a value. 
-# 
-# The Z-score tells us how many standard deviations above or below the mean of the distribution a given value lies.
-# 
-# For example, for women's heights the standard deviation $\sigma$ is 7 and the mean is 162cm, so a woman 169cm tall (one sd above the mean) has a Z-score of 1
-# 
-# A woman whose height is $2\sigma$ below the mean (148cm) has a Z-score of -2.
-# 
-# <ul>
-# <li> What is the Z-score of a woman whose height is 172.5cm?
-# <li> What about a woman whose height is 150cm?
-# </ul>
-# 
-# Reporting the Z-score of a value is useful as we automatically know where the value sits on the normal curve without having to check the normal CDF on Python or in a table (because the probability of obtaining a given Z-score does not depend on the mean and sd of the given dataset)
-# 
-# For example, a Z-score greater than 1.65 occurs only 5% of the time and a Z score greater than 2.6 occurs only 1% of the time.
+
+
+
 
 # In[ ]:
 

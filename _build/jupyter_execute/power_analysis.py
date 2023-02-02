@@ -260,7 +260,7 @@ np.mean(p<0.05)
 # 
 # Statistical tests are designed to control the probability of a type 1 error. When calculating the critical value of the test statistic (in the case of correlation, the test statistic is $r$ and the critical value is minimum $r$ value that would be considered significant for a given sample size $n$, $n$ is directly taken into account. Therefore, the probably of a type 1 error is fixed regardless of sample size.
 # 
-# #### The probability of a Type 1 error *does* depend on sample size
+# #### The probability of a Type 2 error *does* depend on sample size
 # 
 # The above is *not* true for type 2 error. The probability of Type 2 error (and hence the power of the test) varies with sample size.
 # 

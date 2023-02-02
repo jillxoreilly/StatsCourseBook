@@ -626,8 +626,114 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="power_conceptCheck.html">
+     12.3. Concepts Review
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="power_analysis.html">
-     12.3. Sensitivity, power, reproducibility
+     12.4. Sensitivity, power, reproducibility
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="power_placeholder.html">
+     12.9. Tutorial work and Hand in assignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CSVreading_instructions.html">
+     12.10. Loading data from a .csv file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression1_intro.html">
+   13. Regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_outcomes.html">
+     13.1. Learning Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_concepts.html">
+     13.2. Regression Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_interpretingSlope.html">
+     13.3. Interpreting the slope and intercept, prediction and residuals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_QandA.html">
+     13.4. Regression, Covariance and Correlation Q&amp;A
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_prepwork.html">
+     13.5. Regression models in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression1_TutorialExercises.html">
+     13.7. Regression models in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression2_intro.html">
+   14. Multivariate Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_concepts.html">
+     14.2. Multivariate Analysis Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_typesOfRelationship.html">
+     14.3. Different types of multivariate relationship
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_QandA.html">
+     14.4. Multiple Regression Q &amp; A
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_TutorialExercises.html">
+     14.5. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression3_intro.html">
+   15. Regression Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression3_outcomes.html">
+     15.2. Learning Objectives
     </a>
    </li>
   </ul>
@@ -1313,13 +1419,13 @@ Here are some examples of datasets that actually have r=0.25:</p>
   <tbody>
     <tr>
       <th>Maths</th>
-      <td>1.000000</td>
-      <td>-0.003867</td>
+      <td>1.00000</td>
+      <td>-0.00165</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>-0.003867</td>
-      <td>1.000000</td>
+      <td>-0.00165</td>
+      <td>1.00000</td>
     </tr>
   </tbody>
 </table>
@@ -1347,7 +1453,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=0.1577983624048257, pvalue=0.1368776207643046)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=0.00924722552470908, pvalue=0.4745905246911946)
 </pre></div>
 </div>
 </div>
@@ -1360,7 +1466,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1368776207643046
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4745905246911946
 </pre></div>
 </div>
 </div>
@@ -1385,7 +1491,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0931
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0984
 </pre></div>
 </div>
 </div>
@@ -1469,11 +1575,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.250858</td>
+      <td>0.247561</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.250858</td>
+      <td>0.247561</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1505,7 +1611,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
 
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_22269</span><span class="o">/</span><span class="mf">3587976242.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_50347</span><span class="o">/</span><span class="mf">3587976242.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">7</span>     <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
@@ -2405,7 +2511,7 @@ required alpha = 0.20952367203411126
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Jill O'Reilly<br/>
+    By Jill O'Reilly & Lindsay Richards<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

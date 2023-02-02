@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Introduction to Statistics and Data Science
-author: Jill O'Reilly
+author: Jill O'Reilly & Lindsay Richards
 logo: dice.jpg
 
 # Force re-execution of notebooks on each build.

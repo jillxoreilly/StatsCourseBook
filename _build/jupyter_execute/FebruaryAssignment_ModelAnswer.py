@@ -40,7 +40,7 @@ sns.rugplot(data=clouds, x='rainfall', hue='status', height=0.1)
 plt.show()
 
 
-# *c) Calculate the best fitting Normal distribution for seeded and unseeded clouds and overlay a plot of the probability density function (PDF) of this normal distribution on the plot created in part (b)*
+# *c) Calculate the best fitting Normal distributions for seeded and unseeded clouds respectively and overlay a plot of the probability density functions (PDF) of these two normal distributions on the plot created in part (b)*
 # 
 # *Note- the best fitting normal distribution is a normal distribution that shares the same mean and standard deviation as the data sample – plotting of the normal PDF is covered in section 5.7 of the online course book*
 
@@ -59,14 +59,16 @@ y = stats.norm.pdf(x,seeded.mean(),seeded.std())
 plt.plot(x,y,color=(1,0,0))
 sns.kdeplot(data=seeded, color=[1,0,0], shade=True)
 sns.rugplot(data=seeded, color=[1,0,0], height=0.1)
+plt.ylim([0,0.0022])
 
 # unseeded clouds
 plt.subplot(2,1,2)
 x=range(-1000,4000)
-y = stats.norm.pdf(x,seeded.mean(),seeded.std())
+y = stats.norm.pdf(x,unseeded.mean(),seeded.std())
 plt.plot(x,y,color=(0,0,1))
-sns.kdeplot(data=seeded, color=[0,0,1], shade=True)
-sns.rugplot(data=seeded, color=[0,0,1], height=0.1)
+sns.kdeplot(data=unseeded, color=[0,0,1], shade=True)
+sns.rugplot(data=unseeded, color=[0,0,1], height=0.1)
+plt.ylim([0,0.0022])
 
 plt.tight_layout()
 plt.show()
@@ -410,9 +412,9 @@ plt.show()
 # 
 # Participant B seems to be slightly slower in the 'main' distribution of RTs aroung 400ms, and also has a higher number of very fast RTs.
 
-# *The researcher decides that reaction times under 300ms (very fast responses) and over 700ms (very slow responses) should be excluded. 
+# *The researcher decides that reaction times under 300ms (very fast responses) and over 700ms (very slow responses) should be excluded.*
 # 
-# *d) Do you think this is justified? Explain your answer.
+# *d) Do you think this is justified? Explain your answer.*
 # 
 # Yes, the RTs below 300ms clearly belong to a separate distribution from the bulk of RTs - maybe they represent false starts. The RTs above 700mms also seem to be outliers (maybe missed trials)
 # 
@@ -429,7 +431,7 @@ plt.show()
 
 
 # create a new dataframe with fast and slow RTs replaced by NaN
-ChoiceRTs_clean = ChoiceRTs
+ChoiceRTs_clean = ChoiceRTs.copy()
 
 ChoiceRTs_clean.loc[(ChoiceRTs_clean['A']<300),['A']]=np.nan
 ChoiceRTs_clean.loc[(ChoiceRTs_clean['A']>700),['A']]=np.nan

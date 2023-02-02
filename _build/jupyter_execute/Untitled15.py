@@ -1,30 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Exercises
+# # Regression models in Python
 # 
-# At the start of this section, we introduced three examples:
-# <ul>
-#     <li> a fair coin is tossed 10 times. How likely is it that we obtain exactly 5 heads?
-#     <li> a fair six sided dice is rolled 3 times. How likely is it that we obtain two or more sixes?
-#     <li> a blind man guesses whether a symbol on a screen is an X or an O. How likely is it that he guesses correctly at least 22 out of 30 times?
-# </ul>        
+# We will be using the `statsmodels` package in Python, so we will need to import this along with the other Python packages we have been using. 
 # 
-# 
-# In each case there is an event with two possible outcomes. 
-# 
-# One outcome (the one we are looking for) is designated as a "hit" whilst the other is called a "miss". 
-# 
-# The probability of a hit is a fixed value (<i>p</i>)
-# 
-# The event is repeated a certain number of times (<i>n</i>) and we count the number of times (<i>k</i>) one of the outcomes occurs
-# 
-# <img src="images/BinomialTable.png" width=60% >
-# 
-# 
-# So far we have considered the coin toss example. Can we adapt the code to simulte the dice roll example and the blindsight example?
-# 
-
 # ### Set up Python libraries
 # 
 # As usual, run the code cell below to import the relevant Python libraries
@@ -38,67 +18,159 @@ import matplotlib.pyplot as plt
 import scipy.stats as stats
 import pandas 
 import seaborn as sns
-sns.set_theme() # use pretty defaults
+import statsmodels.formula.api as smf
 
 
-# ## Dice roll example
+# If that threw an error, you may need to install `statsmodels` before you can import it.
 # 
-# In the code block below I have copied the complete code to simulate 10 coin tosses for 10,000 repeats, plot the proportion of repeats on which each value of k was obtained, and plot the expected distribution from the equation
-# 
-# Can you modify the code to simulate the dice roll example from the table above?
-# 
-# You will need to change the values of p and n, and the x-axis label for the histogram
+# Try this code block:
 
 # In[2]:
 
 
-n=10
-p=0.5
+get_ipython().system('pip3 install statsmodels')
 
-nReps = 10000
-k = np.empty(nReps)
 
-for i in np.arange(len(k)): # we are going to simlulte 10,000 repeats of 10 coin tosses
-    k[i] = np.random.binomial(n,p)
-    
-sns.countplot(x=k, order=range(n+1)) 
-plt.xlabel('number of heads')
+# ... and then rerun the importing block above
 
-# add the expected distribution
-p_k = stats.binom.pmf(range(n+1),n,p)
-freq = p_k * nReps
-plt.plot(range(n+1),freq, 'k.-')
-
-plt.show()
-
+# ## Happiness toy example
+# 
+# The python code, once you get the hang of it, is pretty straightforward. The output that Python gives is a whole table of statistics, some of which are important to us in this class, and some will be important later, and some we won’t need in the course at all. 
+# 
+# So, when looking at the Python output, the key objective for the moment is to know where to find the key things, e.g., the intercept and slope coefficients.
+# 
+# Let’s run a regression model in Python for the ‘toy’ country happiness data. 
 
 # In[3]:
 
 
-The question asks
+# import and view data
+happiness=pandas.read_csv('data/happiness10.csv')
+happiness
 
 
-# ## Blindsight example
+# In[4]:
+
+
+# run the regression model
+
+
+# * Find the intercept and the slope. How does Python label these?
 # 
-# Warrington and Weiskrantz (1974) worked that a patient (called in their work by his initials, DB). DB had damage to the visual cortex of his brain, and reported no conscious vision, but Warrington and Weiskrantz noticed some hints that he could react to visual stimuli even though he was unaware of them, so they set up the following experiment:
+# Python will also help us out with the predicted values and residuals. 
 # 
-# Symbols are presented on a screen - 50% of symbols are X's and 50% are O's The patient guesses whether each symbol is an X or an O
+# * Run the following code which will store $\hat{y}$ and the residual for each row of the data. Display the result. 
 # 
-# If the patient gives the correct answer much more often than we would expect if he were guessing, we conclude that he has some redisual (unconsicous) vision
+
+# In[5]:
+
+
+# code for storing y-hat and residuals
+
+
+# This should look familiar! We had the same table back in concepts section. (There may be small differences due to rounding). Do you think there are any outliers in the data? As we noted earlier, there was one very high and one very low value among the residuals. 
 # 
-# DB guessed correctly on 22 out of 30 trials. What can we conclude?
-# Simulate the null hypothesis
+# Let’s try re-running the regression model without these two potential outliers: Finland and Ukraine. Let’s change the happiness measure to ‘NaN’ for these two countries and re-run the regression command.
 # 
-# Our 'null' hypothesis is the baseline against which we test our evidence. In this case, the null hypothesis is that DB was guessing and this would translate to a value for p of 0.5
+
+# In[6]:
+
+
+# Code for changing Sweden to NaN, and new regression model
+
+
+# What’s changed in the model? 
 # 
-# So we work out how likely it was to get 22 or more trials out of 30 correct given p=0.5, and this tells us how likely it was that the data could have arisen under the null hypothesis
+# * Has the slope value become bigger and smaller? 
 # 
-# <ul>
-#     <li>Why 22 or more?
-#     <li>We would conclude that DB was not guessing if he got an unusually high number of trials correct. We need to determine a cutoff such that if he scored more than the cut-off, we would conclude he had some residual unconscious vision. It is logical that if 22/30 trials correct is sufficient evidence to reject the null, so is 23/30 and 24/30... 
-# </ul>
-#         
-# Copy the code from above for simulating the binomial distribution and work through modifying it to obtain the probability of 22/30 correct trials if DB was really guessing
+# * Has the conclusion changed?
+
+# # The calculation for the slope and intercept 
+# 
+# Back in Week 4 when you were learning about correlation and covariance, you saw the formula for calculating b, the slope coefficient. 
+# 
+# Remember the Height/ Finger length example?
+# 
+# The equation for finding $b$ is
+# 
+# $$ b = \frac{s_{xy}}{s^2_x} $$
+
+# In[7]:
+
+
+# load and view the data
+heightFinger = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/HeightFingerInches.csv')
+display(heightFinger)
+
+
+# The equation for finding $b$ is
+# 
+# $$ b = \frac{s_{xy}}{s^2_x} $$
+# 
+# Let's apply that in Python
+
+# In[8]:
+
+
+s_x = heightFinger['Height'].std()
+s_y = heightFinger['FingerLength'].std()
+s_xy = heightFinger['Height'].cov(heightFinger['FingerLength'])
+
+b = s_xy/(s_x**2)
+print('b = ' + str(b))
+
+
+# What is the value of the intercept? The equation for finding the intercept is as follows:
+# 
+# $$ a = \bar{y} - b\bar{x} $$
+# 
+# $\bar{x}$ and $\bar{y}$ are the means of $x$ and $y$ for the 10 data points. 
+# 
+# Use Python to find the mean of $y$ and $x$. 
+
+# In[9]:
+
+
+x_bar = heightFinger.Height.mean()
+y_bar = heightFinger.FingerLength.mean()
+
+
+# Can you calculate $a$? 
+
+# In[10]:
+
+
+a = 6.7 + (49.4*0.055) 
+a
+
+
+# In[11]:
+
+
+a = y_bar - b*x_bar
+a
+
+
+# Let’s run a regression model in Python for the finger length data, to check our results. 
+
+# In[12]:
+
+
+# Code for importing finger length data, and regression model. 
+
+
+# Great! Our calculations based on the equations are confirmed by Python’s regression table. 
+
+# ### Quick extra questions
+# 
+# Here are some extra questions on the Regression output table, to see if you can begin to pick out all the important information. 
+# 
+# 1. In the top left, it gives the method as ‘Least Squares’. Above, it gives the model type as ‘OLS’. Do you know what OLS stand for?
+#     * Ordinary Least Squares
+# 1. How many observations are in this model according to the regression output table?
+#     * 71,341
+# 1. What do you think ‘std err’ might stand for, in the column after ‘coef’?
+#     * Standard Error. You learned about this important concept in Week 6, and we’ll come back to it again in a couple of weeks. 
 # 
 
 # In[ ]:

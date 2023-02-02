@@ -29,6 +29,6 @@ In each case we can ask, <b>what is the probability of obtaining
 <i>k</i> (or <i>at least k</i>) hits out of <i>n</i> trials, given
 that the probability of a hit on any given trial is <i>p</i>?</b>
 
-The probability of each value of <i>k</i> is given by the inomial distriubtion
+The probability of each value of <i>k</i> is given by the inomial distribution
 
 
