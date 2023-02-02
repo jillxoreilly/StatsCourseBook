@@ -73,11 +73,26 @@ clouds
 
 # The slash in the commmand `pandas.read_csv('data/CloudSeeding.csv')` just means that `data` is the name of a folder and `CloudSeeding.csv` is inside that folder
 
-# In[ ]:
-
-
-
-
+# ## Colab
+# 
+# If you are on Colab you will need to upload the data file before you can read it in.
+# 
+# To do this you click the file icon at the left of your notebook
+# 
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/colab1.png" width=80% >
+# 
+# ... a file panel opens.
+# 
+# Click the upload button at the top of this panel
+# 
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/colab2.png" width=80% >
+# 
+# 
+# ... a file browser opens. Select the CSV file from where you downloaded it on your own computer (if you are not sure where it went, it might have gone in your Downloads folder!).
+# 
+# The file appears in the file panel and can now be loaded from your Colab notebook as per my instructions above
+# 
+# <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/colab3.png" width=80% >
 
 # In[ ]:
 
