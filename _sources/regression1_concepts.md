@@ -8,8 +8,8 @@ I downloaded these data from the Our World in Data website for all of Europe, th
 
 Here, we’ll focus on the concepts. We’ll get onto the Python code for regression later.
 
-```{image} images/regression1_happinessTable.png
-:width: 50%
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression1_happinessTable.png
+:width: 40%
 :align: center
 ```
 First, we can examine the relationship visually in a scatter plot:
@@ -27,7 +27,7 @@ There is a positive relationship
 ```
 The correlation between life satisfaction and GDP per capita is 0.65 meaning, as you recall from topic 4, that there is a positive relationship of moderate strength. As GDP increases, so does average life satisfaction.
 
-* The regression equation takes the form $\hat{y}=a+bx$ where $\hat{y}$̂ (known as “y-hat”) is the predicted value of $y$, $a$ is the intercept, and $b$ is the slope. What are the $y$ and $x$ in the life satisfaction example?
+* The regression equation takes the form $\hat{y}=a+bx$ where $\hat{y}$ (known as “y-hat”) is the predicted value of $y$, $a$ is the intercept, and $b$ is the slope. What are the $y$ and $x$ in the life satisfaction example?
 
 ```{admonition} Click to reveal answer
 :class: dropdown
@@ -48,7 +48,7 @@ week.
 * So, let’s get to our regression equation for the life satisfaction
   data. We’ll get to the calculation later, so for now, I am just
   providing the regression equation for you. The regression equation
-  here is *Life Satisfaction= 5.85 + 0.018*GDPpc*. Look back at the
+  here is *Life Satisfaction= 5.85 + 0.018(GDPpc)*. Look back at the
   scatter plot, do the coefficients make sense?
 
 ```{admonition} Click to reveal answer
@@ -64,7 +64,7 @@ Yes! It becomes clearer when we add the line to the plot. We can see that the li
 * One function of regression is that we can use it to “predict” the
   outcome variable of a hypothetical country. Imagine we want to know:
   what would be the predicted level of life satisfaction in a country
-  with a GDP per capita of $150 thousand (a very rich country!)? Plug
+  with a GDP per capita of 150 thousand dollars (a very rich country!)? Plug
   in ‘150’ in place of $x$ in the equation and find $y$-hat (just use
   a calculator, or excel, or pen and paper at this point).
 
@@ -73,13 +73,14 @@ Yes! It becomes clearer when we add the line to the plot. We can see that the li
 5.85 + (150*0.018) = life satisfaction of 8.55. (There are, of course, some assumptions here. We’ll talk about the assumptions of regression later in the course).
 ```
 
-In the same way that we can plug in a hypothetical value (like $150),
+In the same way that we can plug in a hypothetical value (like 150
+thousand dollars),
 we could also plug in the actual (or “observed”) values of $x$ for our
 10 countries. If we calculate y-hat for each country we can see the
 difference between the predicted level of life satisfaction and
 observed value. These have been added to the data table.
 
-```{image} images/regression1_happinessTable_res.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression1_happinessTable_res.png
 :width: 50%
 :align: center
 ```
