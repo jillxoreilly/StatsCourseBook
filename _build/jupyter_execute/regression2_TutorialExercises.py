@@ -40,14 +40,16 @@ import statsmodels.formula.api as smf
 
 
 # load and view the data
-ess = pandas.read_csv('data/immigrationData.csv')
+ess = pandas.read_csv('data/ImmigrationData.csv')
 ess
 
 
 # ### Data cleaning
 # 
-# Get to know your dat
-# a. And how many data points? For each variable, check whether there are many missing values.
+# Get to know your data. 
+# 
+# * How survey respondants are there? 
+# * For each variable, check whether there are many missing values.
 # 
 
 # In[3]:
@@ -65,6 +67,7 @@ ess
 
 
 # Your code here to run a regression model Y = better, x = age
+# You can refer back to last week's work for how to do this!
 
 
 # * What does the result tell us? 
@@ -77,7 +80,7 @@ ess
 #     
 # This is a binary variable where male takes the value 0, and female takes the value 1.
 # 
-# Add sex to your model, keeping age in the model too. 
+# Add sex to your model, keeping age in the model too. ou will need to change the formula from `better ~ age` to `better ~ age + sex`
 # 
 
 # In[5]:
@@ -94,26 +97,79 @@ ess
 # 
 # NB: The eagle-eyed among you might spot that the coefficient for sex is not statistically significant. Well spotted! We will spend more time looking at statistical significance next week.
 # 
+# ### Add a categorical variable
+# 
 # Next, we are going to add education as a further explanatory variable. 
 # 
-# * How many categories does the education variable have? 
-# * How many dummy variables are needed in the regression model? 
+# * This is a categorical variable - what are its possible values?
 # 
-# Before you run the model, think about what you expect to see. Do you think the coefficients will be positive or negative? 
-# 
-# Run the model, and check the output.
 # 
 
 # In[6]:
 
 
-# Your code here to run a regression model Y = better, x1 = age, x2 = sex, x3 = education
+ess['educ'].unique()
 
 
+# Think:
+#     
+# * How many categories does the education variable have? 
+# * How many dummy variables are needed in the regression model? 
+# 
+# Before you run the model, think about what you expect to see. Do you think the coefficients will be positive or negative? 
+
+# In[7]:
+
+
+# first we run this line to tell statsmodels where to find the data and the explanatory variables
+reg_formula = sm.regression.linear_model.OLS.from_formula(data = ess, formula = 'better ~ age + sex + educ')
+
+# then we run this line to fit the regression (work out the values of intercept and slope)
+# the output is a structure which we will call reg_results
+reg_results = reg_formula.fit()
+
+# let's view a summary of the regression results
+reg_results.summary() 
+ 
+
+
+# #### Choosing the reference category
+# 
+# Which category was used as the reference category?
+# 
+# You should be able to tell from the summary table, as there will be no $\beta$ value for the reference category - If we have categories A,B,C and B is the reference, then $\beta_A$ and $\beta_C$ tell us how much the expected value of $y$ increases or decreases in catgories A and C compared to category B.
+# 
+# By default, `statsmodels` chooses the least frequent category as the reference, which in this case is 'lower secondary'. So the $\beta$ values for 'Upper secondary' and 'Tertiary' tells us how much higher the value of 'better' is expected to be for survey respondants with 'Upper secondary' or 'Tertiary' education respectively.
+# 
+# You may wish to choose the reference category. You can do this by using slightly different syntax - for example to choose 'Upper secondary' as teh reference category, in the formula we replace the simple variable name `educ` with the code `C(educ, Treatment(reference="Upper secondary")`
+# 
+# I chose the middle category (Upper secondary) as the reference, so I am expecting opposite signed beta values for those with a level of education below (Lower secondary) or abobve (Tertiary) my reference category.
+# 
+# * Run the model, and check the output.
+
+# In[8]:
+
+
+# first we run this line to tell statsmodels where to find the data and the explanatory variables
+reg_formula = sm.regression.linear_model.OLS.from_formula(data = ess, formula = 'better ~ age + sex + C(educ, Treatment(reference="Upper secondary"))')
+                                                          
+                                                        
+# then we run this line to fit the regression (work out the values of intercept and slope)
+# the output is a structure which we will call reg_results
+reg_results = reg_formula.fit()
+
+# let's view a summary of the regression results
+reg_results.summary() 
+ 
+
+
+# ### Interpretation
+# 
 # * How should you interpret the education coefficients in the model? 
 # * Which is the “omitted category” or “reference group” (these two terms are used interchangeably here). 
 # * Can you explain in words the relationship between education and immigration attitudes? 
 # 
+# ### Further categorical variable
 # 
 # What do you think the attitudes will be like of people who are immigrants themselves, versus people who were born in the UK? 
 # 
@@ -122,38 +178,72 @@ ess
 # Run the code. What does it show?
 # 
 
-# In[7]:
+# In[9]:
 
 
 # Your code here to run a regression model Y = better, x1 = age, x2 = sex, x3 = education, x4 = bornuk
 
 
-# What about you? Using pen and paper, or Excel, or whatever, plug in your own values into the regression equation and find out what the model predicts YOUR answer to the immigration question to be. (NB: I know you are all still doing your degree! Assume you have finished it for the purpose of this exercise). 
+# What about you? Plug your own values into the regression equation and find out what the model predicts YOUR answer to the immigration question to be. (NB: I know you are all still doing your degree! Assume you have finished it for the purpose of this exercise). 
 # 
+# You could use pencil and paper or Excel, or type the equation in a code block as I have done below
+
+# In[10]:
+
+
+# edit this equation - 
+# you will need to replace the B values with coefficients from the regression summary table, 
+# and the variable names with actual values (so if your age is 20, replace 'age' with 20)
+# for categorical variables you need to work out which B value to use - 
+
+# better = B0 + B1*age + B2*sex + B3*education + B4*bornuk
+
+# In the following examples I used 'upper secondary' as the reference category for the categorical variable 'educ'
+
+# For example, for a person who is 41, female and tertiary educated, and was born in the UK, the value should be calculated as follows:
+# better = intercept + coef(age)*41 + coef(sex[T.male])*0 + coef(educ[T.tertiary])*1 + coef(bornuk)*1
+print(5.9264 + -0.0118*41 + 0.0390*0 + 1.1765*1 + 1.1811*1)
+
+# For example, for a person who is 43, male and lower secondary educated, and was born outside the UK, the value should be calculated as follows:
+# better = intercept + coef(age)*43 + coef(sex[T.male])*1 + coef(educ[T.Lower Secondary])*1 + coef(bornuk)*0
+print(5.9264 + -0.0118*44 + 0.0390*1 + -0.6699*1 + 1.1811*0)
+
+
 # ### Interaction terms
 # 
 # Finally, we are going to explore the effect of age, according to different political preferences using the ‘vote’ variable. We will do this by adding an interaction term of age*vote to the model.
 # 
-# The code in Python for an interaction is `some code here xxxxx`
-# 
+# The code in Python for an interaction between A and B is A:B
 
-# In[8]:
+# In[11]:
 
 
 # Your code here to run a regression model Y = better, x1 = age, x2 = sex, x3 = education, x4 = bornuk, x5=age*vote
+# first we run this line to tell statsmodels where to find the data and the explanatory variables
+reg_formula = sm.regression.linear_model.OLS.from_formula(data = ess, formula = 'better ~ age + sex + C(educ, Treatment(reference="Upper secondary")) + bornuk + age:vote')
+                                                          
+                                                        
+# then we run this line to fit the regression (work out the values of intercept and slope)
+# the output is a structure which we will call reg_results
+reg_results = reg_formula.fit()
+
+# let's view a summary of the regression results
+reg_results.summary() 
+ 
 
 
-# Interpret the plot in your own words. 
+# Interpret the results in your own words. 
 # 
 # Check your understanding with your classmates or your tutor. 
 # 
-# (Hint: where is the gap between the political parties is smaller, and where it is wider?). Does this make sense to you, in terms of people you know? (Do you know any young Conservatives?) 
+# (Hint: where is the gap between the political parties is smaller, and where it is wider?). Does this make sense to you, in terms of people you know? (Do you know many young Conservatives?) 
 
 # ## Further Exercises
 # 
 # 1. Can you run 3 separate regression models for Conservative voters, Labour voters, and Other? 
+# * I'd recommend creating three separate data frames for each political preference
 
-# In[9]:
+# In[12]:
 
 
 # your code here!

@@ -58,14 +58,16 @@ happy
 # 
 # Let’s begin with some descriptive analysis before running our first regression model. 
 # 
-# Run a scatterplot. Be sure to plot $y$ on the $y$-axis and $x$ on the $x$-axis. 
+# Run a scatterplot. 
+# 
+# Be sure to plot $y$ on the $y$-axis and $x$ on the $x$-axis. 
 # (If you are not sure which is which, discuss with your tutor).
 # 
 
 # In[4]:
 
 
-# your code here for a scatterplot
+# Your code here for the scatterplot
 
 
 # * What are your initial conclusions about the relationship between GDP and life satisfaction? 
@@ -92,13 +94,18 @@ happy
 # 
 # ### Regression plot
 # 
-# Let’s add the regression line to the scatterplot in Python. Here’s the code:
+# Let’s add the regression line to the scatterplot in Python. 
+# 
+# 
+# `seaborn` has a special plotting function for plotting a scatterplot with regression line included, called `sns.regplot`. 
+# 
+# Give it a try, the syntax is the same as for `sns.scatterplot`
 # 
 
 # In[6]:
 
 
-# Code for scatterplot with regression line.
+# your code here for a scatterplot with regression line using sns.regplot
 
 
 # Eyeballing the scatterplot, how well do you think the regression line fits the data points? Do you think there are any outliers? We can see that several countries with very large GDPs are below the regression line. Also, that many countries with very low GDP are a long way from the regression line. We can examine potential outliers more systematically, by asking Python to calculate residuals (and predicted values) for us.
@@ -106,26 +113,47 @@ happy
 # In[7]:
 
 
-# Code for generating and storing y-hat and residuals for each data point.
+# Your code here to generate predictions (y-hat) and residuals for each data point.
+# add them as columns to your datafram
+# view the resulting dataframe
 
 
-# Can you find the sum of squared residuals? 
+# ### SSE
+# 
+# Can you find the sum of squared residuals using an equation?
+# 
+# Hint: The code for $x^2$ in Python is `x**2`
 
 # In[8]:
 
 
-# Code for squaring then adding up all the residuals.
+# Your code here for squaring then adding up all the residuals.
 
 
-# 1. How meaningful is the sum of squared residuals (or “sum of squared error” - SSE)? What does it tell us?
+# * How meaningful is the sum of squared residuals (or “sum of squared error” - SSE)? What does it tell us?
 #     * We know this is the minimized residual. Because this line is fitted using the method of least squares, there is no other line that could fit the data with a lower SSE. 
-#     
+# 
+# The sum of squared residuals is provided by `statsomdels` as `reg_results.ssr` - 
+# 
+# * check that the sum of squared residuals you calculated matches the output of `reg_results.ssr`
+# 
+# 
+# 
+
+# In[9]:
+
+
+# your code here
+
+
+# ### Check datapoints that are not well fit by the model
+# 
 # Sort and display the data and find any very large residuals (remember outliers could have a positive or negative residual. Look for both!). Choose the 6 largest residuals (in absolute terms). Which countries are they? Are they in the same region, are they rich or poor? 
 # 
 # Now change the life satisfaction for these six countries to ‘NaN’ so that we can exclude them from the analysis. Store the data with the excluded outliers with a new name. Then re-run the regression, and the scatterplot with regression line.
 # 
 
-# In[9]:
+# In[10]:
 
 
 # your code here!

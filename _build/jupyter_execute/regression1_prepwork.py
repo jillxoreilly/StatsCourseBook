@@ -41,54 +41,146 @@ get_ipython().system('pip3 install statsmodels')
 # So, when looking at the Python output, the key objective for the moment is to know where to find the key things, e.g., the intercept and slope coefficients.
 # 
 # Let’s run a regression model in Python for the ‘toy’ country happiness data. 
+# 
+# ### Import and view data
 
 # In[3]:
 
 
 # import and view data
-happiness=pandas.read_csv('data/happiness10.csv')
+happiness=pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/happiness10.csv')
 happiness
 
+
+# ### Run the regression using `statsmodels`
 
 # In[4]:
 
 
 # run the regression model
 
+# first we run this line to tell statsmodels where to find the data and the explanatory variables
+reg_formula = sm.regression.linear_model.OLS.from_formula(data = happiness, formula = 'LifeSat ~ GDPpc')
 
-# * Find the intercept and the slope. How does Python label these?
+# then we run this line to fit the regression (work out the values of intercept and slope)
+# the output is a structure which we will call reg_results
+reg_results = reg_formula.fit()
+
+# let's view a summary of the regression results
+reg_results.summary() 
+
+# note you get a warning message because the dataset is quite small - disregard this
+                                             
+
+
 # 
-# Python will also help us out with the predicted values and residuals. 
+# ### Interpreting the output
 # 
-# * Run the following code which will store $\hat{y}$ and the residual for each row of the data. Display the result. 
+# The summary output is three tables
+# 
+# The **top table** tells us about the regression we ran, including 
+# * what was the dependent variable
+# * how many observations there were
+# * type of regression model used (in this case Ordinary Least Squares, OLS - don't worry about this for now)
+# * various measures of model fit such as $R^2$, AIC, BIC, Log-Likelihood - some (but not all) of these will be covered in later weeks
+# 
+# The **middle table** gives the output of the regression
+# * coefficients (beta values) - in this simple regression these are the intercept and the slope
+# * statistical significance of the effects (t and p values)
+# 
+# The **bottom table** contains some information about whether the assummptions of linear regression were satisfied
+# 
+# ### Predicted values, residuals
+# 
+# For now let's focus on the middle table
+# 
+# * find the values for the intercept and the slope. Can you write out the regression equation in the form
+# 
+# $$ \hat{y} = \beta_0 + \beta_1 x $$
+# 
+# ... replacing the $\beta$ values with numbers?
+# 
+# 
+# You could work out the predicted value of $y$, namely $\hat{y}$, for each value of $x4 from the equation. 
+# However `statsmodels` can give us the predicted values and residuals. 
+# 
+# * Run the following code which will give us the predicted values $\hat{y}$ for each row of the data. Display the result. 
 # 
 
-# In[5]:
+# In[9]:
 
 
-# code for storing y-hat and residuals
+# return predicted values
+reg_results.fittedvalues
 
 
-# This should look familiar! We had the same table back in concepts section. (There may be small differences due to rounding). Do you think there are any outliers in the data? As we noted earlier, there was one very high and one very low value among the residuals. 
+# ... and the residuals
+
+# In[10]:
+
+
+# return residuals
+reg_results.resid
+
+
+# These would be easier to view if we added them in as new columns in our dataframe:
+
+# In[12]:
+
+
+happiness['yhat']=reg_results.fittedvalues
+happiness['residuals']=reg_results.resid
+happiness
+
+
+# This should look familiar! We had the same table back in concepts section. (There may be small differences due to rounding). 
+# 
+# Hopefully you can see that:
+# 
+# * The $\hat{y}$ values are fairly similar to the corresponding values of $y$, LifeSat
+# * The residuals are positive when $y>\hat{y}$ and negative $y<\hat{y}$  
+# * The size of the residual is larger when the difference between $y$ and $\hat{y}$ is larger
+# 
+# Do you think there are any outliers in the data? As we noted earlier, there was one very high and one very low value among the residuals. 
 # 
 # Let’s try re-running the regression model without these two potential outliers: Finland and Ukraine. Let’s change the happiness measure to ‘NaN’ for these two countries and re-run the regression command.
 # 
 
-# In[6]:
+# In[15]:
 
 
-# Code for changing Sweden to NaN, and new regression model
+# Code for changing Finland and Ukraine to NaN
+happiness_clean = happiness.copy()
+happiness_clean[happiness_clean['Country']=='Ukraine']=np.nan
+happiness_clean[happiness_clean['Country']=='Finland']=np.nan
+happiness_clean
 
 
-# What’s changed in the model? 
+# In[18]:
+
+
+# re-run the regression model
+
+# first we run this line to tell statsmodels where to find the data and the explanatory variables
+reg_formula = sm.regression.linear_model.OLS.from_formula(data = happiness_clean, formula = 'LifeSat ~ GDPpc')
+
+# then we run this line to fit the regression (work out the values of intercept and slope)
+# the output is a structure which we will call reg_results
+reg_results = reg_formula.fit()
+
+# let's view a summary of the regression results
+reg_results.summary() 
+
+
+# ### What changed when we excluded outliers? 
 # 
-# * Has the slope value become bigger and smaller? 
+# * Has the slope value become bigger or smaller? 
 # 
 # * Has the conclusion changed?
 
 # # The calculation for the slope and intercept 
 # 
-# Back in Week 4 when you were learning about correlation and covariance, you saw the formula for calculating b, the slope coefficient. 
+# Back in Week 4 when you were learning about correlation and covariance, you saw the formula for calculating $b$, the slope coefficient. 
 # 
 # Remember the Height/ Finger length example?
 # 
@@ -96,7 +188,7 @@ happiness
 # 
 # $$ b = \frac{s_{xy}}{s^2_x} $$
 
-# In[7]:
+# In[20]:
 
 
 # load and view the data
@@ -110,7 +202,7 @@ display(heightFinger)
 # 
 # Let's apply that in Python
 
-# In[8]:
+# In[21]:
 
 
 s_x = heightFinger['Height'].std()
@@ -129,7 +221,7 @@ print('b = ' + str(b))
 # 
 # Use Python to find the mean of $y$ and $x$. 
 
-# In[9]:
+# In[22]:
 
 
 x_bar = heightFinger.Height.mean()
@@ -138,14 +230,14 @@ y_bar = heightFinger.FingerLength.mean()
 
 # Can you calculate $a$? 
 
-# In[10]:
+# In[23]:
 
 
 a = 6.7 + (49.4*0.055) 
 a
 
 
-# In[11]:
+# In[24]:
 
 
 a = y_bar - b*x_bar
@@ -154,12 +246,24 @@ a
 
 # Let’s run a regression model in Python for the finger length data, to check our results. 
 
-# In[12]:
+# In[25]:
 
 
-# Code for importing finger length data, and regression model. 
+# run the regression model on height/finger data
+
+# first we run this line to tell statsmodels where to find the data and the explanatory variables
+reg_formula = sm.regression.linear_model.OLS.from_formula(data = heightFinger, formula = 'FingerLength ~ Height')
+
+# then we run this line to fit the regression (work out the values of intercept and slope)
+# the output is a structure which we will call reg_results
+reg_results = reg_formula.fit()
+
+# let's view a summary of the regression results
+reg_results.summary() 
 
 
+# Find $a$ and $b$ in the regression output tablbe (they are not called $a$ and $b$ in the table - what are they called?). Do they match the values we calculated ourselves using the equation?
+# 
 # Great! Our calculations based on the equations are confirmed by Python’s regression table. 
 
 # ### Quick extra questions
@@ -168,11 +272,17 @@ a
 # 
 # 1. In the top left, it gives the method as ‘Least Squares’. Above, it gives the model type as ‘OLS’. Do you know what OLS stand for?
 #     * Ordinary Least Squares
-# 1. How many observations are in this model according to the regression output table?
-#     * 71,341
+# 1. How many observations are in the Height vs Finger model according to the regression output table?
+#     * 3000
 # 1. What do you think ‘std err’ might stand for, in the column after ‘coef’?
 #     * Standard Error. You learned about this important concept in Week 6, and we’ll come back to it again in a couple of weeks. 
 # 
+
+# In[ ]:
+
+
+
+
 
 # In[ ]:
 

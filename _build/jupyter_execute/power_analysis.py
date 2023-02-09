@@ -3,12 +3,12 @@
 
 # # Sensitivity, power, reproducibility
 # 
-# As we saw in the lecture, the concepts of sensitivity and power are concerned with controlling the rate of type I and type II errors respectively, where type I errors are false positives and type II errors are false negatives.
+# As we saw in the lecture, the concepts of specificity and sensitivity/power are concerned with controlling the rate of type I and type II errors respectively, where type I errors are false positives and type II errors are false negatives.
 # 
 # <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/t1t2_error.png" width=80% >
 # 
 # Think about it this way:
-# * When we are talking about sensitivity (controlling type I errors) we are proposing that the true population effect is zero (say, correlation and we are interested in the probability of obtaining a certain value of a test statstistic (say, correlation r=0.25) due to chance.
+# * When we are talking about specificity (controlling type I errors) we are proposing that the true population effect is zero (say, correlation and we are interested in the probability of obtaining a certain value of a test statstistic (say, correlation r=0.25) due to chance.
 # * When we are talking about power (controlling type II errors) we are proposing that the true populaiton effect is non-zero (say correlation and we are interested in how frequently we fail to reject the null hypothesis.
 # 
 # 
@@ -726,8 +726,33 @@ from statsmodels.stats.power import TTestPower
 # run an analysis that models the relationship between the four factors 
 analysis = # your code here
 
+
 # solve for power
 # your code here
+
+
+# In[68]:
+
+
+
+# import required modules
+from statsmodels.stats.power import TTestPower
+
+# run an analysis that models the relationship between the four factors 
+analysis = TTestPower()
+
+# solve for sample size
+n1 = analysis.solve_power(effect_size=0.4, alpha=0.05, nobs=24, power=None, alternative='larger')
+print('required sample size: n1 = ' + str(n1))
+
+# solve for power
+# your code here
+
+
+# In[69]:
+
+
+5/8
 
 
 # In[ ]:
