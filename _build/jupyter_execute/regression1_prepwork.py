@@ -107,7 +107,7 @@ reg_results.summary()
 # * Run the following code which will give us the predicted values $\hat{y}$ for each row of the data. Display the result. 
 # 
 
-# In[9]:
+# In[5]:
 
 
 # return predicted values
@@ -116,7 +116,7 @@ reg_results.fittedvalues
 
 # ... and the residuals
 
-# In[10]:
+# In[6]:
 
 
 # return residuals
@@ -125,7 +125,7 @@ reg_results.resid
 
 # These would be easier to view if we added them in as new columns in our dataframe:
 
-# In[12]:
+# In[7]:
 
 
 happiness['yhat']=reg_results.fittedvalues
@@ -146,7 +146,7 @@ happiness
 # Let’s try re-running the regression model without these two potential outliers: Finland and Ukraine. Let’s change the happiness measure to ‘NaN’ for these two countries and re-run the regression command.
 # 
 
-# In[15]:
+# In[8]:
 
 
 # Code for changing Finland and Ukraine to NaN
@@ -156,7 +156,7 @@ happiness_clean[happiness_clean['Country']=='Finland']=np.nan
 happiness_clean
 
 
-# In[18]:
+# In[9]:
 
 
 # re-run the regression model
@@ -188,7 +188,7 @@ reg_results.summary()
 # 
 # $$ b = \frac{s_{xy}}{s^2_x} $$
 
-# In[20]:
+# In[10]:
 
 
 # load and view the data
@@ -202,7 +202,7 @@ display(heightFinger)
 # 
 # Let's apply that in Python
 
-# In[21]:
+# In[11]:
 
 
 s_x = heightFinger['Height'].std()
@@ -221,7 +221,7 @@ print('b = ' + str(b))
 # 
 # Use Python to find the mean of $y$ and $x$. 
 
-# In[22]:
+# In[12]:
 
 
 x_bar = heightFinger.Height.mean()
@@ -230,14 +230,14 @@ y_bar = heightFinger.FingerLength.mean()
 
 # Can you calculate $a$? 
 
-# In[23]:
+# In[13]:
 
 
 a = 6.7 + (49.4*0.055) 
 a
 
 
-# In[24]:
+# In[14]:
 
 
 a = y_bar - b*x_bar
@@ -246,7 +246,7 @@ a
 
 # Let’s run a regression model in Python for the finger length data, to check our results. 
 
-# In[25]:
+# In[15]:
 
 
 # run the regression model on height/finger data

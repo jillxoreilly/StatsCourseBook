@@ -3,30 +3,30 @@
 We have already discussed the spurious relationship, and how we might show that graphically with boxes and arrows.
 For example, 
 
-```{image} images/regression2_commonCause.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression2_commonCause.png
 :width: 50%
 :align: center 
 ```
 Multivariate relationships may also take the form of a chain
-relationship, where x_1 causes x_2 which causes y.
+relationship, where $x_1$ causes $x_2$ which causes $y$.
 
 For example: 
 
-```{image} images/regression2_chainBlock.png
-:width: 50%
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression2_chainBlock.png
+:width: 70%
 :align: center
 ```
 
 An interaction term is where the effect $x_1$ on $y$ is dependent on $x_2$. In this example, the size of the effect of socioeconomic status on health depends on age. 
 
-```{image} images/regression2_interactionBlock.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression2_interactionBlock.png
 :width: 50%
 :align: center
 ```
 
 It is also helpful to graph interaction terms, for example:
 
-```{image} images/regression2_interactionPlot.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression2_interactionPlot.png
 :width: 50%
 :align: center
 ```

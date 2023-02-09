@@ -1128,14 +1128,14 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: statsmodels in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (0.13.2)
-Requirement already satisfied: packaging&gt;=21.3 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (21.3)
+Requirement already satisfied: pandas&gt;=0.25 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.4.4)
 Requirement already satisfied: scipy&gt;=1.3 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.10.0)
+Requirement already satisfied: packaging&gt;=21.3 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (21.3)
+Requirement already satisfied: patsy&gt;=0.5.2 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (0.5.2)
 Requirement already satisfied: numpy&gt;=1.17 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.21.5)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas&gt;=0.25 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.4.4)
-Requirement already satisfied: patsy&gt;=0.5.2 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (0.5.2)
-Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from packaging&gt;=21.3-&gt;statsmodels) (3.0.9)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from packaging&gt;=21.3-&gt;statsmodels) (3.0.9)
 Requirement already satisfied: python-dateutil&gt;=2.8.1 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2.8.2)
 Requirement already satisfied: pytz&gt;=2020.1 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2022.1)
 Requirement already satisfied: six in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from patsy&gt;=0.5.2-&gt;statsmodels) (1.16.0)
@@ -1180,7 +1180,7 @@ Requirement already satisfied: six in /Users/joreilly/opt/anaconda3/lib/python3.
     <tr style="text-align: right;">
       <th></th>
       <th>Country</th>
-      <th>GDPpc (in $ 000)</th>
+      <th>GDPpc</th>
       <th>LifeSat</th>
     </tr>
   </thead>
@@ -1272,110 +1272,65 @@ Requirement already satisfied: six in /Users/joreilly/opt/anaconda3/lib/python3.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/patsy/compat.py</span> in <span class="ni">call_and_wrap_exc</span><span class="nt">(msg, origin, f, *args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">36</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/patsy/eval.py</span> in <span class="ni">eval</span><span class="nt">(self, expr, source_name, inner_namespace)</span>
-<span class="g g-Whitespace">    </span><span class="mi">164</span>         <span class="n">code</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">source_name</span><span class="p">,</span> <span class="s2">&quot;eval&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">flags</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">165</span>         <span class="k">return</span> <span class="nb">eval</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="p">{},</span> <span class="n">VarLookupDict</span><span class="p">([</span><span class="n">inner_namespace</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span>                                             <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_namespaces</span><span class="p">))</span>
-
-<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-
-<span class="ne">NameError</span>: name &#39;GDPpc&#39; is not defined
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">PatsyError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_96869</span><span class="o">/</span><span class="mf">1881271342.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># first we run this line to tell statsmodels where to find the data and the explanatory variables</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">reg_formula</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">linear_model</span><span class="o">.</span><span class="n">OLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">happiness</span><span class="p">,</span> <span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;LifeSat ~ GDPpc&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># then we run this line to fit the regression (work out the values of intercept and slope)</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/statsmodels/base/model.py</span> in <span class="ni">from_formula</span><span class="nt">(cls, formula, data, subset, drop_cols, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span>             <span class="n">missing</span> <span class="o">=</span> <span class="s1">&#39;raise&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span> 
-<span class="ne">--&gt; </span><span class="mi">200</span>         <span class="n">tmp</span> <span class="o">=</span> <span class="n">handle_formula_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">formula</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">eval_env</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span>                                   <span class="n">missing</span><span class="o">=</span><span class="n">missing</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span>         <span class="p">((</span><span class="n">endog</span><span class="p">,</span> <span class="n">exog</span><span class="p">),</span> <span class="n">missing_idx</span><span class="p">,</span> <span class="n">design_info</span><span class="p">)</span> <span class="o">=</span> <span class="n">tmp</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/statsmodels/formula/formulatools.py</span> in <span class="ni">handle_formula_data</span><span class="nt">(Y, X, formula, depth, missing)</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span>         <span class="k">if</span> <span class="n">data_util</span><span class="o">.</span><span class="n">_is_using_pandas</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">63</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">dmatrices</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">return_type</span><span class="o">=</span><span class="s1">&#39;dataframe&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">64</span>                                <span class="n">NA_action</span><span class="o">=</span><span class="n">na_action</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span>         <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/patsy/highlevel.py</span> in <span class="ni">dmatrices</span><span class="nt">(formula_like, data, eval_env, NA_action, return_type)</span>
-<span class="g g-Whitespace">    </span><span class="mi">307</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span><span class="s2">     eval_env = EvalEnvironment.capture(eval_env, reference=1)</span>
-<span class="ne">--&gt; </span><span class="mi">309</span><span class="s2">     (lhs, rhs) = _do_highlevel_design(formula_like, data, eval_env,</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span><span class="s2">                                       NA_action, return_type)</span>
-<span class="g g-Whitespace">    </span><span class="mi">311</span><span class="s2">     if lhs.shape[1] == 0:</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/patsy/highlevel.py</span> in <span class="ni">_do_highlevel_design</span><span class="nt">(formula_like, data, eval_env, NA_action, return_type)</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span><span class="s2">     def data_iter_maker():</span>
-<span class="g g-Whitespace">    </span><span class="mi">163</span><span class="s2">         return iter([data])</span>
-<span class="ne">--&gt; </span><span class="mi">164</span><span class="s2">     design_infos = _try_incr_builders(formula_like, data_iter_maker, eval_env,</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span><span class="s2">                                       NA_action)</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span><span class="s2">     if design_infos is not None:</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/patsy/highlevel.py</span> in <span class="ni">_try_incr_builders</span><span class="nt">(formula_like, data_iter_maker, eval_env, NA_action)</span>
-<span class="g g-Whitespace">     </span><span class="mi">64</span><span class="s2">     if isinstance(formula_like, ModelDesc):</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span><span class="s2">         assert isinstance(eval_env, EvalEnvironment)</span>
-<span class="ne">---&gt; </span><span class="mi">66</span><span class="s2">         return design_matrix_builders([formula_like.lhs_termlist,</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span><span class="s2">                                        formula_like.rhs_termlist],</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span><span class="s2">                                       data_iter_maker,</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/patsy/build.py</span> in <span class="ni">design_matrix_builders</span><span class="nt">(termlists, data_iter_maker, eval_env, NA_action)</span>
-<span class="g g-Whitespace">    </span><span class="mi">691</span><span class="s2">     # on some data to find out what type of data they return.</span>
-<span class="g g-Whitespace">    </span><span class="mi">692</span><span class="s2">     (num_column_counts,</span>
-<span class="ne">--&gt; </span><span class="mi">693</span><span class="s2">      cat_levels_contrasts) = _examine_factor_types(all_factors,</span>
-<span class="g g-Whitespace">    </span><span class="mi">694</span><span class="s2">                                                    factor_states,</span>
-<span class="g g-Whitespace">    </span><span class="mi">695</span><span class="s2">                                                    data_iter_maker,</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/patsy/build.py</span> in <span class="ni">_examine_factor_types</span><span class="nt">(factors, factor_states, data_iter_maker, NA_action)</span>
-<span class="g g-Whitespace">    </span><span class="mi">441</span><span class="s2">     for data in data_iter_maker():</span>
-<span class="g g-Whitespace">    </span><span class="mi">442</span><span class="s2">         for factor in list(examine_needed):</span>
-<span class="ne">--&gt; </span><span class="mi">443</span><span class="s2">             value = factor.eval(factor_states[factor], data)</span>
-<span class="g g-Whitespace">    </span><span class="mi">444</span><span class="s2">             if factor in cat_sniffers or guess_categorical(value):</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span><span class="s2">                 if factor not in cat_sniffers:</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/patsy/eval.py</span> in <span class="ni">eval</span><span class="nt">(self, memorize_state, data)</span>
-<span class="g g-Whitespace">    </span><span class="mi">562</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">563</span><span class="s2">     def eval(self, memorize_state, data):</span>
-<span class="ne">--&gt; </span><span class="mi">564</span><span class="s2">         return self._eval(memorize_state[&quot;eval_code&quot;],</span>
-<span class="g g-Whitespace">    </span><span class="mi">565</span><span class="s2">                           memorize_state,</span>
-<span class="g g-Whitespace">    </span><span class="mi">566</span><span class="s2">                           data)</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/patsy/eval.py</span> in <span class="ni">_eval</span><span class="nt">(self, code, memorize_state, data)</span>
-<span class="g g-Whitespace">    </span><span class="mi">545</span><span class="s2">     def _eval(self, code, memorize_state, data):</span>
-<span class="g g-Whitespace">    </span><span class="mi">546</span><span class="s2">         inner_namespace = VarLookupDict([data, memorize_state[&quot;transforms&quot;]])</span>
-<span class="ne">--&gt; </span><span class="mi">547</span><span class="s2">         return call_and_wrap_exc(&quot;Error evaluating factor&quot;,</span>
-<span class="g g-Whitespace">    </span><span class="mi">548</span><span class="s2">                                  self,</span>
-<span class="g g-Whitespace">    </span><span class="mi">549</span><span class="s2">                                  memorize_state[&quot;eval_env&quot;].eval,</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/patsy/compat.py</span> in <span class="ni">call_and_wrap_exc</span><span class="nt">(msg, origin, f, *args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span><span class="s2">                                  origin)</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span><span class="s2">             # Use &#39;exec&#39; to hide this syntax from the Python 2 parser:</span>
-<span class="ne">---&gt; </span><span class="mi">43</span><span class="s2">             exec(&quot;raise new_exc from e&quot;)</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span><span class="s2">         else:</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span><span class="s2">             # In python 2, we just let the original exception escape -- better</span>
-
-<span class="s2">~/opt/anaconda3/lib/python3.9/site-packages/patsy/compat.py in &lt;module&gt;</span>
-
-<span class="ne">PatsyError</span>: Error evaluating factor: NameError: name &#39;GDPpc&#39; is not defined
-<span class="s2">    LifeSat ~ GDPpc</span>
-<span class="s2">              ^^^^^</span>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_stats_py.py:1736: UserWarning: kurtosistest only valid for n&gt;=20 ... continuing anyway, n=10
+  warnings.warn(&quot;kurtosistest only valid for n&gt;=20 ... continuing &quot;
 </pre></div>
 </div>
-</div>
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>         <td>LifeSat</td>     <th>  R-squared:         </th> <td>   0.418</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.345</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   5.738</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Thu, 09 Feb 2023</td> <th>  Prob (F-statistic):</th>  <td>0.0435</td> 
+</tr>
+<tr>
+  <th>Time:</th>                 <td>15:51:57</td>     <th>  Log-Likelihood:    </th> <td> -9.1084</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>    10</td>      <th>  AIC:               </th> <td>   22.22</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>     8</td>      <th>  BIC:               </th> <td>   22.82</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th> <td>    5.8485</td> <td>    0.421</td> <td>   13.878</td> <td> 0.000</td> <td>    4.877</td> <td>    6.820</td>
+</tr>
+<tr>
+  <th>GDPpc</th>     <td>    0.0176</td> <td>    0.007</td> <td>    2.395</td> <td> 0.043</td> <td>    0.001</td> <td>    0.035</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 0.349</td> <th>  Durbin-Watson:     </th> <td>   1.689</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.840</td> <th>  Jarque-Bera (JB):  </th> <td>   0.448</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.289</td> <th>  Prob(JB):          </th> <td>   0.799</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 2.139</td> <th>  Cond. No.          </th> <td>    113.</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
 </div>
 </section>
 <section id="interpreting-the-output">
@@ -1742,7 +1697,7 @@ dtype: float64
   <th>Date:</th>             <td>Thu, 09 Feb 2023</td> <th>  Prob (F-statistic):</th>  <td>0.0615</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>11:41:14</td>     <th>  Log-Likelihood:    </th> <td> -3.9966</td>
+  <th>Time:</th>                 <td>15:51:57</td>     <th>  Log-Likelihood:    </th> <td> -3.9966</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>     8</td>      <th>  AIC:               </th> <td>   11.99</td>
@@ -1986,7 +1941,7 @@ dtype: float64
   <th>Date:</th>             <td>Thu, 09 Feb 2023</td> <th>  Prob (F-statistic):</th>  <td>  0.00</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>11:43:39</td>     <th>  Log-Likelihood:    </th> <td>  1163.6</td>
+  <th>Time:</th>                 <td>15:51:57</td>     <th>  Log-Likelihood:    </th> <td>  1163.6</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  3000</td>      <th>  AIC:               </th> <td>  -2323.</td>

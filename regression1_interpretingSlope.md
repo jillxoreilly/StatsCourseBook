@@ -5,7 +5,7 @@ how to use the regression equation to get a predicted value of $y$.
 
 ## Example 1: Weather patterns and crops
 
-```{image} images/regression1_botanics.jpg
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression1_botanics.jpg
 :width: 50%
 :align: center
 ```
@@ -50,7 +50,7 @@ Both the slope will change (because it is in different units), and the intercept
 
 ## Example 2: GDP vs CO2
 
-```{image} images/regression1_carbon.jpeg
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression1_carbon.jpeg
 :width: 50%
 :align: center
 ```

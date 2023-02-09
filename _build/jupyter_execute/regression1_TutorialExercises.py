@@ -31,7 +31,7 @@ import statsmodels.formula.api as smf
 # In[2]:
 
 
-happy = pandas.read_csv('data/All_countries_lifesat_2020.csv')
+happy = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/All_countries_lifesat_2020.csv')
 happy
 
 

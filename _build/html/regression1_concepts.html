@@ -908,7 +908,7 @@ title="Print to PDF"
 <p>There are only 10 data points here, but the data are real! These are country average levels of life satisfaction and GDP per capita for a selection of countries in Europe in 2020.</p>
 <p>I downloaded these data from the Our World in Data website for all of Europe, then randomly selected 10 countries. There are a lot of real-world studies on the topic of the relationship between wealth and happiness.</p>
 <p>Here, we’ll focus on the concepts. We’ll get onto the Python code for regression later.</p>
-<a class="reference internal image-reference" href="_images/regression1_happinessTable.png"><img alt="_images/regression1_happinessTable.png" class="align-center" src="_images/regression1_happinessTable.png" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression1_happinessTable.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression1_happinessTable.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression1_happinessTable.png" style="width: 40%;" /></a>
 <p>First, we can examine the relationship visually in a scatter plot:</p>
 <a class="reference internal image-reference" href="_images/regression1_happinessScatter.png"><img alt="_images/regression1_happinessScatter.png" class="align-center" src="_images/regression1_happinessScatter.png" style="width: 80%;" /></a>
 <ul class="simple">
@@ -920,7 +920,7 @@ title="Print to PDF"
 </div>
 <p>The correlation between life satisfaction and GDP per capita is 0.65 meaning, as you recall from topic 4, that there is a positive relationship of moderate strength. As GDP increases, so does average life satisfaction.</p>
 <ul class="simple">
-<li><p>The regression equation takes the form <span class="math notranslate nohighlight">\(\hat{y}=a+bx\)</span> where <span class="math notranslate nohighlight">\(\hat{y}\)</span>̂ (known as “y-hat”) is the predicted value of <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(a\)</span> is the intercept, and <span class="math notranslate nohighlight">\(b\)</span> is the slope. What are the <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(x\)</span> in the life satisfaction example?</p></li>
+<li><p>The regression equation takes the form <span class="math notranslate nohighlight">\(\hat{y}=a+bx\)</span> where <span class="math notranslate nohighlight">\(\hat{y}\)</span> (known as “y-hat”) is the predicted value of <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(a\)</span> is the intercept, and <span class="math notranslate nohighlight">\(b\)</span> is the slope. What are the <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(x\)</span> in the life satisfaction example?</p></li>
 </ul>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal answer</p>
@@ -941,7 +941,7 @@ week.</p>
 <li><p>So, let’s get to our regression equation for the life satisfaction
 data. We’ll get to the calculation later, so for now, I am just
 providing the regression equation for you. The regression equation
-here is <em>Life Satisfaction= 5.85 + 0.018</em>GDPpc*. Look back at the
+here is <em>Life Satisfaction= 5.85 + 0.018(GDPpc)</em>. Look back at the
 scatter plot, do the coefficients make sense?</p></li>
 </ul>
 <div class="dropdown admonition">
@@ -953,20 +953,21 @@ scatter plot, do the coefficients make sense?</p></li>
 <li><p>One function of regression is that we can use it to “predict” the
 outcome variable of a hypothetical country. Imagine we want to know:
 what would be the predicted level of life satisfaction in a country
-with a GDP per capita of <span class="math notranslate nohighlight">\(150 thousand (a very rich country!)? Plug
-in ‘150’ in place of \)</span>x<span class="math notranslate nohighlight">\( in the equation and find \)</span>y$-hat (just use
+with a GDP per capita of 150 thousand dollars (a very rich country!)? Plug
+in ‘150’ in place of <span class="math notranslate nohighlight">\(x\)</span> in the equation and find <span class="math notranslate nohighlight">\(y\)</span>-hat (just use
 a calculator, or excel, or pen and paper at this point).</p></li>
 </ul>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal answer</p>
 <p>5.85 + (150*0.018) = life satisfaction of 8.55. (There are, of course, some assumptions here. We’ll talk about the assumptions of regression later in the course).</p>
 </div>
-<p>In the same way that we can plug in a hypothetical value (like <span class="math notranslate nohighlight">\(150),
-we could also plug in the actual (or “observed”) values of \)</span>x$ for our
+<p>In the same way that we can plug in a hypothetical value (like 150
+thousand dollars),
+we could also plug in the actual (or “observed”) values of <span class="math notranslate nohighlight">\(x\)</span> for our
 10 countries. If we calculate y-hat for each country we can see the
 difference between the predicted level of life satisfaction and
 observed value. These have been added to the data table.</p>
-<a class="reference internal image-reference" href="images/regression1_happinessTable_res.png"><img alt="images/regression1_happinessTable_res.png" class="align-center" src="images/regression1_happinessTable_res.png" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression1_happinessTable_res.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression1_happinessTable_res.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression1_happinessTable_res.png" style="width: 50%;" /></a>
 <p>*What is the name for <span class="math notranslate nohighlight">\(y\)</span> minus <span class="math notranslate nohighlight">\(\hat{y}\)</span>?</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal answer</p>

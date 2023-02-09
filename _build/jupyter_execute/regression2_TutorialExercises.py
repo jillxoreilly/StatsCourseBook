@@ -40,7 +40,7 @@ import statsmodels.formula.api as smf
 
 
 # load and view the data
-ess = pandas.read_csv('data/ImmigrationData.csv')
+ess = pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/immigrationData.csv')
 ess
 
 

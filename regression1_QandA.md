@@ -15,5 +15,5 @@ Both methods will tell us the strength and direction of the association between 
 * What can we do with regression that we can’t do with correlation?
 ```{admonition} Click to reveal answer
 :class: dropdown
-The correlation, unlike the slope $b$, treats $x$ and $y$ symmetrically. We can use regression to calculate predicted values ($\hat{y}), and we can use these predicted values to find residuals for each data point. We can use these residuals to get an idea of how well the regression line fits the observed data points. 
+The correlation, unlike the slope $b$, treats $x$ and $y$ symmetrically. We can use regression to calculate predicted values ($\hat{y}$), and we can use these predicted values to find residuals for each data point. We can use these residuals to get an idea of how well the regression line fits the observed data points. 
 ```

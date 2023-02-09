@@ -28,7 +28,7 @@ children get older, their feet grow and their reading skills
 improve. We can illustrate a spurious relationship graphically, with
 variable labels and arrows, like below.
 
-```{image} images/regression2_BooksShoes.png 
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression2_BooksShoes.png 
 :width: 50%
 :align: center
 ```
