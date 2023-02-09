@@ -684,56 +684,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="regression1_TutorialExercises.html">
-     13.7. Regression models in Python
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression2_intro.html">
-   14. Multivariate Analysis
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_concepts.html">
-     14.2. Multivariate Analysis Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_typesOfRelationship.html">
-     14.3. Different types of multivariate relationship
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_QandA.html">
-     14.4. Multiple Regression Q &amp; A
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_TutorialExercises.html">
-     14.5. Tutorial Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression3_intro.html">
-   15. Regression Statistics
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_outcomes.html">
-     15.2. Learning Objectives
+     13.7. Tutorial Exercises
     </a>
    </li>
   </ul>
@@ -1554,10 +1505,88 @@ mean rating - with profanity = 6.5885078534031285
 3965
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Difference of means: no profanity- profanity&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+KeyboardInterrupt                         Traceback (most recent call last)
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_6106/1017007513.py in &lt;module&gt;
+      8 
+      9 for i in range(nReps):
+---&gt; 10     sample1 = movies[movies[&#39;Profanity&#39;]==&#39;None&#39;].sample(n1, replace=True)
+     11     sample2 = movies[movies[&#39;Profanity&#39;]!=&#39;None&#39;].sample(n2, replace=True)
+     12     mDiff[i]= sample1[&#39;Rating&#39;].mean()-sample2[&#39;Rating&#39;].mean()
+
+~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/ops/common.py in new_method(self, other)
+     68         other = item_from_zerodim(other)
+     69 
+---&gt; 70         return method(self, other)
+     71 
+     72     return new_method
+
+~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arraylike.py in __eq__(self, other)
+     38     @unpack_zerodim_and_defer(&quot;__eq__&quot;)
+     39     def __eq__(self, other):
+---&gt; 40         return self._cmp_method(other, operator.eq)
+     41 
+     42     @unpack_zerodim_and_defer(&quot;__ne__&quot;)
+
+~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/series.py in _cmp_method(self, other, op)
+   5623             res_values = ops.comparison_op(lvalues, rvalues, op)
+   5624 
+-&gt; 5625         return self._construct_result(res_values, name=res_name)
+   5626 
+   5627     def _logical_method(self, other, op):
+
+~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/series.py in _construct_result(self, result, name)
+   3015         # We do not pass dtype to ensure that the Series constructor
+   3016         #  does inference in the case where `result` has object-dtype.
+-&gt; 3017         out = self._constructor(result, index=self.index)
+   3018         out = out.__finalize__(self)
+   3019 
+
+~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/series.py in __init__(self, data, index, dtype, name, copy, fastpath)
+    451                 data = sanitize_array(data, index, dtype, copy)
+    452 
+--&gt; 453                 manager = get_option(&quot;mode.data_manager&quot;)
+    454                 if manager == &quot;block&quot;:
+    455                     data = SingleBlockManager.from_array(data, index)
+
+~/opt/anaconda3/lib/python3.9/site-packages/pandas/_config/config.py in __call__(self, *args, **kwds)
+    254 
+    255     def __call__(self, *args, **kwds):
+--&gt; 256         return self.__func__(*args, **kwds)
+    257 
+    258     @property
+
+~/opt/anaconda3/lib/python3.9/site-packages/pandas/_config/config.py in _get_option(pat, silent)
+    126 
+    127 def _get_option(pat: str, silent: bool = False):
+--&gt; 128     key = _get_single_key(pat, silent)
+    129 
+    130     # walk the nested dict
+
+~/opt/anaconda3/lib/python3.9/site-packages/pandas/_config/config.py in _get_single_key(pat, silent)
+    118 
+    119     if not silent:
+--&gt; 120         _warn_if_deprecated(key)
+    121 
+    122     key = _translate_key(key)
+
+~/opt/anaconda3/lib/python3.9/site-packages/pandas/_config/config.py in _warn_if_deprecated(key)
+    648     bool - True if `key` is deprecated, False otherwise.
+    649     &quot;&quot;&quot;
+--&gt; 650     d = _get_deprecated_option(key)
+    651     if d:
+    652         if d.msg:
+
+~/opt/anaconda3/lib/python3.9/site-packages/pandas/_config/config.py in _get_deprecated_option(key)
+    612         d = _deprecated_options[key]
+    613     except KeyError:
+--&gt; 614         return None
+    615     else:
+    616         return d
+
+KeyboardInterrupt: 
 </pre></div>
 </div>
-<img alt="_images/IMDb_exercise_16_2.png" src="_images/IMDb_exercise_16_2.png" />
 </div>
 </div>
 <p>Since the difference of means is almost always greater than ero, we can be confident that movies with no profanity really do have higher mean ratings - even if the difference is less than 0.3/10 points!</p>

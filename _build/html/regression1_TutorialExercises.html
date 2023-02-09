@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>13.7. Regression models in Python &#8212; Introduction to Statistics and Data Science</title>
+    <title>13.7. Tutorial Exercises &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,7 +55,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="14. Multivariate Analysis" href="regression2_intro.html" />
     <link rel="prev" title="13.5. Regression models in Python" href="regression1_prepwork.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -686,39 +685,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     13.7. Regression models in Python
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="regression2_intro.html">
-   14. Multivariate Analysis
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_concepts.html">
-     14.2. Multivariate Analysis Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_typesOfRelationship.html">
-     14.3. Different types of multivariate relationship
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_QandA.html">
-     14.4. Multiple Regression Q &amp; A
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression2_TutorialExercises.html">
-     14.5. Tutorial Exercises
+     13.7. Tutorial Exercises
     </a>
    </li>
   </ul>
@@ -987,11 +954,6 @@ title="Print to PDF"
      Check datapoints that are not well fit by the model
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#further-exercises">
-     Further exercises
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -1003,7 +965,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Regression models in Python</h1>
+                <h1>Tutorial Exercises</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1053,11 +1015,6 @@ title="Print to PDF"
      Check datapoints that are not well fit by the model
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#further-exercises">
-     Further exercises
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -1070,8 +1027,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="regression-models-in-python">
-<h1><span class="section-number">13.7. </span>Regression models in Python<a class="headerlink" href="#regression-models-in-python" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises">
+<h1><span class="section-number">13.7. </span>Tutorial Exercises<a class="headerlink" href="#tutorial-exercises" title="Permalink to this heading">#</a></h1>
 <p>We will be using the statsmodels package in Python, so we will need to import this along with the other Python packages we have been using.</p>
 <section id="set-up-python-libraries">
 <h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
@@ -1237,7 +1194,7 @@ title="Print to PDF"
 <section id="regression-model">
 <h3>Regression model<a class="headerlink" href="#regression-model" title="Permalink to this heading">#</a></h3>
 <p>It’s time to run the regression model.</p>
-<p>The basic code is added for you, but you need to complete it.</p>
+<p>The basic code can be copied from the worked examples in the previous notebook, but you will need to modify it.</p>
 <p>Where do you tell Python which is the <span class="math notranslate nohighlight">\(y\)</span> variable, and which is the <span class="math notranslate nohighlight">\(x\)</span>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1320,10 +1277,6 @@ title="Print to PDF"
 <p>In the new analysis with the six outliers excluded, do your conclusions about the relationship between GDP and life satisfaction change, or stay the same?</p>
 <p>We will learn more about the assumptions of regression in the next week or two, but looking back at the scatterplot, have you noticed any potential concerns about the model?</p>
 </section>
-<section id="further-exercises">
-<h3>Further exercises<a class="headerlink" href="#further-exercises" title="Permalink to this heading">#</a></h3>
-<p>Other possible exercises: find outliers with stats, e.g. dfbeta or Cook’s distance.</p>
-</section>
 </section>
 </section>
 
@@ -1360,13 +1313,6 @@ title="Print to PDF"
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">13.5. </span>Regression models in Python</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="regression2_intro.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>Multivariate Analysis</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
