@@ -689,6 +689,38 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="regression2_intro.html">
+   14. Multivariate Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_concepts.html">
+     14.2. Multivariate Analysis Concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_typesOfRelationship.html">
+     14.3. Different types of multivariate relationship
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_QandA.html">
+     14.4. Multiple Regression Q &amp; A
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_TutorialExercises.html">
+     14.5. Tutorial Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -1286,8 +1318,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=277.3961538461539, pvalue=0.0202, null_distribution=array([ -22.66538462,  -78.09615385,  152.76538462, ...,   -6.47307692,
-       -223.99615385, -105.06538462]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=277.3961538461539, pvalue=0.0236, null_distribution=array([-51.05      , -64.68076923,  85.06538462, ..., 149.15769231,
+        -9.85769231,  87.79615385]))
 </pre></div>
 </div>
 </div>
@@ -1497,7 +1529,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc21da83e50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f94e2190610&gt;]
 </pre></div>
 </div>
 <img alt="_images/FebruaryAssignment_ModelAnswer_29_1.png" src="_images/FebruaryAssignment_ModelAnswer_29_1.png" />
@@ -1578,15 +1610,15 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
-<p>The mean heart rate is lower after colouring (mean = 67.3 bpm, s.d. = 5.40) than after reading (mean = 69.4 bpm, s.d. = 5.25)</p>
+<p>The mean heart rate is lower after colouring (mean = 63.7 bpm, s.d. = 5.40) than after reading (mean = 69.4 bpm, s.d. = 5.25)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_rel</span><span class="p">(</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;reading&#39;</span><span class="p">],</span> <span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;colouring&#39;</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_rel</span><span class="p">(</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;colouring&#39;</span><span class="p">],</span> <span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;reading&#39;</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;less&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TtestResult(statistic=3.4753513368432465, pvalue=0.0034947821057590726, df=9)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TtestResult(statistic=-3.4753513368432465, pvalue=0.0034947821057590726, df=9)
 </pre></div>
 </div>
 </div>
@@ -1656,17 +1688,17 @@ title="Print to PDF"
 <span class="k">def</span> <span class="nf">mDiff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
 
-<span class="n">stats</span><span class="o">.</span><span class="n">permutation_test</span><span class="p">((</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;reading&#39;</span><span class="p">],</span> <span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;colouring&#39;</span><span class="p">]),</span> <span class="n">mDiff</span><span class="p">,</span> <span class="n">permutation_type</span><span class="o">=</span><span class="s1">&#39;samples&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">permutation_test</span><span class="p">((</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;colouring&#39;</span><span class="p">],</span> <span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;reading&#39;</span><span class="p">]),</span> <span class="n">mDiff</span><span class="p">,</span> <span class="n">permutation_type</span><span class="o">=</span><span class="s1">&#39;samples&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;less&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=5.7, pvalue=0.0078125, null_distribution=array([ 5.7,  4.5,  4.3, ..., -4.3, -4.5, -5.7]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=-5.7, pvalue=0.0078125, null_distribution=array([-5.7, -4.5, -4.3, ...,  4.3,  4.5,  5.7]))
 </pre></div>
 </div>
 </div>
 </div>
-<p>A permutation test for paired samples showed a significant difference of means such that heart rate was lower after colouring than reading (mean difference in heart rate 5.7 bpm, p=0.0000781, df = 9).</p>
+<p>A permutation test for paired samples showed a significant difference of means such that heart rate was lower after colouring than reading (mean difference in heart rate 5.7 bpm, p=0.00781, df = 9).</p>
 <p>Note - the degrees of freedom for this test are 9 (10 pairs - 1 mean difference for each shuffle); However I don’t necessarily expect students to work this out as I haven’t really explained it; it would be fine to just report sample sizes instead for the permutation test). However students should be aware that the relevant sample size here for statistical purposes is 10 (number of pairs) not 20 (number of measurements).</p>
 </section>
 <section id="iii-sign-rank-test">
@@ -1727,17 +1759,17 @@ title="Print to PDF"
 <p>The median heart rate is lower after colouring (median = 62.00 bpm, q1=61.25, q3=67.50) than after reading (median = 71.0 bpm, q1=66.0, q3=71.75)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">wilcoxon</span><span class="p">(</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;reading&#39;</span><span class="p">],</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;colouring&#39;</span><span class="p">],</span><span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">wilcoxon</span><span class="p">(</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;colouring&#39;</span><span class="p">],</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;reading&#39;</span><span class="p">],</span><span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;less&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WilcoxonResult(statistic=50.5, pvalue=0.009765625)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WilcoxonResult(statistic=4.5, pvalue=0.0068359375)
 </pre></div>
 </div>
 </div>
 </div>
-<p>A sign rank test showed that heart rates were significantly lower after colouring than reading (T=50.5, p=0.00976, n=10 pairs).</p>
+<p>A sign rank test showed that heart rates were significantly lower after colouring than reading (T=4.5, p=0.00683, n=10 pairs).</p>
 <p>We conclude that colouring is effective in lowering heart, rate compared to reading.</p>
 <p><em>f) The use of the t-test rests on an assumption of normality. What exactly must be normally distributed for the t-test to be valid in this case?</em></p>
 <p>The differences in heart rate would have to be normmally distriubted. Let’s check if that is the case</p>
