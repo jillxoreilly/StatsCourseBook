@@ -111,8 +111,13 @@ chapters:
   - file: regression1_QandA.md
   - file: regression1_prepwork.ipynb
   - file: regression1_TutorialExercises.ipynb
-  
-
+- file: regression2_intro.md
+  sections:
+  - file: regression2_outcomes.md
+  - file: regression2_concepts.md
+  - file: regression2_typesOfRelationship.md
+  - file: regression2_QandA.md
+  - file: regression2_TutorialExercises.ipynb
   
 
   

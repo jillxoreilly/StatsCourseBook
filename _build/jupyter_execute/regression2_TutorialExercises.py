@@ -21,6 +21,7 @@ import scipy.stats as stats
 import pandas 
 import seaborn as sns
 import statsmodels.api as sm
+import statsmodels.graphics as smg
 import statsmodels.formula.api as smf
 
 
@@ -31,10 +32,10 @@ import statsmodels.formula.api as smf
 # This file contains several explanatory/ controls variables: 
 # 
 # * age (a continuous measure in years)
-# * sex (a binary measure where 0 = male and 1 = female)
-# * educ (a categorical measure of education where 1 = lower secondary qualifications or below, 2 = upper secondary (e.g., A Levels) and vocational qualifications, and 3 = Tertiary (university degree))
+# * sex (Male, Female)
+# * educ (a categorical measure with 3 levels, where 'tertiary' is higher education such as university)
 # * vote (a categorical measure of the party the respondent last voted for where 1 = Conservatives, 2 = Labour, 3 = any other party)
-# * bornuk (a binary measure of whether the respondent was born in the UK where 0 = No, and 1 = Yes).
+# * bornuk (a binary measure of whether the respondent was born in the UK where 0 = the respondent was not born in the UK, and 1 indicates they were).
 
 # In[2]:
 
@@ -78,7 +79,7 @@ ess
 # 
 # We are going to add a further explanatory variable to the model: sex. 
 #     
-# This is a binary variable where male takes the value 0, and female takes the value 1.
+# This is a string variable with two categories: Male and Female. 
 # 
 # Add sex to your model, keeping age in the model too. ou will need to change the formula from `better ~ age` to `better ~ age + sex`
 # 
@@ -211,7 +212,9 @@ print(5.9264 + -0.0118*44 + 0.0390*1 + -0.6699*1 + 1.1811*0)
 
 # ### Interaction terms
 # 
-# Finally, we are going to explore the effect of age, according to different political preferences using the ‘vote’ variable. We will do this by adding an interaction term of age*vote to the model.
+# Finally, we are going to explore the effect of age, according to different political preferences using the ‘vote’ variable. 
+# 
+# We will do this by modelling the effect of 'age' and 'vote' on 'better', and adding an **interaction term** of age*vote to the model.
 # 
 # The code in Python for an interaction between A and B is A:B
 
@@ -220,7 +223,7 @@ print(5.9264 + -0.0118*44 + 0.0390*1 + -0.6699*1 + 1.1811*0)
 
 # Your code here to run a regression model Y = better, x1 = age, x2 = sex, x3 = education, x4 = bornuk, x5=age*vote
 # first we run this line to tell statsmodels where to find the data and the explanatory variables
-reg_formula = sm.regression.linear_model.OLS.from_formula(data = ess, formula = 'better ~ age + sex + C(educ, Treatment(reference="Upper secondary")) + bornuk + age:vote')
+reg_formula = sm.regression.linear_model.OLS.from_formula(data = ess, formula = 'better ~ age + sex + vote + age:vote')
                                                           
                                                         
 # then we run this line to fit the regression (work out the values of intercept and slope)
@@ -232,18 +235,31 @@ reg_results.summary()
  
 
 
+# #### Interpretation
+# 
+# The interaction `age:vote` breaks down the relationship between `age` and `better` into three separate relationships for the three categories of `vote`
+# 
+# We can visualize this using `sns.lmeplot` which plots the linear relationship between $x$ and $y$ - if we use the argument `hue='vote'` this will be done separately for each category of `vote`
+
+# In[12]:
+
+
+sns.lmplot(data=ess, x='age', y='better', hue='vote', scatter=False, palette={'Labour':'r', 'Any other party':'g', 'Conservative':'b'})
+plt.show()
+
+
 # Interpret the results in your own words. 
 # 
 # Check your understanding with your classmates or your tutor. 
 # 
-# (Hint: where is the gap between the political parties is smaller, and where it is wider?). Does this make sense to you, in terms of people you know? (Do you know many young Conservatives?) 
+# (Hint: where is the gap between between Labour and Conservative supporters smaller, and where it is wider?). Does this make sense to you, in terms of people you know? (Do you know many young Conservatives?) 
 
 # ## Further Exercises
 # 
 # 1. Can you run 3 separate regression models for Conservative voters, Labour voters, and Other? 
 # * I'd recommend creating three separate data frames for each political preference
 
-# In[12]:
+# In[13]:
 
 
 # your code here!
