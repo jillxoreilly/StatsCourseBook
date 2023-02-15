@@ -49,7 +49,7 @@ ess
 # 
 # Get to know your data. 
 # 
-# * How survey respondants are there? 
+# * How many survey respondents are there? 
 # * For each variable, check whether there are many missing values.
 # 
 
