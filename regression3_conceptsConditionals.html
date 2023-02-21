@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>6. The Central Limit Theorem &#8212; Introduction to Statistics and Data Science</title>
+    <title>15.4. Conditional Distributions &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,10 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6.2. Learning Objectives" href="CLT_outcomes.html" />
-    <link rel="prev" title="5.10. Tutorial Exercises II" href="binomial_TutorialExercises2.html" />
+    <link rel="next" title="15.5. Statistical Significance in Regression" href="regression3_conceptsSignificance.html" />
+    <link rel="prev" title="15.3. Model fit: \(R^2\)" href="regression3_conceptsR2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -391,11 +393,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="CLT_intro.html">
    6. The Central Limit Theorem
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
@@ -721,16 +723,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="regression3_intro.html">
    15. Regression - Statistical Tests
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="regression3_outcomes.html">
      15.2. Learning Objectives
@@ -744,8 +746,8 @@ const thebe_selector_output = ".output, .cell_output"
      </span>
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_conceptsConditionals.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      15.4. Conditional Distributions
     </a>
    </li>
@@ -861,7 +863,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2FCLT_intro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2Fregression3_conceptsConditionals.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -889,7 +891,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/CLT_intro.md"
+        <a href="_sources/regression3_conceptsConditionals.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -926,60 +928,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tasks-for-this-week">
-   6.1. Tasks for this week
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>The Central Limit Theorem</h1>
+                <h1>Conditional Distributions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tasks-for-this-week">
-   6.1. Tasks for this week
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -987,49 +952,39 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="the-central-limit-theorem">
-<h1><span class="section-number">6. </span>The Central Limit Theorem<a class="headerlink" href="#the-central-limit-theorem" title="Permalink to this heading">#</a></h1>
-<p>This week we will be thinking about random variability across samples</p>
-<p>Often, we have a relatively small sample of data, and want to infer
-from it something about the properties of a parent or population
-distribution. For example I measure the heights of 10 men and
-calculate the mean - this gives me an estimate of the mean height of
-all men, but how much would my estimate change if I had randomly
-selected 10 different men for my sample?</p>
-<p>We start by looking at the unusual case in which the population or
-parent distribution is available to us. We will simulate the process of drawing many samples of size n
-from a parent distribution, and taking the mean of each sample. The
-distribution of these means, known as the <b>sampling distribution of
-the mean</b>, describes the expected random variability in the mean
-for different samples.</p>
-<p>We see that due to the Central Limit Theorem, when n is large enough
-(above about 50) the sampling distribution of the mean is well
-approximated by a normal distribution, whose standard deviation is the
-standard error of the mean.</p>
-<p>We then look at how our understanding of random varibility in the
-sample mean can be used to construct a confidence interval for the
-parent/population mean, even when the only data available are a
-small(ish) sample of that population</p>
-<section id="tasks-for-this-week">
-<h2><span class="section-number">6.1. </span>Tasks for this week<a class="headerlink" href="#tasks-for-this-week" title="Permalink to this heading">#</a></h2>
-<p><b>Conceptual material</b> is covered in the lecture. In addition to the
-live lecture, you can find lecture videos on Canvas.</p>
-<p>Please work through the guided exercises in this section (everything
-<i>except</i> the page labelled “Tutorial Exercises”) in advance of
-the computer-based tutorial session.</p>
-<p>To complete the guided exercises you will need to either:</p>
-<ul>
-<li>open the pages in Google Colab (simply click the Colab button on each page), or
-<li>download them as Jupyter Notbooks to your own computer and work
-with them locally (eg in Spyder)
+  <section class="tex2jax_ignore mathjax_ignore" id="conditional-distributions">
+<h1><span class="section-number">15.4. </span>Conditional Distributions<a class="headerlink" href="#conditional-distributions" title="Permalink to this heading">#</a></h1>
+<p>Conditional distributions refer to spread of value around the regression line.</p>
+<p>In this example, where <span class="math notranslate nohighlight">\(y\)</span> = income, and <span class="math notranslate nohighlight">\(x\)</span> = years of education, the expected value of income = -5000 + 3000*years of education.</p>
+<p>For people with 12 years of education (<span class="math notranslate nohighlight">\(𝑥\)</span> = 12), the expected mean income is 31,000.</p>
+<p>However, we can think of the predicted value as a predicted mean, and that there will be a normal distribution of values around that <em>mean</em>. The word ‘conditional’ here refers to the distribution of <span class="math notranslate nohighlight">\(y\)</span>, conditional on a given value of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression3_conditional.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression3_conditional.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression3_conditional.png" style="width: 50%;" /></a>
+<p>We can use a statistic called the “Root mean square error” (Or RMSE) to estimate spread around the regression line.</p>
+<p>The RMSE provides the estimated standard deviation of conditional distribution of <span class="math notranslate nohighlight">\(y\)</span> at each value of <span class="math notranslate nohighlight">\(x\)</span>. It is also known as the standard deviation of the residuals.</p>
+<p>The equation for the RMSE is:</p>
+<div class="math notranslate nohighlight">
+\[ \sqrt{MSE} = s_y\sqrt{1-r^2} \]</div>
+<p>Again, you’ll notice that it is comprised of familiar components, namely, the standard deviation of <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(R^2\)</span>.</p>
+<ul class="simple">
+<li><p>Coming back to the immigration data from last week, where <span class="math notranslate nohighlight">\(s_y\)</span> = 2.533, and <span class="math notranslate nohighlight">\(r\)</span> = -0.1572, plug these values into the equation and find the RMSE.</p></li>
 </ul>
-<p>If you find something difficult or have questions, you can discuss
-with your tutor in the computer-based tutoral session.</p>
-<p>This week is particularly heavy on conceptual material, so please do
-discuss the guided exercises and tutorial exercises with your tutor to
-make sure you understand</p>
-</section>
-<div class="toctree-wrapper compound">
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal answer</p>
+<div class="math notranslate nohighlight">
+\[RMSE = 2.533\sqrt{0.975288)} = 2.50\]</div>
+</div>
+<ul class="simple">
+<li><p>How do we interpret the RMSE?</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal answer</p>
+<p>We expect 95% of the values of <span class="math notranslate nohighlight">\(y\)</span> at a given <span class="math notranslate nohighlight">\(x\)</span> to fall within 1.96 standard deviations of the mean.</p>
+<ul class="simple">
+<li><p>note that if the sample size were smaller, we would not use 1.96, which is the critical value of <span class="math notranslate nohighlight">\(t\)</span> for <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> and for large sample sizes (over about 50). Instead we would use the critical values of <span class="math notranslate nohighlight">\(t\)</span> is for <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05 and out actual sample size - there is a section on <span class="math notranslate nohighlight">\(t\)</span> confidence intervals in the final lecture from Michaelmas Term.</p></li>
+</ul>
+<p>Let’s look at an example when <span class="math notranslate nohighlight">\(x\)</span> = 65. The regression line gives us a mean expected answer to the immigration question of 5.380 (based on the equation <span class="math notranslate nohighlight">\(\hat{y}=6.790-0.0217\times age\)</span>).</p>
+<p>5.380 <span class="math notranslate nohighlight">\(\pm\)</span> (1.96*2.50) = [0.480, 10.280]</p>
+<p>When <span class="math notranslate nohighlight">\(x\)</span> = 65, we expect 95% of values to fall between 0.480 and 10.280, which is a wide spread of values around the regression line.</p>
 </div>
 </section>
 
@@ -1060,17 +1015,17 @@ make sure you understand</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="binomial_TutorialExercises2.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="regression3_conceptsR2.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5.10. </span>Tutorial Exercises II</p>
+            <p class="prev-next-title"><span class="section-number">15.3. </span>Model fit: <span class="math notranslate nohighlight">\(R^2\)</span></p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="CLT_outcomes.html" title="next page">
+    <a class='right-next' id="next-link" href="regression3_conceptsSignificance.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.2. </span>Learning Objectives</p>
+        <p class="prev-next-title"><span class="section-number">15.5. </span>Statistical Significance in Regression</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

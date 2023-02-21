@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>6. The Central Limit Theorem &#8212; Introduction to Statistics and Data Science</title>
+    <title>15.9. Tutorial Exercises &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,10 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6.2. Learning Objectives" href="CLT_outcomes.html" />
-    <link rel="prev" title="5.10. Tutorial Exercises II" href="binomial_TutorialExercises2.html" />
+    <link rel="prev" title="15.7. Assessing Regression models in Python." href="regression3_prepwork.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -391,11 +392,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="CLT_intro.html">
    6. The Central Limit Theorem
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
@@ -721,16 +722,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="regression3_intro.html">
    15. Regression - Statistical Tests
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="regression3_outcomes.html">
      15.2. Learning Objectives
@@ -764,8 +765,8 @@ const thebe_selector_output = ".output, .cell_output"
      15.7. Assessing Regression models in Python.
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression3_TutorialExercises.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      15.9. Tutorial Exercises
     </a>
    </li>
@@ -822,6 +823,53 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/regression3_TutorialExercises.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/regression3_TutorialExercises.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -861,7 +909,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2FCLT_intro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2Fregression3_TutorialExercises.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -889,7 +937,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/CLT_intro.md"
+        <a href="_sources/regression3_TutorialExercises.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -900,7 +948,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -949,8 +997,38 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tasks-for-this-week">
-   6.1. Tasks for this week
+  <a class="reference internal nav-link" href="#set-up-python-libraries">
+   Set up Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-and-view-the-data">
+   Import and view the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-cleaning">
+   Data cleaning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#control-variables">
+   Control Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compare-your-two-models">
+   Compare your two models:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpret-your-regression-models">
+   Interpret your regression models.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-the-regression-assumptions">
+   Check the regression assumptions.
   </a>
  </li>
 </ul>
@@ -962,7 +1040,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>The Central Limit Theorem</h1>
+                <h1>Tutorial Exercises</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -973,8 +1051,38 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tasks-for-this-week">
-   6.1. Tasks for this week
+  <a class="reference internal nav-link" href="#set-up-python-libraries">
+   Set up Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-and-view-the-data">
+   Import and view the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-cleaning">
+   Data cleaning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#control-variables">
+   Control Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compare-your-two-models">
+   Compare your two models:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpret-your-regression-models">
+   Interpret your regression models.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-the-regression-assumptions">
+   Check the regression assumptions.
   </a>
  </li>
 </ul>
@@ -987,50 +1095,138 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="the-central-limit-theorem">
-<h1><span class="section-number">6. </span>The Central Limit Theorem<a class="headerlink" href="#the-central-limit-theorem" title="Permalink to this heading">#</a></h1>
-<p>This week we will be thinking about random variability across samples</p>
-<p>Often, we have a relatively small sample of data, and want to infer
-from it something about the properties of a parent or population
-distribution. For example I measure the heights of 10 men and
-calculate the mean - this gives me an estimate of the mean height of
-all men, but how much would my estimate change if I had randomly
-selected 10 different men for my sample?</p>
-<p>We start by looking at the unusual case in which the population or
-parent distribution is available to us. We will simulate the process of drawing many samples of size n
-from a parent distribution, and taking the mean of each sample. The
-distribution of these means, known as the <b>sampling distribution of
-the mean</b>, describes the expected random variability in the mean
-for different samples.</p>
-<p>We see that due to the Central Limit Theorem, when n is large enough
-(above about 50) the sampling distribution of the mean is well
-approximated by a normal distribution, whose standard deviation is the
-standard error of the mean.</p>
-<p>We then look at how our understanding of random varibility in the
-sample mean can be used to construct a confidence interval for the
-parent/population mean, even when the only data available are a
-small(ish) sample of that population</p>
-<section id="tasks-for-this-week">
-<h2><span class="section-number">6.1. </span>Tasks for this week<a class="headerlink" href="#tasks-for-this-week" title="Permalink to this heading">#</a></h2>
-<p><b>Conceptual material</b> is covered in the lecture. In addition to the
-live lecture, you can find lecture videos on Canvas.</p>
-<p>Please work through the guided exercises in this section (everything
-<i>except</i> the page labelled “Tutorial Exercises”) in advance of
-the computer-based tutorial session.</p>
-<p>To complete the guided exercises you will need to either:</p>
-<ul>
-<li>open the pages in Google Colab (simply click the Colab button on each page), or
-<li>download them as Jupyter Notbooks to your own computer and work
-with them locally (eg in Spyder)
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises">
+<h1><span class="section-number">15.9. </span>Tutorial Exercises<a class="headerlink" href="#tutorial-exercises" title="Permalink to this heading">#</a></h1>
+<p>The tutorial exercises this week will form the basis of your next hand-in assignment. You will be using real data that were collected in 2019 about people’s perception of their social standing and their happiness. These data were collected online by the well-respected polling company YouGov. The data are intended to be representative of the UK population.</p>
+<p>Note: as well as completing these exercises, it’s a good idea to review the instructions for the assignment ahead of the tutorial, so that you can check you understanding with your tutor.</p>
+<p>The variables are as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">happy</span></code> (a continuous measure ranging from 0-10, where higher scores are greater happiness)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ladder</span></code> (a continuous measure of 1-11 where participants rate themselves in their standing in society, where the lowest rung on the ladder was labelled “bottom of society” and the top rung as “top of society”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">age</span></code> (a continuous measure in years)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">marital</span></code> (a categorical measure of marital status with three categories)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">work</span></code> (a categorical measure of working status with four categories)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">educ</span></code> ( a categorical measure of educational qualifications summarised into 3 categories)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sex</span></code> (male, female)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">leftout</span></code> (a categorical variable in which people state whether they agree or disagree that they feel left out of society)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">income</span></code> (a categorical variable with four categories)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">region</span></code> (a categorical variable with twelve categories)</p></li>
 </ul>
-<p>If you find something difficult or have questions, you can discuss
-with your tutor in the computer-based tutoral session.</p>
-<p>This week is particularly heavy on conceptual material, so please do
-discuss the guided exercises and tutorial exercises with your tutor to
-make sure you understand</p>
-</section>
-<div class="toctree-wrapper compound">
+<section id="set-up-python-libraries">
+<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<p>As usual, run the code cell below to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+</pre></div>
 </div>
+</div>
+</div>
+</section>
+<section id="import-and-view-the-data">
+<h2>Import and view the data<a class="headerlink" href="#import-and-view-the-data" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to import the data from the file Happy.csv</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-cleaning">
+<h2>Data cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this heading">#</a></h2>
+<p>First, get to know your data and do any necessary data cleaning.</p>
+<p>YouGov uses codes of 99 to indicate missing data. Change these to NaN.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to remove missing values!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="control-variables">
+<h2>Control Variables<a class="headerlink" href="#control-variables" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The outcome variable here is <code class="docutils literal notranslate"><span class="pre">happy</span></code></p></li>
+<li><p>The main explanatory variable is <code class="docutils literal notranslate"><span class="pre">ladder</span></code></p></li>
+<li><p>There are a set of 8 possible control variables.</p></li>
+</ul>
+<p>Which do you think might be important controls here?</p>
+<p>There is no right or wrong answer here but think about your reasons for selecting your control variables (don’t just throw all of them in!).</p>
+<p>Specify two regression models - Model 1 includes just the main explanatory variable. Model 2 adds the control variables of your choice (and keeps the main explanatory variable). Calculate the RMSE for both.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="compare-your-two-models">
+<h2>Compare your two models:<a class="headerlink" href="#compare-your-two-models" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Which is better fitting in terms of the <span class="math notranslate nohighlight">\(R^2\)</span>?</p></li>
+<li><p>And which has a smaller spread of values around the regression line?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here!</span>
+<span class="c1"># You may need to add extra cells</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="interpret-your-regression-models">
+<h2>Interpret your regression models.<a class="headerlink" href="#interpret-your-regression-models" title="Permalink to this heading">#</a></h2>
+<p>Make some notes:</p>
+<ul class="simple">
+<li><p>Which coefficients are significant?</p></li>
+<li><p>What are the confidence intervals around the slope for ‘ladder’?</p></li>
+<li><p>Does the coefficient for ‘ladder’ change much between model 1 and model 2?</p></li>
+<li><p>What can we conclude about the relationship between perceptions of social standing and happiness?</p></li>
+<li><p>Looking at the association between the control variables and happiness, are these as you might have expected, or are there any surprises here?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here!</span>
+<span class="c1"># You may need to add extra cells</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="check-the-regression-assumptions">
+<h2>Check the regression assumptions.<a class="headerlink" href="#check-the-regression-assumptions" title="Permalink to this heading">#</a></h2>
+<p>First, check whether the residuals are normally distributed by plotting a histogram of the residuals (refer bback to the preparatory notebook for an example). Do you think this assumption has been met?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s also trying checking the assumption of constant variance: can you plot a scatter plot of residuals (<span class="math notranslate nohighlight">\(y\)</span>-axis) and <span class="math notranslate nohighlight">\(\hat{y}\)</span> (<span class="math notranslate nohighlight">\(x\)</span>-axis)?</p>
+<p>Residuals are found in <code class="docutils literal notranslate"><span class="pre">reg_results.resid</span></code> and <span class="math notranslate nohighlight">\(\hat{y}\)</span> is obtained using <code class="docutils literal notranslate"><span class="pre">reg_results.predict()</span></code></p>
+<p>Do you think the variance in the residuals looks roughly constant for all values of <span class="math notranslate nohighlight">\(\hat{y}\)</span>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The variance of the residuals looks roughly similar at all values of yhat. It looks like the constant variance assumption has been met</p>
+<p>We’ll come back to the other assumptions next term!</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1060,19 +1256,12 @@ make sure you understand</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="binomial_TutorialExercises2.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="regression3_prepwork.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5.10. </span>Tutorial Exercises II</p>
+            <p class="prev-next-title"><span class="section-number">15.7. </span>Assessing Regression models in Python.</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="CLT_outcomes.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.2. </span>Learning Objectives</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
