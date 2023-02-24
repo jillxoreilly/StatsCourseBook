@@ -35,7 +35,7 @@ import statsmodels.formula.api as smf
 # * sex (Male, Female)
 # * educ (a categorical measure with 3 levels, where 'tertiary' is higher education such as university)
 # * vote (a categorical measure of the party the respondent last voted for where 1 = Conservatives, 2 = Labour, 3 = any other party)
-# * bornuk (a binary measure of whether the respondent was born in the UK where 0 = the respondent **was** born in the UK, and 1 indicates they were **not**).
+# * bornuk (a binary measure of whether the respondent was born in the UK where 0 = the respondent was not born in the UK, and 1 indicates they were).
 
 # In[2]:
 

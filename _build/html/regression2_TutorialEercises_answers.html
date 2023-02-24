@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>14.5. Tutorial Exercises &#8212; Introduction to Statistics and Data Science</title>
+    <title>Tutorial Exercises &#8212; Introduction to Statistics and Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="15. Regression - Statistical Tests" href="regression3_intro.html" />
-    <link rel="prev" title="14.4. Multiple Regression Q &amp; A" href="regression2_QandA.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -116,7 +114,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="prepwork_intro.html">
    1. Preparatory Work
@@ -691,16 +689,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="regression2_intro.html">
    14. Multivariate Analysis
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
   <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="regression2_concepts.html">
      14.2. Multivariate Analysis Concepts
@@ -716,8 +714,8 @@ const thebe_selector_output = ".output, .cell_output"
      14.4. Multiple Regression Q &amp; A
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression2_TutorialExercises.html">
      14.5. Tutorial Exercises
     </a>
    </li>
@@ -832,7 +830,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/regression2_TutorialExercises.ipynb"
+        <a href="https://mybinder.org/v2/gh/jillxoreilly/StatsCourseBook/master?urlpath=tree/regression2_TutorialEercises_answers.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -850,7 +848,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/regression2_TutorialExercises.ipynb"
+        <a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook/blob/master/regression2_TutorialEercises_answers.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -910,7 +908,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2Fregression2_TutorialExercises.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/jillxoreilly/StatsCourseBook/issues/new?title=Issue%20on%20page%20%2Fregression2_TutorialEercises_answers.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -938,7 +936,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/regression2_TutorialExercises.ipynb"
+        <a href="_sources/regression2_TutorialEercises_answers.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1159,7 +1157,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises">
-<h1><span class="section-number">14.5. </span>Tutorial Exercises<a class="headerlink" href="#tutorial-exercises" title="Permalink to this heading">#</a></h1>
+<h1>Tutorial Exercises<a class="headerlink" href="#tutorial-exercises" title="Permalink to this heading">#</a></h1>
 <p>This week, you will be investigating attitudes to immigration using data from the <a href='https://www.europeansocialsurvey.org'>European Social Survey (ESS)</a>.</p>
 <p>The ESS is a highly respected survey and uses random sampling to achieve a sample that is representative of the population. The survey includes lots of questions about the social and economic circumstances of the household as well as asking a set of questions on political preferences and attitudes.</p>
 <section id="set-up-python-libraries">
@@ -1190,7 +1188,7 @@ title="Print to PDF"
 <li><p>sex (Male, Female)</p></li>
 <li><p>educ (a categorical measure with 3 levels, where ‘tertiary’ is higher education such as university)</p></li>
 <li><p>vote (a categorical measure of the party the respondent last voted for where 1 = Conservatives, 2 = Labour, 3 = any other party)</p></li>
-<li><p>bornuk (a binary measure of whether the respondent was born in the UK where 0 = the respondent <strong>was</strong> born in the UK, and 1 indicates they were <strong>not</strong>).</p></li>
+<li><p>bornuk (a binary measure of whether the respondent was born in the UK where 0 = the respondent was not born in the UK, and 1 indicates they were).</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1450,7 +1448,7 @@ title="Print to PDF"
   <th>Date:</th>             <td>Fri, 24 Feb 2023</td> <th>  Prob (F-statistic):</th> <td>1.82e-52</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>11:20:56</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
+  <th>Time:</th>                 <td>11:20:48</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  2097</td>      <th>  AIC:               </th> <td>   9619.</td>
@@ -1542,7 +1540,7 @@ title="Print to PDF"
   <th>Date:</th>             <td>Fri, 24 Feb 2023</td> <th>  Prob (F-statistic):</th> <td>1.82e-52</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>11:20:56</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
+  <th>Time:</th>                 <td>11:20:48</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  2097</td>      <th>  AIC:               </th> <td>   9619.</td>
@@ -1683,7 +1681,7 @@ title="Print to PDF"
   <th>Date:</th>             <td>Fri, 24 Feb 2023</td> <th>  Prob (F-statistic):</th> <td>1.71e-23</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>11:20:56</td>     <th>  Log-Likelihood:    </th> <td> -3444.4</td>
+  <th>Time:</th>                 <td>11:20:48</td>     <th>  Log-Likelihood:    </th> <td> -3444.4</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  1511</td>      <th>  AIC:               </th> <td>   6903.</td>
@@ -1751,7 +1749,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/regression2_TutorialExercises_23_0.png" src="_images/regression2_TutorialExercises_23_0.png" />
+<img alt="_images/regression2_TutorialEercises_answers_23_0.png" src="_images/regression2_TutorialEercises_answers_23_0.png" />
 </div>
 </div>
 <p>Interpret the results in your own words.</p>
@@ -1809,20 +1807,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="regression2_QandA.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">14.4. </span>Multiple Regression Q &amp; A</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="regression3_intro.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">15. </span>Regression - Statistical Tests</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
