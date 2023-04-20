@@ -271,12 +271,12 @@ plt.plot([55,75],[55,75],'r--')
 heartRate.agg({'colouring':['mean', 'std', 'count'], 'reading':['mean', 'std', 'count']})
 
 
-# The mean heart rate is lower after colouring (mean = 63.7 bpm, s.d. = 5.40) than after reading (mean = 69.4 bpm, s.d. = 5.25) 
+# The mean heart rate is lower after colouring (mean = 67.3 bpm, s.d. = 5.40) than after reading (mean = 69.4 bpm, s.d. = 5.25) 
 
 # In[14]:
 
 
-stats.ttest_rel(heartRate['colouring'], heartRate['reading'], alternative='less')
+stats.ttest_rel(heartRate['reading'], heartRate['colouring'], alternative='greater')
 
 
 # A paired samples t-test showed that there was a significant difference such that heart rate was lower after colouring than reading (t(9)=3.48, p=0.00349)
@@ -308,10 +308,10 @@ heartRate.agg({'colouring':['mean', 'std', 'count'], 'reading':['mean', 'std', '
 def mDiff(x,y):
     return np.mean(x-y)
 
-stats.permutation_test((heartRate['colouring'], heartRate['reading']), mDiff, permutation_type='samples', alternative='less')
+stats.permutation_test((heartRate['reading'], heartRate['colouring']), mDiff, permutation_type='samples', alternative='greater')
 
 
-# A permutation test for paired samples showed a significant difference of means such that heart rate was lower after colouring than reading (mean difference in heart rate 5.7 bpm, p=0.00781, df = 9).
+# A permutation test for paired samples showed a significant difference of means such that heart rate was lower after colouring than reading (mean difference in heart rate 5.7 bpm, p=0.0000781, df = 9).
 # 
 # Note - the degrees of freedom for this test are 9 (10 pairs - 1 mean difference for each shuffle); However I don't necessarily expect students to work this out as I haven't really explained it; it would be fine to just report sample sizes instead for the permutation test). However students should be aware that the relevant sample size here for statistical purposes is 10 (number of pairs) not 20 (number of measurements).
 
@@ -335,10 +335,10 @@ heartRate.quantile([0.25,0.5,0.75])
 # In[18]:
 
 
-stats.wilcoxon(heartRate['colouring'],heartRate['reading'],alternative='less')
+stats.wilcoxon(heartRate['reading'],heartRate['colouring'],alternative='greater')
 
 
-# A sign rank test showed that heart rates were significantly lower after colouring than reading (T=4.5, p=0.00683, n=10 pairs).
+# A sign rank test showed that heart rates were significantly lower after colouring than reading (T=50.5, p=0.00976, n=10 pairs).
 # 
 # We conclude that colouring is effective in lowering heart, rate compared to reading.
 
