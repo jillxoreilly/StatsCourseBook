@@ -1,0 +1,82 @@
+Traceback (most recent call last):
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+my_pal_1 = {"brother": [0.9,0.9,1], "sister": [1,0.9,0.9]}
+my_pal_2 = {"brother": [0.5,0.5,1], "sister": [1,0.5,0.5]}
+
+sns.violinplot(data=data, palette=my_pal_1, alpha=0.2)
+sns.swarmplot(data=data, palette=my_pal_2)
+
+
+sns.violinplot(data=data.brother-data.sister, color=[0.5,0.5,0.5])
+sns.swarmplot(data=data.brother-data.sister, color=[0.1,0.1,0.1])
+
+plt.ylabel='height'
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+Cell [0;32mIn[6], line 4[0m
+[1;32m      1[0m my_pal_1 [38;5;241m=[39m {[38;5;124m"[39m[38;5;124mbrother[39m[38;5;124m"[39m: [[38;5;241m0.9[39m,[38;5;241m0.9[39m,[38;5;241m1[39m], [38;5;124m"[39m[38;5;124msister[39m[38;5;124m"[39m: [[38;5;241m1[39m,[38;5;241m0.9[39m,[38;5;241m0.9[39m]}
+[1;32m      2[0m my_pal_2 [38;5;241m=[39m {[38;5;124m"[39m[38;5;124mbrother[39m[38;5;124m"[39m: [[38;5;241m0.5[39m,[38;5;241m0.5[39m,[38;5;241m1[39m], [38;5;124m"[39m[38;5;124msister[39m[38;5;124m"[39m: [[38;5;241m1[39m,[38;5;241m0.5[39m,[38;5;241m0.5[39m]}
+[0;32m----> 4[0m [43msns[49m[38;5;241;43m.[39;49m[43mviolinplot[49m[43m([49m[43mdata[49m[38;5;241;43m=[39;49m[43mdata[49m[43m,[49m[43m [49m[43mpalette[49m[38;5;241;43m=[39;49m[43mmy_pal_1[49m[43m,[49m[43m [49m[43malpha[49m[38;5;241;43m=[39;49m[38;5;241;43m0.2[39;49m[43m)[49m
+[1;32m      5[0m sns[38;5;241m.[39mswarmplot(data[38;5;241m=[39mdata, palette[38;5;241m=[39mmy_pal_2)
+[1;32m      8[0m sns[38;5;241m.[39mviolinplot(data[38;5;241m=[39mdata[38;5;241m.[39mbrother[38;5;241m-[39mdata[38;5;241m.[39msister, color[38;5;241m=[39m[[38;5;241m0.5[39m,[38;5;241m0.5[39m,[38;5;241m0.5[39m])
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/categorical.py:2305[0m, in [0;36mviolinplot[0;34m(data, x, y, hue, order, hue_order, bw, cut, scale, scale_hue, gridsize, width, inner, split, dodge, orient, linewidth, color, palette, saturation, ax, **kwargs)[0m
+[1;32m   2297[0m [38;5;28;01mdef[39;00m [38;5;21mviolinplot[39m(
+[1;32m   2298[0m     data[38;5;241m=[39m[38;5;28;01mNone[39;00m, [38;5;241m*[39m, x[38;5;241m=[39m[38;5;28;01mNone[39;00m, y[38;5;241m=[39m[38;5;28;01mNone[39;00m, hue[38;5;241m=[39m[38;5;28;01mNone[39;00m, order[38;5;241m=[39m[38;5;28;01mNone[39;00m, hue_order[38;5;241m=[39m[38;5;28;01mNone[39;00m,
+[1;32m   2299[0m     bw[38;5;241m=[39m[38;5;124m"[39m[38;5;124mscott[39m[38;5;124m"[39m, cut[38;5;241m=[39m[38;5;241m2[39m, scale[38;5;241m=[39m[38;5;124m"[39m[38;5;124marea[39m[38;5;124m"[39m, scale_hue[38;5;241m=[39m[38;5;28;01mTrue[39;00m, gridsize[38;5;241m=[39m[38;5;241m100[39m,
+[0;32m   (...)[0m
+[1;32m   2302[0m     ax[38;5;241m=[39m[38;5;28;01mNone[39;00m, [38;5;241m*[39m[38;5;241m*[39mkwargs,
+[1;32m   2303[0m ):
+[0;32m-> 2305[0m     plotter [38;5;241m=[39m [43m_ViolinPlotter[49m[43m([49m[43mx[49m[43m,[49m[43m [49m[43my[49m[43m,[49m[43m [49m[43mhue[49m[43m,[49m[43m [49m[43mdata[49m[43m,[49m[43m [49m[43morder[49m[43m,[49m[43m [49m[43mhue_order[49m[43m,[49m
+[1;32m   2306[0m [43m                             [49m[43mbw[49m[43m,[49m[43m [49m[43mcut[49m[43m,[49m[43m [49m[43mscale[49m[43m,[49m[43m [49m[43mscale_hue[49m[43m,[49m[43m [49m[43mgridsize[49m[43m,[49m
+[1;32m   2307[0m [43m                             [49m[43mwidth[49m[43m,[49m[43m [49m[43minner[49m[43m,[49m[43m [49m[43msplit[49m[43m,[49m[43m [49m[43mdodge[49m[43m,[49m[43m [49m[43morient[49m[43m,[49m[43m [49m[43mlinewidth[49m[43m,[49m
+[1;32m   2308[0m [43m                             [49m[43mcolor[49m[43m,[49m[43m [49m[43mpalette[49m[43m,[49m[43m [49m[43msaturation[49m[43m)[49m
+[1;32m   2310[0m     [38;5;28;01mif[39;00m ax [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m   2311[0m         ax [38;5;241m=[39m plt[38;5;241m.[39mgca()
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/categorical.py:902[0m, in [0;36m_ViolinPlotter.__init__[0;34m(self, x, y, hue, data, order, hue_order, bw, cut, scale, scale_hue, gridsize, width, inner, split, dodge, orient, linewidth, color, palette, saturation)[0m
+[1;32m    896[0m [38;5;28;01mdef[39;00m [38;5;21m__init__[39m([38;5;28mself[39m, x, y, hue, data, order, hue_order,
+[1;32m    897[0m              bw, cut, scale, scale_hue, gridsize,
+[1;32m    898[0m              width, inner, split, dodge, orient, linewidth,
+[1;32m    899[0m              color, palette, saturation):
+[1;32m    901[0m     [38;5;28mself[39m[38;5;241m.[39mestablish_variables(x, y, hue, data, orient, order, hue_order)
+[0;32m--> 902[0m     [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mestablish_colors[49m[43m([49m[43mcolor[49m[43m,[49m[43m [49m[43mpalette[49m[43m,[49m[43m [49m[43msaturation[49m[43m)[49m
+[1;32m    903[0m     [38;5;28mself[39m[38;5;241m.[39mestimate_densities(bw, cut, scale, scale_hue, gridsize)
+[1;32m    905[0m     [38;5;28mself[39m[38;5;241m.[39mgridsize [38;5;241m=[39m gridsize
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/categorical.py:694[0m, in [0;36m_CategoricalPlotter.establish_colors[0;34m(self, color, palette, saturation)[0m
+[1;32m    692[0m         [38;5;28;01melse[39;00m:
+[1;32m    693[0m             levels [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mhue_names
+[0;32m--> 694[0m         palette [38;5;241m=[39m [palette[l] [38;5;28;01mfor[39;00m l [38;5;129;01min[39;00m levels]
+[1;32m    696[0m     colors [38;5;241m=[39m color_palette(palette, n_colors)
+[1;32m    698[0m [38;5;66;03m# Desaturate a bit because these are patches[39;00m
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/categorical.py:694[0m, in [0;36m<listcomp>[0;34m(.0)[0m
+[1;32m    692[0m         [38;5;28;01melse[39;00m:
+[1;32m    693[0m             levels [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mhue_names
+[0;32m--> 694[0m         palette [38;5;241m=[39m [[43mpalette[49m[43m[[49m[43ml[49m[43m][49m [38;5;28;01mfor[39;00m l [38;5;129;01min[39;00m levels]
+[1;32m    696[0m     colors [38;5;241m=[39m color_palette(palette, n_colors)
+[1;32m    698[0m [38;5;66;03m# Desaturate a bit because these are patches[39;00m
+
+[0;31mKeyError[0m: 'diff'
+KeyError: 'diff'
+
